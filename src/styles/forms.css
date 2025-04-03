@@ -1,0 +1,854 @@
+/* System3 Forms Centralized Styles for Vue
+   Used for all forms across the System3 website
+   This ensures consistent styling and reduces duplication
+*/
+
+/* Form Layout & Structure */
+#form-section {
+  padding: 120px 0 80px;
+}
+
+.form-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  position: relative;
+}
+
+/* Form Header Styling */
+.form-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.form-logo {
+  margin: 0 auto 25px;
+  width: 80px;
+  height: 80px;
+  background: rgba(138, 133, 255, 0.03);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(138, 133, 255, 0.1);
+  border: 1px solid rgba(138, 133, 255, 0.1);
+  position: relative;
+}
+
+.form-logo::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.15), transparent 70%);
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.form-header h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.form-header p {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 50px;
+  background: rgba(138, 133, 255, 0.02);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(138, 133, 255, 0.08);
+}
+
+.form-section-title {
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(138, 133, 255, 0.2);
+  font-weight: 600;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 35px;
+  position: relative;
+  display: block;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(138, 133, 255, 0.1);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.form-group label {
+  display: block;
+  position: relative;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.required-field::after {
+  content: '*';
+  color: var(--color-primary);
+  margin-left: 4px;
+}
+
+.form-control {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: var(--color-text);
+  font-size: 15px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-control:focus,
+.form-control:not(:placeholder-shown) {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(138, 133, 255, 0.2);
+  outline: none;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Radio & Checkbox Styles */
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.radio-option, .checkbox-option {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(138, 133, 255, 0.05);
+}
+
+.radio-option:hover, .checkbox-option:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.radio-option input, .checkbox-option input {
+  margin: 3px 10px 0 0;
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.radio-option label, 
+.checkbox-option label {
+  margin: 0;
+  font-weight: normal;
+  position: relative;
+  display: inline;
+  width: auto;
+  font-size: 15px;
+  text-align: left;
+}
+
+/* Form Submission */
+.form-submit {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.submit-btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #7a75e6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(138, 133, 255, 0.2);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  background: rgba(46, 213, 115, 0.08);
+  border: 1px solid rgba(46, 213, 115, 0.2);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.success-message.active {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.success-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: #2ed573;
+}
+
+.success-message h3 {
+  color: #2ed573;
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.success-message p {
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.success-btn {
+  display: inline-block;
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.success-btn:hover {
+  background: rgba(46, 213, 115, 0.2);
+}
+
+.primary-btn {
+  background: #2ed573;
+  color: white;
+  border: 1px solid #2ed573;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(46, 213, 115, 0.2);
+}
+
+.primary-btn:hover {
+  background: #26bf65;
+  box-shadow: 0 6px 16px rgba(46, 213, 115, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Important Information Styling */
+.form-important-info {
+  background: rgba(138, 133, 255, 0.08);
+  border-radius: 12px;
+  padding: 28px 28px 28px 32px;
+  margin-top: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(138, 133, 255, 0.2);
+  text-align: left;
+}
+
+/* Gradient accent on the important info box */
+.form-important-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  border-radius: 4px 0 0 4px;
+}
+
+/* Background decoration for important info */
+.form-important-info::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.2), transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.form-important-info p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 16px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.form-important-info p:last-child {
+  margin-bottom: 0;
+}
+
+.form-important-info ul {
+  padding-left: 24px;
+  margin: 16px 0;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.form-important-info li {
+  margin-bottom: 14px;
+  position: relative;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.form-important-info li:last-child {
+  margin-bottom: 0;
+}
+
+.form-important-info li::before {
+  content: '•';
+  color: var(--color-primary);
+  font-size: 18px;
+  position: absolute;
+  left: -18px;
+  top: -1px;
+}
+
+.form-important-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.form-important-info a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.form-important-info a:hover {
+  color: var(--color-secondary);
+}
+
+.form-important-info a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Info header styling */
+.info-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.info-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.info-content {
+  clear: both;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: left;
+}
+
+.info-content * {
+  text-align: left;
+}
+
+/* Info icon styling */
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background: rgba(138, 133, 255, 0.1);
+  border-radius: 50%;
+  margin-left: 0;
+  color: var(--color-primary);
+  border: 1px solid rgba(138, 133, 255, 0.3);
+  box-shadow: 0 4px 8px rgba(138, 133, 255, 0.15);
+  transition: all 0.3s ease;
+  margin-right: 12px;
+}
+
+.form-important-info:hover .info-icon {
+  transform: scale(1.05);
+  background: rgba(138, 133, 255, 0.15);
+  color: var(--color-secondary);
+}
+
+.info-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Field descriptions */
+.form-section-desc {
+  margin-top: -20px;
+  margin-bottom: 25px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.field-description {
+  margin-top: -5px;
+  margin-bottom: 10px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+/* Light Mode Styles */
+[data-theme="light"] .form-container {
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .form-logo {
+  background: white;
+  box-shadow: 0 10px 30px rgba(138, 133, 255, 0.15);
+}
+
+[data-theme="light"] .form-control {
+  background: #f9f9f9;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .radio-option, 
+[data-theme="light"] .checkbox-option {
+  background: rgba(138, 133, 255, 0.03);
+  border: 1px solid rgba(138, 133, 255, 0.1);
+}
+
+[data-theme="light"] .radio-option:hover, 
+[data-theme="light"] .checkbox-option:hover {
+  background: rgba(138, 133, 255, 0.08);
+}
+
+[data-theme="light"] .form-group {
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .form-section {
+  background: rgba(138, 133, 255, 0.03);
+  border: 1px solid rgba(138, 133, 255, 0.1);
+}
+
+/* Light mode styles for important info */
+[data-theme="light"] .form-important-info {
+  background: rgba(138, 133, 255, 0.05);
+  box-shadow: 0 8px 24px rgba(138, 133, 255, 0.08);
+  border: 1px solid rgba(138, 133, 255, 0.15);
+}
+
+[data-theme="light"] .info-icon {
+  background: rgba(138, 133, 255, 0.15);
+  box-shadow: 0 4px 8px rgba(138, 133, 255, 0.1);
+}
+
+[data-theme="light"] .form-important-info:hover .info-icon {
+  background: rgba(138, 133, 255, 0.25);
+}
+
+/* Additional styles for miscellaneous elements */
+.form-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-title-row h1 {
+  margin: 0;
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Fade in animation for form elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Forms Directory Styling */
+#forms-hero {
+  min-height: calc(60vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(5, 5, 5, 0.95), rgba(15, 15, 15, 0.9)), url('/data-science-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  text-align: center;
+}
+
+#forms-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.2), transparent 80%);
+  opacity: 1;
+  z-index: 1;
+}
+
+[data-theme="light"] #forms-hero::before {
+  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.15), transparent 80%);
+}
+
+/* Hero content styles */
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 15;
+  margin: 0 auto;
+  width: 100%;
+  will-change: opacity, transform;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--color-text);
+  position: relative;
+  z-index: 5;
+  /* We'll use GSAP for animation instead of CSS animations */
+  will-change: opacity, transform;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  opacity: 1;
+  visibility: visible;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  /* We'll use GSAP for animation instead of CSS animations */
+  will-change: opacity, transform;
+}
+
+/* Optimized card transition for smoother hover effect */
+.form-card {
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, box-shadow;
+}
+
+/* Forms Directory Section */
+#forms-directory {
+  padding: 6rem 0;
+}
+
+.section-title {
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1), 
+              box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+              border-color 0.3s ease;
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, box-shadow;
+}
+
+.form-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(138, 133, 255, 0.08);
+  border-color: var(--color-primary);
+}
+
+.form-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.form-info {
+  flex-grow: 1;
+}
+
+.form-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.form-info p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-button {
+  display: inline-block;
+  padding: 0.875rem 1.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(138, 133, 255, 0.3);
+  text-decoration: none;
+}
+
+.form-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(138, 133, 255, 0.4);
+}
+
+/* Light mode styles for forms directory */
+[data-theme="light"] #forms-hero {
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.9)), url('/data-science-hero.jpg');
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] #forms-directory {
+  background-color: var(--color-bg-light);
+}
+
+[data-theme="light"] .form-card {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .form-card:hover {
+  box-shadow: 0 15px 30px rgba(138, 133, 255, 0.15);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .form-card {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .form-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  #forms-hero {
+    height: 50vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .section {
+    padding: 4rem 2rem;
+  }
+  
+  .forms-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .form-card {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .form-actions {
+    justify-content: center;
+  }
+  
+  #form-section {
+    padding: 100px 0 60px;
+  }
+  
+  .form-container {
+    padding: 30px 20px;
+  }
+  
+  .form-header h1 {
+    font-size: 24px;
+  }
+  
+  .form-header p {
+    font-size: 14px;
+  }
+  
+  .form-important-info {
+    padding: 20px 20px 20px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  #form-section {
+    padding: 80px 0 40px;
+  }
+  
+  .form-container {
+    padding: 20px 15px;
+  }
+  
+  .form-header h1 {
+    font-size: 20px;
+  }
+  
+  .form-section-title {
+    font-size: 18px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
+  
+  .success-actions {
+    flex-direction: column;
+  }
+}

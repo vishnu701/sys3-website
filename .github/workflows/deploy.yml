@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger the workflow on push to main branch
+  push:
+    branches: [ main, master, develop ]
+  # Allow manual trigger
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false # Improves security
+
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install Dependencies 📦
+        run: npm ci
+        
+      - name: Get Repository Name 📝
+        id: repo-name
+        run: |
+          REPO_NAME=$(echo "$GITHUB_REPOSITORY" | cut -d '/' -f 2)
+          echo "Repository name is $REPO_NAME"
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+          
+      - name: Build 🔧
+        run: npm run build
+        env:
+          # Pass repository name to the build process
+          VITE_REPO_NAME: ${{ env.REPO_NAME }}
+        
+      - name: Configure 404 Page 🔄
+        run: |
+          # Ensure 404.html exists in the dist folder
+          cp dist/index.html dist/404.html
+        
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to
+          folder: dist # The folder the action should deploy
+          clean: true # Automatically remove deleted files from the deploy branch
+          token: ${{ secrets.GITHUB_TOKEN }}
