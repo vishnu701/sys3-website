@@ -30,7 +30,15 @@ jobs:
           cache: 'npm'
           
       - name: Install Dependencies 📦
-        run: npm ci
+        run: |
+          # Install gh-pages and other dependencies
+          npm install --no-audit
+          
+          # Verify gh-pages is installed
+          if ! npm list gh-pages; then
+            echo "Installing gh-pages explicitly"
+            npm install --save-dev gh-pages
+          fi
         
       - name: Get Repository Name 📝
         id: repo-name
