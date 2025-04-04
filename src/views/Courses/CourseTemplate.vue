@@ -3,24 +3,24 @@
     <!-- Course Sticky Navigation (appears on scroll) -->
     <div class="course-nav">
       <div class="course-nav-inner">
-        <div class="course-title">Data Science</div>
+        <div class="course-title">{{ courseTitle }}</div>
         <div class="course-nav-links">
-          <a href="#overview" class="active">Overview</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#curriculum">Curriculum</a>
-          <a href="#instructors">Instructors</a>
-          <a href="#details">Details</a>
-          <a href="#cta">Enroll</a>
+          <a @click.prevent="scrollToSection('overview')" href="#overview" class="active">Overview</a>
+          <a @click.prevent="scrollToSection('how-it-works')" href="#how-it-works">How It Works</a>
+          <a @click.prevent="scrollToSection('curriculum')" href="#curriculum">Curriculum</a>
+          <a @click.prevent="scrollToSection('instructors')" href="#instructors">Instructors</a>
+          <a @click.prevent="scrollToSection('details')" href="#details">Details</a>
+          <a @click.prevent="scrollToSection('cta')" href="#cta">Enroll</a>
         </div>
       </div>
     </div>
 
     <div class="content">
       <!-- Course Hero Section -->
-      <section class="course-hero" :style="{ backgroundImage: `url('/public/data-science-hero.jpg')` }">
+      <section class="course-hero" :style="{ backgroundImage: `url('${heroImage}')` }">
         <div class="course-hero-content">
-          <h1><span class="hero-highlight">Data Science</span></h1>
-          <p>Master the fundamentals of data analysis, statistics, and visualization needed to build a strong AI foundation.</p>
+          <h1><span class="hero-highlight">{{ courseTitle }}</span></h1>
+          <p>{{ heroTagline }}</p>
         </div>
       </section>
 
@@ -31,24 +31,24 @@
           
           <div class="overview-grid">
             <div class="overview-text">
-              <p><strong>Data Science</strong> is a pre-requisite course for students who are looking to get into machine learning using Python. We start with the basics of Python, like data types, data structures, classes etc., and then move on to topics that cover libraries that are ML focused such as NumPy, Pandas, and Matplotlib.</p>
+              <p><strong>{{ overviewTitle }}</strong> {{ overviewParagraph1 }}</p>
               
-              <p>Through a blend of theoretical instruction and hands-on practice, you'll learn how to collect, clean, and analyze data, as well as how to create compelling visualizations that communicate your findings effectively. The course also includes a significant project component, where students work in teams to apply their skills to real-world Python problems.</p>
+              <p>{{ overviewParagraph2 }}</p>
               
-              <p>By the end of this module, students will have the necessary tools to undertake a basic course in machine learning successfully and embark on a data analytics project.</p>
+              <p>{{ overviewParagraph3 }}</p>
             </div>
             
             <div class="overview-stats">
               <div class="stat-item">
-                <div class="stat-number">12</div>
+                <div class="stat-number">{{ weeksDuration }}</div>
                 <div class="stat-label">Weeks</div>
               </div>
               <div class="stat-item">
-                <div class="stat-number">36</div>
+                <div class="stat-number">{{ hoursDuration }}</div>
                 <div class="stat-label">Hours</div>
               </div>
               <div class="stat-item">
-                <div class="stat-number">6</div>
+                <div class="stat-number">{{ projectsCount }}</div>
                 <div class="stat-label">Projects</div>
               </div>
               <div class="stat-item">
@@ -93,10 +93,51 @@
       <section class="course-section" id="curriculum">
         <div class="course-section-content">
           <h2>Course <span class="gradient-text">Curriculum</span></h2>
-          <p>The Data Science curriculum (Autumn-24) is a comprehensive pre-requisite course for students looking to enter the field of machine learning using Python. We start with Python fundamentals and progressively build to data science libraries and techniques.</p>
+          <p>{{ curriculumIntro }}</p>
           
-          <div class="modules-list">
-            <div v-for="(module, index) in modules" :key="index" class="module-item" :class="{ active: index === activeModule }">
+          <!-- Track Selector (for courses with multiple tracks) -->
+          <div v-if="hasTracks" class="track-selector">
+            <button 
+              @click="setActiveTrack('highSchool')" 
+              :class="{ active: activeTrack === 'highSchool' }"
+            >
+              High School Track
+            </button>
+            <button 
+              @click="setActiveTrack('graduate')" 
+              :class="{ active: activeTrack === 'graduate' }"
+            >
+              Graduate Track
+            </button>
+          </div>
+
+          <!-- High School Track Curriculum (shown when activeTrack is 'highSchool' or when hasTracks is false) -->
+          <div v-if="!hasTracks || activeTrack === 'highSchool'" class="modules-list">
+            <div v-for="(module, index) in highSchoolModules" :key="index" class="module-item" :class="{ active: index === activeModule }">
+              <div class="module-head" @click="toggleModule(index)">
+                <div class="module-title">
+                  <div class="module-number">{{ index + 1 }}</div>
+                  <h3>{{ module.title }}</h3>
+                </div>
+                <div class="module-toggle"></div>
+              </div>
+              <div class="module-content">
+                <ul class="module-list">
+                  <li v-for="(lesson, lessonIndex) in module.lessons" :key="lessonIndex">
+                    <svg class="lesson-icon" viewBox="0 0 24 24">
+                      <path fill="none" stroke="currentColor" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                      <path fill="none" stroke="currentColor" stroke-width="2" d="M12 14l6.16-3.42a12 12 0 01.2 1.38A12 12 0 0112 21a12 12 0 01-6.36-1.8c-.2-.46-.37-.94-.5-1.43L12 14z"></path>
+                    </svg>
+                    {{ lesson }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Graduate Track Curriculum (shown only when hasTracks is true and activeTrack is 'graduate') -->
+          <div v-if="hasTracks && activeTrack === 'graduate'" class="modules-list">
+            <div v-for="(module, index) in graduateModules" :key="index" class="module-item" :class="{ active: index === activeModule }">
               <div class="module-head" @click="toggleModule(index)">
                 <div class="module-title">
                   <div class="module-number">{{ index + 1 }}</div>
@@ -123,27 +164,29 @@
       <!-- Instructors Section -->
       <section class="course-section" id="instructors">
         <div class="course-section-content">
-          <h2>Meet Your <span class="gradient-text">Instructor</span></h2>
-          <p>Learn from a world-class educator with extensive research and teaching experience in data science.</p>
+          <h2>Meet Your <span class="gradient-text">{{ instructors.length > 1 ? 'Instructors' : 'Instructor' }}</span></h2>
+          <p>Learn from experts with extensive research and industry experience in {{ courseTitle.toLowerCase() }}.</p>
           
-          <div class="instructors-grid single-instructor">
-            <div class="instructor-card">
+          <div class="instructors-grid" :class="{ 'single-instructor': instructors.length === 1 }">
+            <div v-for="(instructor, index) in instructors" :key="index" class="instructor-card">
               <div class="instructor-image">
-                <img src="/src/assets/images/people/PavlosProtopapas.jpeg" alt="Dr. Pavlos Protopapas" />
+                <img :src="instructor.imagePath" :alt="instructor.name" />
               </div>
               <div class="instructor-info">
-                <div class="instructor-name">Dr. Pavlos Protopapas</div>
-                <div class="instructor-role">CEO and Founder</div>
-                <p class="instructor-bio">Pavlos is an educator and researcher. As an educator, Pavlos is teaching CS109A, CS109B, introduction to data science and advanced topics of data science. He also teaches a course in MLOps. In the past he has taught capstone courses in data science and computational science, introduction to deep reinforcement learning, and planning a course in physics informed neural networks.</p>
+                <div class="instructor-name">{{ instructor.name }}</div>
+                <div class="instructor-role">{{ instructor.role }}</div>
+                <p class="instructor-bio">{{ instructor.bio }}</p>
                 <div class="instructor-links">
-                  <a href="https://seas.harvard.edu/person/pavlos-protopapas" target="_blank" class="harvard-link" aria-label="Harvard Directory">
-                    <svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 3L3 9V11H29V9L16 3Z" fill="currentColor"/>
-                      <path d="M7 13V23H10V13H7Z" fill="currentColor"/>
-                      <path d="M13 13V23H16V13H13Z" fill="currentColor"/>
-                      <path d="M19 13V23H22V13H19Z" fill="currentColor"/>
-                      <path d="M25 13V23H28V13H25Z" fill="currentColor"/>
-                      <path d="M4 25V29H28V25H4Z" fill="currentColor"/>
+                  <a v-if="instructor.linkedin" :href="instructor.linkedin" target="_blank" class="linkedin-link" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                  </a>
+                  <a v-if="instructor.website" :href="instructor.website" target="_blank" class="website-link" aria-label="Personal Website">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                     </svg>
                   </a>
                 </div>
@@ -157,7 +200,7 @@
       <section class="course-section" id="details">
         <div class="course-section-content">
           <h2>Course <span class="gradient-text">Details</span></h2>
-          <p class="section-intro">Everything you need to know about our comprehensive Data Science program, designed to transform beginners into job-ready data scientists.</p>
+          <p class="section-intro">{{ detailsIntro }}</p>
           
           <div class="details-grid">
             <div class="details-item">
@@ -170,11 +213,9 @@
                 </div>
                 <h3>Prerequisites</h3>
               </div>
-              <p>Basic programming knowledge is helpful but not required. The course includes Python fundamentals for beginners. A background in mathematics or statistics is beneficial but not essential.</p>
+              <p>{{ prerequisitesDescription }}</p>
               <ul>
-                <li>No prior coding experience needed</li>
-                <li>Basic algebra and statistics concepts</li>
-                <li>Curiosity and commitment to learn</li>
+                <li v-for="(item, index) in prerequisites" :key="index">{{ item }}</li>
               </ul>
             </div>
             
@@ -192,10 +233,7 @@
               </div>
               <p>The course is delivered through a carefully designed blend of learning methods to maximize engagement and knowledge retention:</p>
               <ul>
-                <li>Live virtual sessions with interactive Q&A</li>
-                <li>Self-paced learning modules with hands-on exercises</li>
-                <li>Real-world projects with industry datasets</li>
-                <li>Mentor-guided review sessions and code reviews</li>
+                <li v-for="(item, index) in formatItems" :key="index">{{ item }}</li>
               </ul>
             </div>
             
@@ -209,13 +247,9 @@
                 </div>
                 <h3>Tools & Technologies</h3>
               </div>
-              <p>Students will build a comprehensive data science toolkit with industry-standard technologies:</p>
+              <p>{{ toolsDescription }}</p>
               <ul>
-                <li>Python programming and Jupyter Notebooks</li>
-                <li>Data analysis with Pandas and NumPy</li>
-                <li>Data visualization with Matplotlib, Seaborn, and Plotly</li>
-                <li>Statistical analysis with SciPy and StatsModels</li>
-                <li>SQL fundamentals for database interactions</li>
+                <li v-for="(item, index) in toolsItems" :key="index">{{ item }}</li>
               </ul>
             </div>
             
@@ -229,12 +263,9 @@
                 </div>
                 <h3>Certification</h3>
               </div>
-              <p>Upon successful completion of all course requirements, you'll earn the System3 Data Science Certification:</p>
+              <p>Upon successful completion of all course requirements, you'll earn the System3 {{ courseTitle }} Certification:</p>
               <ul>
-                <li>Recognized credential by leading tech companies</li>
-                <li>Digital certificate for your resume and LinkedIn profile</li>
-                <li>Showcase of completed projects in a personal portfolio</li>
-                <li>Access to System3 alumni network and job placement assistance</li>
+                <li v-for="(item, index) in certificationItems" :key="index">{{ item }}</li>
               </ul>
             </div>
           </div>
@@ -245,8 +276,8 @@
       <section class="course-section course-cta" id="cta">
         <div class="course-section-content">
           <div class="cta-box">
-            <h2>Ready to <span class="gradient-text">Master</span> Data Science?</h2>
-            <p>Join our next cohort and build the foundational skills for success in the world of AI and data analytics.</p>
+            <h2>Ready to <span class="gradient-text">Master</span> {{ courseTitle }}?</h2>
+            <p>{{ ctaText }}</p>
             <div class="cta-container">
               <router-link to="/forms/course-registration" class="cta-button primary">Register Now</router-link>
               <router-link to="/courses" class="cta-button secondary">Explore Other Courses</router-link>
@@ -266,6 +297,41 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+// Course data props
+const props = defineProps({
+  courseTitle: { type: String, required: true },
+  heroImage: { type: String, required: true },
+  heroTagline: { type: String, required: true },
+  overviewTitle: { type: String, required: true },
+  overviewParagraph1: { type: String, required: true },
+  overviewParagraph2: { type: String, required: true },
+  overviewParagraph3: { type: String, required: true },
+  weeksDuration: { type: String, required: true },
+  hoursDuration: { type: String, required: true },
+  projectsCount: { type: String, required: true },
+  curriculumIntro: { type: String, required: true },
+  hasTracks: { type: Boolean, default: false },
+  highSchoolModules: { type: Array, required: true },
+  graduateModules: { type: Array, default: () => [] },
+  instructors: { type: Array, required: true },
+  detailsIntro: { type: String, required: true },
+  prerequisitesDescription: { type: String, required: true },
+  prerequisites: { type: Array, required: true },
+  formatItems: { type: Array, required: true },
+  toolsDescription: { type: String, required: true },
+  toolsItems: { type: Array, required: true },
+  certificationItems: { type: Array, required: true },
+  ctaText: { type: String, required: true }
+});
+
+// Track selector state (only used if hasTracks is true)
+const activeTrack = ref('highSchool');
+const setActiveTrack = (track) => {
+  activeTrack.value = track;
+  // Reset active module when switching tracks
+  activeModule.value = 0;
+};
+
 // Module accordion state
 const activeModule = ref(null);
 const toggleModule = (index) => {
@@ -276,125 +342,23 @@ const toggleModule = (index) => {
   }
 };
 
-// Course curriculum data
-const modules = ref([
-  {
-    title: "Python Essentials",
-    lessons: [
-      "Data Types and Type Conversion",
-      "Variables and Operators",
-      "Arithmetic, Assignment, Comparison, Logical/Conditional Operators",
-      "Flow Control"
-    ]
-  },
-  {
-    title: "Lists and Loops",
-    lessons: [
-      "Creating Lists, Indexing, and Slicing",
-      "Mutability, List Methods, and Aliasing/Copying",
-      "Common Sequence and Comparison Operations",
-      "For and While Loops",
-      "Mentoring Session: Iterables, Break vs Continue"
-    ]
-  },
-  {
-    title: "Data Structures and Pythonic Syntax",
-    lessons: [
-      "Tuples and Dictionaries",
-      "List Comprehension",
-      "Dictionary Comprehension",
-      "Mentoring Session: Sets"
-    ]
-  },
-  {
-    title: "Functions and Function Scope",
-    lessons: [
-      "Intuition and Definition of Functions",
-      "Types of Arguments: Keyword, Position, and Default",
-      "Unknown Number of Arguments (* and **)",
-      "Namespaces and Types of Scopes",
-      "Mentoring Session: Zip and Enumerate Functions"
-    ]
-  },
-  {
-    title: "Classes",
-    lessons: [
-      "Class and Object Concepts",
-      "Attributes and Methods",
-      "Dunder Methods: __init__()",
-      "Mentoring Session: Advanced Dunder Methods (__call__, __getitem__, __str__ etc.)"
-    ]
-  },
-  {
-    title: "Strings, Files and Regular Expressions",
-    lessons: [
-      "String Operations and Methods",
-      "Types of Files",
-      "Reading and Writing Files",
-      "Regular Expressions",
-      "Mentoring Session: Third Party Libraries"
-    ]
-  },
-  {
-    title: "NumPy",
-    lessons: [
-      "Creating ndarray Objects",
-      "Dimensions and Shapes",
-      "NumPy Methods (zeros, ones, arrange, vstack, etc.)",
-      "Slicing, Accessing, Boolean Masks, and Reshaping",
-      "Mentoring Session: Broadcasting"
-    ]
-  },
-  {
-    title: "Notations and Linear Algebra",
-    lessons: [
-      "Basics of Math Notations (Greek Letters, Summation, etc.)",
-      "Log, Exponent, and Derivatives",
-      "Vectors: Geometric Interpretation, Operations, and Cosine Similarity",
-      "Matrices: Types, Access, Multiplication, Transpose, and Inverse",
-      "Mentoring Session: Vector Span and Basis of Vectors"
-    ]
-  },
-  {
-    title: "Probability and Statistics",
-    lessons: [
-      "Random Variables: Motivation and Types",
-      "Point Estimates: Mean, Median, Mode, Variance, and Standard Deviation",
-      "Histograms and Confidence Intervals",
-      "Common Distributions: Uniform, Binomial, and Normal"
-    ]
-  },
-  {
-    title: "Pandas",
-    lessons: [
-      "DataFrames and Series",
-      "Indexing and Multi-Indexing",
-      ".loc() and .iloc() Methods",
-      "Groupby() Operations",
-      "Debugging with Try and Except Blocks"
-    ]
-  },
-  {
-    title: "Linear Regression",
-    lessons: [
-      "Response vs Predictor Variables",
-      "True vs Statistical Models",
-      "Error Evaluation",
-      "Train and Test Sets",
-      "Regression Coefficients and Their Estimates"
-    ]
-  },
-  {
-    title: "Data Visualization with Matplotlib",
-    lessons: [
-      "Exploratory Data Analysis (EDA)",
-      "Types of Visualizations",
-      "Creating Basic Plots with Matplotlib",
-      "Customizing and Styling Visualizations",
-      "Communicating Insights Through Visualization"
-    ]
+// Method to scroll to section without changing the URL
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // Get the section element and scroll to it
+    section.scrollIntoView({ behavior: 'smooth' });
+    
+    // Update active class in the navigation links
+    const navLinks = document.querySelectorAll('.course-nav-links a');
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${sectionId}`) {
+        link.classList.add('active');
+      }
+    });
   }
-]);
+};
 
 // Initialize animations and course navigation
 onMounted(() => {
@@ -406,9 +370,7 @@ onMounted(() => {
     initAnimations();
 
     // Add active class to the first module as initial state
-    if (modules.value.length > 0) {
-      activeModule.value = 0;
-    }
+    activeModule.value = 0;
   });
 });
 
@@ -454,7 +416,7 @@ const setupCourseNav = () => {
           }
         });
         
-        // Update active class
+        // Update active class without changing URL
         navLinks.forEach(link => {
           link.classList.remove('active');
           const href = link.getAttribute('href');
@@ -561,6 +523,24 @@ const initAnimations = () => {
     });
   }
   
+  // Animate track selector buttons (if present)
+  const trackButtons = document.querySelectorAll('.track-selector button');
+  if (trackButtons.length) {
+    gsap.set(trackButtons, { y: 20, opacity: 0 });
+    gsap.to(trackButtons, {
+      y: 0,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.track-selector',
+        start: 'top 85%',
+        once: true
+      }
+    });
+  }
+  
   // Animate module items
   const moduleItems = document.querySelectorAll('.module-item');
   if (moduleItems.length) {
@@ -582,7 +562,7 @@ const initAnimations = () => {
 </script>
 
 <style scoped>
-/* Specific styles for DataScience.vue */
+/* Course component styles */
 .cta-container {
   display: flex;
   gap: 1.5rem;
@@ -623,12 +603,150 @@ const initAnimations = () => {
   transform: translateY(-3px);
 }
 
-/* Fix for module toggle state */
+/* Track selector styles (for courses with multiple tracks) */
+.track-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.track-selector button {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text);
+}
+
+.track-selector button.active {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(138, 133, 255, 0.25);
+}
+
+.track-selector button:hover:not(.active) {
+  background: rgba(138, 133, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Module toggle state */
 .module-item.active .module-toggle::after {
   transform: translateX(-50%) scaleY(0);
 }
 
-/* Ensure correct theme support */
+/* Instructor image styling */
+.instructor-image {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-right: 1.5rem;
+}
+
+.instructor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Instructors grid styling */
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.instructors-grid.single-instructor {
+  display: block;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+/* Instructor card styling */
+.instructor-card {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.instructor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.instructor-info {
+  flex: 1;
+}
+
+/* Responsive styling for instructor cards */
+@media (max-width: 992px) {
+  .instructor-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .instructor-image {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  
+  /* Fix for instructor links on mobile */
+  .instructor-links {
+    justify-content: center;
+  }
+}
+
+.instructor-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+}
+
+.instructor-role {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.instructor-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.instructor-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.instructor-links a {
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease;
+}
+
+.instructor-links a:hover {
+  color: var(--color-primary);
+}
+
+/* Theme support */
 :deep([data-theme="light"]) .course-hero::before {
   background: linear-gradient(145deg, 
     rgba(30, 30, 60, 0.7), 
@@ -649,12 +767,13 @@ const initAnimations = () => {
 :deep([data-theme="light"]) .component-item,
 :deep([data-theme="light"]) .module-head,
 :deep([data-theme="light"]) .instructor-card,
-:deep([data-theme="light"]) .details-item {
+:deep([data-theme="light"]) .details-item,
+:deep([data-theme="light"]) .track-selector button {
   background: white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Make background overlay for course hero */
+/* Hero section styling */
 .course-hero {
   position: relative;
 }
@@ -678,7 +797,7 @@ const initAnimations = () => {
   z-index: 2;
 }
 
-/* Fix for module toggle in light theme */
+/* Light theme module toggle */
 :deep([data-theme="light"]) .module-item.active .module-content {
   background: white;
 }
@@ -713,7 +832,12 @@ const initAnimations = () => {
   .learning-components {
     grid-template-columns: 1fr;
   }
-}
+  
+  .instructors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  }
 
 @media (max-width: 768px) {
   .cta-container {
@@ -727,6 +851,16 @@ const initAnimations = () => {
   
   .course-hero h1 {
     font-size: 2.5rem;
+  }
+  
+  .track-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .track-selector button {
+    width: 100%;
+    max-width: 300px;
   }
 }
 

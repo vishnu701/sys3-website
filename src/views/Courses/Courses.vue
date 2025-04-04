@@ -15,7 +15,7 @@
         <p class="section-description">Choose the educational track that matches your experience level</p>
         
         <!-- Course Level Tabs -->
-        <div class="course-level-tabs">
+        <div id="graduate" class="course-level-tabs">
           <button class="level-tab" :class="{ active: activeTab === 'high-school' }" @click="switchTab('high-school')">High School</button>
           <button class="level-tab" :class="{ active: activeTab === 'graduate' }" @click="switchTab('graduate')">Graduate & Corporate</button>
         </div>
@@ -30,7 +30,8 @@
             <div class="course-content">
               <h3>{{ course.title }}</h3>
               <p>{{ truncateDescription(course.description, 100) }}</p>
-              <RouterLink :to="`/courses/${course.id}`" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab}/data-science`" v-if="course.id === 'data-science'" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab}/${course.id}`" v-else class="course-link">Learn More</RouterLink>
             </div>
           </div>
         </div>
@@ -46,7 +47,8 @@
             <div class="course-content">
               <h3>{{ course.title }}</h3>
               <p>{{ truncateDescription(course.description, 100) }}</p>
-              <RouterLink :to="`/courses/${course.id}`" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab}/data-science`" v-if="course.id === 'data-science'" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab}/${course.id}`" v-else class="course-link">Learn More</RouterLink>
             </div>
           </div>
         </div>
@@ -172,14 +174,15 @@ function switchTab(tab) {
 
 // Split courses into categories
 const highSchoolCourses = computed(() => {
-  // In a real implementation, filter by a category property
-  // For now, let's just use the first two courses
-  return courses.slice(0, 2);
+  // Only Data Science, Machine Learning, and Computer Vision are available for high school level
+  return courses.filter(course => 
+    ['data-science', 'machine-learning', 'computer-vision'].includes(course.id)
+  );
 });
 
 const graduateCourses = computed(() => {
-  // Use the remaining courses for graduate level (4 courses)
-  return courses.slice(2);
+  // All courses are available at graduate level
+  return courses;
 });
 
 // Import SVG images for courses

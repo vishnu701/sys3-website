@@ -12,6 +12,19 @@ import NotFound from '@/views/NotFound.vue';
 import Courses from '@/views/Courses/Courses.vue';
 import DataScience from '@/views/Courses/DataScience.vue';
 
+// High School Course pages
+import HSMachineLearning from '@/views/Courses/HighSchool/MachineLearning.vue';
+import HSComputerVision from '@/views/Courses/HighSchool/ComputerVision.vue';
+import HSDataScience from '@/views/Courses/HighSchool/DataScience.vue';
+
+// Graduate Course pages
+import GradMachineLearning from '@/views/Courses/Graduate/MachineLearning.vue';
+import GradComputerVision from '@/views/Courses/Graduate/ComputerVision.vue';
+import GradDataScience from '@/views/Courses/Graduate/DataScience.vue';
+import GradNLP from '@/views/Courses/Graduate/NLP.vue';
+import GradReinforcementLearning from '@/views/Courses/Graduate/ReinforcementLearning.vue';
+import GradLLMOps from '@/views/Courses/Graduate/LLMOps.vue';
+
 // Form pages
 import FormsIndex from '@/views/Forms/Index.vue';
 import CourseRegistration from '@/views/Forms/CourseRegistration.vue';
@@ -54,12 +67,73 @@ const routes = [
     component: Courses,
     meta: { title: 'Our Courses - System3' }
   },
+  // Original Data Science Course
   {
     path: '/courses/data-science',
     name: 'DataScience',
     component: DataScience,
     meta: { title: 'Data Science Course - System3' }
   },
+  
+  // High School Courses
+  {
+    path: '/courses/high-school/machine-learning',
+    name: 'HSMachineLearning',
+    component: HSMachineLearning,
+    meta: { title: 'High School Machine Learning - System3' }
+  },
+  {
+    path: '/courses/high-school/computer-vision',
+    name: 'HSComputerVision',
+    component: HSComputerVision,
+    meta: { title: 'High School Computer Vision - System3' }
+  },
+  {
+    path: '/courses/high-school/data-science',
+    name: 'HSDataScience',
+    component: HSDataScience,
+    meta: { title: 'High School Data Science - System3' }
+  },
+  
+  // Graduate Courses
+  {
+    path: '/courses/graduate/machine-learning',
+    name: 'GradMachineLearning',
+    component: GradMachineLearning,
+    meta: { title: 'Graduate Machine Learning - System3' }
+  },
+  {
+    path: '/courses/graduate/computer-vision',
+    name: 'GradComputerVision',
+    component: GradComputerVision,
+    meta: { title: 'Graduate Computer Vision - System3' }
+  },
+  {
+    path: '/courses/graduate/data-science',
+    name: 'GradDataScience',
+    component: GradDataScience,
+    meta: { title: 'Graduate Data Science - System3' }
+  },
+  {
+    path: '/courses/graduate/nlp',
+    name: 'GradNLP',
+    component: GradNLP,
+    meta: { title: 'Graduate Natural Language Processing - System3' }
+  },
+  {
+    path: '/courses/graduate/reinforcement-learning',
+    name: 'GradReinforcementLearning',
+    component: GradReinforcementLearning,
+    meta: { title: 'Graduate Reinforcement Learning - System3' }
+  },
+  {
+    path: '/courses/graduate/llmops',
+    name: 'GradLLMOps',
+    component: GradLLMOps,
+    meta: { title: 'Graduate LLMOps - System3' }
+  },
+  
+  // Form pages
   {
     path: '/forms',
     name: 'Forms',
@@ -94,7 +168,12 @@ const router = createRouter({
       return savedPosition;
     }
     if (to.hash) {
-      return { el: to.hash, behavior: 'smooth' };
+      // Add a small delay to allow components to mount properly
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ el: to.hash, behavior: 'smooth' });
+        }, 300);
+      });
     }
     return { top: 0, behavior: 'smooth' };
   }

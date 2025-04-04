@@ -170,7 +170,8 @@
             <div class="course-preview-content">
               <h3>{{ course.title }}</h3>
               <p>{{ truncateDescription(course.description, 100) }}</p>
-              <RouterLink :to="`/courses/${course.id}`" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab === 'high-school' ? 'high-school' : 'graduate'}/data-science`" v-if="course.id === 'data-science'" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab === 'high-school' ? 'high-school' : 'graduate'}/${course.id}`" v-else class="course-link">Learn More</RouterLink>
             </div>
           </div>
         </div>
@@ -185,7 +186,8 @@
             <div class="course-preview-content">
               <h3>{{ course.title }}</h3>
               <p>{{ truncateDescription(course.description, 100) }}</p>
-              <RouterLink :to="`/courses/${course.id}`" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab === 'high-school' ? 'high-school' : 'graduate'}/data-science`" v-if="course.id === 'data-science'" class="course-link">Learn More</RouterLink>
+              <RouterLink :to="`/courses/${activeTab === 'high-school' ? 'high-school' : 'graduate'}/${course.id}`" v-else class="course-link">Learn More</RouterLink>
             </div>
           </div>
         </div>
