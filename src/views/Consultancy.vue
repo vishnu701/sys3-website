@@ -4,7 +4,7 @@
     <section id="consultancy-hero" class="section hero consultancy-hero">
       <div class="hero-content">
         <h1>AI <span class="gradient-text">Consultancy</span></h1>
-        <p>Expert guidance to implement AI solutions tailored for your business challenges</p>
+        <p>Expert AI implementation led by Harvard's leading astrophysicists</p>
       </div>
     </section>
 
@@ -12,12 +12,12 @@
     <section id="about-consultancy" class="section">
       <div class="section-content">
         <h2><span class="gradient-text">AI Solutions for Business</span></h2>
-        <p class="section-description">Strategic AI implementation to revolutionize your operations</p>
+        <p class="section-description">Strategic AI implementation led by Harvard's leading astrophysicists</p>
         
         <div class="consultancy-about">
           <div class="about-text">
-            <p>System3 Consultancy provides end-to-end AI implementation services to help businesses harness the transformative power of artificial intelligence. Our team of experts combines academic expertise with practical industry experience to deliver solutions that drive real business value.</p>
-            <p>We take a strategic approach to AI implementation, ensuring that every solution is aligned with your business objectives and integrated seamlessly with your existing systems. From initial assessment and strategy development to implementation and ongoing support, we guide you through every step of your AI journey.</p>
+            <p>System3 provides end-to-end AI implementation services to help businesses harness the transformative power of artificial intelligence. Our team of experts is led by two Harvard professors with backgrounds in astronomy and astrophysics, bringing unique analytical perspectives to business challenges.</p>
+            <p>We've successfully served clients across education, technology, and agriculture sectors, with the ability to adapt our expertise to various industries. We provide solutions at all scales—from simple implementation tools to fully deployed enterprise systems—covering the entire spectrum from traditional ML to advanced LLMops.</p>
             <div class="about-cta">
               <RouterLink to="/contact" class="cta-button primary">Get Started</RouterLink>
             </div>
@@ -33,31 +33,31 @@
     <section id="services-section" class="section">
       <div class="section-content">
         <h2><span class="gradient-text">Our Services</span></h2>
-        <p class="section-description">Comprehensive AI consultancy for every stage of your business</p>
+        <p class="section-description">ML/AI solutions tailored to your industry's unique challenges</p>
         
         <div class="services-grid">
           <div class="service-card">
             <div class="service-number">01</div>
-            <h3>Strategy Development</h3>
-            <p>Create a comprehensive AI roadmap aligned with your business objectives and industry positioning. We identify high-impact opportunities and develop a phased implementation plan.</p>
+            <h3>Prediction & Forecasting</h3>
+            <p>Leverage advanced machine learning models for accurate predictions and forecasting. Our algorithms can identify patterns in your data to optimize inventory, predict demand, and improve resource allocation decisions.</p>
           </div>
           
           <div class="service-card">
             <div class="service-number">02</div>
-            <h3>Custom Solutions</h3>
-            <p>Develop tailored AI applications to solve your unique business challenges, from predictive analytics and natural language processing to computer vision and recommendation systems.</p>
+            <h3>End-to-End AI Solutions</h3>
+            <p>From data collection and preprocessing to model development and deployment, we create comprehensive AI systems tailored to your specific business needs, with seamless integration into your existing infrastructure.</p>
           </div>
           
           <div class="service-card">
             <div class="service-number">03</div>
-            <h3>Implementation Support</h3>
-            <p>End-to-end guidance from conceptualization to deployment and maintenance. Our team works closely with yours to ensure smooth integration and knowledge transfer.</p>
+            <h3>Flexible Implementation Scale</h3>
+            <p>Whether you need a simple AI tool or a complex enterprise-wide system, we design solutions that match your implementation needs. Our expertise spans from traditional machine learning to cutting-edge LLM operations (LLMops).</p>
           </div>
           
           <div class="service-card">
             <div class="service-number">04</div>
-            <h3>Ethical AI Framework</h3>
-            <p>Ensure your AI systems adhere to ethical standards and regulatory requirements. We help you build responsible AI systems that maintain trust with your customers and stakeholders.</p>
+            <h3>Scientific Rigor</h3>
+            <p>Led by Harvard astrophysicists, we bring academic precision and scientific methodology to business problems. Our solutions are built on solid theoretical foundations with practical, measurable outcomes.</p>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
     <section id="approach-section" class="section">
       <div class="section-content">
         <h2><span class="gradient-text">Our Approach</span></h2>
-        <p class="section-description">A methodical process for successful AI implementation</p>
+        <p class="section-description">Scientific methodology for business AI solutions</p>
         
         <div class="approach-steps">
           <div class="approach-step">
@@ -77,8 +77,8 @@
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
               </svg>
             </div>
-            <h3>Discovery & Assessment</h3>
-            <p>We start by understanding your business, its challenges, and objectives. Our experts conduct a comprehensive assessment of your existing systems, data infrastructure, and AI readiness.</p>
+            <h3>Data Analysis & Problem Definition</h3>
+            <p>We begin with rigorous data exploration and problem definition, applying the same analytical precision used in astrophysics research. Our Harvard professors' expertise in analyzing complex astronomical datasets translates directly to extracting meaningful patterns from your business data.</p>
           </div>
           
           <div class="approach-step">
@@ -90,8 +90,8 @@
                 <line x1="15" y1="9" x2="15.01" y2="9"></line>
               </svg>
             </div>
-            <h3>Strategy & Solution Design</h3>
-            <p>Based on our findings, we develop a strategic roadmap and design custom AI solutions aligned with your business goals. This includes selecting the right technologies, algorithms, and implementation approach.</p>
+            <h3>Model Development & Testing</h3>
+            <p>We design and test multiple machine learning models with the same methodical approach used in scientific research. Just as astronomers test theoretical models against observational data, we rigorously validate our AI solutions against your business metrics before implementation.</p>
           </div>
           
           <div class="approach-step">
@@ -102,8 +102,8 @@
                 <polyline points="2 12 12 17 22 12"></polyline>
               </svg>
             </div>
-            <h3>Development & Implementation</h3>
-            <p>Our team of experts develops and implements the AI solutions, ensuring integration with your existing systems. We follow agile methodologies to deliver value incrementally and adapt to changing requirements.</p>
+            <h3>Deployment & Integration</h3>
+            <p>We implement solutions with the precision of a scientific experiment, ensuring seamless integration with your existing systems. Our deployment process focuses on minimal disruption while maximizing the impact of AI on your operations across education, technology, or agricultural contexts.</p>
           </div>
           
           <div class="approach-step">
@@ -112,8 +112,8 @@
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
               </svg>
             </div>
-            <h3>Monitoring & Optimization</h3>
-            <p>We continuously monitor the performance of your AI systems, making necessary adjustments to improve accuracy and efficiency. Our team provides ongoing support to ensure long-term success.</p>
+            <h3>Continuous Refinement</h3>
+            <p>Like ongoing scientific research, we continuously monitor and refine our models. Our team applies the iterative improvement methods of scientific inquiry to ensure your AI solution evolves with your business needs and adapts to changing data patterns over time.</p>
           </div>
         </div>
       </div>
@@ -123,22 +123,20 @@
     <section id="case-studies" class="section">
       <div class="section-content">
         <h2><span class="gradient-text">Success Stories</span></h2>
-        <p class="section-description">Real-world AI implementations that delivered exceptional results</p>
+        <p class="section-description">Real-world AI implementations across our core sectors</p>
         
         <div class="case-studies-grid">
           <div class="case-study-card">
             <div class="case-study-content">
-              <h3>Retail Analytics Platform</h3>
-              <p class="case-study-industry">Retail & E-commerce</p>
-              <p class="case-study-description">Implemented a predictive analytics system that increased conversion rates by 24% and reduced inventory costs by 18% through accurate demand forecasting.</p>
+              <h3>AI Teaching Assistants</h3>
+              <p class="case-study-industry">Education</p>
+              <p class="case-study-description">Developed intelligent teaching assistants that streamline content creation for educators. These AI tools help faculty efficiently generate teaching materials, saving preparation time while enhancing educational quality and student engagement.</p>
               <div class="case-study-results">
                 <div class="result-item">
-                  <span class="result-number">24%</span>
-                  <span class="result-label">Increased Conversions</span>
+                  <span class="result-label">Streamlined Content Creation</span>
                 </div>
                 <div class="result-item">
-                  <span class="result-number">18%</span>
-                  <span class="result-label">Cost Reduction</span>
+                  <span class="result-label">Enhanced Teaching Efficiency</span>
                 </div>
               </div>
             </div>
@@ -146,17 +144,15 @@
           
           <div class="case-study-card">
             <div class="case-study-content">
-              <h3>Healthcare Diagnostic Tool</h3>
-              <p class="case-study-industry">Healthcare</p>
-              <p class="case-study-description">Developed an AI-powered diagnostic system that improved early detection rates by 35% and reduced diagnostic time by 60% for medical professionals.</p>
+              <h3>Resume Analysis & Job Matching</h3>
+              <p class="case-study-industry">Technology</p>
+              <p class="case-study-description">Created sophisticated job matching tools using Graph RAGs and advanced LLM capabilities. These systems analyze resumes and job descriptions to identify optimal candidate-position matches, significantly improving hiring outcomes for recruitment teams.</p>
               <div class="case-study-results">
                 <div class="result-item">
-                  <span class="result-number">35%</span>
-                  <span class="result-label">Better Detection</span>
+                  <span class="result-label">Improved Matching Accuracy</span>
                 </div>
                 <div class="result-item">
-                  <span class="result-number">60%</span>
-                  <span class="result-label">Time Saved</span>
+                  <span class="result-label">Enhanced Recruitment Efficiency</span>
                 </div>
               </div>
             </div>
@@ -164,17 +160,15 @@
           
           <div class="case-study-card">
             <div class="case-study-content">
-              <h3>Financial Risk Assessment</h3>
-              <p class="case-study-industry">Financial Services</p>
-              <p class="case-study-description">Created a machine learning system for risk assessment that reduced fraud by 42% and improved credit decision accuracy by 28% for a leading financial institution.</p>
+              <h3>Crop Yield Prediction</h3>
+              <p class="case-study-industry">Agriculture</p>
+              <p class="case-study-description">Implemented machine learning systems that predict yields for blueberries, corn, and wine by analyzing leaf spectral data and other agricultural metrics. This early planning capability helped clients significantly reduce packaging and storage costs while optimizing harvest timing.</p>
               <div class="case-study-results">
                 <div class="result-item">
-                  <span class="result-number">42%</span>
-                  <span class="result-label">Fraud Reduction</span>
+                  <span class="result-label">Accurate Yield Forecasting</span>
                 </div>
                 <div class="result-item">
-                  <span class="result-number">28%</span>
-                  <span class="result-label">Accuracy Improvement</span>
+                  <span class="result-label">Reduced Storage & Packaging Costs</span>
                 </div>
               </div>
             </div>
@@ -187,7 +181,7 @@
     <section id="consultancy-faq" class="section">
       <div class="section-content">
         <h2><span class="gradient-text">Frequently Asked Questions</span></h2>
-        <p class="section-description">Answers to common questions about our AI consultancy services</p>
+        <p class="section-description">Common questions about our AI consultancy services</p>
         
         <div class="faq-container">
           <div v-for="(faq, index) in faqs" :key="index" class="faq-item" :class="{ 'active': activeFaq === index }">
@@ -234,20 +228,20 @@ gsap.registerPlugin(ScrollTrigger);
 // FAQ functionality
 const faqs = [
   {
-    question: "How do I know if my organization is ready for AI?",
-    answer: "We offer a comprehensive AI readiness assessment to evaluate your data infrastructure, technical capabilities, and strategic alignment. This helps determine your organization's preparedness and identifies areas for development."
+    question: "How does your astrophysics background enhance AI solutions?",
+    answer: "Our Harvard professors' backgrounds in astronomy and astrophysics bring unique analytical capabilities to AI development. These fields involve complex data analysis, pattern recognition in vast datasets, and predictive modeling under uncertainty - all skills directly applicable to business AI. Our scientific methodology ensures rigorous testing and validation of all solutions we develop."
   },
   {
-    question: "What kind of ROI can we expect from AI implementation?",
-    answer: "ROI varies based on your specific use case, industry, and implementation scope. Our clients typically see returns through efficiency gains, cost reduction, or revenue enhancement. We work with you to define clear KPIs and track performance."
+    question: "What benefits can we expect from implementing AI solutions?",
+    answer: "The benefits vary based on your specific implementation and industry, but typically include improved operational efficiency, enhanced decision-making with data-driven insights, better resource allocation, predictive capabilities for planning, and potential for innovation through automation of routine tasks. We focus on creating measurable outcomes tailored to your business goals."
   },
   {
-    question: "How long does it take to implement an AI solution?",
-    answer: "Implementation timelines range from 2-6 months for initial solutions to 12+ months for enterprise-wide transformations. We follow an agile methodology with regular deliverables to ensure continuous progress and value creation."
+    question: "Can you adapt your solutions for our specific industry?",
+    answer: "Absolutely. While we have deep experience in education and technology, our fundamental expertise in data science and machine learning is applicable across industries. We take time to understand your sector's unique challenges and data ecosystem before developing solutions. Our approach is to adapt our core ML/AI capabilities to your industry's specific context and requirements."
   },
   {
-    question: "Do you offer custom training for our team?",
-    answer: "Yes, we offer customized training programs to help your team understand and work with the implemented AI solutions. Knowledge transfer is a key component of our approach to ensure long-term success and self-sufficiency."
+    question: "What is your process for developing a new AI solution?",
+    answer: "We follow a scientific approach to AI development, starting with comprehensive data analysis and problem definition. Our process includes rigorous model development and testing, followed by careful deployment and integration. We maintain continuous monitoring and refinement to ensure the solution evolves with your business needs. Each step is guided by our academic expertise and practical industry experience."
   }
 ];
 
