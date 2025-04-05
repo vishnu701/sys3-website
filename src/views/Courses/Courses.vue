@@ -136,10 +136,51 @@ onMounted(() => {
     activeTab.value = 'graduate';
   }
   
-  // Initialize animations
-  initHeroAnimation('#courses-header');
-  initSectionAnimations();
-  initCardAnimations('.course-card, .approach-item');
+  // Reset animation flags to ensure reinitializing
+  if (window.animationsInitialized) {
+    window.animationsInitialized = false;
+  }
+  
+  // Check if we're coming from Education page
+  const comingFromEducation = window.navToCoursesPage === true;
+  if (comingFromEducation) {
+    console.log('Detected navigation from Education page');
+    window.navToCoursesPage = false; // Reset the flag
+  }
+  
+  // Use a double requestAnimationFrame for more reliable initialization
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      // Force clean initialization of animations
+      console.log('Initializing animations for Courses page...');
+      
+      // Kill any existing animations to start fresh
+      gsap.killAll(true);
+      
+      // Initialize animations with a slight delay
+      setTimeout(() => {
+        initHeroAnimation('#courses-header');
+        initSectionAnimations();
+        initCardAnimations('.course-card, .approach-item');
+        
+        // Add a more targeted animation for course cards
+        const cards = document.querySelectorAll('.courses-grid.active .course-card');
+        gsap.set(cards, { opacity: 0, y: 20 });
+        gsap.to(cards, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out"
+        });
+        
+        // Force all sections to be active
+        document.querySelectorAll('.section').forEach(section => {
+          section.classList.add('active');
+        });
+      }, 50);
+    });
+  });
 });
 
 // Function to handle tab switching

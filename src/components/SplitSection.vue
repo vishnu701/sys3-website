@@ -14,7 +14,7 @@
 <script setup>
 defineProps({
   illustration: {
-    type: String,
+    type: [String, Object], // Allow both string paths and imported images
     required: true
   },
   altText: {

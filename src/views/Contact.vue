@@ -27,9 +27,9 @@
               </svg>
             </div>
             <h3>Email Us</h3>
-            <p>For general inquiries: <a href="mailto:info@system3.com">info@system3.com</a></p>
-            <p>For educational programs: <a href="mailto:anshika@system3.com">anshika@system3.com</a></p>
-            <p>For consulting services: <a href="mailto:ignacio@system3.com">ignacio@system3.com</a></p>
+            <p>For general inquiries: <a href="mailto:info@system3.company">info@system3.company</a></p>
+            <p>For educational programs: <a href="mailto:anshika@system3.company">anshika@system3.company</a></p>
+            <p>For consulting services: <a href="mailto:ignacio@system3.company">ignacio@system3.company</a></p>
           </div>
           
           <div class="contact-card">

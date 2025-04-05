@@ -67,7 +67,7 @@
           <p>Our teaching methodology integrates preparation, active learning, and assessment to maximize your learning experience.</p>
           
           <div class="learning-flow-container session-format-container">
-            <img src="/src/assets/images/session-format.png" alt="Session Format Diagram" class="session-format-image">
+            <img :src="sessionFormatImg" alt="Session Format Diagram" class="session-format-image">
           </div>
           
           <div class="learning-components">
@@ -129,7 +129,7 @@
           <div class="instructors-grid single-instructor">
             <div class="instructor-card">
               <div class="instructor-image">
-                <img src="/src/assets/images/people/PavlosProtopapas.jpeg" alt="Dr. Pavlos Protopapas" />
+                <img :src="pavlosImg" alt="Dr. Pavlos Protopapas" />
               </div>
               <div class="instructor-info">
                 <div class="instructor-name">Dr. Pavlos Protopapas</div>
@@ -262,6 +262,8 @@
 import { ref, onMounted, nextTick } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import sessionFormatImg from '@/assets/images/session-format.png';
+import pavlosImg from '@/assets/images/people/PavlosProtopapas.jpeg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

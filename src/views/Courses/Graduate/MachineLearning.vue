@@ -27,6 +27,8 @@
 
 <script setup>
 import CourseTemplate from '../CourseTemplate.vue';
+import pavlosImage from '@/assets/images/people/PavlosProtopapas.jpeg';
+import ignacioImage from '@/assets/images/people/IgnacioBecker.png';
 
 const modules = [
   {
@@ -82,7 +84,7 @@ const modules = [
       "Evaluating Significance of Predictors",
       "Does the outcome depend on the predictors",
       "Hypothesis Testing",
-      "How well do we know f - The confidence intervals of f"
+      "Confidence intervals"
     ]
   },
   {
@@ -167,16 +169,14 @@ const instructors = [
     name: "Dr. Pavlos Protopapas",
     role: "CEO and Founder",
     bio: "Pavlos is an educator and researcher. As an educator, Pavlos is teaching CS109A, CS109B, introduction to data science and advanced topics of data science. He also teaches a course in MLOps. In the past he has taught capstone courses in data science and computational science, introduction to deep reinforcement learning, and planning a course in physics informed neural networks.",
-    imagePath: "/src/assets/images/people/PavlosProtopapas.jpeg",
-    linkedin: "#",
+    imagePath: pavlosImage,
     website: "https://seas.harvard.edu/person/pavlos-protopapas"
   },
   {
     name: "Dr. Ignacio Becker",
     role: "Director of AI Research",
     bio: "Specializes in deep learning architectures for computer vision and multimodal learning. Has contributed to fundamental advances in representation learning and neural architecture design.",
-    imagePath: "/src/assets/images/people/IgnacioBecker.png",
-    linkedin: "#",
+    imagePath: ignacioImage,
     website: "#"
   }
 ];

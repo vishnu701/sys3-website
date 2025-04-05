@@ -22,7 +22,7 @@
             <p>As leaders in the field of AI, we believe in pushing the boundaries and bringing a new perspective to the field of high school education. Led by the Harvard Scientific Director and his team, we give high schoolers the ability to learn how to code and then create their own AI and Machine Learning applications from scratch.</p>
             <p>Our education programs are designed to be accessible to students with no prior coding experience, while challenging enough for those who already have a foundation.</p>
             <div class="about-cta">
-              <RouterLink to="/courses" class="cta-button primary">Explore Courses</RouterLink>
+              <RouterLink to="/courses" class="cta-button primary" @click="prepareForNavigation">Explore Courses</RouterLink>
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@
           <p>Our next cohort starts soon. Register now to secure your spot.</p>
           <div class="cta-container">
             <RouterLink to="/contact" class="cta-button primary">Register Now</RouterLink>
-            <RouterLink to="/courses" class="cta-button secondary">Explore Courses</RouterLink>
+            <RouterLink to="/courses" class="cta-button secondary" @click="prepareForNavigation">Explore Courses</RouterLink>
           </div>
         </div>
       </div>
@@ -286,6 +286,22 @@ import { ref, onMounted, computed } from 'vue';
 import { courses } from '@/data/courses';
 import { initSectionAnimations, initCardAnimations, initHeroAnimation } from '@/utils/animations';
 import gsap from 'gsap';
+
+// Function to prepare for navigation to the courses page
+const prepareForNavigation = () => {
+  // Reset animation flags to ensure proper initialization on the next page
+  if (window.animationsInitialized) {
+    window.animationsInitialized = false;
+  }
+  
+  // Send a message to the global scope that we're transitioning to courses
+  window.navToCoursesPage = true;
+  
+  // Kill any ongoing animations to prevent conflicts
+  gsap.killAll(true);
+  
+  console.log('Preparing for navigation to Courses page...');
+};
 
 // Course tabs state
 const activeTab = ref('high-school');

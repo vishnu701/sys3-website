@@ -67,7 +67,7 @@
           <p>Our teaching methodology integrates preparation, active learning, and assessment to maximize your learning experience.</p>
           
           <div class="learning-flow-container session-format-container">
-            <img src="/src/assets/images/session-format.png" alt="Session Format Diagram" class="session-format-image">
+            <img :src="sessionFormatImage" alt="Session Format Diagram" class="session-format-image">
           </div>
           
           <div class="learning-components">
@@ -177,11 +177,6 @@
                 <div class="instructor-role">{{ instructor.role }}</div>
                 <p class="instructor-bio">{{ instructor.bio }}</p>
                 <div class="instructor-links">
-                  <a v-if="instructor.linkedin" :href="instructor.linkedin" target="_blank" class="linkedin-link" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </a>
                   <a v-if="instructor.website" :href="instructor.website" target="_blank" class="website-link" aria-label="Personal Website">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <circle cx="12" cy="12" r="10"></circle>
@@ -293,6 +288,7 @@
 import { ref, onMounted, nextTick } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import sessionFormatImage from '@/assets/images/session-format.png';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -313,7 +309,16 @@ const props = defineProps({
   hasTracks: { type: Boolean, default: false },
   highSchoolModules: { type: Array, required: true },
   graduateModules: { type: Array, default: () => [] },
-  instructors: { type: Array, required: true },
+  instructors: { 
+    type: Array, 
+    required: true,
+    // Allow for instructors with both string paths and imported image objects
+    validator: (array) => array.every(item => 
+      typeof item === 'object' && 
+      item !== null && 
+      (typeof item.imagePath === 'string' || typeof item.imagePath === 'object')
+    )
+  },
   detailsIntro: { type: String, required: true },
   prerequisitesDescription: { type: String, required: true },
   prerequisites: { type: Array, required: true },

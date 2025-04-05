@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Make initPageAnimations globally available for App.vue
+window.initPageAnimations = true;
+
 /**
  * Professional animation toolkit for System3
  * Provides consistent, optimized animations across the site
@@ -308,27 +311,55 @@ export const initButtonAnimations = (selector = '.button, .cta-button, .form-but
  * @param {Object} options - Custom options
  */
 export const initPageAnimations = (options = {}) => {
-  // Wait for DOM to be fully ready
+  // Reset any conflicting animations first
+  gsap.killAll(true); // Kill all GSAP animations to prevent conflicts
+  
+  // Clear any previous ScrollTriggers
+  if (ScrollTrigger) {
+    ScrollTrigger.getAll().forEach(st => st.kill());
+  }
+  
+  // Make sure all sections are properly prepared
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+    
+    // Reset animation properties that might be stuck
+    gsap.set(section.querySelectorAll('h1, h2, p, .section-content > *, .split-section > *'), {
+      clearProps: 'all'
+    });
+  });
+  
+  // Wait for DOM to be fully ready using nested requestAnimationFrame for better reliability
   window.requestAnimationFrame(() => {
-    // Add a tiny delay to ensure DOM is completely ready
-    setTimeout(() => {
-      // Initialize hero animation
-      initHeroAnimation(options.heroSelector);
-      
-      // Initialize section animations
-      initSectionAnimations(options.sectionSelector);
-      
-      // Initialize card animations
-      initCardAnimations(options.cardSelector, options.cardOptions);
-      
-      // Initialize button animations
-      initButtonAnimations(options.buttonSelector);
-      
-      // Mark all sections as active to prevent FOUC
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.add('active');
-      });
-    }, 50);
+    window.requestAnimationFrame(() => {
+      // Add a more substantial delay to ensure DOM is completely ready
+      setTimeout(() => {
+        // Initialize hero animation
+        initHeroAnimation(options.heroSelector);
+        
+        // Initialize section animations
+        initSectionAnimations(options.sectionSelector);
+        
+        // Initialize card animations
+        initCardAnimations(options.cardSelector, options.cardOptions);
+        
+        // Initialize button animations
+        initButtonAnimations(options.buttonSelector);
+        
+        // Force immediate activation of visible sections
+        document.querySelectorAll('.section').forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
+            section.classList.add('active');
+          }
+        });
+        
+        // Force a refresh of the ScrollTrigger
+        if (ScrollTrigger) {
+          ScrollTrigger.refresh();
+        }
+      }, 100);
+    });
   });
 };
 

@@ -192,7 +192,7 @@
           <div class="contact-text">
             <p>Connect with our experts to explore how our AI education and consulting services can drive your organization forward. We're here to guide your journey from start to finish.</p>
             <div class="contact-info">
-              <p><strong>Email:</strong> <a href="mailto:info@system3.com">info@system3.com</a></p>
+              <p><strong>Email:</strong> <a href="mailto:info@system3.company">info@system3.company</a></p>
               <p><strong>Location:</strong> Harvard University, Cambridge, MA</p>
             </div>
           </div>

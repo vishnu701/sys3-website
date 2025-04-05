@@ -9,7 +9,7 @@
     
     <main>
       <router-view v-slot="{ Component, route }">
-        <transition name="fade" mode="out-in">
+        <transition name="fade" mode="out-in" @after-enter="handleRouteEnter">
           <component :is="Component" :key="route.fullPath" />
         </transition>
       </router-view>
@@ -27,6 +27,29 @@ import TheFooter from '@/components/TheFooter.vue';
 const isDarkTheme = ref(false);
 const showScrollIndicator = ref(false);
 const route = useRoute();
+
+// Handle route transitions and ensure animations are properly initialized
+const handleRouteEnter = () => {
+  console.log('Route transition completed for:', route.path);
+  
+  // Force reinitialization of animations on route change
+  if (window.initPageAnimations) {
+    window.animationsInitialized = false;
+    
+    // Use a short delay to ensure the DOM is stable
+    setTimeout(() => {
+      // Import initPageAnimations dynamically to avoid circular imports
+      import('@/utils/animations').then(animations => {
+        animations.initPageAnimations({
+          heroSelector: '#hero-section, .hero, [id$="-hero"]',
+          sectionSelector: '.section',
+          cardSelector: '.card, .form-card, .education-card, .team-card, .consulting-card'
+        });
+        window.animationsInitialized = true;
+      });
+    }, 50);
+  }
+};
 
 const toggleTheme = () => {
   isDarkTheme.value = !isDarkTheme.value;
