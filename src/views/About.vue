@@ -190,7 +190,7 @@ const coreValues = ref([
 ]);
 
 // Harvard icon for leader links
-const harvardIcon = `<svg width="18" height="18" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+const harvardIcon = `<svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path d="M16 3L3 9V11H29V9L16 3Z" fill="currentColor"/>
   <path d="M7 13V23H10V13H7Z" fill="currentColor"/>
   <path d="M13 13V23H16V13H13Z" fill="currentColor"/>
@@ -200,7 +200,9 @@ const harvardIcon = `<svg width="18" height="18" viewBox="0 0 32 32" fill="none"
 </svg>`;
 
 // LinkedIn icon for social links
-const linkedInIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>`;
+const linkedInIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2">
+  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+</svg>`;
 
 // Team leaders data
 const teamLeaders = ref([
@@ -667,6 +669,7 @@ onMounted(() => {
   justify-content: center;
   color: var(--color-primary);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 [data-theme="light"] .harvard-link {
@@ -677,6 +680,15 @@ onMounted(() => {
   background: var(--color-primary);
   color: white;
   transform: translateY(-3px);
+}
+
+.harvard-link svg {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .leader-bio {
@@ -794,6 +806,7 @@ onMounted(() => {
   justify-content: center;
   color: var(--color-primary);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 [data-theme="light"] .social-link {
@@ -809,6 +822,10 @@ onMounted(() => {
 .social-link svg {
   width: 18px;
   height: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* CTA Section */
