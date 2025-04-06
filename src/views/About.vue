@@ -85,7 +85,7 @@
         </div>
         
         <!-- Team Members -->
-        <div class="team-grid">
+        <div class="team-members-container">
           <div class="team-member" v-for="(member, index) in teamMembers" :key="index">
             <div class="member-image">
               <img :src="member.image" :alt="member.name" :style="member.imagePos ? `--pos-y: ${member.imagePos};` : ''">
@@ -139,7 +139,6 @@ import anshikaImage from '@/assets/images/people/AnshikaGupta.png';
 import shibaniImage from '@/assets/images/people/ShibaniBudhraja.png';
 import lakshayImage from '@/assets/images/people/LakshayChawla.png';
 import nawangImage from '@/assets/images/people/NawangBhutia.png';
-import nickImage from '@/assets/images/people/Nick.jpeg';
 
 // Core values data
 const coreValues = ref([
@@ -263,7 +262,7 @@ const teamMembers = ref([
   },
   {
     name: "Shibani Budhraja",
-    title: "Data Scientist",
+    title: "Senior Data Scientist",
     image: shibaniImage,
     imagePos: "20%",
     socialLinks: [
@@ -293,18 +292,6 @@ const teamMembers = ref([
     socialLinks: [
       {
         url: "https://www.linkedin.com/in/nawang-thinley-bhutia-0158bb218/",
-        icon: linkedInIcon
-      }
-    ]
-  },
-  {
-    name: "Nicholas Koundouros",
-    title: "Market Head",
-    image: nickImage,
-    imagePos: "25%",
-    socialLinks: [
-      {
-        url: "#",
         icon: linkedInIcon
       }
     ]
@@ -706,13 +693,17 @@ onMounted(() => {
   color: rgba(32, 33, 36, 0.9);
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.team-members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2.5rem;
+  padding: 0 1rem;
 }
 
 .team-member {
+  flex: 0 0 calc(33.33% - 1.7rem);
+  max-width: calc(33.33% - 1.7rem);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--color-border);
   border-radius: 16px;
@@ -720,7 +711,6 @@ onMounted(() => {
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
               box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
               border-color 0.4s ease;
-  height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -872,12 +862,14 @@ onMounted(() => {
     font-size: 1.1rem;
   }
   
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .team-members-container {
+    justify-content: center;
+    gap: 2.5rem;
   }
   
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .team-member {
+    flex: 0 0 calc(50% - 1.25rem);
+    max-width: calc(50% - 1.25rem);
   }
 }
 
@@ -898,8 +890,14 @@ onMounted(() => {
     padding: 4rem 0;
   }
   
-  .team-grid {
-    grid-template-columns: 1fr;
+  .team-members-container {
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  
+  .team-member {
+    flex: 0 0 100%;
+    max-width: 350px;
   }
   
   .team-illustration-wrapper {
