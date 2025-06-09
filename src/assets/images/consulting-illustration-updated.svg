@@ -1,0 +1,133 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   width="100%" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+<!-- Title and description -->
+<title>Consulting Illustration</title>
+<desc>A modern illustration representing AI consulting and business solutions</desc>
+
+<!-- Definitions for filters and animations -->
+<defs>
+  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="2" result="blur"/>
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+  
+  <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#8E82FE"/>
+    <stop offset="50%" stop-color="#4DA3FF"/>
+    <stop offset="100%" stop-color="#F88379"/>
+  </linearGradient>
+  
+  <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F88379"/>
+    <stop offset="100%" stop-color="#E26D64"/>
+  </linearGradient>
+  
+  <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#8E82FE"/>
+    <stop offset="100%" stop-color="#5B53E3"/>
+  </linearGradient>
+  
+  <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#4DA3FF"/>
+    <stop offset="100%" stop-color="#2680FF"/>
+  </linearGradient>
+</defs>
+
+<!-- Container for the entire illustration -->
+<g id="container">
+  <!-- Main animated group with floating effect -->
+  <g id="mainIllustration">
+    <animateTransform 
+      attributeName="transform"
+      attributeType="XML"
+      type="translate"
+      values="0,0; 0,-5; 0,0"
+      dur="7s"
+      repeatCount="indefinite"/>
+      
+    <!-- Import the original SVG paths but skip the background rectangle -->
+    <!-- Original illustration content starts here -->
+    <path fill="#8E82FE" opacity="0.400000" stroke="none" 
+      d="
+    M521.988586,565.990845 
+      C521.988586,565.990845 521.954590,565.918579 521.326477,565.868408 
+      C521.189758,566.231384 521.053101,566.594360 520.940125,566.882507 
+      C520.940125,566.882507 520.865601,566.857849 520.136963,566.997864 
+      C516.866699,570.961304 517.059631,574.961914 520.241211,579.633301 
+      C522.937012,581.495789 525.436279,583.781860 528.365540,585.141174 
+      C537.093994,589.191528 545.967590,588.059875 555.094543,585.984802 
+      C559.104065,585.073242 563.670166,586.609375 568.240723,587.445496 
+      C568.447144,587.700134 568.692566,587.908813 569.142700,588.604370 
+      C569.445190,589.071655 569.747742,589.538940 569.983459,590.940613 
+      C570.139587,591.989624 570.295715,593.038635 570.441772,594.104492 
+      C570.441772,594.104492 570.401245,594.078857 570.428101,594.882568 
+      C569.965881,627.042236 563.732117,657.853210 551.173096,686.898560 
+      C542.196777,707.701355 531.062012,727.369812 518.108276,745.892761 
+      C517.818237,746.315308 517.528198,746.737854 517.057434,746.882751 
+      C517.057434,746.882751 517.058655,746.804443 516.571045,747.013794 
+      C508.037262,761.114929 497.861847,774.015320 486.026001,784.798584 
+      C483.855804,786.778442 481.680695,788.753845 479.519531,790.746643 
+      C478.981415,791.196533 478.443298,791.646423 477.747040,791.824280 
+      C477.747040,791.824280 477.717834,791.842712 477.020325,791.806763 
+      C477.012207,790.847046 476.830383,790.051636 476.980713,789.287354 
+      C477.166626,788.358093 477.650330,787.481567 478.052795,786.591980 
+      C478.082886,786.452148 478.112976,786.312256 478.186676,785.995850 
+      C478.254944,785.725891 478.323212,785.455872 478.468567,784.916687 
+      C479.009491,782.855164 479.550415,780.793579 480.045471,778.716064 
+      C480.045471,778.716064 480.058777,778.732361 480.061218,778.344055 
+      C480.194580,776.204529 480.327942,774.065063 480.461304,771.925598 
+      C480.461304,771.925598 480.497009,771.849060 480.466766,770.944641 
+      C480.466766,770.944641 480.466766,770.944641 480.466766,770.944641 
+      C480.466766,770.944641 480.479156,770.865295 480.470276,769.945435 
+      C480.470276,769.945435 480.470276,769.945435 480.470276,769.945435 
+      C480.470276,769.945435 480.470276,769.945435 480.470276,769.945435 
+      C480.470276,769.945435 480.497528,769.839905 480.463135,769.012817 
+      C480.463135,769.012817 480.463135,769.012817 480.463135,769.012817 
+      C480.457520,768.992065 480.451904,768.971252 480.446289,768.950500 
+      C480.446289,768.950500 480.452972,768.948975 480.449066,768.046936 
+      C480.449066,768.046936 480.454010,767.974487 480.439941,768.081482" />
+
+    <!-- Continue with all other paths from the original SVG, adjusting fill colors as needed -->
+    <!-- ... -->
+
+    <!-- Add interactive elements with brand colors -->
+    <g id="interactiveElements">
+      <circle cx="250" cy="400" r="8" fill="url(#primaryGradient)" opacity="0.8" filter="url(#glow)">
+        <animate attributeName="r" values="8;10;8" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="450" cy="300" r="6" fill="url(#secondaryGradient)" opacity="0.8" filter="url(#glow)">
+        <animate attributeName="r" values="6;8;6" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="350" cy="500" r="7" fill="url(#accentGradient)" opacity="0.8" filter="url(#glow)">
+        <animate attributeName="r" values="7;9;7" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Data flow animations -->
+    <g id="dataFlows">
+      <circle cx="200" cy="350" r="3" fill="#8E82FE" opacity="0.9">
+        <animate attributeName="cx" values="200;350" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="350;400" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0;0.9" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="400" cy="250" r="3" fill="#4DA3FF" opacity="0.9">
+        <animate attributeName="cx" values="400;500" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="250;350" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0;0.9" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="300" cy="450" r="3" fill="#F88379" opacity="0.9">
+        <animate attributeName="cx" values="300;450" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="450;400" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0;0.9" dur="6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</g>
+</svg>

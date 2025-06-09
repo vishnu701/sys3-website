@@ -1,22 +1,36 @@
 <template>
   <div class="content">
-    <!-- Hero Section -->
-    <section id="contact-hero" class="section hero-section">
-      <div class="hero-content">
-        <h1>Get in <span class="gradient-text">Touch</span></h1>
-        <p>We'd love to hear from you. Let's discuss how we can collaborate.</p>
+    <!-- Hero Section - Premium Design -->
+    <section id="contact-hero" class="section hero">
+      <!-- Subtle background elements -->
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles" id="contact-particles"></div>
+      </div>
+      
+      <div class="container">
+        <div class="hero-content">
+          <h1>Get in <span class="gradient-text">Touch</span></h1>
+          <p>We'd love to hear from you. Let's discuss how we can collaborate.</p>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <p>SCROLL</p>
       </div>
     </section>
 
-    <!-- Contact Info Section -->
+    <!-- Contact Info Section - Premium Cards -->
     <section id="contact-info" class="section">
-      <div class="section-overlay"></div>
-      <div class="section-content">
-        <SectionTitle
-          title="Contact Information"
-          description="Reach out to us through any of these channels. Our team is ready to assist you."
-          :isGradient="true"
-        />
+      <div class="container">
+        <div class="section-header center">
+          <span class="overline">Contact Information</span>
+          <h2>How to <span class="gradient-text">Reach</span> Us</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">Reach out to us through any of these channels. Our team is ready to assist you.</p>
+        </div>
         
         <div class="contact-grid">
           <div class="contact-card">
@@ -27,9 +41,9 @@
               </svg>
             </div>
             <h3>Email Us</h3>
-            <p>For general inquiries: <a href="mailto:info@system3.com">info@system3.com</a></p>
-            <p>For educational programs: <a href="mailto:anshika@system3.com">anshika@system3.com</a></p>
-            <p>For consulting services: <a href="mailto:ignacio@system3.com">ignacio@system3.com</a></p>
+            <p>For general inquiries: <a href="mailto:info@system3.company">info@system3.company</a></p>
+            <p>For educational programs: <a href="mailto:anshika@system3.company">anshika@system3.company</a></p>
+            <p>For consulting services: <a href="mailto:ignacio@system3.company">ignacio@system3.company</a></p>
           </div>
           
           <div class="contact-card">
@@ -71,19 +85,19 @@
       </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact-form" class="section">
-      <div class="section-overlay gradient-overlay"></div>
-      <div class="section-content">
-        <SectionTitle
-          title="Send Us a Message"
-          description="Fill out the form below and we'll get back to you as soon as possible."
-          :isGradient="true"
-        />
+    <!-- Contact Form Section - Premium Design -->
+    <section id="contact-form" class="section light-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="overline">Get In Touch</span>
+          <h2>Send Us a <span class="gradient-text">Message</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-description">Fill out the form below and we'll get back to you as soon as possible.</p>
+        </div>
         
-        <!-- Simple Contact Form Container -->
-        <div class="formio-container">
-          <form id="contact-form" class="simple-contact-form override-form-styles" @submit.prevent="handleSubmit">
+        <!-- Contact Form Container -->
+        <div class="form-container">
+          <form id="contact-form-element" class="contact-form" @submit.prevent="handleSubmit">
             <!-- Name field -->
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -123,7 +137,7 @@
             
             <!-- Submit button -->
             <div class="form-submit">
-              <button type="submit" class="submit-btn" :disabled="submitting">
+              <button type="submit" class="cta-button primary" :disabled="submitting">
                 {{ submitting ? 'Sending...' : 'Send Message' }}
               </button>
             </div>
@@ -139,20 +153,21 @@
             </div>
             <h3>Thank you for reaching out!</h3>
             <p>Your message has been received. We'll get back to you as soon as possible.</p>
-            <button @click="resetForm" class="success-button">Send Another Message</button>
+            <button @click="resetForm" class="cta-button primary">Send Another Message</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Premium Design -->
     <section id="faq-section" class="section">
-      <div class="section-overlay"></div>
-      <div class="section-content">
-        <SectionTitle
-          title="Frequently Asked Questions"
-          :isGradient="true"
-        />
+      <div class="container">
+        <div class="section-header center">
+          <span class="overline">FAQ</span>
+          <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        
         <div class="faq-container">
           <div class="faq-item" 
                v-for="(faq, index) in faqs" 
@@ -174,9 +189,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import SectionTitle from '@/components/SectionTitle.vue';
-import { initSectionAnimations } from '@/utils/animations';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 // Contact form data
 const formData = ref({
@@ -255,151 +272,387 @@ const toggleFaq = (index) => {
 };
 
 onMounted(() => {
-  // Initialize animations
-  initSectionAnimations();
+  // Initialize premium minimal animations
+  initializeAnimations();
+});
+
+// Premium animation system
+const initializeAnimations = () => {
+  // Hero section animations
+  animateHeroSection();
   
-  // Hero animation
-  const heroContent = document.querySelector('#contact-hero .hero-content');
-  if (heroContent) {
-    gsap.set(heroContent, {
-      y: 30,
-      opacity: 0,
-      willChange: "transform, opacity",
-      backfaceVisibility: "hidden",
-      transform: "translateZ(0)"
-    });
-    
-    gsap.to(heroContent, {
+  // Animate sections on scroll
+  animateSectionsOnScroll();
+  
+  // Animate elements with parallax
+  setupParallaxEffects();
+};
+
+// Hero animations
+const animateHeroSection = () => {
+  const heroTimeline = gsap.timeline();
+  
+  // Animate hero text elements
+  heroTimeline
+    .fromTo('#contact-hero .hero-content h1', 
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    )
+    .fromTo('#contact-hero .hero-content p',
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+      '-=0.6'
+    );
+  
+  // Animate scroll indicator
+  heroTimeline.fromTo('.scroll-indicator',
+    { opacity: 0, y: -10 },
+    { opacity: 1, y: 0, duration: 0.8, delay: 0.5, ease: 'power2.out' }
+  );
+};
+
+// Section animations on scroll
+const animateSectionsOnScroll = () => {
+  // Animate section headers on scroll
+  gsap.utils.toArray('.section-header').forEach(header => {
+    gsap.fromTo(header, 
+      { y: 30, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: header,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+  
+  // Animate contact cards with stagger
+  gsap.utils.toArray('.contact-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: i * 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+  
+  // Form animation
+  gsap.fromTo('.form-container',
+    { y: 40, opacity: 0 },
+    {
       y: 0,
       opacity: 1,
       duration: 0.8,
-      ease: "power3.out",
-      force3D: true,
-      clearProps: "willChange,backfaceVisibility,transform",
-      delay: 0.1
-    });
-  }
-  
-  // Fix form section background in light mode
-  const fixFormBackground = () => {
-    if (document.documentElement.getAttribute('data-theme') === 'light') {
-      const formSection = document.getElementById('contact-form');
-      if (formSection) {
-        formSection.style.setProperty('background-color', 'rgba(248, 249, 250, 0.8)', 'important');
-        formSection.style.setProperty('background', 'rgba(248, 249, 250, 0.8)', 'important');
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.form-container',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
       }
     }
-  };
+  );
   
-  // Apply background fix
-  fixFormBackground();
-  
-  // Observer for theme changes
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach(mutation => {
-      if (mutation.attributeName === 'data-theme') {
-        fixFormBackground();
+  // FAQ items stagger animation
+  gsap.utils.toArray('.faq-item').forEach((item, i) => {
+    gsap.fromTo(item,
+      { x: -20, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: i * 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
       }
-    });
+    );
   });
-  
-  observer.observe(document.documentElement, { attributes: true });
-});
+};
+
+// Parallax effects
+const setupParallaxEffects = () => {
+  // Subtle parallax for grid backgrounds
+  gsap.to('.hero-grid', {
+    y: -30,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#contact-hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+};
 </script>
 
 <style scoped>
-/* Hero Section */
-#contact-hero {
-  height: 60vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Base styles for the minimal premium design */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container.narrow {
+  max-width: 800px;
+}
+
+.section {
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
 }
 
-#contact-hero::before {
-  content: '';
+.light-section {
+  background-color: rgba(245, 247, 250, 0.5);
+}
+
+.dark-section {
+  background-color: #0A0F1F;
+  color: #fff;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.section-header.left {
+  text-align: left;
+}
+
+.overline {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #5842FF;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.dark-section .overline {
+  color: #8B7BFF;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #5842FF, #6585FE);
+  margin: 24px auto 0;
+  border-radius: 2px;
+}
+
+.section-header.center .section-divider {
+  margin: 24px auto 0;
+}
+
+.section-description {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: #4A4A4A;
+  font-weight: 300;
+}
+
+/* Hero Section */
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+}
+
+.hero-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.2), transparent 80%);
-  opacity: 1;
-  z-index: 1;
+  z-index: -1;
+  overflow: hidden;
 }
 
-[data-theme="light"] #contact-hero {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(250, 250, 252, 0.98)) !important;
-  box-shadow: inset 0 0 100px rgba(138, 133, 255, 0.08);
+.hero-gradient {
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(88, 66, 255, 0.05) 0%, rgba(101, 133, 254, 0.03) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
 }
 
-[data-theme="light"] #contact-hero::before {
-  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.15), transparent 80%);
+.hero-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(88, 66, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(88, 66, 255, 0.03) 1px, transparent 1px);
+  opacity: 0.5;
 }
 
 .hero-content {
   text-align: center;
   max-width: 800px;
+  margin: 0 auto;
   padding: 0 2rem;
   position: relative;
   z-index: 15;
 }
 
 .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  color: var(--color-text);
+  font-size: 56px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
   position: relative;
   z-index: 5;
 }
 
+.hero-content h1 .gradient-text {
+  font-weight: 500;
+}
+
 .hero-content p {
-  font-size: 1.25rem;
+  font-size: 19px;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
+  line-height: 1.7;
+  color: #4A4A4A;
+  font-weight: 300;
   text-align: center;
   position: relative;
   z-index: 5;
 }
 
+.gradient-text {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(250, 250, 252, 0.97)) !important;
+  box-shadow: inset 0 0 100px rgba(138, 133, 255, 0.08);
+}
+
 [data-theme="light"] .hero-content p {
-  color: rgba(32, 33, 36, 0.9);
+  color: rgba(32, 33, 36, 0.85);
   font-weight: 500;
 }
 
 [data-theme="light"] .hero-content h1 {
   color: #202124;
+  text-shadow: 0 2px 10px rgba(138, 133, 255, 0.08);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(88, 66, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5842FF;
+  animation: scrollDown 2s infinite;
+}
+
+.scroll-indicator p {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  50%, 100% {
+    transform: translateY(100%);
+  }
 }
 
 /* Contact Info Section */
-#contact-info {
-  padding: 6rem 0;
-}
-
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  margin-top: 3rem;
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .contact-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 40px 30px;
   text-align: center;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.4s ease;
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -408,33 +661,33 @@ onMounted(() => {
 
 .contact-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(138, 133, 255, 0.08);
-  border-color: var(--color-primary);
+  box-shadow: 0 15px 50px rgba(88, 66, 255, 0.1);
 }
 
 .contact-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 1.5rem;
-  color: var(--color-primary);
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  color: #5842FF;
 }
 
 .contact-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1.2rem;
-  color: var(--color-primary);
+  font-size: 20px;
   font-weight: 600;
+  margin: 0 0 16px;
+  color: #0A0A0A;
 }
 
 .contact-card p {
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 16px;
+  color: #4A4A4A;
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
 
 .contact-card a {
-  color: var(--color-primary);
+  color: #5842FF;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -444,24 +697,25 @@ onMounted(() => {
 
 .social-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: center;
 }
 
 .social-link {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(138, 133, 255, 0.1);
+  background: rgba(88, 66, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: #5842FF;
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  background: var(--color-primary);
+  background: #5842FF;
   color: white;
   transform: translateY(-3px);
 }
@@ -472,115 +726,70 @@ onMounted(() => {
 }
 
 /* Contact Form Section */
-#contact-form {
-  padding: 6rem 0;
-}
-
-[data-theme="light"] #contact-form {
-  background-color: rgba(138, 133, 255, 0.05) !important;
-  box-shadow: inset 0 0 60px rgba(138, 133, 255, 0.03);
-  border-top: 1px solid rgba(138, 133, 255, 0.1);
-  border-bottom: 1px solid rgba(138, 133, 255, 0.1);
-}
-
-.formio-container {
+.form-container {
   max-width: 800px;
   margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
   border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(138, 133, 255, 0.2);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-  padding: 2.5rem 3rem;
-  position: relative;
-  z-index: 5;
+  background: white;
+  padding: 40px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.formio-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(138, 133, 255, 0.1), transparent 80%);
-  opacity: 0.5;
-  z-index: -1;
-  border-radius: 16px;
-  transition: opacity 0.4s ease;
-}
-
-[data-theme="light"] .formio-container {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 15px 30px rgba(138, 133, 255, 0.1);
-  border: 1px solid rgba(138, 133, 255, 0.15);
-}
-
-[data-theme="light"] .formio-container::before {
-  background: linear-gradient(135deg, rgba(138, 133, 255, 0.05), transparent 70%);
-  opacity: 1;
-}
-
-.formio-container:hover {
-  box-shadow: 0 20px 40px rgba(138, 133, 255, 0.25);
+.form-container:hover {
   transform: translateY(-5px);
-}
-
-.formio-container:hover::before {
-  opacity: 0.8;
+  box-shadow: 0 20px 50px rgba(88, 66, 255, 0.1);
 }
 
 /* Form styling */
-.simple-contact-form {
-  font-family: 'Inter', sans-serif;
+.contact-form {
+  width: 100%;
 }
 
 .form-group {
-  margin-bottom: 1.8rem;
+  margin-bottom: 24px;
   position: relative;
   width: 100%;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   font-weight: 500;
-  color: var(--color-text);
+  color: #0A0A0A;
+  font-size: 15px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.9rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  color: var(--color-text);
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  color: #333;
+  font-size: 16px;
   transition: all 0.3s ease;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(138, 133, 255, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  border-color: #5842FF;
+  box-shadow: 0 0 0 3px rgba(88, 66, 255, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.02);
   transform: translateY(-1px);
 }
 
 .form-group select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(0, 0, 0, 0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1rem;
-  padding-right: 2.5rem;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 40px;
 }
 
 .form-group textarea {
@@ -591,91 +800,57 @@ onMounted(() => {
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 .form-submit {
-  margin-top: 2rem;
+  margin-top: 32px;
 }
 
-.submit-btn {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 1rem 2.5rem;
-  font-size: 1.05rem;
+/* CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 8px;
   font-weight: 600;
-  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(138, 133, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
 }
 
-.submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: all 0.5s ease;
-  z-index: -1;
+.cta-button.primary {
+  background: #5842FF;
+  color: white;
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.2);
 }
 
-.submit-btn:hover {
+.cta-button.primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(138, 133, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(88, 66, 255, 0.35);
+  background: linear-gradient(135deg, #5842FF, #6585FE);
 }
 
-.submit-btn:hover::before {
-  left: 100%;
+.cta-button.primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(88, 66, 255, 0.25);
 }
 
-.submit-btn:disabled {
+.cta-button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
   transform: none;
-}
-
-.submit-btn:disabled::before {
-  left: -100%;
-}
-
-/* Light mode form styles */
-[data-theme="light"] .form-group label {
-  color: #333;
-}
-
-[data-theme="light"] .form-group input,
-[data-theme="light"] .form-group select,
-[data-theme="light"] .form-group textarea {
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: #333;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
-}
-
-[data-theme="light"] .form-group input:focus,
-[data-theme="light"] .form-group select:focus,
-[data-theme="light"] .form-group textarea:focus {
-  background: white;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(138, 133, 255, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.02);
-  transform: translateY(-1px);
-}
-
-[data-theme="light"] .form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(0, 0, 0, 0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  box-shadow: none;
 }
 
 /* Success message styling */
 .form-success-message {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 20px 0;
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
@@ -694,13 +869,13 @@ onMounted(() => {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 96px;
-  height: 96px;
-  background: rgba(138, 133, 255, 0.1);
+  width: 80px;
+  height: 80px;
+  background: rgba(88, 66, 255, 0.1);
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
   position: relative;
-  color: var(--color-primary);
+  color: #5842FF;
 }
 
 .success-icon::before {
@@ -709,7 +884,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: rgba(138, 133, 255, 0.05);
+  background: rgba(88, 66, 255, 0.05);
   animation: pulse 2s infinite;
   z-index: -1;
 }
@@ -730,68 +905,45 @@ onMounted(() => {
 }
 
 .form-success-message h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--color-primary);
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #0A0A0A;
   font-weight: 600;
 }
 
 .form-success-message p {
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 24px;
+  font-size: 16px;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  color: var(--color-text-secondary);
-}
-
-.success-button {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 0.875rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(138, 133, 255, 0.3);
-}
-
-.success-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(138, 133, 255, 0.4);
+  color: #4A4A4A;
 }
 
 /* FAQ Section */
-#faq-section {
-  padding: 6rem 0;
-}
-
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .faq-item {
-  margin-bottom: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-left-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: white;
+  transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-  background: rgba(255, 255, 255, 0.02);
-  transform: translateX(5px);
-  border-left-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(88, 66, 255, 0.08);
+  border-color: rgba(88, 66, 255, 0.2);
 }
 
 .faq-question {
-  padding: 1.5rem;
+  padding: 20px 24px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -799,24 +951,30 @@ onMounted(() => {
 }
 
 .faq-question h3 {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   margin: 0;
-  padding-right: 2rem;
-  transition: transform 0.3s ease;
+  padding-right: 32px;
+  color: #0A0A0A;
+  transition: color 0.3s ease;
+}
+
+.faq-item.active .faq-question h3 {
+  color: #5842FF;
 }
 
 .faq-toggle {
   position: relative;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .faq-toggle::before,
 .faq-toggle::after {
   content: '';
   position: absolute;
-  background-color: var(--color-primary);
+  background-color: #5842FF;
   transition: all 0.3s ease;
 }
 
@@ -836,93 +994,143 @@ onMounted(() => {
   transform: translateX(-50%);
 }
 
-.faq-item.active {
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 .faq-item.active .faq-toggle::after {
   transform: translateX(-50%) rotate(90deg);
   opacity: 0;
 }
 
 .faq-answer {
-  padding: 0 1.5rem 1.5rem;
-  display: none;
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-  display: block;
+  padding: 0 24px 24px;
+  max-height: 300px;
 }
 
 .faq-answer p {
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
+  color: #4A4A4A;
+  font-size: 16px;
   line-height: 1.7;
+  margin: 0;
 }
 
-/* Light mode adjustments */
-[data-theme="light"] .contact-card {
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* Dark Theme Adjustments */
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .form-container,
+[data-theme="dark"] .faq-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="light"] .contact-card:hover {
-  box-shadow: 0 15px 30px rgba(138, 133, 255, 0.15);
+[data-theme="dark"] .contact-card h3,
+[data-theme="dark"] .form-group label,
+[data-theme="dark"] .faq-question h3,
+[data-theme="dark"] .form-success-message h3 {
+  color: white;
 }
 
-[data-theme="light"] .contact-card p,
-[data-theme="light"] .faq-answer p {
-  color: rgba(32, 33, 36, 0.9);
+[data-theme="dark"] .contact-card p,
+[data-theme="dark"] .faq-answer p,
+[data-theme="dark"] .form-success-message p {
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive styles */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+[data-theme="dark"] .form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Responsive Styles */
 @media (max-width: 1200px) {
   .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+  }
+  
+  .section {
+    padding: 100px 0;
   }
 }
 
 @media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 42px;
   }
   
   .hero-content p {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
   
   .form-row {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  h2 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 768px) {
-  #contact-hero {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .hero {
+    height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+  
+  .form-container {
+    padding: 30px 20px;
+  }
+  
+  .contact-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
     height: 50vh;
   }
   
   .hero-content h1 {
-    font-size: 2.8rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.1rem;
+    font-size: 32px;
   }
   
   .section {
-    padding: 4rem 0;
+    padding: 60px 0;
   }
   
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .formio-container {
-    padding: 2rem 1.5rem;
-  }
-  
-  .submit-btn {
+  .cta-button {
     width: 100%;
   }
 }

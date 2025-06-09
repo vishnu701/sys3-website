@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg"
+     aria-labelledby="educationIllustrationTitle educationIllustrationDesc" role="img">
+  <title id="educationIllustrationTitle">Enhanced Education Illustration</title>
+  <desc id="educationIllustrationDesc">An animated illustration representing AI education and learning with System3 brand colors.</desc>
+  
+  <!-- Use the original illustration as an image element -->
+  <image href="file new.svg" 
+         width="1024" height="1024" 
+         transform="translate(0,0)">
+    <!-- Add a gentle floating animation -->
+    <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0,0; 0,-8; 0,0"
+                      dur="6s"
+                      repeatCount="indefinite"/>
+  </image>
+  
+  <!-- Add subtle brand color circles for visual enhancement -->
+  <g opacity="0.8">
+    <!-- Periwinkle Lavender circles -->
+    <circle cx="280" cy="320" r="12" fill="#8E82FE" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="720" cy="540" r="15" fill="#8E82FE" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;0.5;0.25" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Sky Azure circles -->
+    <circle cx="350" cy="680" r="18" fill="#4DA3FF" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="780" cy="260" r="14" fill="#4DA3FF" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;0.5;0.25" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Coral Pink circles -->
+    <circle cx="610" cy="400" r="10" fill="#F88379" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="420" cy="180" r="16" fill="#F88379" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Simple data flows to add movement -->
+  <g opacity="0.6">
+    <!-- Flow line 1 -->
+    <circle cx="300" cy="400" r="3" fill="#8E82FE">
+      <animate attributeName="cx" values="300;500" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="400;350" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Flow line 2 -->
+    <circle cx="650" cy="300" r="3" fill="#4DA3FF">
+      <animate attributeName="cx" values="650;450" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="300;380" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Flow line 3 -->
+    <circle cx="400" cy="650" r="3" fill="#F88379">
+      <animate attributeName="cx" values="400;600" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="650;600" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

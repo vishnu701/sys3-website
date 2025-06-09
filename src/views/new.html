@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Design Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #9c6bff;
+      --bg: #0e0e0e;
+      --card-bg: #1a1a1a;
+      --text-light: #aaa;
+      --text: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #222;
+      background-color: var(--bg);
+    }
+    header .logo {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    header nav a {
+      margin-left: 1rem;
+      color: var(--text-light);
+      text-decoration: none;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+    .highlight {
+      color: var(--primary);
+    }
+    .hero-text p {
+      margin: 1rem 0;
+      color: var(--text-light);
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 16px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary);
+      color: white;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .mockup-img {
+      border-radius: 12px;
+      width: 100%;
+    }
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .plan {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      width: 280px;
+      text-align: center;
+    }
+    .featured {
+      background-color: var(--primary);
+      color: white;
+    }
+    .insights-grid {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+    }
+    .insight {
+      min-width: 260px;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      border-top: 1px solid #222;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🌀 Neural</div>
+    <nav>
+      <a href="#">Sign In</a>
+      <a href="#">Menu ☰</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your AI-Powered <span class="highlight">Design</span> Assistant</h1>
+      <p>We make it easy to turn ideas into stunning visuals in seconds.</p>
+      <button class="btn">Try Free</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/400x400/9c6bff/ffffff?text=Hero+Image" alt="Hero Illustration">
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Unleash Your <span class="highlight">Creativity</span></h2>
+    <div class="card-grid">
+      <div class="card">Upload Brief</div>
+      <div class="card">Generate Designs</div>
+      <div class="card">Refine Creation</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>High-Resolution Outputs</h2>
+    <img class="mockup-img" src="https://via.placeholder.com/600x300/1a1a1a/ffffff?text=Mockup+1" />
+  </section>
+
+  <section class="section">
+    <h2>Real-Time Collaboration</h2>
+    <img class="mockup-img" src="https://via.placeholder.com/600x300/1a1a1a/ffffff?text=Mockup+2" />
+  </section>
+
+  <section class="section">
+    <h2>Advanced Scheduling Tools</h2>
+    <img class="mockup-img" src="https://via.placeholder.com/600x300/1a1a1a/ffffff?text=Mockup+3" />
+  </section>
+
+  <section class="section">
+    <h2>Transforming Imagination into <span class="highlight">Reality</span></h2>
+    <div class="card-grid">
+      <div class="card">Witness the Future</div>
+      <div class="card">Visualize the Impossible</div>
+      <div class="card">Synergy and Style</div>
+      <div class="card">Timeless Precision</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Affordable Plans for <span class="highlight">Every Need</span></h2>
+    <div class="pricing">
+      <div class="plan">$0/m<br />Starter Plan</div>
+      <div class="plan featured">$14.99/m<br />Pro Plan</div>
+      <div class="plan">$29.99/m<br />Enterprise Plan</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Seamless Tool Integration</h2>
+    <img class="mockup-img" src="https://via.placeholder.com/600x300/1a1a1a/ffffff?text=Mockup+4" />
+  </section>
+
+  <section class="section">
+    <h2>Customer <span class="highlight">Success</span> Stories</h2>
+    <div class="card-grid">
+      <div class="card">Testimonial 1</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+    <div class="card-grid">
+      <div class="card">How does the platform work?</div>
+      <div class="card">Can I collaborate in real-time?</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Stay Inspired with Our <span class="highlight">Latest Insights</span></h2>
+    <div class="insights-grid">
+      <div class="insight">Blog Post 1</div>
+      <div class="insight">Blog Post 2</div>
+      <div class="insight">Blog Post 3</div>
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="hero-text">
+      <h2>Start Your <span class="highlight">Design Journey</span> Today</h2>
+      <button class="btn">Try Free</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/400x400/9c6bff/ffffff?text=Hero+End" alt="Illustration">
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Neural. All rights reserved.
+  </footer>
+</body>
+</html>

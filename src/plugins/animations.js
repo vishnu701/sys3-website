@@ -3,37 +3,21 @@ import { initPageAnimations } from '@/utils/animations';
 /**
  * Vue plugin to initialize professional animations
  * Automatically applies optimized animations to all pages
+ * 
+ * NOTE: Currently disabled to fix scrolling and visibility issues
  */
 export const AnimationsPlugin = {
   install(app) {
-    // Register a global directive for page animations
-    app.directive('page-animate', {
-      mounted(el, binding) {
-        // Extract options from directive binding value
-        const options = binding.value || {};
-        
-        // Initialize page animations with specified or default options
-        initPageAnimations(options);
-      }
-    });
+    // Empty install function - all animations are disabled
     
-    // Add global mixin to initialize animations on page mount
-    app.mixin({
-      mounted() {
-        // Only apply to top-level components (pages) to avoid duplicate animations
-        if (this.$parent?.$root === this.$root) {
-          // Use a tiny delay to ensure DOM is fully rendered
-          setTimeout(() => {
-            initPageAnimations({
-              // Default options that can be overridden by individual pages
-              heroSelector: '#hero-section, .hero, [id$="-hero"]',
-              sectionSelector: '.section',
-              cardSelector: '.card, .form-card, .education-card, .team-card, .consulting-card'
-            });
-          }, 50);
-        }
-      }
-    });
+    // Force document to be scrollable when the plugin is installed
+    document.documentElement.style.overflow = 'auto';
+    document.documentElement.style.height = 'auto';
+    document.body.style.overflow = 'auto';
+    document.body.style.height = 'auto';
+    
+    // Remove any classes that might interfere with scrolling
+    document.body.classList.remove('no-scroll', 'smooth-scroll', 'loading');
   }
 };
 

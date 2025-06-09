@@ -2,6 +2,40 @@
 
 This is a Vue.js 3 implementation of the System3 website, featuring AI education and consulting services.
 
+## Brand Kit Implementation
+
+This project implements the System3 brand kit with:
+
+### Typography
+- Headings: Söhne Breit (fallback: Inter Tight, Poppins)
+- Body: Söhne (fallback: Inter)
+- Monospace: Söhne Mono (fallback: IBM Plex Mono, Source Code Pro)
+
+### Color System
+- Primary (Periwinkle Lavender): #8E82FE
+- Primary Deep: #5B53E3
+- Secondary (Sky Azure): #4DA3FF
+- Secondary Deep: #2680FF
+- Accent (Coral Pink): #F88379
+- Accent Deep: #E26D64
+
+### Font Setup
+
+**Important:** To use the Söhne typeface, place the following font files in the `/public/fonts/` directory:
+
+```
+soehne-web-buch.otf
+soehne-web-buch-kursiv.otf
+soehne-web-kraftig.otf
+soehne-web-kraftig-kursiv.otf
+soehne-web-halbfett.otf
+soehne-breit-web-halbfett.otf
+soehne-breit-web-kraftig.otf
+soehne-mono-web-buch.otf
+```
+
+If the Söhne font files are not available, the website will fall back to system fonts that are loaded from Google Fonts.
+
 ## Project Overview
 
 This project is built with:

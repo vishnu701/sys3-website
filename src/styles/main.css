@@ -1,3 +1,6 @@
+/* Import brand CSS tokens */
+@import 'brand.css';
+
 /* Base Styling */
 * {
   margin: 0;
@@ -8,15 +11,12 @@
 /* Prevent FOUC (Flash of Unstyled Content) */
 html.fouc-protection {
   visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 /* Ensure that all sections are visible by default but can be animated */
 .section {
   visibility: visible;
   opacity: 1;
-  will-change: transform, opacity;
 }
 
 /* CTA Buttons in grid sections */
@@ -39,11 +39,10 @@ html.fouc-protection {
 
 /* App container */
 .app {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  /* No transitions that conflict with GSAP */
 }
 
-/* Remove force dark mode approach since we're using a more direct method */
-/* Instead, enhance the normal dark mode classes */
+/* Dark theme styling */
 .dark-theme .section {
   background-color: var(--color-bg) !important;
 }
@@ -150,25 +149,47 @@ main {
 }
 
 :root {
-  /* Light/Dark Mode System */
-  --color-bg: #f8f9fa;
-  --color-bg-light: #ffffff;
-  --color-primary: #8a85ff; /* More subtle, elegant purple */
-  --color-secondary: #c389c5; /* Refined lilac */
-  --color-accent: #8bb8cf; /* Soft blue accent */
-  --color-text: #202124;
-  --color-text-secondary: rgba(32, 33, 36, 0.7); /* Higher opacity for better readability */
-  --color-border: rgba(32, 33, 36, 0.1);
+  /* Core Brand Colors - From Brand Guidelines */
+  --clr-indigo: #5842FF;      /* Primary brand color */
+  --clr-cool-blue: #6585FE;   /* Secondary brand color */
+  --clr-lavender: #A39AF5;    /* Tertiary accent */
+  --clr-teal: #008080;        /* Secondary accent */
   
-  /* Gradients - More subtle, elegant gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary), #a9a5ff);
-  --gradient-secondary: linear-gradient(135deg, var(--color-secondary), #d9a0db);
+  /* Secondary & Neutral Colors */
+  --clr-white: #FFFFFF;       /* Default background */
+  --clr-light-gray: #F0F0F0;  /* Subtle backgrounds */
+  --clr-medium-gray: #A0A0A0; /* Borders, secondary text */
+  --clr-dark-gray: #404040;   /* Primary text color */
+  
+  /* System background colors */
+  --clr-bg-light: #F7F9FC;    /* Ivory Mist - Light mode base background */
+  --clr-bg-dark: #121212;     /* Charcoal - Dark mode background */
+  --clr-surface-light: #F7F9FC; /* Ivory Mist - Light mode container background */
+  --clr-surface-dark: #1E1E1E; /* Charcoal 800 - Dark mode surface */
+  --clr-text-light: var(--clr-dark-gray); /* Primary text on light */
+  --clr-text-dark: #FFFFFF;   /* White text on dark */
+  
+  /* Legacy mappings for backward compatibility */
+  --color-bg: var(--clr-bg-light);
+  --color-bg-light: var(--clr-surface-light);
+  --color-primary: var(--clr-indigo);
+  --color-secondary: var(--clr-cool-blue);
+  --color-accent: var(--clr-lavender);
+  --color-text: var(--clr-dark-gray);
+  --color-text-secondary: #6C6C6C;
+  --color-border: #DADCE0;
+  
+  /* Gradients - Using updated System3 brand colors */
+  --gradient-primary: linear-gradient(135deg, var(--clr-indigo), var(--clr-cool-blue));
+  --gradient-secondary: linear-gradient(135deg, var(--clr-cool-blue), var(--clr-lavender));
   
   /* Button gradients */
-  --button-gradient: linear-gradient(135deg, var(--color-primary), #9e9aff);
+  --button-gradient: linear-gradient(135deg, var(--clr-indigo), var(--clr-cool-blue));
   
-  /* Fonts */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography - Using Nourd (fallback to Söhne if needed) */
+  --font-primary: 'Nourd', 'Söhne', -apple-system, BlinkMacSystemFont, sans-serif; /* Body/UI */
+  --font-heading: 'Nourd', 'Söhne', sans-serif; /* Headings */
+  --font-mono: 'Söhne Mono', 'IBM Plex Mono', monospace; /* Code/Tags */
   
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -183,11 +204,11 @@ main {
 
 /* Dark mode variables - apply with more specificity */
 .dark-theme {
-  --color-bg: #050505;
-  --color-bg-light: #0a0a0a;
-  --color-text: #ffffff;
-  --color-text-secondary: rgba(255, 255, 255, 0.7);
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-bg: var(--color-bg-dark); /* Use Charcoal 900 from palette */
+  --color-bg-light: var(--color-surface-dark); /* Use Charcoal 800 from palette */
+  --color-text: var(--color-text-dark); /* Use White from palette */
+  --color-text-secondary: #B3B3B3; /* Grey 400 for secondary text */
+  --color-border: #2A2A2A; /* Dark divider color */
   /* Primary, secondary, and accent colors remain the same for brand consistency */
   
   /* Ensure all text elements get proper color */
@@ -402,15 +423,12 @@ html.dark-theme .app {
   align-items: center;
   gap: 0.5rem;
   z-index: 50;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateX(-50%) translateY(10px);
+  opacity: 1;
   pointer-events: none;
 }
 
 .scroll-indicator.visible {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
 }
 
 .scroll-line {
@@ -489,14 +507,67 @@ html {
 body {
   font-family: var(--font-primary);
   background-color: var(--color-bg);
-  color: var(--color-text);
+  color: var(--clr-dark-gray); /* Using #404040 per brand guidance */
   line-height: 1.5;
   overflow-x: hidden;
-  font-weight: 300;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  font-weight: 400; /* Nourd Regular */
+  letter-spacing: 0.2px;
 }
 
-/* Page loading state and transitions */
+/* Typography - implementing brand guidelines */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--clr-dark-gray);
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700; /* Nourd Bold */
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  font-weight: 700; /* Nourd Bold */
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600; /* Nourd Semi-Bold */
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600; /* Nourd Semi-Bold */
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-size: 1rem; /* 16px */
+  font-weight: 400; /* Nourd Regular */
+  line-height: 1.5; /* 150% line height for readability */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--clr-dark-gray);
+}
+
+/* Captions and small text */
+small, .text-small {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.4;
+}
+
+.caption, .text-caption {
+  font-size: 0.75rem; /* 12px */
+  color: var(--clr-medium-gray);
+  line-height: 1.4;
+}
+
+/* Page loading state */
 body.loading {
   overflow: auto !important;
 }
@@ -519,20 +590,9 @@ body.smooth-scroll {
   pointer-events: none;
 }
 
-/* Smooth reveal effect for sections */
-.reveal-section {
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.reveal-section.revealed {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition-fast);
 }
 
 ul {
@@ -544,14 +604,16 @@ button, input, select, textarea {
 }
 
 .gradient-text {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--clr-indigo), var(--clr-cool-blue));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow: none;
+  font-weight: 700; /* Nourd Bold per brand */
+  display: inline-block;
 }
 
-/* Header & Navigation */
+/* Header & Navigation - Updated for brand */
 header {
   position: fixed;
   top: 0;
@@ -562,15 +624,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 4rem;
-  z-index: 1000; /* Increased z-index to ensure it's above all other elements */
+  z-index: 1000;
   backdrop-filter: blur(10px);
-  background: rgba(248, 249, 250, 0.7);
-  transition: transform var(--transition-medium), background var(--transition-medium);
+  background: rgba(247, 249, 252, 0.8); /* Semi-transparent Ivory Mist */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  font-family: var(--font-heading);
 }
 
 .dark-theme header {
-  background: rgba(5, 5, 5, 0.7);
+  background: rgba(30, 30, 30, 0.8); /* Semi-transparent Charcoal 800 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
@@ -578,8 +642,10 @@ header {
   align-items: center;
   gap: 0.5rem;
   font-size: 1.5rem;
+  font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: 1px;
+  color: var(--color-primary);
   position: relative;
   z-index: 2000;
   pointer-events: auto !important;
@@ -597,8 +663,9 @@ header {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-primary), var(--color-accent));
   display: inline-block;
+  box-shadow: 0 2px 8px rgba(142, 130, 254, 0.3);
 }
 
 nav ul {
@@ -612,15 +679,18 @@ nav li {
 
 nav a {
   position: relative;
-  font-weight: 400;
+  font-family: var(--font-heading);
+  font-weight: 600; /* Nourd Semi-Bold per brand */
   font-size: 0.9rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   padding: 0.5rem 0;
   cursor: pointer;
   display: inline-block;
   pointer-events: auto !important; /* Ensure links are clickable */
   z-index: 1001; /* Make sure it's above other elements */
+  color: var(--clr-dark-gray);
+  transition: color 0.3s ease;
 }
 
 nav a::before {
@@ -629,14 +699,22 @@ nav a::before {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 1px;
-  background-color: var(--color-primary);
+  height: 2px;
+  background-color: var(--clr-indigo); /* Primary brand color */
   transition: width var(--transition-fast);
+}
+
+nav a:hover {
+  color: var(--clr-indigo);
 }
 
 nav a:hover::before,
 nav a.active::before {
   width: 100%;
+}
+
+nav a.active {
+  color: var(--clr-indigo);
 }
 
 /* Dropdown Menu */
@@ -881,124 +959,32 @@ nav li.has-dropdown:hover .dropdown-menu {
   padding: 0;
 }
 
-/* Enhanced smooth animations for section content */
-@keyframes fadeUpIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-    filter: blur(5px);
-  }
-  to {
-    opacity: 1;
+/* Better animations */
+@keyframes floatingAnimation {
+  0% {
     transform: translateY(0);
-    filter: blur(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-/* Animation classes with smoother easing */
-.animate-fadeUp {
-  animation: fadeUpIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-}
-
-/* Staggered animation delays */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-
-/* Enhanced card reveal animations */
-@keyframes cardReveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-    filter: blur(5px);
+@keyframes pulseAnimation {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.95);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
   }
-}
-
-.animate-card {
-  animation: cardReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-}
-
-/* Enhanced FAQs slide-in animation */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-    filter: blur(5px);
+  100% {
+    opacity: 0.2;
+    transform: scale(0.95);
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-    filter: blur(0);
-  }
-}
-
-.animate-slideLeft {
-  animation: slideInLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-}
-
-/* Base section styling - simple and clean */
-.section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 4rem;
-  transition: opacity 0.3s ease;
-}
-
-/* Simple section content wrapper */
-.section-content {
-  position: relative;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  width: 100%;
-  padding: 0;
-}
-
-/* Very subtle section transitions */
-.section {
-  /* opacity: 0.7; */
-  transition: opacity 0.3s ease;
-}
-
-.section.active {
-  opacity: 1;
-}
-
-/* Minimal animations */
-@keyframes simpleFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Minimal hover effect for clickable elements */
-a:hover, button:hover {
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-}
-
-/* Minimal card hover effect */
-.card {
-  transition: opacity 0.2s ease;
-}
-
-.card:hover {
-  opacity: 0.9;
 }
 
 /* Special parallax effect for section backgrounds */
@@ -1016,28 +1002,24 @@ a:hover, button:hover {
   );
   opacity: 0.3;
   z-index: -1;
-  transform: translateY(20%);
-  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.section.active::before {
-  transform: translateY(0);
-}
-
-/* Improved section headings with card-style animations */
+/* Improved section headings - Updated for brand */
 .section h2 {
-  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 2.5rem; /* 40px */
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700; /* Nourd Bold per brand */
   text-align: center;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: var(--clr-dark-gray); /* #404040 per brand */
   opacity: 1;
   transform: none;
+  line-height: 1.2;
 }
 
 @media (max-width: 768px) {
   .section h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* 32px */
   }
 }
 
@@ -1051,8 +1033,11 @@ a:hover, button:hover {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 3rem;
-  color: var(--color-text-secondary);
+  color: var(--clr-medium-gray); /* #A0A0A0 per brand for secondary text */
   font-size: 1.125rem;
+  font-family: var(--font-primary);
+  font-weight: 400; /* Nourd Regular */
+  line-height: 1.5; /* Per brand 1.5x line height */
   opacity: 1;
   transform: none;
 }
@@ -1072,7 +1057,7 @@ a:hover, button:hover {
   }
 }
 
-/* Hero Section with 3D effects */
+/* Hero Section */
 .hero {
   position: relative;
   overflow: hidden;
@@ -1086,8 +1071,6 @@ a:hover, button:hover {
 .hero-content {
   text-align: center;
   max-width: 800px;
-  opacity: 0;
-  transform: translateY(30px);
 }
 
 /* Split Section Layout */
@@ -1187,16 +1170,8 @@ a:hover, button:hover {
   display: flex;
   justify-content: center;
   max-width: 100%;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
   margin: 0; /* Remove margins to reduce empty space */
   position: relative;
-}
-
-.section.active .section-illustration-container {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Add subtle glow effects to illustrations in dark mode */
@@ -1233,16 +1208,13 @@ a:hover, button:hover {
   }
 }
 
-.section.active .hero-content {
-  animation: cardFloatIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
 .hero-content h1 {
+  font-family: var(--font-heading);
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 700; /* Nourd Bold */
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: var(--clr-dark-gray); /* #404040 per brand */
 }
 
 @media (max-width: 992px) {
@@ -1267,6 +1239,9 @@ a:hover, button:hover {
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
   color: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.7;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -1286,7 +1261,7 @@ a:hover, button:hover {
   }
 }
 
-/* CTA Buttons */
+/* CTA Buttons - Updated to match brand guidelines */
 .cta-container {
   display: flex;
   gap: 1rem;
@@ -1294,356 +1269,116 @@ a:hover, button:hover {
 }
 
 .cta-button {
-  padding: 0.875rem 1.75rem;
-  border-radius: 4px;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md, 6px);
+  font-family: var(--font-heading);
+  font-weight: 600; /* Nourd Semi-Bold */
   font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  transition: all var(--transition-fast);
-  border: none;
-  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.5px;
   white-space: normal; /* Allow button text to wrap */
-  display: inline-block;
   max-width: 100%; /* Ensure button doesn't overflow container */
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
 }
 
+/* Primary button - Indigo background with white text */
 .cta-button.primary {
-  background: var(--button-gradient);
-  color: white;
-  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+  background-color: var(--clr-indigo);
+  color: var(--clr-white);
+  border-color: var(--clr-indigo);
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.25);
 }
 
-.cta-button.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.4);
+.cta-button.primary:hover,
+.cta-button.primary:focus {
+  background-color: var(--clr-cool-blue);
+  border-color: var(--clr-cool-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(88, 66, 255, 0.3);
 }
 
-.dark-theme .cta-button.primary {
-  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.2);
+.cta-button.primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(88, 66, 255, 0.2);
 }
 
-.dark-theme .cta-button.primary:hover {
-  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.3);
-}
-
+/* Secondary button - White background with Indigo border and text */
 .cta-button.secondary {
-  background: transparent;
-  border: 1px solid rgba(32, 33, 36, 0.1);
-  color: var(--color-text);
+  background-color: transparent;
+  color: var(--clr-indigo);
+  border-color: var(--clr-indigo);
+  box-shadow: 0 2px 8px rgba(88, 66, 255, 0.1);
 }
 
-.cta-button.secondary:hover {
-  background: rgba(0, 0, 0, 0.05);
-  transform: translateY(-3px);
-  border-color: rgba(32, 33, 36, 0.2);
+.cta-button.secondary:hover,
+.cta-button.secondary:focus {
+  background-color: rgba(88, 66, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.15);
+}
+
+.cta-button.secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(88, 66, 255, 0.1);
+}
+
+/* Disabled button */
+.cta-button:disabled,
+.cta-button.disabled {
+  background-color: var(--clr-light-gray);
+  color: var(--clr-medium-gray);
+  border-color: var(--clr-light-gray);
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Button focus state for accessibility */
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(88, 66, 255, 0.3);
+}
+
+/* Dark theme button styles */
+.dark-theme .cta-button.primary {
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.2);
 }
 
 .dark-theme .cta-button.secondary {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-text);
+  color: var(--clr-lavender);
+  border-color: var(--clr-lavender);
 }
 
-.dark-theme .cta-button.secondary:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+.dark-theme .cta-button.secondary:hover,
+.dark-theme .cta-button.secondary:focus {
+  background-color: rgba(163, 154, 245, 0.1);
 }
 
-/* Education Section with enhanced card design */
-.education-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
-  gap: 2rem;
-  perspective: 1500px;
-  transform-style: preserve-3d;
-  margin-bottom: 2rem;
+/* Ripple effect for buttons */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
 }
 
-@media (max-width: 600px) {
-  .education-grid {
-    grid-template-columns: 1fr; /* Single column on very small screens */
-    gap: 1.5rem;
-  }
-}
-
-.education-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  min-height: 320px; /* Changed from fixed height to min-height */
-  background: rgba(138, 133, 255, 0.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1),
-              0 0 0 1px rgba(138, 133, 255, 0.1);
-  transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex; /* Added to ensure proper card content alignment */
-  flex-direction: column;
-  animation: cardFloatIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--card-index) * 0.1s);
-}
-
-@keyframes cardFloatIn {
-  0% {
-    transform: translateY(30px);
+@keyframes ripple {
+  to {
+    transform: scale(4);
     opacity: 0;
   }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.education-card::before {
-  content: attr(data-index);
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 4rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.07);
-  line-height: 1;
-  z-index: 1;
-  transition: all 0.4s ease;
-  background: linear-gradient(135deg, var(--color-primary), transparent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  opacity: 0.15;
-}
-
-.education-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.education-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
-              0 0 0 1px rgba(138, 133, 255, 0.2);
-}
-
-.education-card:hover::before {
-  opacity: 0.3;
-  transform: translateY(-5px);
-}
-
-.education-card:hover::after {
-  transform: scaleX(1);
-}
-
-.card-content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.education-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  position: relative;
-  padding-bottom: 0.75rem;
-}
-
-.education-card h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 2px;
-  background: var(--color-primary);
-}
-
-.education-card p {
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-}
-
-.card-link {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background: transparent;
-  border: 1px solid var(--color-primary);
-  border-radius: 6px;
-  color: var(--color-primary);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  margin-top: auto;
-}
-
-.card-link:hover {
-  background: var(--color-primary);
-  color: white;
-  box-shadow: 0 4px 12px rgba(138, 133, 255, 0.3);
-}
-
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 30% 30%, rgba(138, 133, 255, 0.08) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  z-index: 0;
-}
-
-.education-card:hover .card-overlay {
-  opacity: 1;
-}
-
-/* Education description section styling */
-.education-description {
-  max-width: 800px;
-  margin: 2rem auto 3rem;
-  text-align: center;
-  background: rgba(138, 133, 255, 0.03);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(138, 133, 255, 0.1);
-}
-
-.education-description p {
-  color: var(--color-text-secondary);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* Dark mode specific styling for education cards */
-.dark-theme .education-card {
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
-              0 0 0 1px rgba(255, 255, 255, 0.05);
-}
-
-.dark-theme .education-description {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.dark-theme .education-card::before {
-  opacity: 0.1;
-}
-
-.dark-theme .education-card:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
-              0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.dark-theme .card-overlay {
-  background: radial-gradient(circle at 30% 30%, rgba(138, 133, 255, 0.1) 0%, transparent 70%);
-}
-
-/* Consulting Section */
-.consulting-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
-  gap: 2.5rem;
-  perspective: 1000px; /* For 3D effects */
-  margin-top: 1rem;
-}
-
-.consulting-card {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--color-border);
-  padding: 2.5rem 2rem;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  will-change: transform, background; /* Performance optimization */
-  transform-style: preserve-3d; /* Smooth 3D transitions */
-  backface-visibility: hidden; /* Prevents flickering */
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.dark-theme .consulting-card {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.consulting-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 0;
-  background: var(--gradient-primary);
-  transition: height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Spring effect */
-}
-
-.consulting-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-}
-
-.dark-theme .consulting-card:hover {
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-}
-
-.consulting-card:hover::before {
-  height: 100%;
-}
-
-/* Consulting card content styling */
-.consulting-card .card-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.consulting-card h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-text);
-  position: relative;
-}
-
-.card-number {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-  opacity: 0.8;
-}
-
-.consulting-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.consulting-card p {
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
 }
 
 /* FAQ Section */
@@ -1657,8 +1392,8 @@ a:hover, button:hover {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   overflow: hidden;
-  will-change: transform, background; /* Performance optimization */
-  transform-origin: center left; /* For slide-in effect */
+  will-change: transform, background;
+  transform-origin: center left;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               border-left-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1689,7 +1424,8 @@ a:hover, button:hover {
 
 .faq-item.active .faq-question h3 {
   transform: translateX(5px);
-  color: var(--color-primary);
+  color: var(--color-accent); /* Coral Pink for active FAQ */
+  font-family: var(--font-heading);
 }
 
 .faq-toggle {
@@ -1702,7 +1438,7 @@ a:hover, button:hover {
 .faq-toggle::after {
   content: '';
   position: absolute;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent); /* Coral Pink for toggle */
   transition: all var(--transition-fast);
 }
 
@@ -1755,8 +1491,8 @@ a:hover, button:hover {
 
 /* Footer */
 footer {
-  background: rgba(33, 33, 33, 0.97);
-  backdrop-filter: blur(10px);
+  background: var(--color-surface-dark); /* Charcoal 800 */
+  border-top: 1px solid var(--color-border);
   padding: 5rem 4rem 1.5rem;
   position: relative;
   z-index: 20;
@@ -1839,7 +1575,9 @@ footer {
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
+  font-family: var(--font-heading);
   font-weight: 600;
+  color: var(--color-primary); /* Periwinkle Lavender */
 }
 
 .footer-column h4::after {
@@ -1861,13 +1599,14 @@ footer {
 .footer-column a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
+  font-family: var(--font-primary);
   position: relative;
   transition: color var(--transition-fast);
   display: inline-block;
 }
 
 .footer-column a:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary); /* Mint Blue for hover state */
 }
 
 .footer-column a::after {
@@ -1877,7 +1616,7 @@ footer {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary); /* Mint Blue underline */
   transition: width var(--transition-fast);
 }
 
@@ -2134,4 +1873,22 @@ footer {
   footer {
     padding: 3rem 1.5rem 1rem;
   }
+}
+
+/* Critical CSS fixes to ensure scrolling works and animations display properly */
+html, body, #app, .app, main, .content {
+  height: auto !important; 
+  overflow: auto !important;
+  position: static !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+.section {
+  position: relative !important;
+  overflow: visible !important;
+  height: auto !important;
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }

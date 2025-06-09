@@ -74,3 +74,73 @@ import { computed } from 'vue';
 
 const currentYear = computed(() => new Date().getFullYear());
 </script>
+
+<style scoped>
+/* Footer Enhanced Styles */
+footer {
+  background: linear-gradient(to bottom, #1A1F35, #0A0F1F);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-content {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+  color: white;
+  font-weight: 700;
+}
+
+.footer-branding p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+.footer-column h4 {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-column h4::after {
+  background: linear-gradient(to right, #5842FF, #6585FE);
+  height: 3px;
+  border-radius: 1.5px;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  padding: 2px 0;
+}
+
+.footer-column a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.footer-column a:hover::after {
+  background-color: #6585FE;
+  height: 2px;
+}
+
+.social-icon {
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(88, 66, 255, 0.3);
+}
+
+.social-icon svg {
+  stroke: white;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}
+</style>

@@ -1,0 +1,439 @@
+/* System3 Brand Styles
+-------------------------------------------------- */
+
+:root {
+  /* Core Brand Colors */
+  --clr-indigo: #5842FF;      /* Primary brand color */
+  --clr-cool-blue: #6585FE;   /* Secondary brand color */
+  --clr-lavender: #A39AF5;    /* Tertiary accent */
+  
+  /* Secondary & Neutral Colors */
+  --clr-white: #FFFFFF;       /* Default background */
+  --clr-light-gray: #F0F0F0;  /* Subtle backgrounds */
+  --clr-medium-gray: #A0A0A0; /* Borders, secondary text */
+  --clr-dark-gray: #404040;   /* Primary text color */
+  --clr-teal: #008080;        /* Secondary accent */
+  
+  /* Functional Colors */
+  --clr-bg-light: #F7F9FC;    /* Light mode base background (slightly off-white) */
+  --clr-bg-dark: #121212;     /* Dark mode background */
+  --clr-surface-light: #F7F9FC; /* Light mode container background */
+  
+  /* Typography Sizes */
+  --fs-h1: 2.5rem;          /* 40px */
+  --fs-h2: 2rem;            /* 32px */
+  --fs-h3: 1.5rem;          /* 24px */
+  --fs-h4: 1.25rem;         /* 20px */
+  --fs-body: 1rem;          /* 16px */
+  --fs-small: 0.875rem;     /* 14px */
+  --fs-caption: 0.75rem;    /* 12px */
+  
+  /* Spacing - 8px Grid System */
+  --space-1: 0.25rem;       /* 4px */
+  --space-2: 0.5rem;        /* 8px */
+  --space-3: 1rem;          /* 16px */
+  --space-4: 1.5rem;        /* 24px */
+  --space-5: 2rem;          /* 32px */
+  --space-6: 3rem;          /* 48px */
+  --space-7: 4rem;          /* 64px */
+  --space-8: 5rem;          /* 80px */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  
+  /* Animation Timings */
+  --transition-fast: 150ms;
+  --transition-medium: 300ms;
+  --transition-slow: 500ms;
+
+  /* Font Family */
+  --font-primary: 'Nourd', 'Helvetica Neue', Arial, sans-serif; /* Using Nourd as primary */
+  --font-heading: var(--font-primary);
+  --font-body: var(--font-primary);
+}
+
+/* Typography Styles
+-------------------------------------------------- */
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400; /* Nourd Regular */
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--clr-dark-gray);
+  background-color: var(--clr-bg-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+  font-weight: 700; /* Nourd Bold */
+  line-height: 1.2;
+  color: var(--clr-dark-gray);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  margin-bottom: var(--space-4);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-4);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 600; /* Nourd Semi-Bold */
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  font-weight: 600; /* Nourd Semi-Bold */
+}
+
+p {
+  font-weight: 400; /* Nourd Regular */
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+small, .text-small {
+  font-size: var(--fs-small);
+}
+
+.caption, .text-caption {
+  font-size: var(--fs-caption);
+  color: var(--clr-medium-gray);
+}
+
+/* Add letter-spacing for large display text */
+.display-text {
+  letter-spacing: -0.01em;
+}
+
+/* Buttons
+-------------------------------------------------- */
+
+.cta-button,
+button.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem; /* 12px vertical, 24px horizontal */
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 600; /* Nourd Semi-Bold */
+  font-size: var(--fs-body);
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--transition-fast) ease-out;
+  border: 2px solid transparent;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+/* Primary button - Indigo background with white text */
+.cta-button.primary {
+  background-color: var(--clr-indigo);
+  color: var(--clr-white);
+  border-color: var(--clr-indigo);
+}
+
+.cta-button.primary:hover,
+.cta-button.primary:focus {
+  background-color: var(--clr-cool-blue);
+  border-color: var(--clr-cool-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.2);
+}
+
+/* Secondary button - White background with Indigo border and text */
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--clr-indigo);
+  border-color: var(--clr-indigo);
+}
+
+.cta-button.secondary:hover,
+.cta-button.secondary:focus {
+  background-color: rgba(88, 66, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.1);
+}
+
+/* Disabled button */
+.cta-button:disabled,
+.cta-button.disabled {
+  background-color: var(--clr-light-gray);
+  color: var(--clr-medium-gray);
+  border-color: var(--clr-light-gray);
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Button focus state for accessibility */
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(88, 66, 255, 0.3);
+}
+
+/* Premium Card Styling
+-------------------------------------------------- */
+
+.premium-card {
+  background-color: var(--clr-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-medium) ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(88, 66, 255, 0.08);
+}
+
+.premium-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(88, 66, 255, 0.08);
+}
+
+.card-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: inherit;
+}
+
+/* Feature Card/Service Card Elements 
+-------------------------------------------------- */
+
+.feature-icon,
+.service-number,
+.faq-number {
+  color: var(--clr-indigo);
+}
+
+.icon-bg.primary {
+  background-color: rgba(88, 66, 255, 0.1);
+}
+
+.icon-bg.secondary {
+  background-color: rgba(101, 133, 254, 0.1); 
+}
+
+.icon-bg.accent {
+  background-color: rgba(163, 154, 245, 0.1);
+}
+
+.service-divider {
+  width: 40px;
+  height: 2px;
+  background-color: var(--clr-cool-blue);
+  margin: var(--space-2) 0;
+}
+
+/* Text Gradients 
+-------------------------------------------------- */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--clr-indigo), var(--clr-cool-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--clr-indigo); /* Fallback */
+  display: inline-block;
+}
+
+/* Decorative Elements
+-------------------------------------------------- */
+
+.premium-bg-shine {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 50%, rgba(154, 142, 255, 0.02) 0%, transparent 70%); 
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(50px);
+}
+
+.premium-bg-grid {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to right, rgba(138, 133, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(138, 133, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Hero Particles Styling */
+.particle {
+  position: absolute;
+  background: radial-gradient(circle at center, var(--clr-lavender), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+/* Utility Classes
+-------------------------------------------------- */
+
+.text-indigo { color: var(--clr-indigo); }
+.text-blue { color: var(--clr-cool-blue); }
+.text-lavender { color: var(--clr-lavender); }
+.text-teal { color: var(--clr-teal); }
+.text-dark { color: var(--clr-dark-gray); }
+.text-medium { color: var(--clr-medium-gray); }
+
+.bg-indigo { background-color: var(--clr-indigo); }
+.bg-blue { background-color: var(--clr-cool-blue); }
+.bg-lavender { background-color: var(--clr-lavender); }
+.bg-teal { background-color: var(--clr-teal); }
+.bg-light { background-color: var(--clr-light-gray); }
+.bg-white { background-color: var(--clr-white); }
+
+/* Spacing Utilities */
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.my-0 { margin-top: 0; margin-bottom: 0; }
+.mt-1 { margin-top: var(--space-1); }
+.mb-1 { margin-bottom: var(--space-1); }
+.my-1 { margin-top: var(--space-1); margin-bottom: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mb-2 { margin-bottom: var(--space-2); }
+.my-2 { margin-top: var(--space-2); margin-bottom: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mb-3 { margin-bottom: var(--space-3); }
+.my-3 { margin-top: var(--space-3); margin-bottom: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-4); }
+.my-4 { margin-top: var(--space-4); margin-bottom: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mb-5 { margin-bottom: var(--space-5); }
+.my-5 { margin-top: var(--space-5); margin-bottom: var(--space-5); }
+
+.pt-0 { padding-top: 0; }
+.pb-0 { padding-bottom: 0; }
+.py-0 { padding-top: 0; padding-bottom: 0; }
+.pt-1 { padding-top: var(--space-1); }
+.pb-1 { padding-bottom: var(--space-1); }
+.py-1 { padding-top: var(--space-1); padding-bottom: var(--space-1); }
+.pt-2 { padding-top: var(--space-2); }
+.pb-2 { padding-bottom: var(--space-2); }
+.py-2 { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+.pt-3 { padding-top: var(--space-3); }
+.pb-3 { padding-bottom: var(--space-3); }
+.py-3 { padding-top: var(--space-3); padding-bottom: var(--space-3); }
+.pt-4 { padding-top: var(--space-4); }
+.pb-4 { padding-bottom: var(--space-4); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.pt-5 { padding-top: var(--space-5); }
+.pb-5 { padding-bottom: var(--space-5); }
+.py-5 { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+
+/* Accessibility Utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focusable:focus {
+  outline: 2px solid var(--clr-indigo);
+  outline-offset: 2px;
+}
+
+/* Dark Mode Adjustments 
+-------------------------------------------------- */
+.dark-theme {
+  color: #F0F0F0;
+  background-color: var(--clr-bg-dark);
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
+  color: #FFFFFF;
+}
+
+.dark-theme .premium-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .cta-button.secondary {
+  color: var(--clr-lavender);
+  border-color: var(--clr-lavender);
+}
+
+.dark-theme .premium-bg-grid {
+  background: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Add Nourd font to the page */
+@font-face {
+  font-family: 'Nourd';
+  src: url('/public/fonts/soehne-web-buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nourd';
+  src: url('/public/fonts/soehne-web-kraftig.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nourd';
+  src: url('/public/fonts/soehne-web-halbfett.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback to Söhne fonts which we have */
+@font-face {
+  font-family: 'Nourd';
+  src: url('/public/fonts/soehne-web-buch-kursiv.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nourd';
+  src: url('/public/fonts/soehne-web-kraftig-kursiv.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}

@@ -106,7 +106,7 @@
     </section>
     
     <!-- CTA Section -->
-    <section id="cta-section" class="section cta-section">
+    <!-- <section id="cta-section" class="section cta-section">
       <div class="section-content">
         <h2>Ready to <span class="gradient-text">Transform</span> Your Team?</h2>
         <p>Contact us to discuss your educational needs and design a program that fits your goals.</p>
@@ -115,7 +115,7 @@
           <RouterLink to="/" class="cta-button secondary">Back to Home</RouterLink>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -249,7 +249,7 @@ function truncateDescription(text, maxLength = 100) {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: var(--color-bg);
+  background: #FFFFFF;
   overflow: hidden;
   z-index: 1;
 }
@@ -273,10 +273,9 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.2), transparent 80%);
-  opacity: 1;
+  background: radial-gradient(circle at 20% 50%, rgba(88, 66, 255, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(101, 133, 254, 0.02) 0%, transparent 50%);
   z-index: -1;
-  backdrop-filter: none;
 }
 
 .courses-header::after {
@@ -286,8 +285,10 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(200, 180, 255, 0.15), transparent 70%);
-  opacity: 0.8;
+  background-image: 
+    linear-gradient(rgba(88, 66, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 66, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
   z-index: -1;
 }
 
@@ -301,23 +302,27 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .courses-header .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  color: var(--color-text);
+  font-size: 56px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.15;
+  color: #0A0A0A;
   position: relative;
   z-index: 5;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
+}
+
+.courses-header .hero-content h1 .gradient-text {
+  font-weight: 500;
 }
 
 .courses-header .hero-content p {
-  font-size: 1.25rem;
+  font-size: 19px;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  font-weight: 400;
+  line-height: 1.7;
+  color: #4A4A4A;
+  font-weight: 300;
 }
 
 /* Course Level Tabs */
@@ -336,7 +341,7 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-border);
+  background: #E8E8E8;
   z-index: -1;
 }
 
@@ -345,7 +350,7 @@ function truncateDescription(text, maxLength = 100) {
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  color: var(--color-text-secondary);
+  color: #4A4A4A;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -361,7 +366,7 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 100%;
   height: 3px;
-  background: var(--color-primary);
+  background: #5842FF;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -372,7 +377,7 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .level-tab.active {
-  color: var(--color-primary);
+  color: #5842FF;
 }
 
 .level-tab.active::after {
@@ -420,8 +425,8 @@ function truncateDescription(text, maxLength = 100) {
 .course-card {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--color-border);
+  background: white;
+  border: 1px solid #E8E8E8;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
@@ -436,8 +441,8 @@ function truncateDescription(text, maxLength = 100) {
 
 .course-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(138, 133, 255, 0.1);
-  border-color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(88, 66, 255, 0.1);
+  border-color: #5842FF;
 }
 
 .course-image {
@@ -458,7 +463,7 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.1), transparent 70%);
+  background: radial-gradient(circle at center, rgba(88, 66, 255, 0.1), transparent 70%);
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -488,7 +493,7 @@ function truncateDescription(text, maxLength = 100) {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--color-primary);
+  background: #5842FF;
   color: white;
   font-size: 0.7rem;
   font-weight: 600;
@@ -506,14 +511,15 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .course-content h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1.2rem;
-  color: var(--color-primary);
-  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #5842FF;
+  font-weight: 500;
   position: relative;
   display: inline-flex;
   align-items: center;
   flex-wrap: nowrap;
+  letter-spacing: -0.01em;
 }
 
 .course-content h3::after {
@@ -523,7 +529,7 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--color-primary);
+  background: #5842FF;
   transition: width 0.3s ease;
 }
 
@@ -535,7 +541,7 @@ function truncateDescription(text, maxLength = 100) {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.25rem;
-  color: var(--color-text-secondary);
+  color: #4A4A4A;
   font-size: 0.95rem;
 }
 
@@ -545,10 +551,12 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .course-content p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
   line-height: 1.7;
   min-height: 48px;
   overflow: hidden;
+  color: #4A4A4A;
+  font-weight: 300;
 }
 
 .course-topics {
@@ -556,9 +564,10 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .course-topics h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-  color: var(--color-text);
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #0A0A0A;
+  font-weight: 500;
 }
 
 .course-topics ul {
@@ -571,20 +580,22 @@ function truncateDescription(text, maxLength = 100) {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--color-text-secondary);
+  color: #4A4A4A;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 .course-topics li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-primary);
+  color: #5842FF;
   font-weight: bold;
 }
 
 .more-topics {
   display: block;
-  color: var(--color-primary);
+  color: #5842FF;
   font-size: 0.9rem;
   margin-top: 0.5rem;
   font-style: italic;
@@ -594,8 +605,8 @@ function truncateDescription(text, maxLength = 100) {
   display: inline-block;
   padding: 0.7rem 1.4rem;
   background: transparent;
-  border: 1.5px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 1.5px solid #5842FF;
+  color: #5842FF;
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -604,6 +615,7 @@ function truncateDescription(text, maxLength = 100) {
   position: relative;
   overflow: hidden;
   text-decoration: none;
+  margin-top: auto;
 }
 
 .course-link::before {
@@ -613,7 +625,7 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 0;
   height: 100%;
-  background: var(--color-primary);
+  background: #5842FF;
   transition: width 0.3s ease;
   z-index: -1;
 }
@@ -621,7 +633,7 @@ function truncateDescription(text, maxLength = 100) {
 .course-link:hover {
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(138, 133, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(88, 66, 255, 0.2);
 }
 
 .course-link:hover::before {
@@ -643,8 +655,8 @@ function truncateDescription(text, maxLength = 100) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 30%, rgba(138, 133, 255, 0.08), transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(138, 133, 255, 0.08), transparent 50%);
+  background: radial-gradient(circle at 20% 30%, rgba(88, 66, 255, 0.08), transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(88, 66, 255, 0.08), transparent 50%);
   opacity: 0.6;
   z-index: 0;
 }
@@ -687,8 +699,8 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .approach-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--color-border);
+  background: white;
+  border: 1px solid #E8E8E8;
   border-radius: 12px;
   padding: 2.5rem 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -703,19 +715,19 @@ function truncateDescription(text, maxLength = 100) {
 .approach-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-primary);
+  border-color: #5842FF;
   z-index: 2;
 }
 
 .approach-icon {
-  color: var(--color-primary);
+  color: #5842FF;
   margin-bottom: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  background: rgba(138, 133, 255, 0.1);
+  background: rgba(88, 66, 255, 0.08);
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -724,15 +736,17 @@ function truncateDescription(text, maxLength = 100) {
 
 .approach-item:hover .approach-icon {
   transform: scale(1.1);
-  background: rgba(138, 133, 255, 0.2);
+  background: rgba(88, 66, 255, 0.1);
 }
 
 .approach-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-primary);
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #5842FF;
   position: relative;
   padding-bottom: 0.8rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .approach-item h3::after {
@@ -743,7 +757,7 @@ function truncateDescription(text, maxLength = 100) {
   transform: translateX(-50%);
   width: 40px;
   height: 3px;
-  background: var(--color-primary);
+  background: #5842FF;
   opacity: 0.7;
   transition: width 0.3s ease;
 }
@@ -753,9 +767,10 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .approach-item p {
-  color: var(--color-text-secondary);
+  color: #4A4A4A;
   line-height: 1.7;
-  font-size: 1.05rem;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 /* CTA Section */
@@ -789,7 +804,7 @@ function truncateDescription(text, maxLength = 100) {
 
 @media (max-width: 992px) {
   .courses-header .hero-content h1 {
-    font-size: 3rem;
+    font-size: 42px;
   }
   
   .approach-grid {
@@ -803,7 +818,7 @@ function truncateDescription(text, maxLength = 100) {
   }
   
   .courses-header .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 36px;
   }
   
   .course-level-tabs {
@@ -829,7 +844,7 @@ function truncateDescription(text, maxLength = 100) {
 
 @media (max-width: 576px) {
   .courses-header .hero-content h1 {
-    font-size: 2rem;
+    font-size: 28px;
   }
   
   .course-content {
@@ -837,7 +852,7 @@ function truncateDescription(text, maxLength = 100) {
   }
   
   .course-content h3 {
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 }
 @keyframes fadeIn {
@@ -845,68 +860,35 @@ function truncateDescription(text, maxLength = 100) {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Dark/Light mode specific styles */
-:root .dark-theme .course-image {
-  background: rgba(10, 10, 10, 0.3);
+/* Add section header styling */
+.section-content h2 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
+  text-align: center;
 }
 
-:root .dark-theme .course-content {
-  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.2), rgba(5, 5, 5, 0.1));
+.section-content .section-description {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 48px;
+  font-weight: 300;
+  color: #4A4A4A;
+  max-width: 680px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-:root .dark-theme .approach-section {
-  background-color: rgba(10, 10, 10, 0.5);
-}
-
-:root .dark-theme .course-card {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-:root .dark-theme .approach-item {
-  background: rgba(25, 25, 35, 0.3);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-:root .light-theme .course-image {
-  background: rgba(235, 235, 255, 0.5);
-  border-bottom: 1px solid rgba(200, 200, 230, 0.3);
-}
-
-:root .light-theme .course-content {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-text-dark);
-}
-
-:root .light-theme .course-content h3 {
-  color: var(--color-primary-dark, #4a3aff);
-}
-
-:root .light-theme .course-content p {
-  color: #2c3e50;
-}
-
-:root .light-theme .course-card {
-  background: white;
-  box-shadow: 0 8px 30px rgba(100, 100, 230, 0.12);
-  border: 1px solid rgba(220, 220, 250, 0.5);
-}
-
-:root .light-theme .approach-section {
-  background: linear-gradient(180deg, #f5f7ff 0%, #ffffff 100%);
-}
-
-:root .light-theme .approach-item {
-  background: white;
-  box-shadow: 0 10px 25px rgba(100, 100, 250, 0.08);
-  border: 1px solid rgba(220, 220, 250, 0.5);
-}
-
-:root .light-theme .approach-item h3 {
-  color: var(--color-primary-dark, #4a3aff);
-}
-
-:root .light-theme .approach-item p {
-  color: #2c3e50;
+.gradient-text {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Icon visibility based on theme */

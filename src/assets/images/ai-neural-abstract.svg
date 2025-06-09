@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg"
+     aria-labelledby="aiNeuralAbstractTitle aiNeuralAbstractDesc" role="img">
+  <title id="aiNeuralAbstractTitle">Abstract AI Neural Illustration</title>
+  <desc id="aiNeuralAbstractDesc">An abstract 3D visualization representing neural networks and AI concepts that can be animated for page transitions.</desc>
+  
+  <!-- Background gradient shape -->
+  <rect x="0" y="0" width="500" height="400" fill="url(#backgroundGradient)" opacity="0.08"/>
+  
+  <!-- Main 3D neural structure -->
+  <g id="neural-structure">
+    <!-- Central neural core -->
+    <g id="neural-core" transform="translate(250, 200)">
+      <!-- Core sphere -->
+      <ellipse cx="0" cy="0" rx="40" ry="30" fill="url(#coreGradient)" opacity="0.8">
+        <animate attributeName="ry" values="30;33;30" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="40;44;40" dur="7s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Outer membrane -->
+      <ellipse cx="0" cy="0" rx="55" ry="45" fill="none" stroke="url(#membraneGradient)" stroke-width="1.5" opacity="0.4">
+        <animate attributeName="ry" values="45;48;45" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="55;58;55" dur="9s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Inner neural pathways -->
+      <path d="M-25 -10 Q 0 -25, 25 -10" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+      <path d="M-25 0 Q 0 -15, 25 0" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+      <path d="M-25 10 Q 0 -5, 25 10" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+      <path d="M-20 -15 Q 0 5, 20 -15" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+      <path d="M-20 15 Q 0 35, 20 15" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+      
+      <!-- Neural nodes in the core -->
+      <circle cx="-15" cy="-8" r="2.5" fill="white" opacity="0.9"/>
+      <circle cx="15" cy="-8" r="2.5" fill="white" opacity="0.9"/>
+      <circle cx="0" cy="0" r="3.5" fill="white" opacity="0.9"/>
+      <circle cx="-20" cy="5" r="2" fill="white" opacity="0.7"/>
+      <circle cx="20" cy="5" r="2" fill="white" opacity="0.7"/>
+      <circle cx="-5" cy="15" r="2" fill="white" opacity="0.7"/>
+      <circle cx="5" cy="15" r="2" fill="white" opacity="0.7"/>
+      
+      <!-- Pulsing core effect -->
+      <circle cx="0" cy="0" r="15" fill="white" opacity="0.3">
+        <animate attributeName="r" values="15;18;15" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0.4;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- 3D Planes representing data layers -->
+    <g id="data-planes">
+      <!-- Front plane -->
+      <path d="M180 250 L320 250 L300 290 L200 290 Z" fill="#8a85ff" opacity="0.2" transform="rotate(-5, 250, 270)">
+        <animate attributeName="opacity" values="0.2;0.25;0.2" dur="5s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Middle plane -->
+      <path d="M170 220 L330 220 L310 260 L190 260 Z" fill="#c389c5" opacity="0.15" transform="rotate(-2, 250, 240)">
+        <animate attributeName="opacity" values="0.15;0.2;0.15" dur="7s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Back plane -->
+      <path d="M160 190 L340 190 L320 230 L180 230 Z" fill="#8bb8cf" opacity="0.1" transform="rotate(1, 250, 210)">
+        <animate attributeName="opacity" values="0.1;0.15;0.1" dur="9s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Orbital rings -->
+    <g id="orbital-rings">
+      <!-- Horizontal ring -->
+      <ellipse cx="250" cy="200" rx="120" ry="30" fill="none" stroke="url(#ringGradient1)" stroke-width="1" opacity="0.4" transform="rotate(15, 250, 200)">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                          from="15 250 200" to="375 250 200" dur="40s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Vertical ring -->
+      <ellipse cx="250" cy="200" rx="100" ry="25" fill="none" stroke="url(#ringGradient2)" stroke-width="1" opacity="0.3" transform="rotate(75, 250, 200)">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                          from="75 250 200" to="435 250 200" dur="35s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Diagonal ring -->
+      <ellipse cx="250" cy="200" rx="140" ry="35" fill="none" stroke="url(#ringGradient3)" stroke-width="1" opacity="0.2" transform="rotate(45, 250, 200)">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                          from="45 250 200" to="405 250 200" dur="50s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+  </g>
+  
+  <!-- Floating particles and nodes -->
+  <g id="floating-elements">
+    <!-- Constellation of neural nodes -->
+    <!-- Group 1 - Upper left -->
+    <circle cx="100" cy="120" r="3" fill="#8a85ff" opacity="0.8"/>
+    <circle cx="130" cy="90" r="2" fill="#8a85ff" opacity="0.6"/>
+    <circle cx="160" cy="110" r="2.5" fill="#8a85ff" opacity="0.7"/>
+    <line x1="100" y1="120" x2="130" y2="90" stroke="#8a85ff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="130" y1="90" x2="160" y2="110" stroke="#8a85ff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="100" y1="120" x2="160" y2="110" stroke="#8a85ff" stroke-width="0.7" opacity="0.4"/>
+    
+    <!-- Group 2 - Upper right -->
+    <circle cx="350" cy="100" r="3" fill="#c389c5" opacity="0.8"/>
+    <circle cx="380" cy="120" r="2" fill="#c389c5" opacity="0.6"/>
+    <circle cx="390" cy="80" r="2.5" fill="#c389c5" opacity="0.7"/>
+    <line x1="350" y1="100" x2="380" y2="120" stroke="#c389c5" stroke-width="0.7" opacity="0.4"/>
+    <line x1="380" y1="120" x2="390" y2="80" stroke="#c389c5" stroke-width="0.7" opacity="0.4"/>
+    <line x1="350" y1="100" x2="390" y2="80" stroke="#c389c5" stroke-width="0.7" opacity="0.4"/>
+    
+    <!-- Group 3 - Lower left -->
+    <circle cx="120" cy="290" r="3" fill="#8bb8cf" opacity="0.8"/>
+    <circle cx="90" cy="320" r="2" fill="#8bb8cf" opacity="0.6"/>
+    <circle cx="140" cy="330" r="2.5" fill="#8bb8cf" opacity="0.7"/>
+    <line x1="120" y1="290" x2="90" y2="320" stroke="#8bb8cf" stroke-width="0.7" opacity="0.4"/>
+    <line x1="90" y1="320" x2="140" y2="330" stroke="#8bb8cf" stroke-width="0.7" opacity="0.4"/>
+    <line x1="120" y1="290" x2="140" y2="330" stroke="#8bb8cf" stroke-width="0.7" opacity="0.4"/>
+    
+    <!-- Group 4 - Lower right -->
+    <circle cx="370" cy="280" r="3" fill="#8a85ff" opacity="0.8"/>
+    <circle cx="400" cy="310" r="2" fill="#8a85ff" opacity="0.6"/>
+    <circle cx="370" cy="330" r="2.5" fill="#8a85ff" opacity="0.7"/>
+    <line x1="370" y1="280" x2="400" y2="310" stroke="#8a85ff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="400" y1="310" x2="370" y2="330" stroke="#8a85ff" stroke-width="0.7" opacity="0.4"/>
+    <line x1="370" y1="280" x2="370" y2="330" stroke="#8a85ff" stroke-width="0.7" opacity="0.4"/>
+    
+    <!-- Random nodes with pulsing animations -->
+    <circle cx="80" cy="170" r="2" fill="#8a85ff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="420" cy="150" r="2" fill="#c389c5" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="150" cy="50" r="2" fill="#8bb8cf" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="350" cy="50" r="2" fill="#8a85ff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="450" cy="200" r="2" fill="#c389c5" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="50" cy="250" r="2" fill="#8bb8cf" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="250" cy="350" r="2" fill="#8a85ff" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Connection lines to neural core -->
+  <g id="neural-connections">
+    <!-- Curved connection lines -->
+    <path d="M160 110 C200 130, 220 150, 235 175" stroke="#8a85ff" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+    <path d="M350 100 C320 130, 290 150, 265 175" stroke="#c389c5" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+    <path d="M120 290 C150 270, 200 240, 235 225" stroke="#8bb8cf" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+    <path d="M370 280 C340 270, 310 240, 265 225" stroke="#8a85ff" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+    
+    <!-- Data flow particles -->
+    <circle cx="160" cy="110" r="1.5" fill="#8a85ff">
+      <animate attributeName="cx" values="160;180;200;220;235" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="110;120;130;150;175" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.8;0.6;0.4;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="350" cy="100" r="1.5" fill="#c389c5">
+      <animate attributeName="cx" values="350;320;290;265" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;120;150;175" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.8;0.6;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="120" cy="290" r="1.5" fill="#8bb8cf">
+      <animate attributeName="cx" values="120;150;180;210;235" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="290;270;250;235;225" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.8;0.6;0.4;0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="370" cy="280" r="1.5" fill="#8a85ff">
+      <animate attributeName="cx" values="370;340;310;285;265" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="280;270;250;235;225" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.8;0.6;0.4;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Binary data elements -->
+  <g id="binary-data" opacity="0.4">
+    <!-- Binary strings scattered across illustration -->
+    <text x="70" y="80" font-family="monospace" font-size="7" fill="#8a85ff">01101</text>
+    <text x="85" y="90" font-family="monospace" font-size="7" fill="#8a85ff">10010</text>
+    
+    <text x="370" y="70" font-family="monospace" font-size="7" fill="#c389c5">10110</text>
+    <text x="385" y="80" font-family="monospace" font-size="7" fill="#c389c5">01001</text>
+    
+    <text x="100" y="350" font-family="monospace" font-size="7" fill="#8bb8cf">11011</text>
+    <text x="115" y="360" font-family="monospace" font-size="7" fill="#8bb8cf">00101</text>
+    
+    <text x="380" y="340" font-family="monospace" font-size="7" fill="#8a85ff">10111</text>
+    <text x="395" y="350" font-family="monospace" font-size="7" fill="#8a85ff">01010</text>
+    
+    <!-- Animated binary fade in/out -->
+    <text x="200" y="100" font-family="monospace" font-size="8" fill="#8a85ff" opacity="0.7">
+      <tspan x="200" dy="0">101</tspan>
+      <tspan x="200" dy="10">010</tspan>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="7s" repeatCount="indefinite"/>
+    </text>
+    
+    <text x="300" y="100" font-family="monospace" font-size="8" fill="#c389c5" opacity="0.7">
+      <tspan x="300" dy="0">011</tspan>
+      <tspan x="300" dy="10">100</tspan>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="8s" repeatCount="indefinite"/>
+    </text>
+    
+    <text x="150" y="300" font-family="monospace" font-size="8" fill="#8bb8cf" opacity="0.7">
+      <tspan x="150" dy="0">110</tspan>
+      <tspan x="150" dy="10">001</tspan>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="6s" repeatCount="indefinite"/>
+    </text>
+    
+    <text x="350" y="300" font-family="monospace" font-size="8" fill="#8a85ff" opacity="0.7">
+      <tspan x="350" dy="0">101</tspan>
+      <tspan x="350" dy="10">110</tspan>
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="9s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- Abstract geometric elements -->
+  <g id="geometric-elements">
+    <!-- Triangular mesh structures -->
+    <path d="M50 150 L75 120 L100 150 Z" fill="none" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+    <path d="M75 120 L100 90 L125 120 Z" fill="none" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+    <path d="M100 150 L125 120 L150 150 Z" fill="none" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+    
+    <path d="M350 150 L375 120 L400 150 Z" fill="none" stroke="#c389c5" stroke-width="0.8" opacity="0.5"/>
+    <path d="M375 120 L400 90 L425 120 Z" fill="none" stroke="#c389c5" stroke-width="0.8" opacity="0.5"/>
+    <path d="M400 150 L425 120 L450 150 Z" fill="none" stroke="#c389c5" stroke-width="0.8" opacity="0.5"/>
+    
+    <!-- Cubic wireframes -->
+    <g id="cube1" transform="translate(80, 200) rotate(15)">
+      <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="#8bb8cf" stroke-width="0.8" opacity="0.5"/>
+      <rect x="-10" y="-10" width="30" height="30" fill="none" stroke="#8bb8cf" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-15" y1="-15" x2="-10" y2="-10" stroke="#8bb8cf" stroke-width="0.8" opacity="0.5"/>
+      <line x1="15" y1="-15" x2="20" y2="-10" stroke="#8bb8cf" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-15" y1="15" x2="-10" y2="20" stroke="#8bb8cf" stroke-width="0.8" opacity="0.5"/>
+      <line x1="15" y1="15" x2="20" y2="20" stroke="#8bb8cf" stroke-width="0.8" opacity="0.5"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                        from="15 80 200" to="375 80 200" dur="30s" repeatCount="indefinite"/>
+    </g>
+    
+    <g id="cube2" transform="translate(400, 200) rotate(30)">
+      <rect x="-15" y="-15" width="30" height="30" fill="none" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+      <rect x="-10" y="-10" width="30" height="30" fill="none" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-15" y1="-15" x2="-10" y2="-10" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+      <line x1="15" y1="-15" x2="20" y2="-10" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+      <line x1="-15" y1="15" x2="-10" y2="20" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+      <line x1="15" y1="15" x2="20" y2="20" stroke="#8a85ff" stroke-width="0.8" opacity="0.5"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                        from="30 400 200" to="390 400 200" dur="25s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a85ff" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#c389c5" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#8bb8cf" stop-opacity="0.3"/>
+    </linearGradient>
+    
+    <radialGradient id="coreGradient" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="white" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#c389c5" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8a85ff" stop-opacity="0.3"/>
+    </radialGradient>
+    
+    <linearGradient id="membraneGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a85ff"/>
+      <stop offset="50%" stop-color="#c389c5"/>
+      <stop offset="100%" stop-color="#8bb8cf"/>
+    </linearGradient>
+    
+    <linearGradient id="ringGradient1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8a85ff"/>
+      <stop offset="100%" stop-color="#c389c5"/>
+    </linearGradient>
+    
+    <linearGradient id="ringGradient2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c389c5"/>
+      <stop offset="100%" stop-color="#8bb8cf"/>
+    </linearGradient>
+    
+    <linearGradient id="ringGradient3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8bb8cf"/>
+      <stop offset="100%" stop-color="#8a85ff"/>
+    </linearGradient>
+  </defs>
+</svg>

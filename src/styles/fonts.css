@@ -1,0 +1,85 @@
+/* Söhne Font Family by Klim Type Foundry
+ *
+ * This is a web font implementation for System3's brand typography.
+ * Please ensure proper licensing for production use.
+ */
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('/fonts/soehne-web-buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('/fonts/soehne-web-buch-kursiv.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('/fonts/soehne-web-kraftig.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('/fonts/soehne-web-kraftig-kursiv.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('/fonts/soehne-web-halbfett.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne Breit';
+  src: url('/fonts/soehne-breit-web-halbfett.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne Breit';
+  src: url('/fonts/soehne-breit-web-kraftig.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne Mono';
+  src: url('/fonts/soehne-mono-web-buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback message for when the user needs to add the font files */
+.font-notice {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #f8f9fa;
+  border-left: 4px solid #f88379;
+  color: #333;
+}
+
+/* Note to implementer:
+ * 1. Place Söhne font files in the public/fonts/ directory
+ * 2. Update file names if they differ from the ones used above
+ * 3. Ensure proper licensing for production use
+ * 4. Import this CSS file in your main.js or main entry point
+ */

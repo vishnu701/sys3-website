@@ -1,28 +1,102 @@
 <template>
   <div class="content">
-    <!-- Education Hero Section -->
-    <section id="education-hero" class="section hero education-hero">
-      <div class="hero-content">
-        <h1>System3 <span class="gradient-text">Education</span></h1>
-        <p>Premium AI education led by Harvard's Scientific Program Director and his expert team</p>
+    <!-- Education Hero Section - Clean Minimal Design -->
+    <section id="education-hero" class="section hero">
+      <!-- Background Elements -->
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content">
+          <!-- Education Video Visual -->
+          <div class="education-visual-wrapper">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="education-hero-video"
+            >
+              <source src="@/assets/3.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- Right Text Section -->
+          <div class="hero-text-container">
+            <div class="hero-badge">Harvard University Faculty</div>
+            <h1 class="hero-heading">
+              System3 <span class="gradient-text">Education</span>
+            </h1>
+            <p class="hero-paragraph">
+              Distinguished AI education led by Harvard's Scientific Program Director and Harvard's expert faculty
+            </p>
+            <div class="cta-container">
+              <RouterLink to="/courses" class="cta-button primary">View Academic Programs</RouterLink>
+              <RouterLink to="/contact" class="cta-button secondary">Apply for Admission</RouterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-dots">
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+        </div>
+        <p>SCROLL</p>
       </div>
     </section>
 
-    <!-- About Education Section -->
-    <section id="about-education" class="section">
-      <div class="section-content">
-        <h2><span class="gradient-text">Harvard-Level Education</span></h2>
-        <p class="section-description">We recreate the AI experience taught at Harvard and tailor it for high school students</p>
-        
-        <div class="education-about">
-          <div class="about-image">
-            <img src="@/assets/images/people/PavlosTeaching.jpeg" alt="Harvard Education" />
+    <!-- About Education Section - Clean Layout -->
+    <section id="about-education" class="section light-section">
+      <div class="container">
+        <div class="split-layout">
+          <div class="split-content">
+            <div class="section-header left">
+              <span class="overline">Harvard Excellence</span>
+              <h2>Academic <span class="gradient-text">Excellence</span></h2>
+              <div class="section-divider"></div>
+            </div>
+            
+            <p class="large-text">We deliver the rigorous academic standards of Harvard University, thoughtfully adapted for exceptional high school students</p>
+            
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-number">01</div>
+                <div class="feature-text">
+                  <h4>Harvard-Caliber Education</h4>
+                  <p>Under the direct guidance of Harvard's Scientific Program Director and faculty, we offer an unparalleled educational experience.</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-number">02</div>
+                <div class="feature-text">
+                  <h4>Research-Level Projects</h4>
+                  <p>Develop sophisticated AI applications of publication quality with guidance from Harvard researchers.</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-number">03</div>
+                <div class="feature-text">
+                  <h4>Exclusive Learning Environment</h4>
+                  <p>Small-cohort live instruction with personalized feedback and access to Harvard's educational methodology.</p>
+                </div>
+              </div>
+            </div>
+            
+            <RouterLink to="/courses" class="cta-button primary">View Academic Curriculum</RouterLink>
           </div>
-          <div class="about-text">
-            <p>As leaders in the field of AI, we believe in pushing the boundaries and bringing a new perspective to the field of high school education. Led by the Harvard Scientific Director and his team, we give high schoolers the ability to learn how to code and then create their own AI and Machine Learning applications from scratch.</p>
-            <p>Our education programs are designed to be accessible to students with no prior coding experience, while challenging enough for those who already have a foundation.</p>
-            <div class="about-cta">
-              <RouterLink to="/courses" class="cta-button primary">Explore Courses</RouterLink>
+          
+          <div class="split-visual">
+            <div class="education-image-container">
+              <img src="@/assets/images/people/PavlosTeaching.jpeg" alt="Harvard Education" class="education-image" />
             </div>
           </div>
         </div>
@@ -31,143 +105,71 @@
 
     <!-- Benefits Section -->
     <section id="benefits-section" class="section">
-      <div class="section-content">
-        <h2><span class="gradient-text">Benefits</span></h2>
-        <p class="section-description">What makes System3 Education unique</p>
-        
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            <h3>Harvard Expertise</h3>
-            <p>Direct tutelage from the Harvard Scientific Director and his team of experts</p>
-          </div>
-          
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-              </svg>
-            </div>
-            <h3>Tailored Content</h3>
-            <p>Custom curriculum designed for Python, AI, and ML from scratch</p>
-          </div>
-          
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3>Personalized Mentoring</h3>
-            <p>One-on-one and small group mentoring sessions with experienced instructors</p>
-          </div>
+      <div class="container">
+        <div class="section-header center">
+          <span class="overline">Key Benefits</span>
+          <h2>What Sets Us <span class="gradient-text">Apart</span></h2>
+          <div class="section-divider"></div>
         </div>
         
-        <div class="benefits-grid benefits-grid-centered">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" />
             </div>
-            <h3>Hands-On Projects</h3>
-            <p>Build and publish your own AI projects with guidance from industry experts</p>
+            <h3>Harvard Faculty Instruction</h3>
+            <p>Direct mentorship from Harvard University's distinguished Scientific Program Director and faculty members</p>
+            <RouterLink to="/courses" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
           </div>
           
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-                <circle cx="8" cy="14" r="1"></circle>
-                <circle cx="12" cy="14" r="1"></circle>
-                <circle cx="16" cy="14" r="1"></circle>
-                <circle cx="8" cy="18" r="1"></circle>
-                <circle cx="12" cy="18" r="1"></circle>
-                <circle cx="16" cy="18" r="1"></circle>
-              </svg>
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="@/assets/images/consulting-icon.svg" alt="Consulting Icon" class="service-icon-img" />
             </div>
-            <h3>Live Classes</h3>
-            <p>Interactive live sessions with real-time feedback and collaborative learning experiences</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="section">
-      <div class="section-content">
-        <h2><span class="gradient-text">How It Works</span></h2>
-        <p class="section-description">Our proven educational approach</p>
-        
-        <div class="steps-container">
-          <div class="step-item">
-            <div class="step-number">01</div>
-            <div class="step-content">
-              <h3>Learning Concepts</h3>
-              <p>Even if you're a complete beginner, our team will guide you through the building blocks of AI. We break down complex concepts into digestible modules.</p>
-            </div>
+            <h3>Academic Excellence</h3>
+            <p>Rigorous curriculum designed to the exacting standards of Harvard University's renowned AI programs</p>
+            <RouterLink to="/courses" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
           </div>
           
-          <div class="step-item">
-            <div class="step-number">02</div>
-            <div class="step-content">
-              <h3>Exploring Code</h3>
-              <p>We map learning concepts to working code, starting with Python fundamentals and progressing to creating simple to complex machine learning models.</p>
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" />
             </div>
-          </div>
-          
-          <div class="step-item">
-            <div class="step-number">03</div>
-            <div class="step-content">
-              <h3>Creating Projects</h3>
-              <p>Build a project from scratch, tackling a real-world problem with AI. Our mentors guide you through the entire process, from conception to completion.</p>
-            </div>
-          </div>
-          
-          <div class="step-item">
-            <div class="step-number">04</div>
-            <div class="step-content">
-              <h3>Ongoing Support</h3>
-              <p>With 24/7 community access and regular mentoring sessions, you'll never be stuck. Our team is always available to help you overcome challenges.</p>
-            </div>
+            <h3>Distinguished Mentorship</h3>
+            <p>Individual guidance from Harvard-affiliated instructors in an exclusive academic environment with limited enrollment</p>
+            <RouterLink to="/courses" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Courses Preview Section -->
-    <section id="courses-preview" class="section">
-      <div class="section-content">
-        <h2><span class="gradient-text">Our Courses</span></h2>
-        <p class="section-description">Comprehensive AI education for all skill levels</p>
+    <section id="courses-preview" class="section light-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="overline">Our Programs</span>
+          <h2>Academic <span class="gradient-text">Courses</span></h2>
+          <div class="section-divider"></div>
+        </div>
         
         <!-- Course Level Tabs -->
         <div class="course-level-tabs">
-          <button class="level-tab" :class="{ active: activeTab === 'high-school' }" @click="switchTab('high-school')">High School</button>
-          <button class="level-tab" :class="{ active: activeTab === 'graduate' }" @click="switchTab('graduate')">Graduate & Corporate</button>
+          <button class="level-tab" :class="{ active: activeTab === 'high-school' }" @click="switchTab('high-school')">
+            <span class="tab-text">High School</span>
+          </button>
+          <button class="level-tab" :class="{ active: activeTab === 'graduate' }" @click="switchTab('graduate')">
+            <span class="tab-text">Graduate & Corporate</span>
+          </button>
         </div>
         
         <!-- High School Level Courses -->
         <div class="courses-preview-grid" :class="{ active: activeTab === 'high-school' }">
-          <div v-for="course in highSchoolCourses" :key="course.id" class="course-preview-card">
-            <div class="course-preview-image">
+          <div v-for="(course, index) in highSchoolCourses" :key="course.id" class="course-preview-card" :style="{'--card-index': index}">
+            <div class="course-image">
               <img :src="getIconPath(course.iconLight || course.icon)" :alt="course.title" class="light-mode-icon" />
               <img :src="getIconPath(course.iconDark || course.icon)" :alt="course.title" class="dark-mode-icon" />
             </div>
-            <div class="course-preview-content">
+            <div class="course-content">
               <h3>{{ course.title }}</h3>
               <p>{{ truncateDescription(course.description, 100) }}</p>
               <RouterLink :to="`/courses/${activeTab === 'high-school' ? 'high-school' : 'graduate'}/data-science`" v-if="course.id === 'data-science'" class="course-link">Learn More</RouterLink>
@@ -178,12 +180,13 @@
         
         <!-- Graduate & Corporate Level Courses -->
         <div class="courses-preview-grid" :class="{ active: activeTab === 'graduate' }">
-          <div v-for="course in graduateCourses" :key="course.id" class="course-preview-card">
-            <div class="course-preview-image">
+          <div v-for="(course, index) in graduateCourses" :key="course.id" class="course-preview-card" :style="{'--card-index': index}">
+            <div class="course-image">
               <img :src="getIconPath(course.iconLight || course.icon)" :alt="course.title" class="light-mode-icon" />
               <img :src="getIconPath(course.iconDark || course.icon)" :alt="course.title" class="dark-mode-icon" />
+              <div class="advanced-badge">Advanced</div>
             </div>
-            <div class="course-preview-content">
+            <div class="course-content">
               <h3>{{ course.title }}</h3>
               <p>{{ truncateDescription(course.description, 100) }}</p>
               <RouterLink :to="`/courses/${activeTab === 'high-school' ? 'high-school' : 'graduate'}/data-science`" v-if="course.id === 'data-science'" class="course-link">Learn More</RouterLink>
@@ -192,7 +195,7 @@
           </div>
         </div>
         
-        <div class="courses-cta">
+        <div class="education-cta">
           <RouterLink :to="activeTab === 'high-school' ? '/courses' : '/courses#graduate'" class="cta-button primary">
             <span v-if="activeTab === 'high-school'">View All High School Courses</span>
             <span v-else>View All Graduate Courses</span>
@@ -203,77 +206,43 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials-section" class="section">
-      <div class="section-content">
-        <h2><span class="gradient-text">Student Testimonials</span></h2>
-        <p class="section-description">What our students are saying about their learning experience</p>
-        
-        <div class="testimonials-container">
-          <div class="testimonials-carousel">
-            <div v-for="(testimonial, index) in testimonials" 
-                 :key="index" 
-                 class="testimonial-card"
-                 :class="{ active: activeTestimonial === index, 
-                          prev: getPrevIndex(index), 
-                          next: getNextIndex(index) }">
-              <div class="testimonial-quote-icon">
-                <svg viewBox="0 0 24 24" width="32" height="32">
-                  <path fill="currentColor" d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"></path>
-                </svg>
-              </div>
-              <div class="testimonial-content">
-                <p>{{ testimonial.content }}</p>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-image">
-                  <img :src="testimonial.authorImg" :alt="testimonial.author" />
-                </div>
-                <div class="author-info">
-                  <h4>{{ testimonial.author }}</h4>
-                  <p>{{ testimonial.role }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-navigation">
-            <button class="nav-button prev-button" aria-label="Previous testimonial" @click="prevTestimonial">
-              <svg viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" stroke="currentColor" stroke-width="3" d="M15 18l-6-6 6-6"></path>
-              </svg>
-            </button>
-            
-            <div class="testimonial-indicators">
-              <button v-for="(_, index) in testimonials" 
-                      :key="index" 
-                      class="indicator" 
-                      :class="{ active: activeTestimonial === index }"
-                      @click="activeTestimonial = index"
-                      :aria-label="`Testimonial ${index + 1}`">
-              </button>
-            </div>
-            
-            <button class="nav-button next-button" aria-label="Next testimonial" @click="nextTestimonial">
-              <svg viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" stroke="currentColor" stroke-width="3" d="M9 18l6-6-6-6"></path>
-              </svg>
-            </button>
-          </div>
+      <div class="container narrow">
+        <div class="section-header center">
+          <span class="overline">Success Stories</span>
+          <h2>Alumni <span class="gradient-text">Testimonials</span></h2>
+          <div class="section-divider"></div>
         </div>
+        
+        <TestimonialSlider />
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="education-cta" class="section">
-      <div class="section-content">
-        <h2><span class="gradient-text">Start Your AI Journey</span></h2>
-        <p class="section-description">Join students from around the world in our cutting-edge AI education programs</p>
-        
-        <div class="cta-box">
-          <h3>Ready to learn AI from Harvard experts?</h3>
-          <p>Our next cohort starts soon. Register now to secure your spot.</p>
-          <div class="cta-container">
-            <RouterLink to="/contact" class="cta-button primary">Register Now</RouterLink>
-            <RouterLink to="/courses" class="cta-button secondary">Explore Courses</RouterLink>
+    <!-- Contact CTA Section -->
+    <section id="education-cta" class="section dark-section">
+      <!-- Background Video -->
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="cta-video-bg"
+      >
+        <source src="@/assets/2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Centered White CTA Card -->
+      <div class="container">
+        <div class="cta-content-overlay">
+          <div class="section-header center">
+            <span class="overline">Get Started</span>
+            <h2>Ready to <span class="gradient-text-dark">Transform</span> Your Future?</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p class="large-text">Join a select cohort of exceptional students in our Harvard-led educational programs and unlock your potential in artificial intelligence.</p>
+          <div class="cta-actions">
+            <RouterLink to="/contact" class="cta-button primary">Apply for Admission</RouterLink>
+            <RouterLink to="/courses" class="cta-button secondary">View All Courses</RouterLink>
           </div>
         </div>
       </div>
@@ -284,50 +253,47 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 import { courses } from '@/data/courses';
-import { initSectionAnimations, initCardAnimations, initHeroAnimation } from '@/utils/animations';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import TestimonialSlider from '@/components/TestimonialSlider.vue';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 // Course tabs state
 const activeTab = ref('high-school');
 
 // Function to handle tab switching
 function switchTab(tab) {
-  if (activeTab.value === tab) return; // Don't switch if already on this tab
-  
-  // Set active tab
+  if (activeTab.value === tab) return;
   activeTab.value = tab;
   
-  // Add a small delay to ensure Vue has updated the DOM
   setTimeout(() => {
-    // Get the newly activated cards
     const cards = document.querySelectorAll(`.courses-preview-grid.active .course-preview-card`);
+    const tl = gsap.timeline();
     
-    // Reset any existing animations and set initial state
-    gsap.set(cards, { opacity: 0, y: 30 });
+    tl.set(cards, { 
+      opacity: 0, 
+      y: 30
+    });
     
-    // Animate cards with staggered entry
-    gsap.to(cards, {
+    tl.to(cards, {
       opacity: 1,
       y: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: "power2.out",
-      clearProps: "all"
+      duration: 0.7,
+      stagger: 0.12,
+      ease: "power3.out"
     });
   }, 10);
 }
 
 // Get high school courses (first 3 for preview)
 const highSchoolCourses = computed(() => {
-  // In a real implementation, you'd filter based on a property
-  // For now, let's just take the first 3 courses
   return courses.slice(0, 3);
 });
 
 // Get graduate courses (the next 3 courses starting from index 2)
 const graduateCourses = computed(() => {
-  // In a real implementation, you'd filter based on a property
-  // For now, let's just take 3 courses starting from index 2
   return courses.slice(2, 5);
 });
 
@@ -356,7 +322,6 @@ function truncateDescription(text, maxLength = 100) {
 function getIconPath(icon) {
   if (!icon) return '';
   
-  // Map icons to imported assets
   const iconMap = {
     'data-science-icon-light.svg': dataIconLight,
     'data-science-icon-dark.svg': dataIconDark,
@@ -372,451 +337,790 @@ function getIconPath(icon) {
     'llmops-icon-dark.svg': llmopsIconDark
   };
   
-  // Check if icon is in our map
   if (iconMap[icon]) {
     return iconMap[icon];
   }
   
-  // If it's a full path, use it directly
   if (icon.startsWith('/')) return icon;
-  
-  // Fallback - assume it's a direct URL
   return icon;
 }
 
-// Testimonials data
-const testimonials = [
-  {
-    author: 'Maya Rodriguez',
-    role: 'Data Science Student • Class of 2023',
-    content: 'The Data Science course was transformative for my career. The instructors broke down complex concepts into digestible modules, and I was able to build my first ML model within weeks!',
-    authorImg: '@/assets/images/people/AnshikaGupta.png',
-  },
-  {
-    author: 'James Chen',
-    role: 'Computer Vision Student • Class of 2023',
-    content: 'I joined with zero coding experience, feeling intimidated. Six months later, I\'ve built my own computer vision application that can identify bird species! The mentorship was exceptional.',
-    authorImg: '@/assets/images/people/LakshayChawla.png',
-  },
-  {
-    author: 'Sarah Johnson',
-    role: 'Machine Learning Student • Class of 2022',
-    content: 'The live classes and 24/7 community support made all the difference. I could ask questions anytime and get immediate help. My Machine Learning project got me three job interviews!',
-    authorImg: '@/assets/images/people/ShibaniBudhraja.png',
-  },
-  {
-    author: 'David Patel',
-    role: 'AI Foundations Student • Class of 2023',
-    content: 'As a high school student, I never thought I\'d be able to understand neural networks and build AI applications. The curriculum was challenging but incredibly rewarding. Now I\'m helping my school implement AI tools!',
-    authorImg: '@/assets/images/people/IgnacioBecker.png',
-  }
-];
-
-// Testimonials carousel state
-const activeTestimonial = ref(0);
-const totalTestimonials = testimonials.length;
-
-// Testimonial navigation methods
-function nextTestimonial() {
-  activeTestimonial.value = (activeTestimonial.value + 1) % totalTestimonials;
-}
-
-function prevTestimonial() {
-  activeTestimonial.value = (activeTestimonial.value - 1 + totalTestimonials) % totalTestimonials;
-}
-
-// Helper methods for testimonial carousel
-function getPrevIndex(index) {
-  return (activeTestimonial.value === (index + 1) % totalTestimonials) || 
-         (activeTestimonial.value === 0 && index === totalTestimonials - 1);
-}
-
-function getNextIndex(index) {
-  return (activeTestimonial.value === (index - 1 + totalTestimonials) % totalTestimonials);
-}
-
-// Auto-rotate testimonials
-let testimonialInterval;
-
-function startAutoRotate() {
-  testimonialInterval = setInterval(() => {
-    nextTestimonial();
-  }, 5000);
-}
-
-function stopAutoRotate() {
-  clearInterval(testimonialInterval);
-}
-
 onMounted(() => {
-  // Initialize animations
-  initHeroAnimation('#education-hero');
-  initSectionAnimations();
-  initCardAnimations('.benefit-card, .course-preview-card, .step-item');
+  // Initialize animations matching the Home page style
+  const heroTimeline = gsap.timeline();
   
-  // Start auto-rotating testimonials
-  startAutoRotate();
+  // Animate hero text elements
+  heroTimeline
+    .fromTo('.hero-text-container h1', 
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    )
+    .fromTo('.hero-text-container p',
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+      '-=0.6'
+    )
+    .fromTo('.cta-container',
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+      '-=0.6'
+    );
   
-  // Stop rotation when user interacts with carousel
-  const carousel = document.querySelector('.testimonials-carousel');
-  if (carousel) {
-    carousel.addEventListener('mouseenter', stopAutoRotate);
-    carousel.addEventListener('mouseleave', startAutoRotate);
-  }
+  // Animate hero visual
+  heroTimeline.fromTo('.education-visual-wrapper',
+    { scale: 0.9, opacity: 0 },
+    { scale: 1, opacity: 1, duration: 1.2, ease: 'power2.out' },
+    '-=1.8'
+  );
+  
+  // Animate scroll indicator
+  heroTimeline.fromTo('.scroll-indicator',
+    { opacity: 0, y: -10 },
+    { opacity: 1, y: 0, duration: 0.8, delay: 0.5, ease: 'power2.out' }
+  );
+  
+  // Animate section headers on scroll
+  gsap.utils.toArray('.section-header').forEach(header => {
+    gsap.fromTo(header, 
+      { y: 30, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: header,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+  
+  // Animate split layouts
+  gsap.utils.toArray('.split-layout').forEach(split => {
+    const content = split.querySelector('.split-content');
+    const visual = split.querySelector('.split-visual');
+    
+    const splitTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: split,
+        start: 'top 75%',
+        toggleActions: 'play none none none'
+      }
+    });
+    
+    splitTl
+      .fromTo(content, 
+        { x: split.classList.contains('reverse') ? 30 : -30, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }
+      )
+      .fromTo(visual,
+        { x: split.classList.contains('reverse') ? -30 : 30, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
+        '-=0.6'
+      );
+  });
+  
+  // Animate service cards with stagger
+  gsap.utils.toArray('.service-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: i * 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+  
+  // Animate feature items
+  gsap.utils.toArray('.feature-item').forEach((item, i) => {
+    gsap.fromTo(item,
+      { x: -20, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: i * 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
 });
 </script>
 
 <style scoped>
-/* Education Hero Section */
-.education-hero {
-  height: 100vh;
-  background-color: var(--color-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Container System */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.container.narrow {
+  max-width: 900px;
+}
+
+/* Section Base */
+.section {
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
-  z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .education-hero {
-    height: 80vh;
-  }
+.light-section {
+  background-color: #F9FAFB;
 }
 
-@media (max-width: 480px) {
-  .education-hero {
-    height: 60vh;
-  }
+.dark-section {
+  background-color: #0F0F0F;
+  color: #fff;
 }
 
-.education-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.15), transparent 80%);
-  opacity: 1;
-  z-index: -1;
+/* Typography System */
+.overline {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #5842FF;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
-.education-hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 30% 70%, rgba(200, 180, 255, 0.1), transparent 70%);
-  opacity: 0.8;
-  z-index: -1;
+.dark-section .overline {
+  color: #8B7BFF;
 }
 
-.education-hero .hero-content {
-  text-align: center;
-  max-width: 800px;
-  padding: 0 2rem;
-  z-index: 5;
-  position: relative;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.education-hero .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .education-hero .hero-content h1 {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .education-hero .hero-content h1 {
-    font-size: 2.5rem;
-  }
-}
-
-.education-hero .hero-content p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
+h2 {
+  font-size: 48px;
   font-weight: 400;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
 }
 
-/* About Education Section */
-.education-about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-top: 3rem;
+.dark-section h2 {
+  color: #FFFFFF;
 }
 
-@media (max-width: 992px) {
-  .education-about {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .about-image {
-    order: -1;
-  }
+.section-header {
+  margin-bottom: 64px;
 }
 
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 12px 24px -12px rgba(16, 24, 40, 0.18);
-}
-
-.about-text p {
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-.about-cta {
-  margin-top: 2rem;
-}
-
-/* Benefits Section */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-@media (max-width: 992px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.benefits-grid-centered {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-  .benefits-grid-centered {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-  }
-}
-
-.benefit-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
+.section-header.center {
   text-align: center;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.4s ease;
+}
+
+.section-header.left {
+  text-align: left;
+}
+
+/* Section Divider */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #5842FF, #6585FE);
+  margin: 24px auto 0;
+  border-radius: 2px;
+}
+
+.section-header.left .section-divider {
+  margin-left: 0;
+}
+
+.large-text {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 48px;
+  font-weight: 300;
+  color: #4A4A4A;
+  max-width: 680px;
+}
+
+.dark-section .large-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-dark {
+  background: linear-gradient(90deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  min-height: 260px;
+  position: relative;
+  background: #FFFFFF;
 }
 
-.benefit-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(138, 133, 255, 0.1);
-  border-color: var(--color-primary);
-  z-index: 2;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.benefit-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 1.8rem;
-  color: var(--color-primary);
-  background: rgba(138, 133, 255, 0.1);
-  border-radius: 50%;
+.hero-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(88, 66, 255, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(101, 133, 254, 0.02) 0%, transparent 50%);
+}
+
+.hero-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(88, 66, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 66, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.hero-content {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Education Visual Container */
+.education-visual-wrapper {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  background: transparent;
+  margin-left: -30px;
+  margin-bottom: -300px;
+}
+
+.education-hero-video {
+  width: 160%;
+  height: 160%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  
+  /* ULTRA aggressive blending - starts fading from 15% */
+  mask: radial-gradient(circle at center, 
+    black 0%, 
+    black 15%, 
+    rgba(0,0,0,0.9) 25%, 
+    rgba(0,0,0,0.7) 35%, 
+    rgba(0,0,0,0.5) 45%, 
+    rgba(0,0,0,0.3) 55%,
+    rgba(0,0,0,0.15) 65%,
+    rgba(0,0,0,0.05) 75%,
+    transparent 85%);
+  -webkit-mask: radial-gradient(circle at center, 
+    black 0%, 
+    black 15%, 
+    rgba(0,0,0,0.9) 25%, 
+    rgba(0,0,0,0.7) 35%, 
+    rgba(0,0,0,0.5) 45%, 
+    rgba(0,0,0,0.3) 55%,
+    rgba(0,0,0,0.15) 65%,
+    rgba(0,0,0,0.05) 75%,
+    transparent 85%);
+    
+  /* Much stronger blur and scale for ultra-soft edges */
+  transform: scale(1.3);
+  filter: blur(3px);
+}
+
+/* Background blend overlay that matches the hero background */
+.education-visual-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(88, 66, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(101, 133, 254, 0.02) 0%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+  
+  /* Inverse mask - only show at the edges where video fades */
+  mask: radial-gradient(circle at center, 
+    transparent 0%, 
+    transparent 40%, 
+    rgba(0,0,0,0.3) 55%, 
+    rgba(0,0,0,0.7) 70%, 
+    rgba(0,0,0,0.9) 80%,
+    black 90%);
+  -webkit-mask: radial-gradient(circle at center, 
+    transparent 0%, 
+    transparent 40%, 
+    rgba(0,0,0,0.3) 55%, 
+    rgba(0,0,0,0.7) 70%, 
+    rgba(0,0,0,0.9) 80%,
+    black 90%);
+}
+
+/* Grid pattern overlay for seamless blending */
+.education-visual-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background-image: 
+    linear-gradient(rgba(88, 66, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88, 66, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 3;
+  pointer-events: none;
+  
+  /* Same inverse mask as background */
+  mask: radial-gradient(circle at center, 
+    transparent 0%, 
+    transparent 40%, 
+    rgba(0,0,0,0.3) 55%, 
+    rgba(0,0,0,0.7) 70%, 
+    rgba(0,0,0,0.9) 80%,
+    black 90%);
+  -webkit-mask: radial-gradient(circle at center, 
+    transparent 0%, 
+    transparent 40%, 
+    rgba(0,0,0,0.3) 55%, 
+    rgba(0,0,0,0.7) 70%, 
+    rgba(0,0,0,0.9) 80%,
+    black 90%);
+}
+
+/* Hero Text Container */
+.hero-text-container {
+  flex: 1;
+  max-width: 600px;
+  min-width: 450px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(88, 66, 255, 0.08);
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #5842FF;
+  margin-bottom: 32px;
+}
+
+.hero-heading {
+  font-size: 56px;
+  font-weight: 300;
+  margin: 0 0 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
+}
+
+.hero-heading .gradient-text {
+  font-weight: 500;
+}
+
+.hero-paragraph {
+  font-size: 19px;
+  margin: 0 0 40px;
+  line-height: 1.7;
+  color: #4A4A4A;
+  font-weight: 300;
+}
+
+/* CTA Buttons */
+.cta-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.benefit-card:hover .benefit-icon {
-  transform: scale(1.1);
-  background: rgba(138, 133, 255, 0.2);
-}
-
-.benefit-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
   position: relative;
-  padding-bottom: 1rem;
 }
 
-.benefit-card h3::after {
-  content: '';
+.cta-button.primary {
+  background: #0A0A0A;
+  color: white;
+  border: 1px solid #0A0A0A;
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: #1A1A1A;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: #0A0A0A;
+  border: 1px solid #D8D8D8;
+}
+
+.cta-button.secondary:hover {
+  border-color: #0A0A0A;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.cta-button.large {
+  padding: 18px 40px;
+  font-size: 16px;
+}
+
+.cta-button.dark {
+  background: #0A0A0A;
+  color: white;
+  border: 1px solid #0A0A0A;
+}
+
+.cta-button.dark:hover {
+  background: #1A1A1A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Text Links */
+.text-link {
+  color: #5842FF;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.text-link:hover {
+  gap: 10px;
+}
+
+.text-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+.text-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
   position: absolute;
-  bottom: 0;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background: var(--color-primary);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.scroll-indicator:hover {
   opacity: 0.7;
-  transition: width 0.3s ease;
 }
 
-.benefit-card:hover h3::after {
-  width: 60px;
-}
-
-/* How It Works Section */
-.steps-container {
-  margin-top: 3rem;
-}
-
-.step-item {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.step-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: 25px;
-  top: 60px;
-  height: calc(100% - 30px);
-  width: 2px;
-  background: var(--color-primary);
-  opacity: 0.5;
-}
-
-.step-number {
-  width: 50px;
+.scroll-dots {
+  width: 1px;
   height: 50px;
-  min-width: 50px;
-  background: var(--color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: white;
-}
-
-.step-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--color-primary);
-}
-
-/* Courses Preview Section */
-.course-level-tabs {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0 0;
+  background: #D8D8D8;
+  margin: 0 auto 12px;
   position: relative;
-  z-index: 1;
+  overflow: hidden;
 }
 
-.course-level-tabs::after {
+.scroll-dots::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 15px;
+  background: #0A0A0A;
+  animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-15px); }
+  50% { transform: translateY(50px); }
+  100% { transform: translateY(50px); }
+}
+
+.scroll-indicator p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8A8A8A;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 64px;
+}
+
+.service-card {
+  padding: 48px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #E8E8E8;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--color-border);
-  z-index: -1;
+  background: linear-gradient(90deg, #5842FF, #6585FE);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 24px;
+  background: rgba(88, 66, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5842FF;
+}
+
+.service-icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+  color: #0A0A0A;
+}
+
+.service-card p {
+  color: #4A4A4A;
+  margin: 0 0 24px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Split Layout Sections */
+.split-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.split-layout.reverse {
+  flex-direction: row-reverse;
+}
+
+.split-content {
+  flex: 1;
+  max-width: 520px;
+}
+
+.split-visual {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+}
+
+/* Education Image Container */
+.education-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.education-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Feature List */
+.feature-list {
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px;
+  background: rgba(88, 66, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(88, 66, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(88, 66, 255, 0.04);
+  border-color: rgba(88, 66, 255, 0.1);
+  transform: translateX(6px);
+}
+
+.feature-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5842FF;
+  background: rgba(88, 66, 255, 0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-text h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  color: #0A0A0A;
+}
+
+.feature-text p {
+  margin: 0;
+  line-height: 1.6;
+  color: #4A4A4A;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+/* Course Tabs */
+.course-level-tabs {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 4rem;
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: 1px solid #E8E8E8;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .level-tab {
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.5rem;
   background: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
-  color: var(--color-text-secondary);
+  color: #4A4A4A;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1.1rem;
   position: relative;
-  margin: 0 1rem;
-}
-
-.level-tab::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--color-primary);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease;
-}
-
-.level-tab:hover::after {
-  transform: scaleX(0.8);
+  margin: 0;
+  border-radius: 30px;
+  z-index: 2;
 }
 
 .level-tab.active {
-  color: var(--color-primary);
+  color: white;
+  background: #5842FF;
 }
 
-.level-tab.active::after {
-  transform: scaleX(1);
+.level-tab:hover {
+  color: #5842FF;
 }
 
+/* Course Cards Grid */
 .courses-preview-grid {
   display: grid;
   visibility: hidden;
   position: absolute;
   opacity: 0;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   pointer-events: none;
-}
-
-@media (max-width: 1200px) {
-  .courses-preview-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-  }
-}
-
-@media (max-width: 768px) {
-  .courses-preview-grid {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-  }
 }
 
 .courses-preview-grid.active {
@@ -827,53 +1131,70 @@ onMounted(() => {
 }
 
 .course-preview-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #E8E8E8;
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
               box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
               border-color 0.4s ease;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   min-height: 340px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(calc(var(--card-index) * 20px));
+  opacity: 0;
+  animation: cardEntrance 0.8s forwards;
+  animation-delay: calc(var(--card-index) * 0.1s);
 }
 
 .course-preview-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(138, 133, 255, 0.1);
-  border-color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(88, 66, 255, 0.1);
+  border-color: #5842FF;
 }
 
-.course-preview-image {
-  height: 200px;
-  overflow: hidden;
+@keyframes cardEntrance {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.course-image {
+  width: 100%;
+  height: 210px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   position: relative;
-  background: none;
+  overflow: hidden;
 }
 
-.course-preview-image::after {
+.course-image::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(138, 133, 255, 0.1), transparent 70%);
+  background: radial-gradient(circle at center, rgba(88, 66, 255, 0.1), transparent 70%);
   z-index: 1;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
-.course-preview-card:hover .course-preview-image::after {
+.course-preview-card:hover .course-image::after {
   opacity: 1;
 }
 
-.course-preview-image img {
+.course-image img {
   width: auto;
   height: auto;
   max-width: 120px;
@@ -885,21 +1206,53 @@ onMounted(() => {
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
 }
 
-.course-preview-card:hover .course-preview-image img {
+.course-preview-card:hover .course-image img {
   transform: scale(1.08) translateY(-5px);
 }
 
-.course-preview-content {
+.advanced-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #5842FF;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.course-badge {
+  display: inline-block;
+  background: rgba(38, 128, 255, 0.1);
+  color: #2680FF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(38, 128, 255, 0.2);
+}
+
+.course-badge.advanced {
+  background: rgba(246, 144, 127, 0.1);
+  color: #F6907F;
+  border-color: rgba(246, 144, 127, 0.2);
+}
+
+.course-content {
   padding: 2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.course-preview-content h3 {
+.course-content h3 {
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
-  color: var(--color-primary);
+  color: #5842FF;
   font-weight: 600;
   position: relative;
   display: inline-flex;
@@ -907,36 +1260,36 @@ onMounted(() => {
   flex-wrap: nowrap;
 }
 
-.course-preview-content h3::after {
+.course-content h3::after {
   content: '';
   position: absolute;
   bottom: -8px;
   left: 0;
   width: 40px;
   height: 3px;
-  background: var(--color-primary);
+  background: #5842FF;
   transition: width 0.3s ease;
 }
 
-.course-preview-card:hover .course-preview-content h3::after {
+.course-preview-card:hover .course-content h3::after {
   width: 60px;
 }
 
-.course-preview-content p {
+.course-content p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
-  flex-grow: 1;
   min-height: 48px;
   overflow: hidden;
+  color: #4A4A4A;
+  font-weight: 300;
 }
 
-/* Styling for the "Learn More" course link */
 .course-link {
   display: inline-block;
   padding: 0.7rem 1.4rem;
   background: transparent;
-  border: 1.5px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 1.5px solid #5842FF;
+  color: #5842FF;
   border-radius: 6px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -944,6 +1297,8 @@ onMounted(() => {
   letter-spacing: 0.3px;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  margin-top: auto;
 }
 
 .course-link::before {
@@ -953,7 +1308,7 @@ onMounted(() => {
   left: 0;
   width: 0;
   height: 100%;
-  background: var(--color-primary);
+  background: #5842FF;
   transition: width 0.3s ease;
   z-index: -1;
 }
@@ -961,545 +1316,308 @@ onMounted(() => {
 .course-link:hover {
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(138, 133, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(88, 66, 255, 0.2);
 }
 
 .course-link:hover::before {
   width: 100%;
 }
 
-.courses-cta {
+/* Education page course cards inspired by courses page */
+
+/* Education CTA */
+.education-cta {
   text-align: center;
   margin-top: 3rem;
-  position: relative;
-  padding: 0.5rem 0;
 }
 
-.courses-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: var(--color-primary);
-  opacity: 0.7;
-}
-
-.courses-cta .cta-button {
-  font-size: 1.1rem;
-  padding: 0.9rem 2rem;
+/* Contact CTA Section */
+#education-cta {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0;
 }
 
-.courses-cta .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(138, 133, 255, 0.25);
-}
-
-/* Testimonials Section */
-#testimonials-section {
-  position: relative;
-  overflow: hidden;
-}
-
-#testimonials-section::before {
-  content: '';
+/* Background Video - Fixed positioning */
+.cta-video-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(138, 133, 255, 0.12), transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(138, 133, 255, 0.12), transparent 50%);
-  opacity: 0.8;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Simple overlay for readability */
+#education-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-.testimonials-container {
-  max-width: 1200px;
-  margin: 3rem auto 0;
-  position: relative;
-  z-index: 5;
-  overflow: hidden;
-  padding: 1rem 0 2rem;
-}
-
-.testimonials-carousel {
-  position: relative;
-  height: 400px;
-  perspective: 1500px;
-  margin: 0 auto;
-  transform-style: preserve-3d;
-  overflow: visible;
-}
-
-.testimonial-card {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  left: 25%;
-  top: 0;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  padding: 2.5rem;
-  opacity: 0;
-  transform: translateX(0) rotateY(0) scale(0.85);
-  transform-origin: center;
-  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-  visibility: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(138, 133, 255, 0.15);
-  overflow: hidden;
-  pointer-events: none;
-}
-
-@media (max-width: 992px) {
-  .testimonial-card {
-    width: 70%;
-    left: 15%;
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .testimonial-card {
-    width: 85%;
-    left: 7.5%;
-    padding: 1.5rem;
-  }
-}
-
-.testimonial-card.active {
-  opacity: 1;
-  transform: translateX(0) rotateY(0) scale(1);
-  z-index: 10;
-  visibility: visible;
-  filter: none;
-  pointer-events: auto;
-}
-
-.testimonial-card.prev {
-  opacity: 0.6;
-  transform: translateX(-60%) rotateY(10deg) scale(0.85);
-  z-index: 5;
-  visibility: visible;
-  filter: blur(2px);
-  left: 10%;
-  pointer-events: none;
-}
-
-.testimonial-card.next {
-  opacity: 0.6;
-  transform: translateX(60%) rotateY(-10deg) scale(0.85);
-  z-index: 5;
-  visibility: visible;
-  filter: blur(2px);
-  left: 40%;
-  pointer-events: none;
-}
-
-.testimonial-quote-icon {
-  color: var(--color-primary);
-  opacity: 0.4;
-  margin-bottom: 1rem;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.testimonial-card.active .testimonial-quote-icon {
-  opacity: 0.7;
-  animation: floatIcon 3s ease-in-out infinite;
-}
-
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.testimonial-content {
-  margin-bottom: 2rem;
-  overflow: hidden;
-  max-height: 60%;
-  transition: opacity 0.3s ease;
-}
-
-.testimonial-card:not(.active) .testimonial-content {
-  opacity: 0.4;
-  max-height: 50%;
-}
-
-.testimonial-content p {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  font-weight: 400;
+/* White CTA Card */
+.cta-content-overlay {
   position: relative;
   z-index: 2;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
-}
-
-.testimonial-card.active .testimonial-author {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.author-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--color-primary);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.author-image img {
+  background: white;
+  padding: 60px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 700px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.testimonial-card:hover .author-image img {
-  transform: scale(1.1);
-}
-
-.author-info h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-}
-
-.author-info p {
-  font-size: 0.9rem;
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
-.testimonial-navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.nav-button {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(138, 133, 255, 0.5);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 50;
-}
-
-.nav-button:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(138, 133, 255, 0.4);
-}
-
-.testimonial-indicators {
-  display: flex;
-  gap: 1rem;
-  margin: 0 10px;
-}
-
-.indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(138, 133, 255, 0.3);
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 50;
-}
-
-.indicator:hover {
-  background: rgba(138, 133, 255, 0.5);
-  transform: scale(1.2);
-}
-
-.indicator.active {
-  background: var(--color-primary);
-  transform: scale(1.5);
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 10px rgba(138, 133, 255, 0.5);
-}
-
-/* CTA Section */
-.cta-box {
-  max-width: 800px;
-  margin: 3rem auto 0;
-  background: rgba(138, 133, 255, 0.05);
-  border: 1px solid var(--color-primary);
-  border-radius: 10px;
-  padding: 3rem 2rem;
   text-align: center;
+  margin: 0 auto;
 }
 
-.cta-box h3 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
+.cta-content-overlay .section-header {
+  margin-bottom: 32px;
 }
 
-.cta-box p {
-  margin-bottom: 2rem;
+.cta-content-overlay .large-text {
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 100%;
+  color: #4A4A4A;
 }
 
-.cta-container {
+.cta-content-overlay h2 {
+  color: #0A0A0A;
+}
+
+.cta-actions {
   display: flex;
-  gap: 1rem;
+  gap: 16px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Responsive styles */
-@media (max-width: 992px) {
-  .education-about {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .about-image {
-    order: -1;
-  }
-  
-  .benefits-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-  
-  .benefits-grid-centered {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
     max-width: 100%;
   }
   
-  .cta-container {
-    flex-direction: column;
-    align-items: center;
+  .education-visual-wrapper {
+    width: 320px;
+    height: 320px;
+    margin-bottom: 0;
   }
   
-  .step-item {
-    gap: 1.5rem;
-  }
-  
-  .testimonial-card {
-    width: 75%;
-    left: 12.5%;
+  .split-visual {
+    width: 480px;
   }
 }
 
-@media (max-width: 768px) {
-  .education-hero {
-    height: 50vh;
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 56px;
   }
   
-  .education-hero .hero-content h1 {
-    font-size: 3rem;
-  }
-  
-  .benefit-card,
-  .step-item {
-    padding: 1.5rem;
-  }
-  
-  .step-item:not(:last-child)::after {
-    left: 20px;
-  }
-  
-  .step-number {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    font-size: 1rem;
-  }
-  
-  .course-level-tabs {
-    flex-direction: row;
+  .education-visual-wrapper {
     width: 100%;
-    gap: 0;
+    max-width: 400px;
+    height: 400px;
+  }
+  
+  .hero-text-container {
+    max-width: 600px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .hero-badge {
     margin-left: auto;
     margin-right: auto;
   }
   
-  .level-tab {
-    flex: 1;
+  .cta-container {
+    justify-content: center;
+  }
+  
+  .split-layout,
+  .split-layout.reverse {
+    flex-direction: column;
+    gap: 56px;
+  }
+  
+  .split-visual {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .split-content {
+    max-width: 600px;
     text-align: center;
-    margin: 0;
-    padding: 0.8rem 0.5rem;
-    font-size: 0.95rem;
+    margin: 0 auto;
   }
   
-  .testimonial-card {
-    padding: 1.5rem;
-    width: 85%;
-    left: 7.5%;
+  .section-header.left {
+    text-align: center;
   }
   
-  .testimonial-content p {
-    font-size: 1.1rem;
+  .section-header.left .section-divider {
+    margin: 24px auto 0;
+  }
+  
+  .feature-list {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .courses-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+  
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  
+  .hero-heading {
+    font-size: 42px;
+  }
+  
+  .hero-paragraph {
+    font-size: 17px;
+  }
+  
+  h2 {
+    font-size: 36px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .courses-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .cta-content-overlay {
+    padding: 50px 40px;
+  }
+  
+  .cta-content-overlay h2 {
+    font-size: 36px;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
 @media (max-width: 576px) {
-  .step-item {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .hero-heading {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .hero-paragraph {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .hero-badge {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .cta-container {
     flex-direction: column;
-    gap: 1rem;
-    padding-left: 1rem;
+    width: 100%;
   }
   
-  .step-item:not(:last-child)::after {
-    left: 25px;
-    top: 40px;
-    height: calc(100% - 20px);
+  .cta-button {
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 14px;
   }
   
-  .testimonials-carousel {
-    height: 500px;
+  h2 {
+    font-size: 28px;
   }
   
-  .testimonial-card {
+  .large-text {
+    font-size: 17px;
+  }
+  
+  .service-card {
+    padding: 32px;
+  }
+  
+  .feature-item {
+    padding: 16px;
+  }
+  
+  .cta-content-overlay {
+    padding: 40px 24px;
+  }
+  
+  .cta-content-overlay h2 {
+    font-size: 28px;
+  }
+  
+  .cta-content-overlay p {
+    font-size: 16px;
+  }
+  
+  .education-visual-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .course-preview-card {
+    min-height: 320px;
+  }
+  
+  .course-content {
     padding: 1.5rem;
-    width: 90%;
-    left: 5%;
   }
   
-  .testimonial-author {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .course-image {
+    height: 180px;
+    padding: 1.5rem;
   }
-  
-  .author-image {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .nav-button {
-    width: 40px;
-    height: 40px;
-  }
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Dark/Light mode specific styles */
-:root .dark-theme .education-hero {
-  background-color: var(--color-bg);
-}
-
-:root .dark-theme .benefit-card {
-  background: rgba(30, 30, 40, 0.3);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(60, 60, 80, 0.5);
-}
-
-:root .dark-theme .course-preview-card {
-  background: rgba(30, 30, 40, 0.3);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-:root .dark-theme .course-preview-image {
-  background: rgba(20, 20, 30, 0.5);
-}
-
-:root .dark-theme .course-preview-content {
-  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.2), rgba(5, 5, 5, 0.1));
-}
-
-:root .dark-theme .cta-box {
-  background: rgba(40, 40, 60, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-:root .light-theme .education-hero {
-  background-color: var(--color-bg);
-}
-
-:root .light-theme .benefit-card {
-  background: white;
-  box-shadow: 0 10px 30px rgba(100, 100, 230, 0.08);
-  border: 1px solid rgba(200, 200, 240, 0.5);
-}
-
-:root .light-theme .benefit-card h3 {
-  color: var(--color-primary-dark, #4a3aff);
-}
-
-:root .light-theme .benefit-card p {
-  color: #2c3e50;
-}
-
-:root .light-theme .step-number {
-  background: var(--color-primary-dark, #4a3aff);
-  box-shadow: 0 5px 15px rgba(74, 58, 255, 0.3);
-}
-
-:root .light-theme .step-content h3 {
-  color: var(--color-primary-dark, #4a3aff);
-}
-
-:root .light-theme .step-content p {
-  color: #2c3e50;
-}
-
-:root .light-theme .course-preview-card {
-  background: white;
-  box-shadow: 0 8px 30px rgba(100, 100, 230, 0.08);
-  border: 1px solid rgba(200, 200, 240, 0.5);
-}
-
-:root .light-theme .course-preview-image {
-  background: rgba(235, 235, 255, 0.5);
-  border-bottom: 1px solid rgba(200, 200, 240, 0.3);
-}
-
-:root .light-theme .course-preview-content h3 {
-  color: var(--color-primary-dark, #4a3aff);
-}
-
-:root .light-theme .course-preview-content p {
-  color: #2c3e50;
-}
-
-:root .light-theme .cta-box {
-  background: linear-gradient(135deg, rgba(245, 245, 255, 1) 0%, rgba(235, 235, 255, 1) 100%);
-  border: 1px solid rgba(138, 133, 255, 0.5);
-  box-shadow: 0 15px 40px rgba(100, 100, 230, 0.1);
-}
-
-:root .light-theme .testimonial-card {
-  background: white;
-  box-shadow: 0 15px 35px rgba(100, 100, 230, 0.08);
-  border: 1px solid rgba(200, 200, 240, 0.5);
-}
-
-:root .light-theme .testimonial-content p {
-  color: #2c3e50;
 }
 
 /* Icon visibility based on theme */

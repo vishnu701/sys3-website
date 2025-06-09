@@ -27,15 +27,19 @@
       <!-- Course Overview Section -->
       <section class="course-section course-overview" id="overview">
         <div class="course-section-content">
-          <h2>Course <span class="gradient-text">Overview</span></h2>
+          <div class="section-header center">
+            <span class="overline">Course Overview</span>
+            <h2>Course <span class="gradient-text">Overview</span></h2>
+            <div class="section-divider"></div>
+          </div>
           
           <div class="overview-grid">
             <div class="overview-text">
-              <p><strong>{{ overviewTitle }}</strong> {{ overviewParagraph1 }}</p>
+              <p class="large-text"><strong>{{ overviewTitle }}</strong> {{ overviewParagraph1 }}</p>
               
-              <p>{{ overviewParagraph2 }}</p>
+              <p class="large-text">{{ overviewParagraph2 }}</p>
               
-              <p>{{ overviewParagraph3 }}</p>
+              <p class="large-text">{{ overviewParagraph3 }}</p>
             </div>
             
             <div class="overview-stats">
@@ -63,8 +67,12 @@
       <!-- How It Works Section -->
       <section class="course-section" id="how-it-works">
         <div class="course-section-content">
-          <h2>How It <span class="gradient-text">Works</span></h2>
-          <p>Our teaching methodology integrates preparation, active learning, and assessment to maximize your learning experience.</p>
+          <div class="section-header center">
+            <span class="overline">Teaching Methodology</span>
+            <h2>How It <span class="gradient-text">Works</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">Our teaching methodology integrates preparation, active learning, and assessment to maximize your learning experience.</p>
+          </div>
           
           <div class="learning-flow-container session-format-container">
             <img src="/src/assets/images/session-format.png" alt="Session Format Diagram" class="session-format-image">
@@ -92,8 +100,12 @@
       <!-- Curriculum Section -->
       <section class="course-section" id="curriculum">
         <div class="course-section-content">
-          <h2>Course <span class="gradient-text">Curriculum</span></h2>
-          <p>{{ curriculumIntro }}</p>
+          <div class="section-header center">
+            <span class="overline">Course Curriculum</span>
+            <h2>Course <span class="gradient-text">Curriculum</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">{{ curriculumIntro }}</p>
+          </div>
           
           <!-- Track Selector (for courses with multiple tracks) -->
           <div v-if="hasTracks" class="track-selector">
@@ -164,8 +176,12 @@
       <!-- Instructors Section -->
       <section class="course-section" id="instructors">
         <div class="course-section-content">
-          <h2>Meet Your <span class="gradient-text">{{ instructors.length > 1 ? 'Instructors' : 'Instructor' }}</span></h2>
-          <p>Learn from experts with extensive research and industry experience in {{ courseTitle.toLowerCase() }}.</p>
+          <div class="section-header center">
+            <span class="overline">{{ instructors.length > 1 ? 'Instructors' : 'Instructor' }}</span>
+            <h2>Meet Your <span class="gradient-text">{{ instructors.length > 1 ? 'Instructors' : 'Instructor' }}</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">Learn from experts with extensive research and industry experience in {{ courseTitle.toLowerCase() }}.</p>
+          </div>
           
           <div class="instructors-grid" :class="{ 'single-instructor': instructors.length === 1 }">
             <div v-for="(instructor, index) in instructors" :key="index" class="instructor-card">
@@ -199,8 +215,12 @@
       <!-- Course Details Section -->
       <section class="course-section" id="details">
         <div class="course-section-content">
-          <h2>Course <span class="gradient-text">Details</span></h2>
-          <p class="section-intro">{{ detailsIntro }}</p>
+          <div class="section-header center">
+            <span class="overline">Course Details</span>
+            <h2>Course <span class="gradient-text">Details</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-description">{{ detailsIntro }}</p>
+          </div>
           
           <div class="details-grid">
             <div class="details-item">
@@ -276,8 +296,12 @@
       <section class="course-section course-cta" id="cta">
         <div class="course-section-content">
           <div class="cta-box">
-            <h2>Ready to <span class="gradient-text">Master</span> {{ courseTitle }}?</h2>
-            <p>{{ ctaText }}</p>
+            <div class="section-header center">
+              <span class="overline">Get Started</span>
+              <h2>Ready to <span class="gradient-text">Master</span> {{ courseTitle }}?</h2>
+              <div class="section-divider"></div>
+              <p class="section-description">{{ ctaText }}</p>
+            </div>
             <div class="cta-container">
               <router-link to="/forms/course-registration" class="cta-button primary">Register Now</router-link>
               <router-link to="/courses" class="cta-button secondary">Explore Other Courses</router-link>
@@ -563,11 +587,173 @@ const initAnimations = () => {
 
 <style scoped>
 /* Course component styles */
+
+/* Typography Consistency Updates */
+.overline {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #5842FF;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #5842FF, #6585FE);
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+.section-description {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 20px 0 40px;
+  color: #4A4A4A;
+  font-weight: 300;
+}
+
+.large-text {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-weight: 300;
+  color: #4A4A4A;
+  max-width: 680px;
+}
+
+/* Section Headers Spacing */
+.course-section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.course-section {
+  padding: 120px 0;
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.section-header.center .section-divider {
+  margin: 24px auto 0;
+}
+
+.section-header.center .section-description {
+  margin: 20px auto 0;
+  text-align: center;
+}
+
+/* Component Items Typography */
+.component-item h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #0A0A0A;
+}
+
+.component-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A4A;
+  font-weight: 300;
+}
+
+/* Module Items Typography */
+.module-item h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+
+/* Details Items Typography */
+.details-item h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #0A0A0A;
+}
+
+.details-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A4A;
+  font-weight: 300;
+}
+
+/* Instructor Typography */
+.instructor-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0A0A0A;
+}
+
+.instructor-role {
+  font-size: 15px;
+  color: #5842FF;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.instructor-bio {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A4A;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
 .cta-container {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* CTA Box Typography */
+.cta-box {
+  text-align: center;
+  padding: 60px 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(88, 66, 255, 0.1);
+}
+
+.cta-box .overline {
+  margin-bottom: 16px;
+}
+
+.cta-box h2 {
+  margin-bottom: 0;
+}
+
+.cta-box .section-divider {
+  margin: 24px auto;
+}
+
+.cta-box .section-description {
+  margin: 0 auto 32px;
+  text-align: center;
 }
 
 .cta-button {
@@ -797,6 +983,25 @@ const initAnimations = () => {
   z-index: 2;
 }
 
+.course-hero-content h1 {
+  font-size: 56px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
+}
+
+.course-hero-content h1 .hero-highlight {
+  font-weight: 500;
+}
+
+.course-hero-content p {
+  font-size: 19px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
 /* Light theme module toggle */
 :deep([data-theme="light"]) .module-item.active .module-content {
   background: white;
@@ -811,6 +1016,10 @@ const initAnimations = () => {
   
   .overview-text {
     padding-right: 0;
+  }
+  
+  .course-nav {
+    font-size: 15px;
   }
   
   .course-nav-inner {
@@ -837,7 +1046,22 @@ const initAnimations = () => {
     grid-template-columns: 1fr;
   }
   
+  h2 {
+    font-size: 36px;
   }
+  
+  .large-text {
+    font-size: 18px;
+  }
+  
+  .section-description {
+    font-size: 18px;
+  }
+  
+  .course-section {
+    padding: 80px 0;
+  }
+}
 
 @media (max-width: 768px) {
   .cta-container {
@@ -850,7 +1074,7 @@ const initAnimations = () => {
   }
   
   .course-hero h1 {
-    font-size: 2.5rem;
+    font-size: 42px;
   }
   
   .track-selector {
@@ -862,6 +1086,26 @@ const initAnimations = () => {
     width: 100%;
     max-width: 300px;
   }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  .large-text {
+    font-size: 17px;
+  }
+  
+  .section-description {
+    font-size: 17px;
+  }
+  
+  .course-section {
+    padding: 60px 0;
+  }
+  
+  .course-section-content {
+    padding: 0 24px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -870,15 +1114,31 @@ const initAnimations = () => {
   }
   
   .course-hero h1 {
-    font-size: 2rem;
+    font-size: 32px;
   }
   
   .course-section {
-    padding: 3rem 0;
+    padding: 60px 0;
   }
   
   .course-section-content {
-    padding: 0 1rem;
+    padding: 0 20px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  .large-text {
+    font-size: 16px;
+  }
+  
+  .section-description {
+    font-size: 16px;
+  }
+  
+  .cta-box {
+    padding: 40px 24px;
   }
 }
 </style>
