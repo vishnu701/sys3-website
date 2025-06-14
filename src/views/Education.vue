@@ -1565,12 +1565,17 @@ h2 {
   .cta-container {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
+    align-items: center;
   }
   
   .cta-button {
-    width: 100%;
+    width: auto;
+    min-width: 220px;
+    max-width: 280px;
     padding: 14px 28px;
     font-size: 14px;
+    text-align: center;
   }
   
   h2 {

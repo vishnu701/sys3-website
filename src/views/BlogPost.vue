@@ -1,0 +1,671 @@
+<template>
+  <div class="content">
+    <!-- Article Header -->
+    <section id="article-header" class="section hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="container">
+        <div class="article-header-content" v-if="currentBlog">
+          <div class="breadcrumb">
+            <RouterLink to="/blog">Blog</RouterLink>
+            <span class="separator">→</span>
+            <span>{{ currentBlog.category }}</span>
+          </div>
+          
+          <div class="article-meta">
+            <span class="article-date">{{ currentBlog.date }}</span>
+            <span class="article-category">{{ currentBlog.category }}</span>
+            <span class="read-time">{{ currentBlog.readTime }}</span>
+          </div>
+          
+          <h1 class="article-title" v-html="currentBlog.title"></h1>
+          
+          <p class="article-subtitle">
+            {{ currentBlog.subtitle }}
+          </p>
+          
+          <div class="author-info">
+            <div class="author-avatar">
+              <img :src="currentBlog.author.avatar" :alt="currentBlog.author.name" />
+            </div>
+            <div class="author-details">
+              <span class="author-name">{{ currentBlog.author.name }}</span>
+              <span class="author-title">{{ currentBlog.author.title }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section id="article-content" class="section" v-if="currentBlog">
+      <div class="container narrow">
+        <article class="article-body">
+          <div class="article-text" v-html="currentBlog.content"></div>
+
+          <!-- Article Footer -->
+          <div class="article-footer">
+            <div class="article-tags">
+              <span 
+                v-for="tag in currentBlog.tags" 
+                :key="tag"
+                class="tag"
+              >
+                {{ tag }}
+              </span>
+            </div>
+            
+            <div class="article-share">
+              <h4>Share this article</h4>
+              <div class="share-buttons">
+                <button class="share-btn twitter">Twitter</button>
+                <button class="share-btn linkedin">LinkedIn</button>
+                <button class="share-btn copy">Copy Link</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section id="related-articles" class="section light-section">
+      <div class="container">
+        <div class="section-header center">
+          <span class="overline">Related Reading</span>
+          <h2>More <span class="gradient-text">AI Insights</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="related-grid">
+          <article 
+            v-for="blog in relatedBlogs" 
+            :key="blog.id"
+            class="related-post"
+          >
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-date">{{ blog.date }}</span>
+                <span class="post-category">{{ blog.category }}</span>
+              </div>
+              <h3>{{ blog.title }}</h3>
+              <p class="post-excerpt">
+                {{ blog.excerpt }}
+              </p>
+              <RouterLink :to="`/blog/${blog.id}`" class="read-more">
+                Read More <span class="arrow">→</span>
+              </RouterLink>
+            </div>
+          </article>
+        </div>
+
+        <div class="back-to-blog">
+          <RouterLink to="/blog" class="cta-button secondary">
+            ← Back to All Articles
+          </RouterLink>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { getBlogById, getRelatedBlogs } from '@/data/blogs/index.js';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const route = useRoute();
+
+// Get current blog data
+const currentBlog = computed(() => getBlogById(route.params.id));
+const relatedBlogs = computed(() => getRelatedBlogs(route.params.id, 3));
+
+onMounted(() => {
+  // Hero animations
+  const headerTimeline = gsap.timeline();
+  
+  headerTimeline
+    .fromTo('.article-header-content', 
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    );
+
+  // Animate article sections on scroll
+  gsap.utils.toArray('.article-text h2').forEach((heading, i) => {
+    gsap.fromTo(heading,
+      { x: -30, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: heading,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+
+  // Animate related articles
+  gsap.utils.toArray('.related-post').forEach((post, i) => {
+    gsap.fromTo(post,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        delay: i * 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: post,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+  });
+});
+</script>
+
+<style scoped>
+/* Global styles for dynamic blog content */
+.article-text :deep(h2) {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 64px 0 24px;
+  color: #0A0A0A;
+  line-height: 1.3;
+}
+
+.article-text :deep(h2:first-child) {
+  margin-top: 0;
+}
+
+.article-text :deep(h3) {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 48px 0 20px;
+  color: #0A0A0A;
+  line-height: 1.3;
+}
+
+.article-text :deep(p) {
+  margin: 0 0 24px;
+  color: #2A2A2A;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.article-text :deep(blockquote) {
+  margin: 48px 0;
+  padding: 32px;
+  background: rgba(88, 66, 255, 0.03);
+  border-left: 4px solid #5842FF;
+  border-radius: 0 8px 8px 0;
+  font-size: 20px;
+  font-style: italic;
+  color: #1A1A1A;
+  position: relative;
+}
+
+.article-text :deep(blockquote::before) {
+  content: '"';
+  font-size: 64px;
+  color: rgba(88, 66, 255, 0.2);
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  line-height: 1;
+  font-family: serif;
+}
+
+.article-text :deep(ul) {
+  margin: 24px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-text :deep(ul li) {
+  margin: 12px 0;
+  padding-left: 32px;
+  position: relative;
+}
+
+.article-text :deep(ul li::before) {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #5842FF;
+  font-weight: 600;
+}
+
+.article-text :deep(.highlight-box) {
+  margin: 48px 0;
+  padding: 32px;
+  background: linear-gradient(135deg, rgba(88, 66, 255, 0.05), rgba(101, 133, 254, 0.05));
+  border: 1px solid rgba(88, 66, 255, 0.1);
+  border-radius: 12px;
+}
+
+.article-text :deep(.highlight-box h3) {
+  margin: 0 0 24px;
+  color: #5842FF;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.article-text :deep(.milestone-list) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.article-text :deep(.milestone-item) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+.article-text :deep(.year) {
+  font-weight: 700;
+  color: #5842FF;
+  font-size: 16px;
+  min-width: 60px;
+}
+
+.article-text :deep(.event) {
+  color: #2A2A2A;
+  font-size: 16px;
+}
+
+.article-text :deep(.article-image) {
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+.article-text :deep(.article-image img) {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.article-text :deep(.image-caption) {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6C6C6C;
+  font-style: italic;
+}
+
+/* Dark theme styles for dynamic content */
+.dark-theme .article-text :deep(h2),
+.dark-theme .article-text :deep(h3) {
+  color: #FFFFFF;
+}
+
+.dark-theme .article-text :deep(p) {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-theme .article-text :deep(blockquote) {
+  background: rgba(88, 66, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-theme .article-text :deep(.highlight-box) {
+  background: linear-gradient(135deg, rgba(88, 66, 255, 0.08), rgba(101, 133, 254, 0.08));
+  border-color: rgba(88, 66, 255, 0.2);
+}
+
+.dark-theme .article-text :deep(.milestone-item) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .article-text :deep(.event) {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-theme .article-text :deep(.image-caption) {
+  color: rgba(255, 255, 255, 0.7);
+}
+/* Article Header */
+.article-header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #6C6C6C;
+}
+
+.breadcrumb a {
+  color: #5842FF;
+  text-decoration: none;
+}
+
+.breadcrumb .separator {
+  margin: 0 8px;
+  color: #D8D8D8;
+}
+
+.article-meta {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.article-date,
+.read-time {
+  font-size: 14px;
+  color: #6C6C6C;
+  font-weight: 500;
+}
+
+.article-category {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5842FF;
+  background: rgba(88, 66, 255, 0.08);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.article-title {
+  font-size: 48px;
+  font-weight: 300;
+  margin: 0 0 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0A0A0A;
+}
+
+.article-title .gradient-text {
+  font-weight: 500;
+}
+
+.article-subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #4A4A4A;
+  font-weight: 300;
+  margin: 0 0 48px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(88, 66, 255, 0.1);
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.author-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0A0A0A;
+  margin-bottom: 4px;
+}
+
+.author-title {
+  font-size: 14px;
+  color: #6C6C6C;
+}
+
+/* Article Body */
+.article-body {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.article-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2A2A2A;
+}
+
+
+/* Article Footer */
+.article-footer {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid #E8E8E8;
+}
+
+.article-tags {
+  margin-bottom: 32px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(88, 66, 255, 0.08);
+  color: #5842FF;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0 8px 8px 0;
+}
+
+.article-share h4 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: #0A0A0A;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.share-btn {
+  padding: 8px 16px;
+  border: 1px solid #D8D8D8;
+  background: white;
+  color: #4A4A4A;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+  border-color: #5842FF;
+  color: #5842FF;
+}
+
+/* Related Articles */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.related-post {
+  background: white;
+  border: 1px solid #E8E8E8;
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.related-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.related-post .post-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.related-post h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  color: #0A0A0A;
+  line-height: 1.3;
+}
+
+.related-post .post-excerpt {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4A4A4A;
+  margin: 0 0 20px;
+}
+
+.related-post .read-more {
+  color: #5842FF;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.back-to-blog {
+  text-align: center;
+}
+
+/* Dark Theme */
+.dark-theme .article-title,
+.dark-theme .author-name {
+  color: #FFFFFF;
+}
+
+.dark-theme .article-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-theme .related-post {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-theme .related-post:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark-theme .related-post h3 {
+  color: #FFFFFF;
+}
+
+.dark-theme .share-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .article-title {
+    font-size: 32px;
+  }
+  
+  .article-subtitle {
+    font-size: 18px;
+  }
+  
+  .article-text {
+    font-size: 16px;
+  }
+  
+  .article-text h2 {
+    font-size: 26px;
+    margin: 48px 0 20px;
+  }
+  
+  .article-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .author-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-details {
+    text-align: center;
+  }
+  
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .share-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .milestone-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .article-title {
+    font-size: 28px;
+  }
+  
+  .article-text blockquote {
+    padding: 24px;
+    font-size: 18px;
+  }
+  
+  .highlight-box {
+    padding: 24px;
+  }
+  
+  .related-post {
+    padding: 24px;
+  }
+}
+</style>

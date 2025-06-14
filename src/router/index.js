@@ -6,6 +6,8 @@ import About from '@/views/About.vue';
 import Education from '@/views/Education.vue';
 import Consultancy from '@/views/Consultancy.vue';
 import Contact from '@/views/Contact.vue';
+import Blog from '@/views/Blog.vue';
+import BlogPost from '@/views/BlogPost.vue';
 import NotFound from '@/views/NotFound.vue';
 
 // Course pages
@@ -60,6 +62,18 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: { title: 'Contact Us - System3' }
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Blog,
+    meta: { title: 'Blog - System3' }
+  },
+  {
+    path: '/blog/:id',
+    name: 'BlogPost',
+    component: BlogPost,
+    meta: { title: 'Blog Post - System3' }
   },
   {
     path: '/courses',

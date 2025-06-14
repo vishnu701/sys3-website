@@ -656,6 +656,7 @@ h2 {
   align-items: center;
   position: relative;
   background: #FFFFFF;
+  padding: 120px 0;
 }
 
 .hero-bg {
@@ -668,8 +669,8 @@ h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(88, 66, 255, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(101, 133, 254, 0.02) 0%, transparent 50%);
+  background: radial-gradient(circle at 80% 20%, rgba(88, 66, 255, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(101, 133, 254, 0.03) 0%, transparent 50%);
 }
 
 .hero-grid {
@@ -729,11 +730,11 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 80px;
   width: 100%;
   position: relative;
   z-index: 1;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
