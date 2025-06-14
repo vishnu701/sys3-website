@@ -25,18 +25,18 @@
             </div>
           </div>
 
-       <!-- Right Consultancy Video Visual -->
-         <div class="consultancy-visual-wrapper">
-           <video
-             autoplay
-             muted
-             loop
-             playsinline
-             class="consultancy-hero-video"
-           >
-             <source src="@/assets/4.mp4" type="video/mp4" />
-             Your browser does not support the video tag.
-           </video>
+          <!-- Right Consultancy Video Visual -->
+          <div class="consultancy-visual-wrapper">
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              class="consultancy-hero-video"
+            >
+              <source src="@/assets/4.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -1817,19 +1817,6 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  position: relative;
-}
-
-.gradient-text::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 5%;
-  width: 90%;
-  height: 4px;
-  background: linear-gradient(90deg, rgba(88, 66, 255, 0.1), rgba(101, 133, 254, 0.2), rgba(88, 66, 255, 0.1));
-  border-radius: 2px;
-  z-index: -1;
 }
 
 
@@ -2332,7 +2319,7 @@ h2 {
   max-width: 100%;
 }
 
-  /* Consultancy Video Container - Matching Education Style */
+/* Consultancy Video Container - Exact Education Style */
 .consultancy-visual-wrapper {
   width: 350px;
   height: 350px;
@@ -2340,125 +2327,45 @@ h2 {
   justify-content: flex-start;
   align-items: flex-end;
   position: relative;
-  position: relative;
   background: transparent;
-  margin-left: -60px;
-  margin-bottom: -270px;
-  margin-right: 150px;
+  margin-left: -30px;
+  margin-bottom: -300px;
 }
 
-  .consultancy-hero-video {
-    width: 160%;
-    height: 160%;
+.consultancy-hero-video {
+  width: 160%;
+  height: 160%;
   object-fit: cover;
   position: relative;
   z-index: 1;
-    
-  /* Enhanced left edge fading with elliptical mask */
-  mask: 
-    radial-gradient(ellipse 120% 100% at 60% 50%, 
-      black 0%, 
-      black 10%, 
-      rgba(0,0,0,0.9) 20%, 
-      rgba(0,0,0,0.7) 30%, 
-      rgba(0,0,0,0.5) 40%, 
-      rgba(0,0,0,0.3) 50%,
-      rgba(0,0,0,0.15) 60%,
-      rgba(0,0,0,0.05) 70%,
-      transparent 80%),
-    linear-gradient(90deg, 
-      transparent 0%,
-      rgba(0,0,0,0.3) 15%,
-      rgba(0,0,0,0.7) 25%,
-      black 35%,
-      black 100%);
-  -webkit-mask: 
-    radial-gradient(ellipse 120% 100% at 60% 50%, 
-      black 0%, 
-      black 10%, 
-      rgba(0,0,0,0.9) 20%, 
-      rgba(0,0,0,0.7) 30%, 
-      rgba(0,0,0,0.5) 40%, 
-      rgba(0,0,0,0.3) 50%,
-      rgba(0,0,0,0.15) 60%,
-      rgba(0,0,0,0.05) 70%,
-      transparent 80%),
-    linear-gradient(90deg, 
-      transparent 0%,
-      rgba(0,0,0,0.3) 15%,
-      rgba(0,0,0,0.7) 25%,
-      black 35%,
-      black 100%);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
+  
+  /* ULTRA aggressive blending - starts fading from 15% */
+  mask: radial-gradient(circle at center, 
+    black 0%, 
+    black 15%, 
+    rgba(0,0,0,0.9) 25%, 
+    rgba(0,0,0,0.7) 35%, 
+    rgba(0,0,0,0.5) 45%, 
+    rgba(0,0,0,0.3) 55%,
+    rgba(0,0,0,0.15) 65%,
+    rgba(0,0,0,0.05) 75%,
+    transparent 85%);
+  -webkit-mask: radial-gradient(circle at center, 
+    black 0%, 
+    black 15%, 
+    rgba(0,0,0,0.9) 25%, 
+    rgba(0,0,0,0.7) 35%, 
+    rgba(0,0,0,0.5) 45%, 
+    rgba(0,0,0,0.3) 55%,
+    rgba(0,0,0,0.15) 65%,
+    rgba(0,0,0,0.05) 75%,
+    transparent 85%);
     
   /* Much stronger blur and scale for ultra-soft edges */
   transform: scale(1.3);
   filter: blur(3px);
 }
 
-/* Background blend overlay that matches the hero background */
-.consultancy-visual-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(88, 66, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(101, 133, 254, 0.02) 0%, transparent 50%);
-  z-index: 2;
-  pointer-events: none;
-  
-  /* Inverse mask - only show at the edges where video fades */
-  mask: radial-gradient(circle at center, 
-    transparent 0%, 
-    transparent 40%, 
-    rgba(0,0,0,0.3) 55%, 
-    rgba(0,0,0,0.7) 70%, 
-    rgba(0,0,0,0.9) 80%,
-    black 90%);
-  -webkit-mask: radial-gradient(circle at center, 
-    transparent 0%, 
-    transparent 40%, 
-    rgba(0,0,0,0.3) 55%, 
-    rgba(0,0,0,0.7) 70%, 
-    rgba(0,0,0,0.9) 80%,
-    black 90%);
-}
-
-/* Grid pattern overlay for seamless blending */
-.consultancy-visual-wrapper::after {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-  background-image: 
-    linear-gradient(rgba(88, 66, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(88, 66, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: 3;
-  pointer-events: none;
-  
-  /* Same inverse mask as background */
-  mask: radial-gradient(circle at center, 
-    transparent 0%, 
-    transparent 40%, 
-    rgba(0,0,0,0.3) 55%, 
-    rgba(0,0,0,0.7) 70%, 
-    rgba(0,0,0,0.9) 80%,
-    black 90%);
-  -webkit-mask: radial-gradient(circle at center, 
-    transparent 0%, 
-    transparent 40%, 
-    rgba(0,0,0,0.3) 55%, 
-    rgba(0,0,0,0.7) 70%, 
-    rgba(0,0,0,0.9) 80%,
-    black 90%);
-}
 
 /* Responsive Design - Clean Home Page Style */
 @media (max-width: 1200px) {
@@ -2467,9 +2374,8 @@ h2 {
   }
   
   .consultancy-visual-wrapper {
-    width: 320px;
-    height: 320px;
-    margin-bottom: 0;
+    max-width: 450px;
+    height: 350px;
   }
   .split-visual {
     width: 480px;
@@ -2478,8 +2384,12 @@ h2 {
 
 @media (max-width: 992px) {
   .hero-content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 56px;
+  }
+  
+  .scroll-indicator {
+    display: none;
   }
   
   .consultancy-visual-wrapper {
@@ -2488,6 +2398,10 @@ h2 {
     height: 400px;
     margin-left: 0;
     margin-bottom: 0;
+  }
+  
+  .scroll-indicator {
+    display: none;
   }
   
   .hero-text-container {
@@ -2604,6 +2518,19 @@ h2 {
     padding: 0 20px;
   }
   
+  .hero .container {
+    padding: 0 32px;
+  }
+  
+  .hero-text-container {
+    padding: 0 16px;
+  }
+  
+  .hero-paragraph {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
   .section {
     padding: 60px 0;
   }
@@ -2669,6 +2596,91 @@ h2 {
   
   .cta-content-overlay p {
     font-size: 16px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .hero-heading {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .hero-paragraph {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  
+  .hero-badge {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: auto;
+    min-width: 220px;
+    max-width: 280px;
+    padding: 14px 28px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  .large-text {
+    font-size: 17px;
+  }
+  
+  .service-card {
+    padding: 32px;
+  }
+  
+  .feature-item {
+    padding: 16px;
+  }
+  
+  .cta-content-overlay {
+    padding: 40px 24px;
+  }
+  
+  .cta-content-overlay h2 {
+    font-size: 28px;
+  }
+  
+  .cta-content-overlay p {
+    font-size: 16px;
+  }
+  
+  .education-visual-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .course-preview-card {
+    min-height: 320px;
+  }
+  
+  .course-content {
+    padding: 1.5rem;
+  }
+  
+  .course-image {
+    height: 180px;
+    padding: 1.5rem;
   }
 }
 </style>

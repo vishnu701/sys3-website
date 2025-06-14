@@ -69,7 +69,7 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section id="newsletter" class="section light-section">
+    <!-- <section id="newsletter" class="section light-section">
       <div class="container narrow">
         <div class="newsletter-content">
           <div class="section-header center">
@@ -91,7 +91,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

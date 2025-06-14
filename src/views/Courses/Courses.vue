@@ -244,7 +244,7 @@ function truncateDescription(text, maxLength = 100) {
 <style scoped>
 /* Courses Header Section */
 .courses-header {
-  height: 60vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,17 +252,38 @@ function truncateDescription(text, maxLength = 100) {
   background: #FFFFFF;
   overflow: hidden;
   z-index: 1;
+  padding-top: 80px;
 }
 
 @media (max-width: 768px) {
   .courses-header {
-    height: 40vh;
+    min-height: 70vh;
+    padding-top: 80px;
+  }
+  
+  .courses-header .hero-content {
+    padding: 0 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .courses-header {
-    height: 35vh;
+    min-height: 70vh;
+    padding-top: 80px;
+  }
+  
+  .courses-header .hero-content {
+    padding: 0 1.5rem;
+  }
+  
+  .courses-header .hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  
+  .courses-header .hero-content p {
+    font-size: 16px;
+    margin: 0 auto 24px;
   }
 }
 
@@ -395,6 +416,10 @@ function truncateDescription(text, maxLength = 100) {
   grid-gap: 2.5rem;
   pointer-events: none;
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .courses-grid.active {
@@ -416,9 +441,11 @@ function truncateDescription(text, maxLength = 100) {
 @media (max-width: 768px) {
   .courses-grid {
     grid-template-columns: 1fr;
-    max-width: 480px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    grid-gap: 2rem;
+    padding: 0 1rem;
   }
 }
 
@@ -821,10 +848,21 @@ function truncateDescription(text, maxLength = 100) {
     font-size: 36px;
   }
   
+  .courses-grid-section {
+    padding: 3rem 0;
+  }
+  
+  .courses-grid-section .section-content {
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
   .course-level-tabs {
     flex-direction: row;
     width: 100%;
     gap: 0;
+    margin: 2rem 1rem 0;
   }
   
   .level-tab {
@@ -840,11 +878,49 @@ function truncateDescription(text, maxLength = 100) {
     align-items: center;
     gap: 1rem;
   }
+  
+  h2 {
+    font-size: 36px;
+    padding: 0 1rem;
+  }
+  
+  .section-content .section-description {
+    font-size: 17px;
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 576px) {
+  .courses-header {
+    padding: 0 1.5rem;
+  }
+  
+  .courses-header .hero-content {
+    padding: 0 1rem;
+  }
+  
   .courses-header .hero-content h1 {
     font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .courses-header .hero-content p {
+    font-size: 16px;
+    margin: 0 auto 20px;
+  }
+  
+  .courses-grid-section .section-content {
+    padding: 0 1.5rem;
+  }
+  
+  .courses-grid {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    grid-gap: 1.5rem;
+  }
+  
+  .course-card {
+    min-height: 300px;
   }
   
   .course-content {
@@ -853,6 +929,58 @@ function truncateDescription(text, maxLength = 100) {
   
   .course-content h3 {
     font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .course-content p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .course-image {
+    height: 180px;
+    padding: 1.5rem;
+  }
+  
+  .course-image img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  .section-content .section-description {
+    font-size: 16px;
+  }
+  
+  .course-level-tabs {
+    margin: 2rem 0.5rem 0;
+  }
+  
+  .level-tab {
+    padding: 0.7rem 0.3rem;
+    font-size: 0.9rem;
+  }
+  
+  .approach-grid {
+    padding: 0 0.5rem;
+    grid-gap: 1.5rem;
+  }
+  
+  .approach-item {
+    padding: 2rem 1.5rem;
+    min-height: 200px;
+  }
+  
+  .approach-item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .approach-item p {
+    font-size: 14px;
   }
 }
 @keyframes fadeIn {
@@ -860,8 +988,14 @@ function truncateDescription(text, maxLength = 100) {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Add section header styling */
-.section-content h2 {
+/* Section Content Styling */
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h2 {
   font-size: 48px;
   font-weight: 400;
   margin: 0 0 24px;

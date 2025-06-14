@@ -4,9 +4,9 @@ export default {
   subtitle: 'From passive models to proactive agents—AI is becoming more autonomous, and it\'s changing how we build and interact with software.',
   excerpt: 'Agentic workflows empower AI systems to plan, decide, and execute multi-step tasks with minimal human oversight. This shift in AI architecture unlocks a new era of autonomy, creativity, and complexity.',
   author: {
-    name: 'Dr. Pavlos Protopapas',
-    title: 'Professor, Harvard University',
-    avatar: '/src/assets/images/people/PavlosProtopapas.jpeg'
+    name: 'Vishnu M',
+    title: 'CTO, System3',
+    avatar: '/src/assets/images/people/VishnuM.png'
   },
   category: 'Research',
   date: 'June 2025',

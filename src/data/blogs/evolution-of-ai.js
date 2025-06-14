@@ -4,9 +4,9 @@ export default {
   subtitle: 'Exploring the transformative journey of artificial intelligence, from early expert systems to today\'s sophisticated language models that are reshaping how we interact with technology.',
   excerpt: 'Exploring the transformative journey of artificial intelligence, from early expert systems to today\'s sophisticated language models that are reshaping how we interact with technology.',
   author: {
-    name: 'Dr. Pavlos Protopapas',
-    title: 'Professor, Harvard University',
-    avatar: '/src/assets/images/people/PavlosProtopapas.jpeg'
+    name: 'Anshika Gupta',
+    title: 'Head of Educational Programs, System3',
+    avatar: '/src/assets/images/people/AnshikaGupta.png'
   },
   category: 'Research',
   date: 'December 2024',

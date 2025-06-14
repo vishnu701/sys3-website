@@ -1425,6 +1425,10 @@ h2 {
     gap: 56px;
   }
   
+  .scroll-indicator {
+    display: none;
+  }
+  
   .education-visual-wrapper {
     width: 100%;
     max-width: 400px;
@@ -1541,6 +1545,19 @@ h2 {
 @media (max-width: 576px) {
   .container {
     padding: 0 20px;
+  }
+  
+  .hero .container {
+    padding: 0 32px;
+  }
+  
+  .hero-text-container {
+    padding: 0 16px;
+  }
+  
+  .hero-paragraph {
+    margin-left: 20px;
+    margin-right: 20px;
   }
   
   .section {

@@ -4,9 +4,9 @@ export default {
   subtitle: 'How retrieval-augmented generation is pushing the boundaries of what AI can know—and how it reasons.',
   excerpt: 'RAG systems combine language models with external retrieval mechanisms to create more accurate, context-aware, and up-to-date outputs. Here\'s how they work and why they matter.',
   author: {
-    name: 'Dr. Pavlos Protopapas',
-    title: 'Professor, Harvard University',
-    avatar: '/src/assets/images/people/PavlosProtopapas.jpeg'
+    name: 'Vishnu M',
+    title: 'CTO, System3',
+    avatar: '/src/assets/images/people/VishnuM.png'
   },
   category: 'Research',
   date: 'June 2025',

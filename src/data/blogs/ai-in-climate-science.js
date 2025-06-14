@@ -4,8 +4,8 @@ export default {
   subtitle: 'How artificial intelligence is transforming our understanding of climate change through advanced modeling, prediction, and environmental monitoring systems.',
   excerpt: 'Exploring how AI is revolutionizing climate science through advanced modeling, environmental monitoring, and climate prediction systems.',
   author: {
-    name: 'Dr. Anshika Gupta',
-    title: 'Climate AI Researcher',
+    name: 'Anshika Gupta',
+    title: 'Head of Educational Programs, System3',
     avatar: '/src/assets/images/people/AnshikaGupta.png'
   },
   category: 'Research',
