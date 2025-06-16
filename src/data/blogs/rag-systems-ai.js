@@ -1,3 +1,7 @@
+// Import required assets
+import VishnuMAvatar from '../../assets/images/people/VishnuM.png';
+import RAGImage from '../../assets/images/blogs/RAG.jpg';
+
 export default {
   id: 'rag-systems-ai',
   title: 'RAG Systems: Marrying Language Models with External Knowledge',
@@ -6,17 +10,17 @@ export default {
   author: {
     name: 'Vishnu M',
     title: 'CTO, System3',
-    avatar: '/src/assets/images/people/VishnuM.png'
+    avatar: VishnuMAvatar
   },
   category: 'Research',
   date: 'June 2025',
   readTime: '12 min read',
   featured: true,
-  image: '/src/assets/images/blogs/RAG.jpg',
+  image: RAGImage,
   tags: ['Artificial Intelligence', 'LLMs', 'Information Retrieval', 'RAG', 'Research'],
   content: `
 <div class="article-image">
-  <img src="/src/assets/images/blogs/RAG.jpg" alt="RAG System Diagram" />
+  <img src="${RAGImage}" alt="RAG System Diagram" />
   <p class="image-caption">Retrieval-augmented generation systems enable dynamic access to external knowledge sources</p>
 </div>
 

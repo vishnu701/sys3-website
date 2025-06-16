@@ -34,7 +34,7 @@
               playsinline
               class="consultancy-hero-video"
             >
-              <source src="@/assets/4.mp4" type="video/mp4" />
+              <source :src="consultancyVideo" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -113,7 +113,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/consulting-icon.svg" alt="Strategy Icon" class="service-icon-img" />
+              <img :src="consultingIcon" alt="Strategy Icon" class="service-icon-img" />
             </div>
             <h3>Strategy Development</h3>
             <p>Create a comprehensive AI roadmap aligned with your business objectives and industry positioning. We identify high-impact opportunities and develop a phased implementation plan.</p>
@@ -122,7 +122,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/machine-learning-icon.svg" alt="Custom Solutions Icon" class="service-icon-img" />
+              <img :src="machineLearningIcon" alt="Custom Solutions Icon" class="service-icon-img" />
             </div>
             <h3>Custom Solutions</h3>
             <p>Develop tailored AI applications to solve your unique business challenges, from predictive analytics and natural language processing to computer vision and recommendation systems.</p>
@@ -131,7 +131,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/data-science-icon.svg" alt="Implementation Icon" class="service-icon-img" />
+              <img :src="dataScienceIcon" alt="Implementation Icon" class="service-icon-img" />
             </div>
             <h3>Implementation Support</h3>
             <p>End-to-end guidance from conceptualization to deployment and maintenance. Our team works closely with yours to ensure smooth integration and knowledge transfer.</p>
@@ -140,7 +140,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/computer-vision-icon.svg" alt="Ethics Icon" class="service-icon-img" />
+              <img :src="computerVisionIcon" alt="Ethics Icon" class="service-icon-img" />
             </div>
             <h3>Ethical AI Framework</h3>
             <p>Ensure your AI systems adhere to ethical standards and regulatory requirements. We help you build responsible AI systems that maintain trust with your customers and stakeholders.</p>
@@ -283,7 +283,7 @@
         playsinline
         class="cta-video-bg"
       >
-        <source src="@/assets/2.mp4" type="video/mp4" />
+        <source :src="ctaVideo" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -312,6 +312,16 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import MinimalFaq from '@/components/MinimalFaq.vue';
 import DataVisualization from '@/components/DataVisualization.vue';
+
+// Import video assets
+import consultancyVideo from '@/assets/4.mp4';
+import ctaVideo from '@/assets/2.mp4';
+
+// Import image assets
+import consultingIcon from '@/assets/images/consulting-icon.svg';
+import machineLearningIcon from '@/assets/images/machine-learning-icon.svg';
+import dataScienceIcon from '@/assets/images/data-science-icon.svg';
+import computerVisionIcon from '@/assets/images/computer-vision-icon.svg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

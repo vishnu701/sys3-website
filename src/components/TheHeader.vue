@@ -3,8 +3,8 @@
     <div class="header-container">
       <div class="logo">
         <RouterLink to="/">
-          <img src="@/assets/logos/full/logo.png" alt="System3 Full Logo" class="logo-img full-logo" />
-          <img src="@/assets/logos/compact/logo.png" alt="System3 Icon Logo" class="logo-img compact-logo" />
+          <img :src="fullLogo" alt="System3 Full Logo" class="logo-img full-logo" />
+          <img :src="compactLogo" alt="System3 Icon Logo" class="logo-img compact-logo" />
         </RouterLink>
       </div>
       
@@ -65,6 +65,8 @@
 <script setup>
 import { ref, inject, onMounted, onBeforeUnmount, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import fullLogo from '@/assets/logos/full/logo.png';
+import compactLogo from '@/assets/logos/compact/logo.png';
 
 const route = useRoute();
 const isDarkTheme = inject('isDarkTheme');

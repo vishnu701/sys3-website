@@ -1,3 +1,11 @@
+// Import all required assets
+import PavlosProtopapasAvatar from '../assets/images/people/PavlosProtopapas.jpeg';
+import VishnuMAvatar from '../assets/images/people/VishnuM.png';
+import AINeural from '../assets/images/ai-neural-abstract.svg';
+import EducationIcon from '../assets/images/education-icon.svg';
+import ConsultingIcon from '../assets/images/consulting-icon.svg';
+import TeamIllustration from '../assets/images/team-illustration.svg';
+
 // Blog data structure - Add new blogs here
 export const blogs = [
   {
@@ -8,17 +16,17 @@ export const blogs = [
     author: {
       name: 'Dr. Pavlos Protopapas',
       title: 'Professor, Harvard University',
-      avatar: '/src/assets/images/people/PavlosProtopapas.jpeg'
+      avatar: PavlosProtopapasAvatar
     },
     category: 'Research',
     date: 'December 2024',
     readTime: '8 min read',
     featured: true,
-    image: '/src/assets/images/ai-neural-abstract.svg',
+    image: AINeural,
     tags: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'LLMs', 'Research'],
     content: `
       <div class="article-image">
-        <img src="/src/assets/images/ai-neural-abstract.svg" alt="AI Neural Network Visualization" />
+        <img src="${AINeural}" alt="AI Neural Network Visualization" />
         <p class="image-caption">The evolution of AI systems from simple rule-based approaches to complex neural networks</p>
       </div>
 
@@ -134,13 +142,13 @@ export const blogs = [
     author: {
       name: 'Dr. Vishnu Mishra',
       title: 'AI Education Specialist',
-      avatar: '/src/assets/images/people/VishnuM.png'
+      avatar: VishnuMAvatar
     },
     category: 'Education',
     date: 'November 2024',
     readTime: '6 min read',
     featured: false,
-    image: '/src/assets/images/education-icon.svg',
+    image: EducationIcon,
     tags: ['Education', 'AI Literacy', 'Curriculum', 'Students'],
     content: `
       <h2>The Imperative for AI Education</h2>
@@ -185,13 +193,13 @@ export const blogs = [
     author: {
       name: 'Dr. Pavlos Protopapas',
       title: 'Professor, Harvard University',
-      avatar: '/src/assets/images/people/PavlosProtopapas.jpeg'
+      avatar: PavlosProtopapasAvatar
     },
     category: 'Industry',
     date: 'November 2024',
     readTime: '7 min read',
     featured: false,
-    image: '/src/assets/images/consulting-icon.svg',
+    image: ConsultingIcon,
     tags: ['Ethics', 'AI Implementation', 'Enterprise', 'Responsible AI'],
     content: `
       <h2>The Business Case for Ethical AI</h2>
@@ -237,13 +245,13 @@ export const blogs = [
     author: {
       name: 'Dr. Vishnu Mishra',
       title: 'AI Education Specialist',
-      avatar: '/src/assets/images/people/VishnuM.png'
+      avatar: VishnuMAvatar
     },
     category: 'Technology',
     date: 'October 2024',
     readTime: '5 min read',
     featured: false,
-    image: '/src/assets/images/team-illustration.svg',
+    image: TeamIllustration,
     tags: ['Human-AI Collaboration', 'Future of Work', 'Augmentation', 'Technology'],
     content: `
       <h2>Beyond Replacement: The Augmentation Paradigm</h2>

@@ -1,3 +1,7 @@
+// Import required assets
+import VishnuMAvatar from '../../assets/images/people/VishnuM.png';
+import TeamIllustration from '../../assets/images/team-illustration.svg';
+
 export default {
   id: 'human-ai-collaboration',
   title: 'The Future of Human-AI Collaboration',
@@ -6,13 +10,13 @@ export default {
   author: {
     name: 'Dr. Vishnu Mishra',
     title: 'AI Education Specialist',
-    avatar: '/src/assets/images/people/VishnuM.png'
+    avatar: VishnuMAvatar
   },
   category: 'Technology',
   date: 'October 2024',
   readTime: '5 min read',
   featured: false,
-  image: '/src/assets/images/team-illustration.svg',
+  image: TeamIllustration,
   tags: ['Human-AI Collaboration', 'Future of Work', 'Augmentation', 'Technology'],
   content: `
     <h2>Beyond Replacement: The Augmentation Paradigm</h2>

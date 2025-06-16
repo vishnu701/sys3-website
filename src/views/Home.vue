@@ -20,7 +20,7 @@
               class="masked-logo-video"
               ref="maskedVideo"
             >
-              <source src="@/assets/hero.mp4" type="video/mp4" />
+              <source :src="heroVideo" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -65,7 +65,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" loading="lazy" />
+              <img :src="educationIcon" alt="Education Icon" class="service-icon-img" loading="lazy" />
             </div>
             <h3>Premium Education</h3>
             <p>Expertly crafted AI education programs designed to empower individuals with actionable knowledge and skills.</p>
@@ -74,7 +74,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/consulting-icon.svg" alt="Consulting Icon" class="service-icon-img" loading="lazy" />
+              <img :src="consultingIcon" alt="Consulting Icon" class="service-icon-img" loading="lazy" />
             </div>
             <h3>Strategic Consulting</h3>
             <p>Tailored AI integration strategies to transform your organization with cutting-edge technology and expertise.</p>
@@ -129,7 +129,7 @@
           <div class="split-visual">
             <div class="education-illustration-container">
               <video autoplay muted loop playsinline>
-                <source src="@/assets/3.mp4" type="video/mp4" />
+                <source :src="educationVideo" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <ChatAnimation />
@@ -180,7 +180,7 @@
           <div class="split-visual">
             <div class="consulting-visualization-container">
               <video autoplay muted loop playsinline>
-                <source src="@/assets/4.mp4" type="video/mp4" />
+                <source :src="consultancyVideo" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <DataVisualization />
@@ -230,7 +230,7 @@
         playsinline
         class="cta-video-bg"
       >
-        <source src="@/assets/2.mp4" type="video/mp4" />
+        <source :src="ctaVideo" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -261,7 +261,17 @@ import ChatAnimation from '@/components/ChatAnimation.vue';
 import DataVisualization from '@/components/DataVisualization.vue';
 import TestimonialSlider from '@/components/TestimonialSlider.vue';
 import MinimalFaq from '@/components/MinimalFaq.vue';
-import logoMask from '@/assets/logos/compact/logo_mask.svg'
+import logoMask from '@/assets/logos/compact/logo_mask.svg';
+
+// Import video assets
+import heroVideo from '@/assets/hero.mp4';
+import educationVideo from '@/assets/3.mp4';
+import consultancyVideo from '@/assets/4.mp4';
+import ctaVideo from '@/assets/2.mp4';
+
+// Import image assets
+import educationIcon from '@/assets/images/education-icon.svg';
+import consultingIcon from '@/assets/images/consulting-icon.svg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -608,8 +618,8 @@ h2 {
   position: relative;
   
   /* Apply soft logo mask using filter */
-  -webkit-mask-image: url('@/assets/logos/compact/logo_mask.svg');
-  mask-image: url('@/assets/logos/compact/logo_mask.svg');
+  -webkit-mask-image: v-bind('`url(${logoMask})`');
+  mask-image: v-bind('`url(${logoMask})`');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;

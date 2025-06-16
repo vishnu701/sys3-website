@@ -222,6 +222,16 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { RouterLink } from 'vue-router';
 
+// Import team member images
+import pavlosImage from '@/assets/images/people/PavlosProtopapas.jpeg';
+import ignacioImage from '@/assets/images/people/IgnacioBecker.png';
+import vishnuImage from '@/assets/images/people/VishnuM.png';
+import anshikaImage from '@/assets/images/people/AnshikaGupta.png';
+import shibaniImage from '@/assets/images/people/ShibaniBudhraja.png';
+import lakshayImage from '@/assets/images/people/LakshayChawla.png';
+import nawangImage from '@/assets/images/people/NawangBhutia.png';
+// import teamIllustration from '@/assets/images/team-illustration.svg';
+
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -293,7 +303,7 @@ const teamLeaders = ref([
     name: "Dr. Pavlos Protopapas",
     title: "CEO and Founder",
     bio: "Pavlos is an educator and researcher. As an educator, Pavlos is teaching CS109A, CS109B, introduction to data science and advanced topics of data science. He also teaches a course in MLOps. In the past he has taught capstone courses in data science and computational science.",
-    image: "/src/assets/images/people/PavlosProtopapas.jpeg",
+    image: pavlosImage,
     imagePos: "15%",
     links: [
       {
@@ -307,7 +317,7 @@ const teamLeaders = ref([
     name: "Dr. Ignacio Becker",
     title: "Head of System3 Consulting",
     bio: "His main area of research is applied AI to astrophysical problems. Nowadays, he focuses on developing models to process the real-time data of the next generation of telescopes. He is the head of the consulting department in System 3.",
-    image: "/src/assets/images/people/IgnacioBecker.png",
+    image: ignacioImage,
     imagePos: "20%",
     links: [
       {
@@ -324,7 +334,7 @@ const teamMembers = ref([
   {
     name: "Vishnu M",
     title: "Chief Technical Officer",
-    image: "/src/assets/images/people/VishnuM.png",
+    image: vishnuImage,
     imagePos: "top",
     socialLinks: [
       {
@@ -336,7 +346,7 @@ const teamMembers = ref([
   {
     name: "Anshika Gupta",
     title: "AI Solutions Consultant | Head of Educational Programs",
-    image: "/src/assets/images/people/AnshikaGupta.png",
+    image: anshikaImage,
     imagePos: "10%",
     socialLinks: [
       {
@@ -348,7 +358,7 @@ const teamMembers = ref([
   {
     name: "Shibani Budhraja",
     title: "Data Scientist",
-    image: "/src/assets/images/people/ShibaniBudhraja.png",
+    image: shibaniImage,
     imagePos: "20%",
     socialLinks: [
       {
@@ -360,7 +370,7 @@ const teamMembers = ref([
   {
     name: "Lakshay Chawla",
     title: "Data Scientist",
-    image: "/src/assets/images/people/LakshayChawla.png",
+    image: lakshayImage,
     imagePos: "15%",
     socialLinks: [
       {
@@ -372,7 +382,7 @@ const teamMembers = ref([
   {
     name: "Nawang Thinley Bhutia",
     title: "Data Scientist",
-    image: "/src/assets/images/people/NawangBhutia.png",
+    image: nawangImage,
     imagePos: "10%",
     socialLinks: [
       {

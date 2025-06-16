@@ -75,7 +75,7 @@
           </div>
           
           <div class="learning-flow-container session-format-container">
-            <img src="/src/assets/images/session-format.png" alt="Session Format Diagram" class="session-format-image">
+            <img :src="sessionFormatImage" alt="Session Format Diagram" class="session-format-image">
           </div>
           
           <div class="learning-components">
@@ -317,6 +317,7 @@
 import { ref, onMounted, nextTick } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import sessionFormatImage from '@/assets/images/session-format.png';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

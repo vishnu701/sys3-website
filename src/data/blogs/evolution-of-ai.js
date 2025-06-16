@@ -1,3 +1,7 @@
+// Import required assets
+import AnshikaGuptaAvatar from '../../assets/images/people/AnshikaGupta.png';
+import AIEvolutionImage from '../../assets/images/blogs/AI Evolution.jpg';
+
 export default {
   id: 'evolution-of-ai',
   title: 'The Evolution of AI: From Rule-Based Systems to Large Language Models',
@@ -6,17 +10,17 @@ export default {
   author: {
     name: 'Anshika Gupta',
     title: 'Head of Educational Programs, System3',
-    avatar: '/src/assets/images/people/AnshikaGupta.png'
+    avatar: AnshikaGuptaAvatar
   },
   category: 'Research',
   date: 'December 2024',
   readTime: '8 min read',
   featured: false,
-  image: '/src/assets/images/blogs/AI Evolution.jpg',
+  image: AIEvolutionImage,
   tags: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'LLMs', 'Research'],
   content: `
     <div class="article-image">
-      <img src="/src/assets/images/blogs/AI Evolution.jpg" alt="AI Evolution Visualization" />
+      <img src="${AIEvolutionImage}" alt="AI Evolution Visualization" />
       <p class="image-caption">The evolution of AI systems from simple rule-based approaches to complex neural networks</p>
     </div>
 

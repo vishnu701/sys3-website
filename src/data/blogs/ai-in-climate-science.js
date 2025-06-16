@@ -1,3 +1,7 @@
+// Import required assets
+import AnshikaGuptaAvatar from '../../assets/images/people/AnshikaGupta.png';
+import NeuralNetwork from '../../assets/images/neural-network-minimal.svg';
+
 export default {
   id: 'ai-in-climate-science',
   title: 'AI Revolutionizing Climate Science and Environmental Monitoring',
@@ -6,17 +10,17 @@ export default {
   author: {
     name: 'Anshika Gupta',
     title: 'Head of Educational Programs, System3',
-    avatar: '/src/assets/images/people/AnshikaGupta.png'
+    avatar: AnshikaGuptaAvatar
   },
   category: 'Research',
   date: 'December 2024',
   readTime: '9 min read',
   featured: false,
-  image: '/src/assets/images/neural-network-minimal.svg',
+  image: NeuralNetwork,
   tags: ['Climate Science', 'Environmental AI', 'Sustainability', 'Machine Learning', 'Research'],
   content: `
 <div class="article-image">
-  <img src="/src/assets/images/neural-network-minimal.svg" alt="AI Climate Monitoring" />
+  <img src="${NeuralNetwork}" alt="AI Climate Monitoring" />
   <p class="image-caption">AI-powered systems are revolutionizing how we monitor and understand climate patterns</p>
 </div>
 

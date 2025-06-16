@@ -1,3 +1,7 @@
+// Import required assets
+import VishnuMAvatar from '../../assets/images/people/VishnuM.png';
+import EducationIcon from '../../assets/images/education-icon.svg';
+
 export default {
   id: 'ai-literacy',
   title: 'Building AI Literacy in the Next Generation',
@@ -6,13 +10,13 @@ export default {
   author: {
     name: 'Dr. Vishnu Mishra',
     title: 'AI Education Specialist',
-    avatar: '/src/assets/images/people/VishnuM.png'
+    avatar: VishnuMAvatar
   },
   category: 'Education',
   date: 'November 2024',
   readTime: '6 min read',
   featured: false,
-  image: '/src/assets/images/education-icon.svg',
+  image: EducationIcon,
   tags: ['Education', 'AI Literacy', 'Curriculum', 'Students'],
   content: `
     <h2>The Imperative for AI Education</h2>

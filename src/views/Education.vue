@@ -19,7 +19,7 @@
               playsinline
               class="education-hero-video"
             >
-              <source src="@/assets/3.mp4" type="video/mp4" />
+              <source :src="educationVideo" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -96,7 +96,7 @@
           
           <div class="split-visual">
             <div class="education-image-container">
-              <img src="@/assets/images/people/PavlosTeaching.jpeg" alt="Harvard Education" class="education-image" />
+              <img :src="pavlosTeachingImage" alt="Harvard Education" class="education-image" />
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" />
+              <img :src="educationIcon" alt="Education Icon" class="service-icon-img" />
             </div>
             <h3>Harvard Faculty Instruction</h3>
             <p>Direct mentorship from Harvard University's distinguished Scientific Program Director and faculty members</p>
@@ -124,7 +124,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/consulting-icon.svg" alt="Consulting Icon" class="service-icon-img" />
+              <img :src="consultingIcon" alt="Consulting Icon" class="service-icon-img" />
             </div>
             <h3>Academic Excellence</h3>
             <p>Rigorous curriculum designed to the exacting standards of Harvard University's renowned AI programs</p>
@@ -133,7 +133,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" />
+              <img :src="educationIcon" alt="Education Icon" class="service-icon-img" />
             </div>
             <h3>Distinguished Mentorship</h3>
             <p>Individual guidance from Harvard-affiliated instructors in an exclusive academic environment with limited enrollment</p>
@@ -433,7 +433,7 @@
         playsinline
         class="cta-video-bg"
       >
-        <source src="@/assets/2.mp4" type="video/mp4" />
+        <source :src="ctaVideo" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -462,6 +462,15 @@ import { courses } from '@/data/courses';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import TestimonialSlider from '@/components/TestimonialSlider.vue';
+
+// Import video assets
+import educationVideo from '@/assets/3.mp4';
+import ctaVideo from '@/assets/2.mp4';
+
+// Import image assets
+import pavlosTeachingImage from '@/assets/images/people/PavlosTeaching.jpeg';
+import educationIcon from '@/assets/images/education-icon.svg';
+import consultingIcon from '@/assets/images/consulting-icon.svg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

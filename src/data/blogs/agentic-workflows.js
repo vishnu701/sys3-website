@@ -1,3 +1,7 @@
+// Import required assets
+import VishnuMAvatar from '../../assets/images/people/VishnuM.png';
+import AIAgentImage from '../../assets/images/blogs/AI Agent.jpg';
+
 export default {
   id: 'agentic-workflows',
   title: 'The Rise of Agentic Workflows in AI',
@@ -6,17 +10,17 @@ export default {
   author: {
     name: 'Vishnu M',
     title: 'CTO, System3',
-    avatar: '/src/assets/images/people/VishnuM.png'
+    avatar: VishnuMAvatar
   },
   category: 'Research',
   date: 'June 2025',
   readTime: '12 min read',
   featured: false,
-  image: '/src/assets/images/blogs/AI Agent.jpg',
+  image: AIAgentImage,
   tags: ['Artificial Intelligence', 'LLMs', 'Autonomous Agents', 'AI Applications', 'Research'],
   content: `
 <div class="article-image">
-  <img src="/src/assets/images/blogs/AI Agent.jpg" alt="Agentic AI Visual" />
+  <img src="${AIAgentImage}" alt="Agentic AI Visual" />
   <p class="image-caption">Agentic systems execute tasks independently, planning and adjusting as needed</p>
 </div>
 
