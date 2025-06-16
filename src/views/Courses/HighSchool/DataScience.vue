@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Data Science"
-    heroImage="/public/data-science-hero.jpg"
+    heroImage=""
     heroTagline="Master the fundamentals of data analysis, statistics, and visualization needed to build a strong AI foundation."
     overviewTitle="Data Science for High School"
     overviewParagraph1="is a beginner-friendly course designed to build a strong foundation in both Python programming and the core mathematical concepts essential for data science and machine learning. Students will begin by mastering programming fundamentals—such as data structures, functions, classes, and debugging—before moving into foundational topics in statistics, calculus, and linear algebra."

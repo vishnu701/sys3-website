@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="LLMOps"
-    heroImage="/public/course-data-science.jpg"
+    heroImage=""
     heroTagline="Master the engineering, deployment, and operation of large language models in production environments."
     overviewTitle="Advanced LLMOps"
     overviewParagraph1="is a comprehensive graduate-level course focused on the technical infrastructure, optimization techniques, and operational practices required to successfully deploy and manage large language models at scale. This course bridges the gap between research and production-ready AI systems."

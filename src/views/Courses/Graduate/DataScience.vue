@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Data Science"
-    heroImage="/public/data-science-hero.jpg"
+    heroImage=""
     heroTagline="Build a comprehensive foundation in programming, statistics, and mathematics for advanced data science and machine learning."
     overviewTitle="Advanced Data Science"
     overviewParagraph1="lays the groundwork for a successful journey into data science and machine learning by building fluency in two critical areas: Python programming and mathematical foundations. Designed to take students from basic to advanced Python skills, it covers essential programming concepts including data structures, object-oriented programming, and the use of powerful data analysis libraries that form the backbone of modern data workflows."

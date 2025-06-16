@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Machine Learning"
-    heroImage="/public/course-ml.jpg"
+    heroImage=""
     heroTagline="Advanced algorithms and deep learning techniques for cutting-edge machine learning applications."
     overviewTitle="Advanced Machine Learning"
     overviewParagraph1="is a rigorous graduate-level course that delves deep into the theoretical foundations and advanced applications of machine learning. The course is designed for students with strong backgrounds in mathematics, statistics, and programming."

@@ -1,70 +1,65 @@
 <template>
   <footer>
-    <div class="footer-content">
-      <div class="footer-branding">
+    <div class="footer-container">
+      <!-- Mobile-first: Logo and description at top -->
+      <div class="footer-brand">
         <div class="footer-logo">
           <span class="logo-mark"></span>
           System<span class="gradient-text">3</span>
         </div>
-        <p>
+        <p class="footer-description">
           Empowering organizations with advanced AI education and strategic consulting services.
         </p>
+      </div>
+
+      <!-- Compact link sections -->
+      <div class="footer-nav">
+        <div class="nav-section">
+          <h4>Services</h4>
+          <div class="nav-links">
+            <RouterLink to="/education">Education</RouterLink>
+            <RouterLink to="/consultancy">Consultancy</RouterLink>
+            <RouterLink to="/courses">Courses</RouterLink>
+            <a href="https://www.theepochtour.ai/" target="_blank" rel="noopener noreferrer">Workshops</a>
+          </div>
+        </div>
+        
+        <div class="nav-section">
+          <h4>Company</h4>
+          <div class="nav-links">
+            <RouterLink to="/about">About Us</RouterLink>
+            <RouterLink to="/contact">Contact</RouterLink>
+            <RouterLink to="/blog">Blog</RouterLink>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social and copyright -->
+      <div class="footer-bottom">
         <div class="footer-social">
-          <a href="#" class="social-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a href="#" class="social-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
             </svg>
           </a>
-          <a href="#" class="social-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
         </div>
-      </div>
-      
-      <div class="footer-links">
-        <div class="footer-column">
-          <h4>Services</h4>
-          <ul>
-            <li><RouterLink to="/education">Education</RouterLink></li>
-            <li><RouterLink to="/consultancy">Consultancy</RouterLink></li>
-            <li><RouterLink to="/courses">Courses</RouterLink></li>
-            <li><a href="#">Workshops</a></li>
-          </ul>
-        </div>
         
-        <div class="footer-column">
-          <h4>Company</h4>
-          <ul>
-            <li><RouterLink to="/about">About Us</RouterLink></li>
-            <li><RouterLink to="/contact">Contact</RouterLink></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
+        <div class="footer-copyright">
+          <p>© {{ currentYear }} System3. All rights reserved.</p>
         </div>
       </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>© {{ currentYear }} System3. All rights reserved.</p>
     </div>
   </footer>
 </template>
@@ -76,126 +71,246 @@ const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <style scoped>
-/* Footer Enhanced Styles */
+/* Mobile-first Footer Design */
 footer {
   background: linear-gradient(to bottom, #1A1F35, #0A0F1F);
   color: rgba(255, 255, 255, 0.9);
-  padding: 4rem 0 2rem;
   position: relative;
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
-.footer-content {
+.footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  padding: 2rem 1rem 1rem;
 }
 
-.footer-branding {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Brand section - Mobile first */
+.footer-brand {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .footer-logo {
   color: white;
   font-weight: 700;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: block;
 }
 
-.footer-social {
+.footer-description {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Navigation sections - Mobile first */
+.footer-nav {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.nav-section {
+  text-align: center;
 }
 
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.nav-section h4 {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.nav-section h4::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(to right, #5842FF, #6585FE);
+  margin: 0.5rem auto 0;
+  border-radius: 1px;
+}
+
+.nav-links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.nav-links a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  transition: all 0.2s ease;
+  border-radius: 4px;
 }
 
-.footer-branding p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
-}
-
-.footer-column h4 {
+.nav-links a:hover,
+.nav-links a:focus {
   color: white;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0.5rem;
 }
 
-.footer-column h4::after {
-  background: linear-gradient(to right, #5842FF, #6585FE);
-  height: 3px;
-  border-radius: 1.5px;
-}
-
-.footer-column a {
-  color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-  padding: 2px 0;
-}
-
-.footer-column a:hover {
-  color: white;
-  transform: translateX(4px);
-}
-
-.footer-column a:hover::after {
-  background-color: #6585FE;
-  height: 2px;
-}
-
-.social-icon {
-  background: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-  background: linear-gradient(135deg, #5842FF, #6585FE);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(88, 66, 255, 0.3);
-}
-
-.social-icon svg {
-  stroke: white;
-}
-
+/* Footer bottom section */
 .footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
   text-align: center;
 }
 
-.footer-bottom p {
-  color: rgba(255, 255, 255, 0.7);
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.3);
+}
+
+.footer-copyright p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
   margin: 0;
-  font-size: 0.9rem;
+}
+
+/* Tablet breakpoint - 768px and up */
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 3rem 2rem 2rem;
+  }
+  
+  .footer-brand {
+    text-align: left;
+    margin-bottom: 2.5rem;
+  }
+  
+  .footer-description {
+    max-width: 400px;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .footer-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+  
+  .nav-section {
+    text-align: left;
+    flex: 1;
+  }
+  
+  .nav-section h4::after {
+    margin: 0.5rem 0 0;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  
+  .footer-social {
+    margin-bottom: 0;
+    order: 2;
+  }
+  
+  .footer-copyright {
+    order: 1;
+  }
+}
+
+/* Desktop breakpoint - 1024px and up */
+@media (min-width: 1024px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    padding: 4rem 2rem 2rem;
+  }
+  
+  .footer-brand {
+    margin-bottom: 0;
+  }
+  
+  .footer-logo {
+    font-size: 1.75rem;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+    max-width: none;
+  }
+  
+  .footer-nav {
+    margin-bottom: 0;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .footer-bottom {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .social-link,
+  .nav-links a {
+    transition: none;
+  }
+  
+  .social-link:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .footer-description,
+  .nav-links a,
+  .footer-copyright p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .nav-section h4::after {
+    background: white;
+  }
 }
 </style>

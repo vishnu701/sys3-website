@@ -237,19 +237,22 @@
               <p>The perfect introduction to AI for high school students. Build a solid foundation in data science and machine learning fundamentals.</p>
             </div>
             <div class="program-courses">
-              <h4>Included Courses</h4>
-              <div class="program-course-list">
-                <div class="program-course">
-                  <RouterLink to="/courses/high-school/data-science" class="program-course-link">
-                    <span class="course-name">Data Science</span>
-                    <span class="course-meta">10 weeks</span>
-                  </RouterLink>
+              <h4>Core Curriculum</h4>
+              <div class="course-sequence">
+                <div class="course-item">
+                  <div class="course-number">01</div>
+                  <div class="course-details">
+                    <RouterLink to="/courses/high-school/data-science" class="course-title-link">Data Science Fundamentals</RouterLink>
+                    <span class="course-duration">10 weeks</span>
+                  </div>
                 </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/high-school/machine-learning" class="program-course-link">
-                    <span class="course-name">Machine Learning</span>
-                    <span class="course-meta">12 weeks</span>
-                  </RouterLink>
+                <div class="sequence-connector"></div>
+                <div class="course-item">
+                  <div class="course-number">02</div>
+                  <div class="course-details">
+                    <RouterLink to="/courses/high-school/machine-learning" class="course-title-link">Machine Learning</RouterLink>
+                    <span class="course-duration">12 weeks</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,25 +279,15 @@
               <p>The ultimate fusion of data science mastery and machine learning fundamentals. Perfect for the next generation of AI leaders.</p>
             </div>
             <div class="program-courses">
-              <h4>Included Courses</h4>
-              <div class="program-course-list">
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/data-science" class="program-course-link">
-                    <span class="course-name">Data Science</span>
-                    <span class="course-meta">10 weeks</span>
-                  </RouterLink>
-                </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/machine-learning" class="program-course-link">
-                    <span class="course-name">Machine Learning</span>
-                    <span class="course-meta">12 weeks</span>
-                  </RouterLink>
-                </div>
-              </div>
+              <h4>Included Courses:</h4>
+              <ul class="course-list">
+                <li><RouterLink to="/courses/graduate/data-science" class="program-course-link"><span class="course-icon">🔬</span> Data Science</RouterLink></li>
+                <li><RouterLink to="/courses/graduate/machine-learning" class="program-course-link"><span class="course-icon">🧠</span> Machine Learning</RouterLink></li>
+              </ul>
             </div>
             <div class="program-duration">
               <div class="duration-display">
-                <span class="duration-number">22</span>
+                <span class="duration-number">24</span>
                 <span class="duration-label">Weeks Total</span>
               </div>
             </div>
@@ -311,31 +304,39 @@
               <p>Master both visual and language understanding AI. Create systems that can see, read, and comprehend the world.</p>
             </div>
             <div class="program-courses">
-              <h4>Included Courses</h4>
-              <div class="program-course-list">
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/machine-learning" class="program-course-link">
-                    <span class="course-name">Machine Learning</span>
-                    <span class="course-meta">12 weeks</span>
-                  </RouterLink>
+              <h4>Core Curriculum</h4>
+              <div class="course-sequence">
+                <div class="course-item foundation">
+                  <div class="course-number">01</div>
+                  <div class="course-details">
+                    <RouterLink to="/courses/graduate/machine-learning" class="course-title-link">Machine Learning Foundations</RouterLink>
+                    <span class="course-duration">12 weeks</span>
+                  </div>
                 </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/computer-vision" class="program-course-link">
-                    <span class="course-name">Computer Vision</span>
-                    <span class="course-meta">8 weeks</span>
-                  </RouterLink>
-                </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/nlp" class="program-course-link">
-                    <span class="course-name">Natural Language Processing</span>
-                    <span class="course-meta">9 weeks</span>
-                  </RouterLink>
+                <div class="sequence-split">
+                  <div class="split-line"></div>
+                  <div class="parallel-courses">
+                    <div class="course-item">
+                      <div class="course-number">02</div>
+                      <div class="course-details">
+                        <RouterLink to="/courses/graduate/computer-vision" class="course-title-link">Computer Vision</RouterLink>
+                        <span class="course-duration">8 weeks</span>
+                      </div>
+                    </div>
+                    <div class="course-item">
+                      <div class="course-number">03</div>
+                      <div class="course-details">
+                        <RouterLink to="/courses/graduate/nlp" class="course-title-link">Natural Language Processing</RouterLink>
+                        <span class="course-duration">9 weeks</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="program-duration">
               <div class="duration-display">
-                <span class="duration-number">29</span>
+                <span class="duration-number">33</span>
                 <span class="duration-label">Weeks Total</span>
               </div>
             </div>
@@ -353,49 +354,74 @@
               <p>The complete AI education - from foundations to production deployment. Become a versatile AI architect with expertise across all domains.</p>
             </div>
             <div class="program-courses">
-              <h4>Included Courses</h4>
-              <div class="program-course-list">
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/data-science" class="program-course-link">
-                    <span class="course-name">Data Science</span>
-                    <span class="course-meta">10 weeks</span>
-                  </RouterLink>
+              <h4>Complete Curriculum</h4>
+              <div class="course-sequence comprehensive">
+                <div class="sequence-section">
+                  <div class="section-label">Foundation</div>
+                  <div class="course-item foundation">
+                    <div class="course-number">01</div>
+                    <div class="course-details">
+                      <RouterLink to="/courses/graduate/data-science" class="course-title-link">Data Science</RouterLink>
+                      <span class="course-duration">10 weeks</span>
+                    </div>
+                  </div>
+                  <div class="sequence-connector"></div>
                 </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/machine-learning" class="program-course-link">
-                    <span class="course-name">Machine Learning</span>
-                    <span class="course-meta">12 weeks</span>
-                  </RouterLink>
+                
+                <div class="sequence-section">
+                  <div class="section-label">Core</div>
+                  <div class="course-item core">
+                    <div class="course-number">02</div>
+                    <div class="course-details">
+                      <RouterLink to="/courses/graduate/machine-learning" class="course-title-link">Machine Learning</RouterLink>
+                      <span class="course-duration">12 weeks</span>
+                    </div>
+                  </div>
+                  <div class="sequence-split">
+                    <div class="split-line"></div>
+                    <div class="parallel-courses">
+                      <div class="course-item">
+                        <div class="course-number">03</div>
+                        <div class="course-details">
+                          <RouterLink to="/courses/graduate/computer-vision" class="course-title-link">Computer Vision</RouterLink>
+                          <span class="course-duration">8 weeks</span>
+                        </div>
+                      </div>
+                      <div class="course-item">
+                        <div class="course-number">04</div>
+                        <div class="course-details">
+                          <RouterLink to="/courses/graduate/nlp" class="course-title-link">Natural Language Processing</RouterLink>
+                          <span class="course-duration">9 weeks</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/computer-vision" class="program-course-link">
-                    <span class="course-name">Computer Vision</span>
-                    <span class="course-meta">8 weeks</span>
-                  </RouterLink>
-                </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/nlp" class="program-course-link">
-                    <span class="course-name">Natural Language Processing</span>
-                    <span class="course-meta">9 weeks</span>
-                  </RouterLink>
-                </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/reinforcement-learning" class="program-course-link">
-                    <span class="course-name">Reinforcement Learning</span>
-                    <span class="course-meta">10 weeks</span>
-                  </RouterLink>
-                </div>
-                <div class="program-course">
-                  <RouterLink to="/courses/graduate/llmops" class="program-course-link">
-                    <span class="course-name">LLMOps</span>
-                    <span class="course-meta">8 weeks</span>
-                  </RouterLink>
+                
+                <div class="sequence-section">
+                  <div class="section-label">Advanced</div>
+                  <div class="parallel-courses advanced">
+                    <div class="course-item">
+                      <div class="course-number">05</div>
+                      <div class="course-details">
+                        <RouterLink to="/courses/graduate/reinforcement-learning" class="course-title-link">Reinforcement Learning</RouterLink>
+                        <span class="course-duration">10 weeks</span>
+                      </div>
+                    </div>
+                    <div class="course-item">
+                      <div class="course-number">06</div>
+                      <div class="course-details">
+                        <RouterLink to="/courses/graduate/llmops" class="course-title-link">LLMOps</RouterLink>
+                        <span class="course-duration">8 weeks</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="program-duration">
               <div class="duration-display">
-                <span class="duration-number">57</span>
+                <span class="duration-number">67</span>
                 <span class="duration-label">Weeks Total</span>
               </div>
             </div>
@@ -466,18 +492,15 @@ import TestimonialSlider from '@/components/TestimonialSlider.vue';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Shared tab state - both sections use the same state
+// Course tabs state
 const activeTab = ref('high-school');
+const activeProgramTab = ref('high-school');
 
-// Computed property for program tab to keep backward compatibility
-const activeProgramTab = computed(() => activeTab.value);
-
-// Function to handle tab switching for courses section
+// Function to handle tab switching
 function switchTab(tab) {
   if (activeTab.value === tab) return;
   activeTab.value = tab;
   
-  // Animate course cards
   setTimeout(() => {
     const cards = document.querySelectorAll(`.courses-preview-grid.active .course-preview-card`);
     const tl = gsap.timeline();
@@ -495,33 +518,30 @@ function switchTab(tab) {
       ease: "power3.out"
     });
   }, 10);
-  
-  // Also animate program cards if they're visible
-  setTimeout(() => {
-    const programCards = document.querySelectorAll(`.programs-grid.active .program-card`);
-    if (programCards.length > 0) {
-      const tl = gsap.timeline();
-      
-      tl.set(programCards, { 
-        opacity: 0, 
-        y: 30
-      });
-      
-      tl.to(programCards, {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: "power3.out"
-      });
-    }
-  }, 10);
 }
 
-// Function to handle program tab switching - now syncs with course tabs
+// Function to handle program tab switching
 function switchProgramTab(tab) {
-  // Use the same function as course tabs to keep them in sync
-  switchTab(tab);
+  if (activeProgramTab.value === tab) return;
+  activeProgramTab.value = tab;
+  
+  setTimeout(() => {
+    const cards = document.querySelectorAll(`.programs-grid.active .program-card`);
+    const tl = gsap.timeline();
+    
+    tl.set(cards, { 
+      opacity: 0, 
+      y: 30
+    });
+    
+    tl.to(cards, {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      stagger: 0.15,
+      ease: "power3.out"
+    });
+  }, 10);
 }
 
 // Get high school courses (first 3 for preview)
@@ -788,16 +808,6 @@ h2 {
   font-weight: 300;
   color: #4A4A4A;
   max-width: 680px;
-}
-
-.section-description {
-  font-size: 19px;
-  line-height: 1.8;
-  margin: 20px auto 0;
-  font-weight: 300;
-  color: #4A4A4A;
-  max-width: 700px;
-  text-align: center;
 }
 
 .dark-section .large-text {
@@ -1346,15 +1356,12 @@ h2 {
 }
 
 .level-tab.active {
-  color: white !important;
+  color: white;
   background: #5842FF;
-  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.25);
 }
 
-.level-tab:hover:not(.active) {
+.level-tab:hover {
   color: #5842FF;
-  background: rgba(88, 66, 255, 0.1);
-  transform: translateY(-1px);
 }
 
 /* Course Cards Grid */

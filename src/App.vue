@@ -3,11 +3,7 @@
     <TheHeader />
     
     <main style="height: auto; overflow: visible; position: static;">
-      <router-view v-slot="{ Component }">
-        <transition name="page-transition" mode="out-in" @before-leave="onBeforeLeave" @enter="onEnter">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <router-view />
     </main>
     <TheFooter />
     
@@ -37,53 +33,16 @@ const toggleTheme = () => {
 provide('isDarkTheme', isDarkTheme);
 provide('toggleTheme', toggleTheme);
 
-// Page transition handlers
+// Page transition handlers (temporarily disabled)
 const onBeforeLeave = async (el) => {
   isTransitioning.value = true;
-  
-  // Zoom out/fade out current page
-  await gsap.to(el, {
-    scale: 0.95,
-    opacity: 0,
-    duration: 0.5,
-    ease: 'power2.in'
-  });
-  
-  // Show overlay during transition
-  gsap.to('.page-transition-overlay', {
-    opacity: 1,
-    duration: 0.3,
-    ease: 'power2.inOut'
-  });
+  // Skip transition animation for debugging
 };
 
 const onEnter = async (el, done) => {
-  // Initial state for the entering page
-  gsap.set(el, {
-    opacity: 0,
-    scale: 1.05
-  });
-  
-  // Hide overlay
-  gsap.to('.page-transition-overlay', {
-    opacity: 0,
-    duration: 0.3,
-    delay: 0.2,
-    ease: 'power2.inOut'
-  });
-  
-  // Zoom in/fade in new page
-  await gsap.to(el, {
-    opacity: 1,
-    scale: 1,
-    duration: 0.5,
-    delay: 0.1,
-    ease: 'power2.out',
-    onComplete: () => {
-      isTransitioning.value = false;
-      done();
-    }
-  });
+  // Skip transition animation for debugging
+  isTransitioning.value = false;
+  done();
 };
 
 // Listen for route changes to manipulate the neural network

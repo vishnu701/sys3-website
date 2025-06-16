@@ -17,7 +17,7 @@
 
     <div class="content">
       <!-- Course Hero Section -->
-      <section class="course-hero" :style="{ backgroundImage: `url('${heroImage}')` }">
+      <section class="course-hero" :style="heroImage ? { backgroundImage: `url('${heroImage}')` } : {}">
         <div class="course-hero-content">
           <h1><span class="hero-highlight">{{ courseTitle }}</span></h1>
           <p>{{ heroTagline }}</p>
@@ -324,7 +324,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Course data props
 const props = defineProps({
   courseTitle: { type: String, required: true },
-  heroImage: { type: String, required: true },
+  heroImage: { type: String, default: '' },
   heroTagline: { type: String, required: true },
   overviewTitle: { type: String, required: true },
   overviewParagraph1: { type: String, required: true },
@@ -767,7 +767,7 @@ h2 {
 }
 
 .cta-button.primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--clr-indigo), var(--clr-cool-blue));
   color: white;
   border: none;
   box-shadow: 0 4px 15px rgba(138, 133, 255, 0.25);
@@ -780,8 +780,8 @@ h2 {
 
 .cta-button.secondary {
   background: transparent;
-  border: 1.5px solid var(--color-primary);
-  color: var(--color-text);
+  border: 1.5px solid var(--clr-indigo);
+  color: var(--clr-dark-gray);
 }
 
 .cta-button.secondary:hover {
@@ -800,17 +800,17 @@ h2 {
 .track-selector button {
   padding: 0.75rem 1.5rem;
   background: transparent;
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--clr-indigo);
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: var(--color-text);
+  color: var(--clr-dark-gray);
 }
 
 .track-selector button.active {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--clr-indigo), var(--clr-cool-blue));
   color: white;
   border: 2px solid transparent;
   box-shadow: 0 4px 12px rgba(138, 133, 255, 0.25);
@@ -833,7 +833,7 @@ h2 {
   min-width: 120px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--color-primary);
+  border: 3px solid var(--clr-indigo);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   margin-right: 1.5rem;
 }
@@ -866,7 +866,7 @@ h2 {
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--clr-light-gray);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
@@ -903,12 +903,12 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: var(--color-primary);
+  color: var(--clr-indigo);
 }
 
 .instructor-role {
   font-size: 0.9rem;
-  color: var(--color-text-secondary);
+  color: var(--clr-medium-gray);
   margin-bottom: 1rem;
 }
 
@@ -924,12 +924,12 @@ h2 {
 }
 
 .instructor-links a {
-  color: var(--color-text-secondary);
+  color: var(--clr-medium-gray);
   transition: color 0.3s ease;
 }
 
 .instructor-links a:hover {
-  color: var(--color-primary);
+  color: var(--clr-indigo);
 }
 
 /* Theme support */
@@ -962,6 +962,26 @@ h2 {
 /* Hero section styling */
 .course-hero {
   position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #5842FF 100%);
+  overflow: hidden;
+}
+
+.course-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(88, 66, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(101, 133, 254, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(163, 154, 245, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .course-hero::before {
@@ -980,7 +1000,16 @@ h2 {
 
 .course-hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  text-align: center;
+  padding: 80px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .course-hero-content h1 {
@@ -989,17 +1018,24 @@ h2 {
   margin-bottom: 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .course-hero-content h1 .hero-highlight {
-  font-weight: 500;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, #e8e3ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }
 
 .course-hero-content p {
   font-size: 19px;
   line-height: 1.7;
   font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Light theme module toggle */
@@ -1070,10 +1106,16 @@ h2 {
   }
   
   .course-hero {
-    height: 60vh;
+    min-height: 400px;
   }
   
-  .course-hero h1 {
+  .course-hero-content {
+    padding: 60px 20px;
+    margin: 0 20px;
+    backdrop-filter: blur(5px);
+  }
+  
+  .course-hero-content h1 {
     font-size: 42px;
   }
   

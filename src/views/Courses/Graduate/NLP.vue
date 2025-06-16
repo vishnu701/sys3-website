@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Natural Language Processing"
-    heroImage="/public/course-data-science.jpg"
+    heroImage=""
     heroTagline="Master advanced language understanding systems and cutting-edge NLP architectures for sophisticated text processing."
     overviewTitle="Advanced Natural Language Processing"
     overviewParagraph1="is a rigorous graduate-level course that explores the theoretical foundations and state-of-the-art approaches in computational linguistics and language understanding. This course covers both classical statistical NLP and modern deep learning methods."

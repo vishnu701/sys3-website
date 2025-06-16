@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Reinforcement Learning"
-    heroImage="/public/course-ml.jpg"
+    heroImage=""
     heroTagline="Master advanced reinforcement learning algorithms for complex decision-making systems and intelligent agents."
     overviewTitle="Advanced Reinforcement Learning"
     overviewParagraph1="is a rigorous graduate-level course that explores the theoretical foundations and cutting-edge approaches in decision-making systems that learn through interaction. This course covers both classical RL algorithms and modern deep reinforcement learning methods."

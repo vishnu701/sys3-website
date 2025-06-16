@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Computer Vision"
-    heroImage="/public/course-cv.jpg"
+    heroImage=""
     heroTagline="Teach computers to see: Build intelligent systems that understand and interpret visual data."
     overviewTitle="Computer Vision for High School"
     overviewParagraph1="is an accessible introduction to the fascinating world of computer vision. This course teaches students how to build systems that can understand and interpret visual information from images and videos."

@@ -8,10 +8,10 @@
   box-sizing: border-box;
 }
 
-/* Prevent FOUC (Flash of Unstyled Content) */
-html.fouc-protection {
+/* Prevent FOUC (Flash of Unstyled Content) - DISABLED */
+/* html.fouc-protection {
   visibility: hidden;
-}
+} */
 
 /* Ensure that all sections are visible by default but can be animated */
 .section {
@@ -931,6 +931,12 @@ nav li.has-dropdown:hover .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
   box-sizing: border-box;
+}
+
+/* Last section before footer should not have min-height */
+.section:last-of-type {
+  min-height: auto;
+  padding-bottom: 0;
 }
 
 @media (max-width: 992px) {

@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Machine Learning"
-    heroImage="/public/course-ml.jpg"
+    heroImage=""
     heroTagline="From algorithms to applied intelligence: Build, train, and deploy powerful machine learning models."
     overviewTitle="Machine Learning for High School"
     overviewParagraph1="is a comprehensive course designed specifically for high school students. This course introduces the fundamental concepts, algorithms, and techniques that power modern machine learning systems in an accessible way."

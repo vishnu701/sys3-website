@@ -1,7 +1,7 @@
 <template>
-  <course-template
+  <CourseTemplate
     courseTitle="Computer Vision"
-    heroImage="/public/course-cv.jpg"
+    heroImage=""
     heroTagline="Master advanced computer vision algorithms, deep learning architectures, and state-of-the-art visual understanding systems."
     overviewTitle="Advanced Computer Vision"
     overviewParagraph1="is a rigorous graduate-level course exploring cutting-edge techniques in visual perception systems. This course covers both classical computer vision algorithms and modern deep learning approaches that have revolutionized the field."
