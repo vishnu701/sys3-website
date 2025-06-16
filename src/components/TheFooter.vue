@@ -80,15 +80,62 @@ const currentYear = computed(() => new Date().getFullYear());
 footer {
   background: linear-gradient(to bottom, #1A1F35, #0A0F1F);
   color: rgba(255, 255, 255, 0.9);
+  padding: 4rem 0 2rem;
+  position: relative;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .footer-content {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-branding {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .footer-logo {
   color: white;
   font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .footer-branding p {
@@ -139,8 +186,16 @@ footer {
   stroke: white;
 }
 
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
 .footer-bottom p {
   color: rgba(255, 255, 255, 0.7);
-  margin-top: 10px;
+  margin: 0;
+  font-size: 0.9rem;
 }
 </style>

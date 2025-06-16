@@ -1,36 +1,75 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-// Import page components
-import Home from '@/views/Home.vue';
-import About from '@/views/About.vue';
-import Education from '@/views/Education.vue';
-import Consultancy from '@/views/Consultancy.vue';
-import Contact from '@/views/Contact.vue';
-import Blog from '@/views/Blog.vue';
-import BlogPost from '@/views/BlogPost.vue';
-import NotFound from '@/views/NotFound.vue';
+// Lazy load page components for better performance and code splitting
+const Home = () => import('@/views/Home.vue');
+const About = () => import('@/views/About.vue');
+const Education = () => import('@/views/Education.vue');
+const Consultancy = () => import('@/views/Consultancy.vue');
+const Contact = () => import('@/views/Contact.vue');
+const Blog = () => import('@/views/Blog.vue');
+const BlogPost = () => import('@/views/BlogPost.vue');
+const NotFound = () => import('@/views/NotFound.vue');
 
-// Course pages
-import Courses from '@/views/Courses/Courses.vue';
-import DataScience from '@/views/Courses/DataScience.vue';
+// Course pages - grouped for better chunking
+const Courses = () => import('@/views/Courses/Courses.vue');
+const DataScience = () => import(
+  /* webpackChunkName: "course-data-science" */ 
+  '@/views/Courses/DataScience.vue'
+);
 
-// High School Course pages
-import HSMachineLearning from '@/views/Courses/HighSchool/MachineLearning.vue';
-import HSComputerVision from '@/views/Courses/HighSchool/ComputerVision.vue';
-import HSDataScience from '@/views/Courses/HighSchool/DataScience.vue';
+// High School Course pages - grouped into single chunk
+const HSMachineLearning = () => import(
+  /* webpackChunkName: "highschool-courses" */ 
+  '@/views/Courses/HighSchool/MachineLearning.vue'
+);
+const HSComputerVision = () => import(
+  /* webpackChunkName: "highschool-courses" */ 
+  '@/views/Courses/HighSchool/ComputerVision.vue'
+);
+const HSDataScience = () => import(
+  /* webpackChunkName: "highschool-courses" */ 
+  '@/views/Courses/HighSchool/DataScience.vue'
+);
 
-// Graduate Course pages
-import GradMachineLearning from '@/views/Courses/Graduate/MachineLearning.vue';
-import GradComputerVision from '@/views/Courses/Graduate/ComputerVision.vue';
-import GradDataScience from '@/views/Courses/Graduate/DataScience.vue';
-import GradNLP from '@/views/Courses/Graduate/NLP.vue';
-import GradReinforcementLearning from '@/views/Courses/Graduate/ReinforcementLearning.vue';
-import GradLLMOps from '@/views/Courses/Graduate/LLMOps.vue';
+// Graduate Course pages - grouped into single chunk
+const GradMachineLearning = () => import(
+  /* webpackChunkName: "graduate-courses" */ 
+  '@/views/Courses/Graduate/MachineLearning.vue'
+);
+const GradComputerVision = () => import(
+  /* webpackChunkName: "graduate-courses" */ 
+  '@/views/Courses/Graduate/ComputerVision.vue'
+);
+const GradDataScience = () => import(
+  /* webpackChunkName: "graduate-courses" */ 
+  '@/views/Courses/Graduate/DataScience.vue'
+);
+const GradNLP = () => import(
+  /* webpackChunkName: "graduate-courses" */ 
+  '@/views/Courses/Graduate/NLP.vue'
+);
+const GradReinforcementLearning = () => import(
+  /* webpackChunkName: "graduate-courses" */ 
+  '@/views/Courses/Graduate/ReinforcementLearning.vue'
+);
+const GradLLMOps = () => import(
+  /* webpackChunkName: "graduate-courses" */ 
+  '@/views/Courses/Graduate/LLMOps.vue'
+);
 
-// Form pages
-import FormsIndex from '@/views/Forms/Index.vue';
-import CourseRegistration from '@/views/Forms/CourseRegistration.vue';
-import AI5Form from '@/views/Forms/AI5Form.vue';
+// Form pages - grouped into single chunk
+const FormsIndex = () => import(
+  /* webpackChunkName: "forms" */ 
+  '@/views/Forms/Index.vue'
+);
+const CourseRegistration = () => import(
+  /* webpackChunkName: "forms" */ 
+  '@/views/Forms/CourseRegistration.vue'
+);
+const AI5Form = () => import(
+  /* webpackChunkName: "forms" */ 
+  '@/views/Forms/AI5Form.vue'
+);
 
 const routes = [
   {

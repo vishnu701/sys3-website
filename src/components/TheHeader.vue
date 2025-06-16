@@ -124,17 +124,17 @@ watch(() => route.path, () => {
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
   window.addEventListener('resize', handleResize);
-  // window.addEventListener('scroll', handleScroll);
-  
-  // Initialize scroll state
-  handleScroll();
+  // Removed scroll listener to keep header fixed
 });
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
   window.removeEventListener('resize', handleResize);
-  window.removeEventListener('scroll', handleScroll);
-  document.body.style.overflow = ''; // Reset body overflow when component unmounts
+  // Removed scroll listener cleanup since we're not using it
+  
+  // Clean up any body modifications
+  document.body.style.overflow = '';
+  document.body.classList.remove('menu-open');
 });
 
 // Close mobile menu if window is resized to desktop size
@@ -153,18 +153,19 @@ const handleResize = () => {
 <style scoped>
 /* Header container */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 80px !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  justify-content: center !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   transition: max-width 0.4s ease, 
               transform 0.4s ease, 
               border-radius 0.4s ease, 
@@ -183,23 +184,9 @@ header {
   padding: 0 2rem;
 }
 
-/* Scrolled state */
+/* Scrolled state - disabled to keep header fixed */
 header.scrolled {
-  height: calc(var(--header-height) * 1);
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  max-width: 80%;
-  margin: 0 auto;
-  border-radius: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  padding: 0 2rem;
-}
-
-header.scrolled .header-container {
-  max-width: 1200px;
-  padding: 0;
+  /* Keep same styling as default header */
 }
 
 header.scrolled .full-logo {

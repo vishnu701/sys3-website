@@ -381,18 +381,18 @@ const teamMembers = ref([
       }
     ]
   },
-  {
-    name: "Nicholas Koundouros",
-    title: "Market Head",
-    image: "/src/assets/images/people/Nick.jpeg",
-    imagePos: "25%",
-    socialLinks: [
-      {
-        url: "#",
-        icon: linkedInIcon
-      }
-    ]
-  }
+  // {
+  //   name: "Nicholas Koundouros",
+  //   title: "Market Head",
+  //   image: "/src/assets/images/people/Nick.jpeg",
+  //   imagePos: "25%",
+  //   socialLinks: [
+  //     {
+  //       url: "#",
+  //       icon: linkedInIcon
+  //     }
+  //   ]
+  // }
 ]);
 
 onMounted(() => {
@@ -685,14 +685,14 @@ h2 {
 
 /* Hero Section */
 .hero {
-  height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  padding: 0;
+  padding-top: 80px;
 }
 
 .hero-bg {
@@ -1663,6 +1663,8 @@ h2 {
     height: 320px;
   }
 }
+
+
 
 @media (max-width: 576px) {
   .values-grid {

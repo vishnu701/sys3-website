@@ -4,15 +4,16 @@
 .course-nav {
   position: sticky;
   top: var(--header-height);
-  background: rgba(15, 15, 20, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(15, 15, 20, 0.95);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   z-index: 90;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
   border-bottom: 1px solid rgba(138, 133, 255, 0.15);
   transform: translateY(-100%);
   opacity: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  contain: layout style paint;
 }
 
 .course-nav.visible {
@@ -291,12 +292,15 @@
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+  contain: layout style paint;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .component-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -5px, 0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .component-item h3 {

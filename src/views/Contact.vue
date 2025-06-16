@@ -490,14 +490,14 @@ h2 {
 
 /* Hero Section */
 .hero {
-  height: 70vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  padding: 0;
+  padding-top: 80px;
 }
 
 .hero-bg {

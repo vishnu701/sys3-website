@@ -100,9 +100,9 @@ onMounted(() => {
   document.body.style.overflow = 'auto';
   document.body.style.height = 'auto';
   
-  // Get theme from local storage
-  const savedTheme = localStorage.getItem('theme');
-  isDarkTheme.value = savedTheme === 'dark';
+  // Force light theme only - disable dark mode
+  localStorage.setItem('theme', 'light');
+  isDarkTheme.value = false;
   
   // Remove any classes that might interfere with scrolling
   document.body.classList.remove('no-scroll', 'smooth-scroll', 'loading');
@@ -111,7 +111,14 @@ onMounted(() => {
 
 <style>
 /* Critical CSS to enable scrolling */
-html, body, #app, .app, main {
+html, body, #app, .app {
+  height: auto !important;
+  overflow: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+main {
   height: auto !important;
   overflow: auto !important;
   min-height: 0 !important;

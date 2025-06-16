@@ -34,4 +34,31 @@ export default defineConfig({
     },
   },
   base: base,
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'vue-router'],
+          animations: ['gsap'],
+          'course-pages': [
+            './src/views/Courses/Graduate/MachineLearning.vue',
+            './src/views/Courses/Graduate/ComputerVision.vue',
+            './src/views/Courses/Graduate/DataScience.vue',
+            './src/views/Courses/Graduate/NLP.vue',
+            './src/views/Courses/Graduate/ReinforcementLearning.vue',
+            './src/views/Courses/Graduate/LLMOps.vue',
+            './src/views/Courses/HighSchool/MachineLearning.vue',
+            './src/views/Courses/HighSchool/ComputerVision.vue',
+            './src/views/Courses/HighSchool/DataScience.vue'
+          ]
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+    target: 'esnext',
+    minify: 'esbuild'
+  },
+  optimizeDeps: {
+    include: ['vue', 'vue-router', 'gsap']
+  }
 });

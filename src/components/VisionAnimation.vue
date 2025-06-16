@@ -75,13 +75,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const insights = ref([
+// Static data - no need for reactivity
+const insights = [
   "Pioneering AI education methodologies",
   "World-class academic excellence",
   "Real-world skill application"
-]);
+];
 </script>
 
 <style scoped>

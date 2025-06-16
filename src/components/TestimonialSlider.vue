@@ -71,11 +71,12 @@ const testimonials = [
 // Clone count for infinite scrolling (clone slides at start and end)
 const cloneCount = 1;
 
-// Create array with cloned slides at beginning and end
+// Create array with cloned slides at beginning and end (optimized for performance)
 const displayedTestimonials = computed(() => {
-  const lastItems = testimonials.slice(-cloneCount);
-  const firstItems = testimonials.slice(0, cloneCount);
-  return [...lastItems, ...testimonials, ...firstItems];
+  if (!testimonials.length) return [];
+  return testimonials.slice(-cloneCount)
+    .concat(testimonials)
+    .concat(testimonials.slice(0, cloneCount));
 });
 
 const currentSlide = ref(cloneCount); // Start at first real slide (after clones)
@@ -161,9 +162,11 @@ watch(currentSlide, () => {
 onMounted(() => {
   startAutoplay();
   
-  // Reset autoplay after user interaction
-  testimonialTrack.value.addEventListener('mouseenter', clearAutoplay);
-  testimonialTrack.value.addEventListener('mouseleave', startAutoplay);
+  // Add event listeners with proper cleanup tracking
+  if (testimonialTrack.value) {
+    testimonialTrack.value.addEventListener('mouseenter', clearAutoplay, { passive: true });
+    testimonialTrack.value.addEventListener('mouseleave', startAutoplay, { passive: true });
+  }
 });
 
 onBeforeUnmount(() => {

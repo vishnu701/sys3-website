@@ -65,7 +65,7 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" />
+              <img src="@/assets/images/education-icon.svg" alt="Education Icon" class="service-icon-img" loading="lazy" />
             </div>
             <h3>Premium Education</h3>
             <p>Expertly crafted AI education programs designed to empower individuals with actionable knowledge and skills.</p>
@@ -74,7 +74,7 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img src="@/assets/images/consulting-icon.svg" alt="Consulting Icon" class="service-icon-img" />
+              <img src="@/assets/images/consulting-icon.svg" alt="Consulting Icon" class="service-icon-img" loading="lazy" />
             </div>
             <h3>Strategic Consulting</h3>
             <p>Tailored AI integration strategies to transform your organization with cutting-edge technology and expertise.</p>
