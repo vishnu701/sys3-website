@@ -404,7 +404,7 @@
         </div>
 
         <div class="programs-footer">
-          <p class="programs-note">All programs include Harvard faculty mentorship, industry projects, and career placement support</p>
+          <p class="programs-note">All programs include Harvard faculty mentorship and industry projects</p>
           <RouterLink to="/courses" class="cta-button secondary">Compare Individual Courses</RouterLink>
         </div>
       </div>

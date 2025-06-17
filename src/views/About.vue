@@ -529,24 +529,56 @@ const animateSectionsOnScroll = () => {
     );
   });
   
-  // Team leaders and members animation
-  gsap.utils.toArray('.team-leader, .team-member').forEach((item, i) => {
-    gsap.fromTo(item,
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.7,
-        delay: i * 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        }
-      }
-    );
-  });
+  // Optimized team leaders animation
+  const teamLeaders = gsap.utils.toArray('.team-leader');
+  if (teamLeaders.length > 0) {
+    gsap.set(teamLeaders, { y: 60, opacity: 0 });
+    
+    ScrollTrigger.create({
+      trigger: '.team-leaders',
+      start: 'top 80%',
+      onEnter: () => {
+        gsap.to(teamLeaders, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: {
+            amount: 0.3,
+            ease: 'power2.out'
+          },
+          ease: 'back.out(1.2)'
+        });
+      },
+      once: true
+    });
+  }
+  
+  // Optimized team members animation
+  const teamMembers = gsap.utils.toArray('.team-member');
+  if (teamMembers.length > 0) {
+    gsap.set(teamMembers, { y: 60, opacity: 0, scale: 0.9 });
+    
+    ScrollTrigger.create({
+      trigger: '.team-grid',
+      start: 'top 75%',
+      onEnter: () => {
+        gsap.to(teamMembers, {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.9,
+          stagger: {
+            amount: 0.6,
+            grid: [2, 3], // Assumes 2 columns on tablet, 3 on desktop
+            from: 'start',
+            ease: 'power2.out'
+          },
+          ease: 'back.out(1.1)'
+        });
+      },
+      once: true
+    });
+  }
   
   // CTA box animation
   gsap.fromTo('.cta-box',
@@ -1328,16 +1360,19 @@ h2 {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 40px 20px;
+  will-change: transform;
+  transform: translateZ(0); /* Enable hardware acceleration */
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .team-leader:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
   box-shadow: 0 15px 50px rgba(88, 66, 255, 0.1);
 }
 
@@ -1355,12 +1390,14 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
   object-position: var(--pos-x, center) var(--pos-y, center);
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .team-leader:hover .leader-image img {
-  transform: scale(1.08);
+  transform: scale(1.08) translateZ(0);
 }
 
 .leader-info {
@@ -1429,16 +1466,19 @@ h2 {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 30px 20px;
+  will-change: transform;
+  transform: translateZ(0); /* Enable hardware acceleration */
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .team-member:hover {
-  transform: translateY(-8px) scale(1.01);
+  transform: translateY(-8px) scale(1.01) translateZ(0);
   box-shadow: 0 15px 50px rgba(88, 66, 255, 0.1);
 }
 
@@ -1456,12 +1496,14 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
   object-position: var(--pos-x, center) var(--pos-y, center);
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .team-member:hover .member-image img {
-  transform: scale(1.08);
+  transform: scale(1.08) translateZ(0);
 }
 
 .member-info {

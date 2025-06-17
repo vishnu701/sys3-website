@@ -24,6 +24,7 @@
               Your browser does not support the video tag.
             </video>
           </div>
+          
 
           <!-- Right Text Section -->
           <div class="hero-text-container">
@@ -254,14 +255,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ChatAnimation from '@/components/ChatAnimation.vue';
 import DataVisualization from '@/components/DataVisualization.vue';
 import TestimonialSlider from '@/components/TestimonialSlider.vue';
 import MinimalFaq from '@/components/MinimalFaq.vue';
-import logoMask from '@/assets/logos/compact/logo_mask.svg';
+// import logoMask from '@/assets/logos/compact/logo_mask.svg';
 
 // Import video assets
 import heroVideo from '@/assets/hero.mp4';
@@ -293,6 +294,7 @@ const initializeAnimations = () => {
   // Animate elements with parallax
   setupParallaxEffects();
 };
+
 
 // Hero animations
 const animateHeroSection = () => {
@@ -452,6 +454,7 @@ const setupParallaxEffects = () => {
     }
   });
 };
+
 
 </script>
 
@@ -616,10 +619,12 @@ h2 {
   justify-content: center;
   align-items: center;
   position: relative;
+  background: white;
+  overflow: hidden;
   
-  /* Apply soft logo mask using filter */
-  -webkit-mask-image: v-bind('`url(${logoMask})`');
-  mask-image: v-bind('`url(${logoMask})`');
+  /* Apply logo mask using direct path */
+  -webkit-mask-image: url('@/assets/logos/compact/logo_mask.svg');
+  mask-image: url('@/assets/logos/compact/logo_mask.svg');
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -630,6 +635,7 @@ h2 {
   /* Apply a subtle filter to soften the mask edges */
   filter: contrast(0.95) blur(0.5px);
 }
+
 
 .masked-logo-video {
   width: 100%;

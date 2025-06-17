@@ -444,62 +444,96 @@ const animateSectionsOnScroll = () => {
       );
   });
   
-  // Animate service cards with stagger
-  gsap.utils.toArray('.service-card').forEach((card, i) => {
-    gsap.fromTo(card,
-      { y: 30, opacity: 0 },
+  // Instant service cards animation for Comprehensive AI Solutions
+  const serviceCards = gsap.utils.toArray('.service-card');
+  if (serviceCards.length > 0) {
+    gsap.fromTo(serviceCards, 
+      { 
+        y: 20, 
+        opacity: 0,
+        force3D: true
+      },
       {
         y: 0,
         opacity: 1,
-        duration: 0.6,
-        delay: i * 0.1,
+        duration: 0.8,
+        stagger: 0.15,
         ease: 'power2.out',
+        force3D: true,
         scrollTrigger: {
-          trigger: card,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
+          trigger: '.services-grid',
+          start: 'top bottom-=100px',
+          toggleActions: 'play none none none',
+          immediateRender: false
         }
       }
     );
-  });
+  }
   
-  // Case study cards with stagger
-  gsap.utils.toArray('.case-study-card').forEach((card, i) => {
-    gsap.fromTo(card,
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        delay: i * 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
+  // Optimized case study cards animation
+  const caseStudyCards = gsap.utils.toArray('.case-study-card');
+  if (caseStudyCards.length > 0) {
+    gsap.set(caseStudyCards, { 
+      y: 35, 
+      opacity: 0,
+      willChange: 'transform, opacity',
+      force3D: true
+    });
+    
+    gsap.to(caseStudyCards, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      stagger: { 
+        amount: 0.3,
+        grid: [3, 1],
+        from: 'start',
+        ease: 'sine.inOut'
+      },
+      ease: 'power3.out',
+      force3D: true,
+      scrollTrigger: {
+        trigger: '.case-studies-grid',
+        start: 'top 85%',
+        toggleActions: 'play none none none',
+        onComplete: () => {
+          gsap.set(caseStudyCards, { willChange: 'auto' });
         }
       }
-    );
-  });
+    });
+  }
   
-  // Feature items stagger animation
-  gsap.utils.toArray('.feature-item').forEach((item, i) => {
-    gsap.fromTo(item,
-      { x: -20, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.6,
-        delay: i * 0.15,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
+  // Optimized feature items animation - A Methodical Process section
+  const featureItems = gsap.utils.toArray('.feature-item');
+  if (featureItems.length > 0) {
+    gsap.set(featureItems, { 
+      x: -30, 
+      opacity: 0,
+      willChange: 'transform, opacity',
+      force3D: true
+    });
+    
+    gsap.to(featureItems, {
+      x: 0,
+      opacity: 1,
+      duration: 0.7,
+      stagger: { 
+        amount: 0.5,
+        from: 'start',
+        ease: 'power2.inOut'
+      },
+      ease: 'back.out(1.2)',
+      force3D: true,
+      scrollTrigger: {
+        trigger: '.feature-list',
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+        onComplete: () => {
+          gsap.set(featureItems, { willChange: 'auto' });
         }
       }
-    );
-  });
+    });
+  }
   
   // CTA box animation
   const ctaBox = document.querySelector('.cta-box');
@@ -1982,8 +2016,10 @@ h2 {
   background: white;
   border-radius: 12px;
   border: 1px solid #E8E8E8;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .service-card::before {
@@ -2004,7 +2040,7 @@ h2 {
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) translateZ(0);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   border-color: transparent;
 }
@@ -2090,13 +2126,15 @@ h2 {
   background: rgba(88, 66, 255, 0.02);
   border-radius: 12px;
   border: 1px solid rgba(88, 66, 255, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .feature-item:hover {
   background: rgba(88, 66, 255, 0.04);
   border-color: rgba(88, 66, 255, 0.1);
-  transform: translateX(6px);
+  transform: translateX(6px) translateZ(0);
 }
 
 .feature-number {
