@@ -23,8 +23,8 @@ if (!repoName) {
   console.warn('Using default repo name:', repoName);
 }
 
-// Get base URL - use repo name in production, relative path in development
-const base = process.env.NODE_ENV === 'production' ? `/${repoName}/` : './';
+// Get base URL - for Hostinger deployment, use relative paths
+const base = './';
 
 export default defineConfig({
   plugins: [vue()],

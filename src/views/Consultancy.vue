@@ -206,49 +206,49 @@
         
         <div class="services-grid case-studies-grid">
           <div class="service-card case-study-card">
-            <h3>Retail Analytics Platform</h3>
-            <p class="case-study-industry">Retail & E-commerce</p>
-            <p>Implemented a predictive analytics system that increased conversion rates by 24% and reduced inventory costs by 18% through accurate demand forecasting.</p>
+            <h3>AI Teaching Assistants</h3>
+            <p class="case-study-industry">Education</p>
+            <p>Developed intelligent teaching assistants that streamline content creation for educators. These AI tools help faculty efficiently generate teaching materials, saving preparation time while enhancing educational quality and student engagement.</p>
             <div class="case-study-results">
               <div class="result-item">
-                <span class="result-number">24%</span>
-                <span class="result-label">Increased Conversions</span>
+                <span class="result-number">Streamlined</span>
+                <span class="result-label">Content Creation</span>
               </div>
               <div class="result-item">
-                <span class="result-number">18%</span>
-                <span class="result-label">Cost Reduction</span>
+                <span class="result-number">Enhanced</span>
+                <span class="result-label">Teaching Efficiency</span>
               </div>
             </div>
           </div>
           
           <div class="service-card case-study-card">
-            <h3>Healthcare Diagnostic Tool</h3>
-            <p class="case-study-industry">Healthcare</p>
-            <p>Developed an AI-powered diagnostic system that improved early detection rates by 35% and reduced diagnostic time by 60% for medical professionals.</p>
+            <h3>Resume Analysis & Job Matching</h3>
+            <p class="case-study-industry">Technology</p>
+            <p>Created sophisticated job matching tools using Graph RAGs and advanced LLM capabilities. These systems analyze resumes and job descriptions to identify optimal candidate-position matches, significantly improving hiring outcomes for recruitment teams.</p>
             <div class="case-study-results">
               <div class="result-item">
-                <span class="result-number">35%</span>
-                <span class="result-label">Better Detection</span>
+                <span class="result-number">Improved</span>
+                <span class="result-label">Matching Accuracy</span>
               </div>
               <div class="result-item">
-                <span class="result-number">60%</span>
-                <span class="result-label">Time Saved</span>
+                <span class="result-number">Enhanced</span>
+                <span class="result-label">Recruitment Efficiency</span>
               </div>
             </div>
           </div>
           
           <div class="service-card case-study-card">
-            <h3>Financial Risk Assessment</h3>
-            <p class="case-study-industry">Financial Services</p>
-            <p>Created a machine learning system for risk assessment that reduced fraud by 42% and improved credit decision accuracy by 28% for a leading financial institution.</p>
+            <h3>Crop Yield Prediction</h3>
+            <p class="case-study-industry">Agriculture</p>
+            <p>Implemented machine learning systems that predict yields for blueberries, corn, and wine by analyzing leaf spectral data and other agricultural metrics. This early planning capability helped clients significantly reduce packaging and storage costs while optimizing harvest timing.</p>
             <div class="case-study-results">
               <div class="result-item">
-                <span class="result-number">42%</span>
-                <span class="result-label">Fraud Reduction</span>
+                <span class="result-number">Accurate</span>
+                <span class="result-label">Yield Forecasting</span>
               </div>
               <div class="result-item">
-                <span class="result-number">28%</span>
-                <span class="result-label">Accuracy Improvement</span>
+                <span class="result-number">Reduced</span>
+                <span class="result-label">Storage & Packaging Costs</span>
               </div>
             </div>
           </div>
@@ -2011,6 +2011,15 @@ h2 {
   margin-top: 64px;
 }
 
+/* Case Studies Grid - 3 columns on desktop */
+.case-studies-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .service-card {
   padding: 48px;
   background: white;
@@ -2505,6 +2514,13 @@ h2 {
   
   .case-studies-grid {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+  
+  .case-studies-grid .service-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    margin: 0 auto;
   }
   
   .service-grid {

@@ -21,7 +21,7 @@
     </section>
 
     <!-- Blog Posts Section -->
-    <section id="blog-posts" class="section">
+    <section id="blog-posts" class="section blog-posts-section">
       <div class="container">
         <div class="blog-grid">
           <!-- Featured Post -->
@@ -233,6 +233,11 @@ onMounted(() => {
   font-weight: 300;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* Blog Posts Section */
+.blog-posts-section {
+  padding-bottom: 80px;
 }
 
 /* Blog Grid */
@@ -484,6 +489,10 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .blog-posts-section {
+    padding-bottom: 60px;
+  }
+  
   .blog-grid {
     gap: 32px;
   }
@@ -519,6 +528,10 @@ onMounted(() => {
 }
 
 @media (max-width: 576px) {
+  .blog-posts-section {
+    padding-bottom: 40px;
+  }
+  
   .post-content {
     padding: 24px !important;
   }

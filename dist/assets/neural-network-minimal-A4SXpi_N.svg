@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background glow element -->
+  <defs>
+    <radialGradient id="bgGlow" cx="300" cy="250" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5842FF" stop-opacity="0.08"/>
+      <stop offset="0.6" stop-color="#6585FE" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#A39AF5" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Node glow for primary nodes -->
+    <radialGradient id="nodeGlowPrimary" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5842FF" stop-opacity="0.3"/>
+      <stop offset="0.8" stop-color="#5842FF" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#5842FF" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Node glow for secondary nodes -->
+    <radialGradient id="nodeGlowSecondary" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6585FE" stop-opacity="0.3"/>
+      <stop offset="0.8" stop-color="#6585FE" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#6585FE" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Data flow animation along connections -->
+    <linearGradient id="dataFlow" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#5842FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#5842FF" stop-opacity="0.5">
+        <animate attributeName="offset" values="0;1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="51%" stop-color="#5842FF" stop-opacity="0.5">
+        <animate attributeName="offset" values="0;1" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#5842FF" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Filter for soft glow effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background elements -->
+  <rect width="600" height="500" fill="url(#bgGlow)" opacity="0.5"/>
+  
+  <!-- Grid pattern (very subtle) -->
+  <g opacity="0.15">
+    <!-- Vertical lines -->
+    <line x1="100" y1="50" x2="100" y2="450" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="200" y1="50" x2="200" y2="450" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="300" y1="50" x2="300" y2="450" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="400" y1="50" x2="400" y2="450" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="500" y1="50" x2="500" y2="450" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    
+    <!-- Horizontal lines -->
+    <line x1="50" y1="100" x2="550" y2="100" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="50" y1="200" x2="550" y2="200" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="50" y1="300" x2="550" y2="300" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="50" y1="400" x2="550" y2="400" stroke="#5842FF" stroke-width="0.5" stroke-opacity="0.2"/>
+  </g>
+  
+  <!-- Neural Network Connections -->
+  <!-- Input to Hidden Layer Connections -->
+  <g opacity="0.6">
+    <!-- Connection from Input 1 to all hidden nodes -->
+    <line x1="120" y1="150" x2="220" y2="120" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="150" x2="220" y2="220" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="150" x2="220" y2="320" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="150" x2="220" y2="420" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <!-- Connection from Input 2 to all hidden nodes -->
+    <line x1="120" y1="250" x2="220" y2="120" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="250" x2="220" y2="220" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="250" x2="220" y2="320" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="250" x2="220" y2="420" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <!-- Connection from Input 3 to all hidden nodes -->
+    <line x1="120" y1="350" x2="220" y2="120" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="350" x2="220" y2="220" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="350" x2="220" y2="320" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="120" y1="350" x2="220" y2="420" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+  </g>
+  
+  <!-- Hidden to Hidden Layer Connections -->
+  <g opacity="0.6">
+    <!-- Connections from Hidden Layer 1 to Hidden Layer 2 -->
+    <line x1="220" y1="120" x2="320" y2="170" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="120" x2="320" y2="270" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="120" x2="320" y2="370" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <line x1="220" y1="220" x2="320" y2="170" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="220" x2="320" y2="270" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="220" x2="320" y2="370" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <line x1="220" y1="320" x2="320" y2="170" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="320" x2="320" y2="270" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="320" x2="320" y2="370" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <line x1="220" y1="420" x2="320" y2="170" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="420" x2="320" y2="270" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="220" y1="420" x2="320" y2="370" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+  </g>
+  
+  <!-- Hidden to Output Layer Connections -->
+  <g opacity="0.6">
+    <!-- Animated data flow connections for visual interest -->
+    <line x1="320" y1="170" x2="470" y2="200" stroke="url(#dataFlow)" stroke-width="1.5"/>
+    <line x1="320" y1="270" x2="470" y2="200" stroke="url(#dataFlow)" stroke-width="1.5"/>
+    <line x1="320" y1="370" x2="470" y2="200" stroke="url(#dataFlow)" stroke-width="1.5"/>
+    
+    <line x1="320" y1="170" x2="470" y2="300" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="320" y1="270" x2="470" y2="300" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+    <line x1="320" y1="370" x2="470" y2="300" stroke="#5842FF" stroke-width="1" stroke-opacity="0.3"/>
+  </g>
+  
+  <!-- Neural Network Nodes -->
+  <!-- Input Layer Nodes -->
+  <g>
+    <!-- Node glows (larger radius for depth) -->
+    <circle cx="120" cy="150" r="25" fill="url(#nodeGlowPrimary)" opacity="0.6"/>
+    <circle cx="120" cy="250" r="25" fill="url(#nodeGlowPrimary)" opacity="0.6"/>
+    <circle cx="120" cy="350" r="25" fill="url(#nodeGlowPrimary)" opacity="0.6"/>
+    
+    <!-- Actual nodes -->
+    <circle cx="120" cy="150" r="10" fill="#5842FF" opacity="0.9">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="250" r="12" fill="#5842FF" opacity="0.9">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="350" r="10" fill="#5842FF" opacity="0.9">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Hidden Layer 1 Nodes -->
+  <g>
+    <!-- Node glows -->
+    <circle cx="220" cy="120" r="20" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    <circle cx="220" cy="220" r="20" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    <circle cx="220" cy="320" r="20" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    <circle cx="220" cy="420" r="20" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    
+    <!-- Actual nodes -->
+    <circle cx="220" cy="120" r="8" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="220" r="8" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="320" r="8" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="420" r="8" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Hidden Layer 2 Nodes -->
+  <g>
+    <!-- Node glows -->
+    <circle cx="320" cy="170" r="22" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    <circle cx="320" cy="270" r="22" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    <circle cx="320" cy="370" r="22" fill="url(#nodeGlowSecondary)" opacity="0.5"/>
+    
+    <!-- Actual nodes -->
+    <circle cx="320" cy="170" r="9" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="270" r="9" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="370" r="9" fill="#6585FE" opacity="0.8">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Output Layer Nodes -->
+  <g>
+    <!-- Node glows (larger for emphasis) -->
+    <circle cx="470" cy="200" r="32" fill="url(#nodeGlowPrimary)" opacity="0.7"/>
+    <circle cx="470" cy="300" r="30" fill="url(#nodeGlowPrimary)" opacity="0.7"/>
+    
+    <!-- Actual nodes -->
+    <circle cx="470" cy="200" r="14" fill="#5842FF">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="14;16;14" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="470" cy="300" r="14" fill="#5842FF">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <!-- Abstract data points -->
+  <g opacity="0.4">
+    <circle cx="170" cy="180" r="3" fill="#A39AF5">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="390" cy="220" r="3" fill="#A39AF5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="270" cy="350" r="3" fill="#A39AF5">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="370" cy="320" r="3" fill="#A39AF5">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="420" cy="150" r="3" fill="#A39AF5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="10s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Flowing data animation elements -->
+  <g opacity="0.7">
+    <circle cx="180" cy="220" r="2" fill="#5842FF">
+      <animate attributeName="cx" values="120;220" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="250;220" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="270" cy="220" r="2" fill="#6585FE">
+      <animate attributeName="cx" values="220;320" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="220;270" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="400" cy="230" r="2" fill="#5842FF">
+      <animate attributeName="cx" values="320;470" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="270;200" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Central focal glow for depth -->
+  <circle cx="300" cy="250" r="200" fill="url(#bgGlow)" opacity="0.1"/>
+  
+  <!-- Subtle pulsing animation for the entire network -->
+  <animate attributeName="opacity" values="0.95;1;0.95" dur="10s" repeatCount="indefinite"/>
+</svg>
