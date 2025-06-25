@@ -125,7 +125,6 @@
             </div>
             <h3>Harvard Faculty Instruction</h3>
             <p>Direct mentorship from Harvard University's distinguished Scientific Program Director and faculty members</p>
-            <RouterLink to="/courses" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
           </div>
           
           <div class="service-card">
@@ -137,7 +136,6 @@
             </div>
             <h3>Academic Excellence</h3>
             <p>Rigorous curriculum designed to the exacting standards of Harvard University's renowned AI programs</p>
-            <RouterLink to="/courses" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
           </div>
           
           <div class="service-card">
@@ -151,7 +149,6 @@
             </div>
             <h3>Distinguished Mentorship</h3>
             <p>Individual guidance from Harvard-affiliated instructors in an exclusive academic environment with limited enrollment</p>
-            <RouterLink to="/courses" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
           </div>
         </div>
       </div>
@@ -318,6 +315,7 @@
           <!-- Vision & Language AI Master's -->
           <div class="program-card">
             <div class="program-header">
+              <div class="program-badge-placeholder"></div>
               <h3 class="program-title-tech">Vision & Language AI Master's</h3>
               <p class="program-title-formal">Master of Computer Vision & Natural Language Processing</p>
             </div>
@@ -353,7 +351,7 @@
                 <span class="duration-label">Weeks Total</span>
               </div>
             </div>
-            <RouterLink to="/contact" class="program-cta secondary">Learn More</RouterLink>
+            <RouterLink to="/contact" class="program-cta secondary">Apply Now</RouterLink>
           </div>
 
           <!-- Full-Stack AI Master's -->
@@ -1999,6 +1997,11 @@ h2 {
 
 .program-badge.premium {
   background: linear-gradient(135deg, #6585FE, #A39AF5);
+}
+
+.program-badge-placeholder {
+  height: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .program-header {

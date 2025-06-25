@@ -153,6 +153,8 @@ const prerequisites = [
 const formatItems = [
   "Live virtual sessions with interactive Q&A",
   "Self-paced learning modules with hands-on exercises",
+  "Beginner-friendly codecasts with guided coding practice",
+  "Step-by-step tutorials for foundational concepts",
   "Real-world projects with guided datasets",
   "Mentor-guided review sessions and code reviews",
   "Team-based capstone project"

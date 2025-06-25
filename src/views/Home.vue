@@ -213,7 +213,7 @@
           <div class="section-divider"></div>
         </div>
         
-        <MinimalFaq />
+        <MinimalFaq :items="faqs" />
         
         <div class="cta-center">
           <RouterLink to="/contact" class="text-link large">Have more questions? Contact us <span class="arrow">→</span></RouterLink>
@@ -276,6 +276,26 @@ import consultingIcon from '@/assets/images/consulting-icon.svg';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
+// General FAQ data for homepage
+const faqs = [
+  {
+    question: "What services does System3 offer?",
+    answer: "We provide comprehensive AI education programs and strategic consulting services. Our education division offers expert-led courses and personalized learning experiences, while our consulting team helps organizations implement AI solutions tailored to their specific needs."
+  },
+  {
+    question: "Who can benefit from your AI education programs?",
+    answer: "Our programs are designed for professionals, students, and organizations looking to master AI technologies. Whether you're a beginner or have existing technical knowledge, we offer courses that match your skill level and career goals."
+  },
+  {
+    question: "How does your consulting process work?",
+    answer: "We follow a methodical approach: Discovery & Assessment, Strategy & Solution Design, Development & Implementation, and ongoing Monitoring & Optimization. Each project is tailored to your specific business objectives and technical requirements."
+  },
+  {
+    question: "What makes System3 different from other AI companies?",
+    answer: "We combine academic expertise with practical industry experience to deliver both education and implementation services. Our team of experts ensures you not only learn about AI but also successfully integrate it into your organization with ongoing support."
+  }
+];
 
 // Initialize animations and particles
 onMounted(() => {
