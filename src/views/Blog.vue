@@ -218,7 +218,7 @@ onMounted(() => {
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .hero-heading .gradient-text {
@@ -229,7 +229,7 @@ onMounted(() => {
   font-size: 19px;
   margin: 0;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   max-width: 600px;
   margin: 0 auto;
@@ -344,7 +344,7 @@ onMounted(() => {
   font-weight: 500;
   margin: 0 0 20px;
   line-height: 1.3;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .blog-post h3 {
@@ -352,13 +352,13 @@ onMounted(() => {
   font-weight: 500;
   margin: 0 0 16px;
   line-height: 1.3;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .post-excerpt {
   font-size: 16px;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   margin: 0 0 24px;
   font-weight: 300;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;

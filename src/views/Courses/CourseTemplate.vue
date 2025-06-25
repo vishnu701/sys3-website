@@ -606,7 +606,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .section-divider {
@@ -622,7 +622,7 @@ h2 {
   line-height: 1.8;
   max-width: 700px;
   margin: 20px 0 40px;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -631,7 +631,7 @@ h2 {
   line-height: 1.8;
   margin-bottom: 24px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
 }
 
@@ -668,13 +668,13 @@ h2 {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 12px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .component-item p {
   font-size: 16px;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -682,7 +682,7 @@ h2 {
 .module-item h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 /* Details Items Typography */
@@ -690,13 +690,13 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 12px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .details-item p {
   font-size: 16px;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -705,7 +705,7 @@ h2 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .instructor-role {
@@ -718,7 +718,7 @@ h2 {
 .instructor-bio {
   font-size: 16px;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   margin-bottom: 16px;
 }
@@ -1019,6 +1019,7 @@ h2 {
   margin-bottom: 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  color: #545454;
   color: white;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }

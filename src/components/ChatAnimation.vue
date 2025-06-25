@@ -4,7 +4,9 @@
       <div class="chat-container">
         <div class="chat-header">
           <div class="chat-header-logo">
-            <div class="system3-logo">S3</div>
+            <div class="system3-logo">
+              <img src="/src/assets/logos/compact/logo.png" alt="System3" class="logo-img" />
+            </div>
             <span>System3</span>
           </div>
         </div>
@@ -23,7 +25,9 @@
           <!-- System3 Response -->
           <div class="message system-message">
             <div class="avatar system-avatar">
-              <div class="system-logo">S3</div>
+              <div class="system-logo">
+                <img src="/src/assets/logos/compact/logo.png" alt="System3" class="logo-img-small" />
+              </div>
             </div>
             <div class="message-bubble">
               <div class="message-text">Our education is led by Harvard faculty and combines academic rigor with practical AI applications</div>
@@ -45,7 +49,9 @@
           <!-- Second System3 Response -->
           <div class="message system-message">
             <div class="avatar system-avatar">
-              <div class="system-logo">S3</div>
+              <div class="system-logo">
+                <img src="/src/assets/logos/compact/logo.png" alt="System3" class="logo-img-small" />
+              </div>
             </div>
             <div class="message-bubble">
               <div class="message-text">Yes! We have specialized AI courses designed specifically for exceptional high school students</div>
@@ -130,6 +136,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.logo-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .chat-messages {
   padding: 20px;
   overflow-y: auto;
@@ -208,7 +220,7 @@
 }
 
 .system-avatar {
-  background-color: white;
+  background-color: transparent;
 }
 
 .system-logo {
@@ -220,6 +232,13 @@
   font-weight: bold;
   color: #5842FF;
   font-size: 13px;
+}
+
+.logo-img-small {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .message-bubble {

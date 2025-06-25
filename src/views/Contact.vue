@@ -464,7 +464,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .section-divider {
@@ -484,7 +484,7 @@ h2 {
   line-height: 1.8;
   max-width: 700px;
   margin: 20px auto 0;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -548,7 +548,7 @@ h2 {
   margin-bottom: 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
   position: relative;
   z-index: 5;
 }
@@ -562,7 +562,7 @@ h2 {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   text-align: center;
   position: relative;
@@ -589,7 +589,7 @@ h2 {
 }
 
 [data-theme="light"] .hero-content h1 {
-  color: #202124;
+  color: #545454;
   text-shadow: 0 2px 10px rgba(138, 133, 255, 0.08);
 }
 
@@ -677,12 +677,12 @@ h2 {
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 16px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .contact-card p {
   font-size: 16px;
-  color: #4A4A4A;
+  color: #545454;
   margin-bottom: 8px;
   line-height: 1.6;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -759,7 +759,7 @@ h2 {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #0A0A0A;
+  color: #545454;
   font-size: 15px;
 }
 
@@ -910,7 +910,7 @@ h2 {
 .form-success-message h3 {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #0A0A0A;
+  color: #545454;
   font-weight: 600;
 }
 
@@ -921,7 +921,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
@@ -959,7 +959,7 @@ h2 {
   font-weight: 600;
   margin: 0;
   padding-right: 32px;
-  color: #0A0A0A;
+  color: #545454;
   transition: color 0.3s ease;
 }
 
@@ -1016,7 +1016,7 @@ h2 {
 }
 
 .faq-answer p {
-  color: #4A4A4A;
+  color: #545454;
   font-size: 16px;
   line-height: 1.7;
   margin: 0;

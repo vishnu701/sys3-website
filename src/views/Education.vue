@@ -115,7 +115,13 @@
         <div class="services-grid">
           <div class="service-card">
             <div class="service-icon">
-              <img :src="educationIcon" alt="Education Icon" class="service-icon-img" />
+              <svg class="service-icon-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L22 7L12 11L2 7L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M6 13L12 16L18 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 17L12 20L18 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 7V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="22" cy="13" r="1" fill="currentColor"/>
+              </svg>
             </div>
             <h3>Harvard Faculty Instruction</h3>
             <p>Direct mentorship from Harvard University's distinguished Scientific Program Director and faculty members</p>
@@ -124,7 +130,10 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img :src="consultingIcon" alt="Consulting Icon" class="service-icon-img" />
+              <svg class="service-icon-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7V21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H2V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M22 3H16C14.9391 3 13.9217 3.42143 13.1716 4.17157C12.4214 4.92172 12 5.93913 12 7V21C12 20.2044 12.3161 19.4413 12.8787 18.8787C13.4413 18.3161 14.2044 18 15 18H22V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
             </div>
             <h3>Academic Excellence</h3>
             <p>Rigorous curriculum designed to the exacting standards of Harvard University's renowned AI programs</p>
@@ -133,7 +142,12 @@
           
           <div class="service-card">
             <div class="service-icon">
-              <img :src="educationIcon" alt="Education Icon" class="service-icon-img" />
+              <svg class="service-icon-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="currentColor" stroke-width="2"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M23 21V19C23 16.7909 21.2091 15 19 15C18.1805 15 17.4344 15.2868 16.8482 15.7647" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 3.13137C16.8604 3.35751 17.623 3.85888 18.1676 4.55618C18.7122 5.25349 19 6.10401 19 7C19 7.89599 18.7122 8.74651 18.1676 9.44382C17.623 10.1411 16.8604 10.6425 16 10.8686" stroke="currentColor" stroke-width="2"/>
+              </svg>
             </div>
             <h3>Distinguished Mentorship</h3>
             <p>Individual guidance from Harvard-affiliated instructors in an exclusive academic environment with limited enrollment</p>
@@ -758,7 +772,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .dark-section h2 {
@@ -795,7 +809,7 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -805,7 +819,7 @@ h2 {
   line-height: 1.8;
   margin: 20px auto 0;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 700px;
   text-align: center;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -1009,7 +1023,7 @@ h2 {
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .hero-heading .gradient-text {
@@ -1020,7 +1034,7 @@ h2 {
   font-size: 19px;
   margin: 0 0 40px;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -1061,12 +1075,12 @@ h2 {
 
 .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 
@@ -1223,11 +1237,11 @@ h2 {
   font-weight: 500;
   margin: 0 0 16px;
   letter-spacing: -0.01em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .service-card p {
-  color: #4A4A4A;
+  color: #545454;
   margin: 0 0 24px;
   line-height: 1.7;
   font-weight: 300;
@@ -1315,13 +1329,13 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .feature-text p {
   margin: 0;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -1348,7 +1362,7 @@ h2 {
   padding: 0.9rem 2.5rem;
   background: transparent;
   border: none;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1544,7 +1558,7 @@ h2 {
   line-height: 1.7;
   min-height: 48px;
   overflow: hidden;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -1653,11 +1667,11 @@ h2 {
   margin-bottom: 40px;
   text-align: center;
   max-width: 100%;
-  color: #4A4A4A;
+  color: #545454;
 }
 
 .cta-content-overlay h2 {
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .cta-actions {
@@ -2125,7 +2139,7 @@ h2 {
 
 .course-name {
   font-weight: 500;
-  color: #0A0A0A;
+  color: #545454;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }

@@ -327,7 +327,7 @@ function truncateDescription(text, maxLength = 100) {
   font-weight: 300;
   margin-bottom: 32px;
   line-height: 1.15;
-  color: #0A0A0A;
+  color: #545454;
   position: relative;
   z-index: 5;
   letter-spacing: -0.02em;
@@ -342,7 +342,7 @@ function truncateDescription(text, maxLength = 100) {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -371,7 +371,7 @@ function truncateDescription(text, maxLength = 100) {
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -568,7 +568,7 @@ function truncateDescription(text, maxLength = 100) {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.25rem;
-  color: #4A4A4A;
+  color: #545454;
   font-size: 0.95rem;
 }
 
@@ -582,7 +582,7 @@ function truncateDescription(text, maxLength = 100) {
   line-height: 1.7;
   min-height: 48px;
   overflow: hidden;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -593,7 +593,7 @@ function truncateDescription(text, maxLength = 100) {
 .course-topics h4 {
   font-size: 18px;
   margin-bottom: 8px;
-  color: #0A0A0A;
+  color: #545454;
   font-weight: 500;
 }
 
@@ -607,7 +607,7 @@ function truncateDescription(text, maxLength = 100) {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
 }
@@ -794,7 +794,7 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .approach-item p {
-  color: #4A4A4A;
+  color: #545454;
   line-height: 1.7;
   font-size: 15px;
   font-weight: 300;
@@ -1001,7 +1001,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
   text-align: center;
 }
 
@@ -1010,7 +1010,7 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
   text-align: center;
   margin-left: auto;

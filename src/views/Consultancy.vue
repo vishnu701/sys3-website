@@ -648,7 +648,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .dark-section h2 {
@@ -686,7 +686,7 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -809,7 +809,7 @@ h2 {
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .hero-heading .gradient-text {
@@ -820,7 +820,7 @@ h2 {
   font-size: 19px;
   margin: 0 0 40px;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -1903,12 +1903,12 @@ h2 {
 
 .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 
@@ -2080,11 +2080,11 @@ h2 {
   font-weight: 500;
   margin: 0 0 16px;
   letter-spacing: -0.01em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .service-card p {
-  color: #4A4A4A;
+  color: #545454;
   margin: 0 0 24px;
   line-height: 1.7;
   font-weight: 300;
@@ -2168,13 +2168,13 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .feature-text p {
   margin: 0;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -2325,11 +2325,11 @@ h2 {
   margin-bottom: 40px;
   text-align: center;
   max-width: 100%;
-  color: #4A4A4A;
+  color: #545454;
 }
 
 .cta-content-overlay h2 {
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .cta-actions {
@@ -2354,12 +2354,12 @@ h2 {
 
 .cta-content-overlay .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-content-overlay .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 

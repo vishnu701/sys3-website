@@ -689,7 +689,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .section-divider {
@@ -718,7 +718,7 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
@@ -786,7 +786,7 @@ h2 {
   margin-bottom: 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
   position: relative;
   z-index: 5;
 }
@@ -800,7 +800,7 @@ h2 {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   text-align: center;
   position: relative;
@@ -827,7 +827,7 @@ h2 {
 }
 
 [data-theme="light"] .hero-content h1 {
-  color: #202124;
+  color: #545454;
   text-shadow: 0 2px 10px rgba(138, 133, 255, 0.08);
 }
 
@@ -1271,13 +1271,13 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .feature-text p {
   margin: 0;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
