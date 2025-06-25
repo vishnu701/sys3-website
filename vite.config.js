@@ -23,8 +23,8 @@ if (!repoName) {
   console.warn('Using default repo name:', repoName);
 }
 
-// Get base URL - for Hostinger deployment, use relative paths
-const base = './';
+// Get base URL - for GitHub Actions deployment to GitHub Pages
+const base = process.env.NODE_ENV === 'production' ? `/${repoName}/` : '/';
 
 export default defineConfig({
   plugins: [vue()],
