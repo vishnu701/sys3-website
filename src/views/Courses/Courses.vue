@@ -454,7 +454,7 @@ function truncateDescription(text, maxLength = 100) {
   flex-direction: column;
   background: white;
   border: 1px solid #E8E8E8;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
               box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -525,7 +525,7 @@ function truncateDescription(text, maxLength = 100) {
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.3rem 0.8rem;
-  border-radius: 12px;
+  border-radius: 24px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -634,7 +634,7 @@ function truncateDescription(text, maxLength = 100) {
   background: transparent;
   border: 1.5px solid #5842FF;
   color: #5842FF;
-  border-radius: 6px;
+  border-radius: 24px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   text-align: center;
@@ -728,7 +728,7 @@ function truncateDescription(text, maxLength = 100) {
 .approach-item {
   background: white;
   border: 1px solid #E8E8E8;
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 2.5rem 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   text-align: center;

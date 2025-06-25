@@ -151,27 +151,27 @@
               <div class="section-divider"></div>
             </div>
             
-            <p class="large-text">We provide tailored AI solutions to ensure your organization stays at the forefront of technological innovation.</p>
+            <p class="large-text">Tailored <span class="highlight-text">AI solutions</span> that keep your organization at the forefront of <span class="highlight-text">technological innovation</span>.</p>
             
             <div class="service-grid">
               <div class="minimal-card">
                 <h4>Strategic Guidance</h4>
-                <p>Expert consultancy in AI integration and program development for forward-thinking organizations.</p>
+                <p>Expert consultancy in AI integration and program development.</p>
               </div>
               
               <div class="minimal-card">
                 <h4>Implementation Support</h4>
-                <p>Hands-on assistance with seamless AI integration into your existing systems and workflows.</p>
+                <p>Seamless integration into your existing systems and workflows.</p>
               </div>
               
               <div class="minimal-card">
                 <h4>Customized Solutions</h4>
-                <p>Bespoke strategies designed specifically for your organization's unique challenges and goals.</p>
+                <p>Bespoke strategies designed for your unique challenges.</p>
               </div>
               
               <div class="minimal-card">
                 <h4>Ongoing Optimization</h4>
-                <p>Continuous improvement of AI systems to maximize efficiency and return on investment.</p>
+                <p>Continuous improvement to maximize efficiency and ROI.</p>
               </div>
             </div>
             
@@ -225,6 +225,7 @@
     <section id="contact-cta" class="section dark-section">
       <!-- Background Video -->
       <video
+        ref="ctaVideoRef"
         autoplay
         loop
         muted
@@ -297,10 +298,20 @@ const faqs = [
   }
 ];
 
+// Video ref for CTA section
+const ctaVideoRef = ref(null);
+
 // Initialize animations and particles
 onMounted(() => {
   // Initialize premium minimal animations
   initializeAnimations();
+  
+  // Slow down CTA video playback
+  setTimeout(() => {
+    if (ctaVideoRef.value) {
+      ctaVideoRef.value.playbackRate = 1 // 60% of normal speed
+    }
+  }, 100);
 });
 
 // Premium animation system
@@ -585,6 +596,21 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+/* Highlight Text Styles */
+.highlight-text {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+}
+
+.highlight-word {
+  color: #8B7BFF;
+  font-weight: 500;
 }
 
 /* Hero Section - Fixed Alignment & Improved Contrast */

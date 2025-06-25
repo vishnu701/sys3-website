@@ -683,6 +683,28 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   color: #545454;
+  margin: 0;
+}
+
+/* Module Title and Number Alignment */
+.module-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.module-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
 }
 
 /* Details Items Typography */

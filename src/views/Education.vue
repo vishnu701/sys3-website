@@ -124,7 +124,7 @@
               </svg>
             </div>
             <h3>Harvard Faculty Instruction</h3>
-            <p>Direct mentorship from Harvard University's distinguished Scientific Program Director and faculty members</p>
+            <p><strong>Direct mentorship</strong> from Harvard University's <strong>distinguished faculty</strong> and Scientific Program Director</p>
           </div>
           
           <div class="service-card">
@@ -135,7 +135,7 @@
               </svg>
             </div>
             <h3>Academic Excellence</h3>
-            <p>Rigorous curriculum designed to the exacting standards of Harvard University's renowned AI programs</p>
+            <p><strong>Rigorous curriculum</strong> designed to <strong>Harvard standards</strong> for renowned AI programs</p>
           </div>
           
           <div class="service-card">
@@ -148,7 +148,7 @@
               </svg>
             </div>
             <h3>Distinguished Mentorship</h3>
-            <p>Individual guidance from Harvard-affiliated instructors in an exclusive academic environment with limited enrollment</p>
+            <p><strong>Individual guidance</strong> from Harvard-affiliated instructors in an <strong>exclusive environment</strong> with limited enrollment</p>
           </div>
         </div>
       </div>
@@ -1246,6 +1246,12 @@ h2 {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
+/* Enhanced Visual Hierarchy for Service Cards */
+.service-card p strong {
+  color: #2D2D2D;
+  font-weight: 500;
+}
+
 /* Split Layout Sections */
 .split-layout {
   display: flex;
@@ -1973,13 +1979,21 @@ h2 {
 }
 
 .program-card.featured {
-  border: 2px solid #5842FF;
   background: linear-gradient(135deg, rgba(88, 66, 255, 0.05), rgba(255, 255, 255, 0.95));
+  border: 2px solid transparent; /* Consistent border width */
+}
+
+.program-card.featured:hover {
+  border-color: #5842FF;
 }
 
 .program-card.premium {
-  border: 2px solid #6585FE;
   background: linear-gradient(135deg, rgba(101, 133, 254, 0.05), rgba(255, 255, 255, 0.95));
+  border: 2px solid transparent; /* Consistent border width */
+}
+
+.program-card.premium:hover {
+  border-color: #6585FE;
 }
 
 .program-badge {
