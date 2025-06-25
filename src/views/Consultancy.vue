@@ -674,6 +674,7 @@ h2 {
   color: rgba(0, 0, 0, 0.7);
   font-size: 1.125rem;
   line-height: 1.5;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .section-description {
@@ -687,6 +688,7 @@ h2 {
   font-weight: 300;
   color: #4A4A4A;
   max-width: 680px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .large-text {
@@ -820,6 +822,7 @@ h2 {
   line-height: 1.7;
   color: #4A4A4A;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .hero-visual {
@@ -1876,7 +1879,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -2085,6 +2088,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.7;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Split Layout - Clean Home Page Style */
@@ -2173,6 +2177,7 @@ h2 {
   color: #4A4A4A;
   font-weight: 300;
   font-size: 15px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Service Grid for Case Studies - Clean Home Page Style */

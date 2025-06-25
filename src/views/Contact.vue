@@ -486,6 +486,7 @@ h2 {
   margin: 20px auto 0;
   color: #4A4A4A;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Hero Section */
@@ -566,6 +567,7 @@ h2 {
   text-align: center;
   position: relative;
   z-index: 5;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .gradient-text {
@@ -649,7 +651,7 @@ h2 {
 .contact-card {
   background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 40px 30px;
   text-align: center;
   transition: all 0.3s ease;
@@ -683,6 +685,7 @@ h2 {
   color: #4A4A4A;
   margin-bottom: 8px;
   line-height: 1.6;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .contact-card a {
@@ -730,7 +733,7 @@ h2 {
   max-width: 800px;
   margin: 0 auto;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
+  border-radius: 24px;
   background: white;
   padding: 40px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -767,7 +770,7 @@ h2 {
   padding: 12px 16px;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 24px;
   color: #333;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -813,7 +816,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.5px;
@@ -919,6 +922,7 @@ h2 {
   margin-right: auto;
   line-height: 1.6;
   color: #4A4A4A;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* FAQ Section */
@@ -930,7 +934,7 @@ h2 {
 .faq-item {
   margin-bottom: 16px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   background: white;
   transition: all 0.3s ease;
@@ -1016,6 +1020,7 @@ h2 {
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Dark Theme Adjustments */

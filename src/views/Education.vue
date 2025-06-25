@@ -797,6 +797,7 @@ h2 {
   font-weight: 300;
   color: #4A4A4A;
   max-width: 680px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .section-description {
@@ -807,6 +808,7 @@ h2 {
   color: #4A4A4A;
   max-width: 700px;
   text-align: center;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .large-text {
@@ -1020,6 +1022,7 @@ h2 {
   line-height: 1.7;
   color: #4A4A4A;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* CTA Buttons */
@@ -1034,7 +1037,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -1168,7 +1171,7 @@ h2 {
 .service-card {
   padding: 48px;
   background: white;
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid #E8E8E8;
   transition: all 0.3s ease;
   position: relative;
@@ -1202,7 +1205,7 @@ h2 {
   height: 56px;
   margin-bottom: 24px;
   background: rgba(88, 66, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1228,6 +1231,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.7;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Split Layout Sections */
@@ -1282,7 +1286,7 @@ h2 {
   align-items: flex-start;
   padding: 24px;
   background: rgba(88, 66, 255, 0.02);
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid rgba(88, 66, 255, 0.06);
   transition: all 0.3s ease;
 }
@@ -1320,6 +1324,7 @@ h2 {
   color: #4A4A4A;
   font-weight: 300;
   font-size: 15px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Course Tabs */
@@ -1394,7 +1399,7 @@ h2 {
   flex-direction: column;
   background: white;
   border: 1px solid #E8E8E8;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
               box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -1478,7 +1483,7 @@ h2 {
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.3rem 0.8rem;
-  border-radius: 12px;
+  border-radius: 24px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1541,6 +1546,7 @@ h2 {
   overflow: hidden;
   color: #4A4A4A;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .course-link {
@@ -1549,7 +1555,7 @@ h2 {
   background: transparent;
   border: 1.5px solid #5842FF;
   color: #5842FF;
-  border-radius: 6px;
+  border-radius: 24px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   text-align: center;
@@ -1631,7 +1637,7 @@ h2 {
   z-index: 2;
   background: white;
   padding: 60px;
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   max-width: 700px;
   width: 100%;
@@ -1941,7 +1947,7 @@ h2 {
 .program-card {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(138, 133, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 2rem;
   position: relative;
   transition: all 0.3s ease;
@@ -1969,7 +1975,7 @@ h2 {
   background: linear-gradient(135deg, #5842FF, #6585FE);
   color: white;
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 24px;
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -2012,6 +2018,7 @@ h2 {
   color: #555;
   line-height: 1.6;
   margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .program-courses {
@@ -2032,7 +2039,7 @@ h2 {
   background: transparent;
   border: 1.5px solid #5842FF;
   color: #5842FF;
-  border-radius: 6px;
+  border-radius: 24px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   text-align: center;
@@ -2086,7 +2093,7 @@ h2 {
   padding: 1rem 1.25rem;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid #E8E8E8;
-  border-radius: 8px;
+  border-radius: 24px;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -2161,7 +2168,7 @@ h2 {
   margin-bottom: 2rem;
   padding: 1rem;
   background: rgba(88, 66, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 24px;
   text-align: center;
 }
 
@@ -2188,7 +2195,7 @@ h2 {
 .program-cta {
   display: inline-block;
   padding: 0.75rem 2rem;
-  border-radius: 8px;
+  border-radius: 24px;
   text-decoration: none;
   font-weight: 600;
   text-align: center;

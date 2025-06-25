@@ -761,7 +761,7 @@ h2 {
   display: inline-block;
   padding: 0.85rem 1.8rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 24px;
   transition: all 0.3s ease;
   text-decoration: none;
   cursor: pointer;
@@ -802,7 +802,7 @@ h2 {
   padding: 0.75rem 1.5rem;
   background: transparent;
   border: 2px solid var(--clr-indigo);
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;

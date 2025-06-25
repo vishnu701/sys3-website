@@ -203,6 +203,7 @@ onMounted(() => {
   color: #2A2A2A;
   font-size: 18px;
   line-height: 1.7;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .article-text :deep(blockquote) {
@@ -410,6 +411,7 @@ onMounted(() => {
   color: #4A4A4A;
   font-weight: 300;
   margin: 0 0 48px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .author-info {
@@ -461,6 +463,7 @@ onMounted(() => {
   font-size: 18px;
   line-height: 1.7;
   color: #2A2A2A;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 
@@ -555,6 +558,7 @@ onMounted(() => {
   line-height: 1.6;
   color: #4A4A4A;
   margin: 0 0 20px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .related-post .read-more {

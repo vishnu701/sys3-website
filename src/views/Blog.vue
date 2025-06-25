@@ -233,6 +233,7 @@ onMounted(() => {
   font-weight: 300;
   max-width: 600px;
   margin: 0 auto;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Blog Posts Section */
@@ -252,7 +253,7 @@ onMounted(() => {
 /* Blog Posts */
 .blog-post {
   background: white;
-  border-radius: 16px;
+  border-radius: 24px;
   border: 1px solid #E8E8E8;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -335,7 +336,7 @@ onMounted(() => {
   color: #5842FF;
   background: rgba(88, 66, 255, 0.08);
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 24px;
 }
 
 .blog-post h2 {
@@ -360,6 +361,7 @@ onMounted(() => {
   color: #4A4A4A;
   margin: 0 0 24px;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .read-more {
@@ -407,7 +409,7 @@ onMounted(() => {
   flex: 1;
   padding: 16px 20px;
   border: 1px solid #D8D8D8;
-  border-radius: 8px;
+  border-radius: 24px;
   font-size: 15px;
   font-family: inherit;
   transition: all 0.3s ease;

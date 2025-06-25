@@ -1035,7 +1035,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -2084,7 +2084,7 @@ h2 {
   padding: 1rem 1.25rem;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid #E8E8E8;
-  border-radius: 8px;
+  border-radius: 24px;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
@@ -2186,7 +2186,7 @@ h2 {
 .program-cta {
   display: inline-block;
   padding: 0.75rem 2rem;
-  border-radius: 8px;
+  border-radius: 24px;
   text-decoration: none;
   font-weight: 600;
   text-align: center;

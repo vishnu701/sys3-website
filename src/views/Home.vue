@@ -546,6 +546,7 @@ h2 {
 }
 
 .large-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 19px;
   line-height: 1.8;
   margin-bottom: 48px;
@@ -665,12 +666,13 @@ h2 {
 }
 
 .hero-heading {
+  font-family: 'Nourd', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 56px;
   font-weight: 300;
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .hero-heading .gradient-text {
@@ -678,10 +680,11 @@ h2 {
 }
 
 .hero-paragraph {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 19px;
   margin: 0 0 40px;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -693,11 +696,12 @@ h2 {
 }
 
 .cta-button {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -831,7 +835,7 @@ h2 {
 .service-card {
   padding: 48px;
   background: white;
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid #E8E8E8;
   transition: all 0.3s ease;
   position: relative;
@@ -865,7 +869,7 @@ h2 {
   height: 56px;
   margin-bottom: 24px;
   background: rgba(88, 66, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -886,6 +890,7 @@ h2 {
 }
 
 .service-card p {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   color: #4A4A4A;
   margin: 0 0 24px;
   line-height: 1.7;
@@ -921,7 +926,7 @@ h2 {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
   background: #000;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
@@ -951,7 +956,7 @@ h2 {
   align-items: flex-start;
   padding: 24px;
   background: rgba(88, 66, 255, 0.02);
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid rgba(88, 66, 255, 0.06);
   transition: all 0.3s ease;
 }
@@ -984,6 +989,7 @@ h2 {
 }
 
 .feature-text p {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin: 0;
   line-height: 1.6;
   color: #4A4A4A;
@@ -1003,7 +1009,7 @@ h2 {
   padding: 36px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 24px;
   transition: all 0.3s ease;
 }
 
@@ -1021,6 +1027,7 @@ h2 {
 }
 
 .minimal-card p {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin: 0;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
@@ -1084,7 +1091,7 @@ h2 {
   z-index: 2;
   background: white;
   padding: 60px;
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   max-width: 700px;
   width: 100%;
@@ -1097,6 +1104,7 @@ h2 {
 }
 
 .cta-content-overlay .large-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin-bottom: 40px;
   text-align: center;
   max-width: 100%;
