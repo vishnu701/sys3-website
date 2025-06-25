@@ -168,20 +168,7 @@
           <div class="section-divider"></div>
         </div>
         
-        <div class="faq-container">
-          <div class="faq-item" 
-               v-for="(faq, index) in faqs" 
-               :key="index"
-               :class="{ 'active': activeFaq === index }">
-            <div class="faq-question" @click="toggleFaq(index)">
-              <h3>{{ faq.question }}</h3>
-              <div class="faq-toggle"></div>
-            </div>
-            <div class="faq-answer">
-              <p>{{ faq.answer }}</p>
-            </div>
-          </div>
-        </div>
+        <MinimalFaq :items="faqs" />
       </div>
     </section>
   </div>
@@ -191,9 +178,16 @@
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import MinimalFaq from '@/components/MinimalFaq.vue';
+import emailjs from '@emailjs/browser';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
+
+// EmailJS Configuration - Replace with your actual keys
+const EMAILJS_SERVICE_ID = 'service_mnsmeep';
+const EMAILJS_TEMPLATE_ID = 'template_1xgc2nq';
+const EMAILJS_PUBLIC_KEY = 'yDa_bTev6NgBynJL1';
 
 // Contact form data
 const formData = ref({
@@ -208,24 +202,55 @@ const submitting = ref(false);
 const showSuccess = ref(false);
 
 // Handle form submission
-const handleSubmit = () => {
+const handleSubmit = async () => {
   submitting.value = true;
   
-  // Simulate form submission
-  setTimeout(() => {
-    // Store in localStorage for reference (simulates backend storage)
+  try {
+    // Prepare template parameters for EmailJS
+    const templateParams = {
+      from_name: formData.value.name,
+      from_email: formData.value.email,
+      from_phone: formData.value.phone || 'Not provided',
+      interest_type: formData.value.interest,
+      message: formData.value.message,
+      to_email: 'programs@system3.company' // Your receiving email
+    };
+
+    // Send email using EmailJS
+    const response = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      templateParams,
+      EMAILJS_PUBLIC_KEY
+    );
+
+    console.log('Email sent successfully:', response);
+    
+    // Store in localStorage for reference
     localStorage.setItem('system3_contact_submission', JSON.stringify({
       timestamp: new Date().toISOString(),
-      data: formData.value
+      data: formData.value,
+      emailStatus: 'sent'
     }));
-    
-    // Log form data to console
-    console.log('Contact form submitted:', formData.value);
     
     // Show success message
     submitting.value = false;
     showSuccess.value = true;
-  }, 1000);
+    
+  } catch (error) {
+    console.error('Email send failed:', error);
+    
+    // Store failed submission for retry
+    localStorage.setItem('system3_contact_submission_failed', JSON.stringify({
+      timestamp: new Date().toISOString(),
+      data: formData.value,
+      error: error.message
+    }));
+    
+    submitting.value = false;
+    // You might want to show an error message here
+    alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
+  }
 };
 
 // Reset form
@@ -241,7 +266,7 @@ const resetForm = () => {
 };
 
 // FAQ data
-const faqs = ref([
+const faqs = [
   {
     question: "How quickly can you respond to inquiries?",
     answer: "We typically respond to all inquiries within 24-48 hours during business days. For urgent matters, please indicate this in your message subject line."
@@ -258,18 +283,9 @@ const faqs = ref([
     question: "Do you work with international clients?",
     answer: "Absolutely! We work with clients globally and have experience delivering both remote and on-site services internationally. Our team spans multiple time zones to ensure responsive communication."
   }
-]);
+];
 
-const activeFaq = ref(null);
-
-// Toggle FAQ
-const toggleFaq = (index) => {
-  if (activeFaq.value === index) {
-    activeFaq.value = null;
-  } else {
-    activeFaq.value = index;
-  }
-};
+// FAQ toggle functionality is now handled by MinimalFaq component
 
 onMounted(() => {
   // Initialize premium minimal animations
@@ -366,24 +382,7 @@ const animateSectionsOnScroll = () => {
     }
   );
   
-  // FAQ items stagger animation
-  gsap.utils.toArray('.faq-item').forEach((item, i) => {
-    gsap.fromTo(item,
-      { x: -20, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.6,
-        delay: i * 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        }
-      }
-    );
-  });
+  // FAQ animations are now handled by MinimalFaq component
 };
 
 // Parallax effects
@@ -464,7 +463,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .section-divider {
@@ -484,8 +483,9 @@ h2 {
   line-height: 1.8;
   max-width: 700px;
   margin: 20px auto 0;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Hero Section */
@@ -547,7 +547,7 @@ h2 {
   margin-bottom: 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
   position: relative;
   z-index: 5;
 }
@@ -561,11 +561,12 @@ h2 {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   text-align: center;
   position: relative;
   z-index: 5;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .gradient-text {
@@ -587,7 +588,7 @@ h2 {
 }
 
 [data-theme="light"] .hero-content h1 {
-  color: #202124;
+  color: #545454;
   text-shadow: 0 2px 10px rgba(138, 133, 255, 0.08);
 }
 
@@ -649,7 +650,7 @@ h2 {
 .contact-card {
   background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 40px 30px;
   text-align: center;
   transition: all 0.3s ease;
@@ -675,14 +676,15 @@ h2 {
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 16px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .contact-card p {
   font-size: 16px;
-  color: #4A4A4A;
+  color: #545454;
   margin-bottom: 8px;
   line-height: 1.6;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .contact-card a {
@@ -730,7 +732,7 @@ h2 {
   max-width: 800px;
   margin: 0 auto;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
+  border-radius: 24px;
   background: white;
   padding: 40px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -756,7 +758,7 @@ h2 {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #0A0A0A;
+  color: #545454;
   font-size: 15px;
 }
 
@@ -767,7 +769,7 @@ h2 {
   padding: 12px 16px;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 24px;
   color: #333;
   font-size: 16px;
   transition: all 0.3s ease;
@@ -813,7 +815,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.5px;
@@ -907,7 +909,7 @@ h2 {
 .form-success-message h3 {
   font-size: 24px;
   margin-bottom: 16px;
-  color: #0A0A0A;
+  color: #545454;
   font-weight: 600;
 }
 
@@ -918,123 +920,26 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-/* FAQ Section */
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  margin-bottom: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(88, 66, 255, 0.08);
-  border-color: rgba(88, 66, 255, 0.2);
-}
-
-.faq-question {
-  padding: 20px 24px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq-question h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-  padding-right: 32px;
-  color: #0A0A0A;
-  transition: color 0.3s ease;
-}
-
-.faq-item.active .faq-question h3 {
-  color: #5842FF;
-}
-
-.faq-toggle {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
-
-.faq-toggle::before,
-.faq-toggle::after {
-  content: '';
-  position: absolute;
-  background-color: #5842FF;
-  transition: all 0.3s ease;
-}
-
-.faq-toggle::before {
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  transform: translateY(-50%);
-}
-
-.faq-toggle::after {
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  transform: translateX(-50%);
-}
-
-.faq-item.active .faq-toggle::after {
-  transform: translateX(-50%) rotate(90deg);
-  opacity: 0;
-}
-
-.faq-answer {
-  padding: 0 24px;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-  padding: 0 24px 24px;
-  max-height: 300px;
-}
-
-.faq-answer p {
-  color: #4A4A4A;
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0;
-}
+/* FAQ Section - Now using MinimalFaq component */
 
 /* Dark Theme Adjustments */
 [data-theme="dark"] .contact-card,
-[data-theme="dark"] .form-container,
-[data-theme="dark"] .faq-item {
+[data-theme="dark"] .form-container {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="dark"] .contact-card h3,
 [data-theme="dark"] .form-group label,
-[data-theme="dark"] .faq-question h3,
 [data-theme="dark"] .form-success-message h3 {
   color: white;
 }
 
 [data-theme="dark"] .contact-card p,
-[data-theme="dark"] .faq-answer p,
 [data-theme="dark"] .form-success-message p {
   color: rgba(255, 255, 255, 0.7);
 }

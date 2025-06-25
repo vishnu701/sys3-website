@@ -182,7 +182,7 @@ onMounted(() => {
   font-size: 32px;
   font-weight: 500;
   margin: 64px 0 24px;
-  color: #0A0A0A;
+  color: #545454;
   line-height: 1.3;
 }
 
@@ -194,7 +194,7 @@ onMounted(() => {
   font-size: 24px;
   font-weight: 500;
   margin: 48px 0 20px;
-  color: #0A0A0A;
+  color: #545454;
   line-height: 1.3;
 }
 
@@ -203,6 +203,7 @@ onMounted(() => {
   color: #2A2A2A;
   font-size: 18px;
   line-height: 1.7;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .article-text :deep(blockquote) {
@@ -397,7 +398,7 @@ onMounted(() => {
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .article-title .gradient-text {
@@ -407,9 +408,10 @@ onMounted(() => {
 .article-subtitle {
   font-size: 20px;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   margin: 0 0 48px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .author-info {
@@ -442,7 +444,7 @@ onMounted(() => {
 .author-name {
   font-size: 16px;
   font-weight: 600;
-  color: #0A0A0A;
+  color: #545454;
   margin-bottom: 4px;
 }
 
@@ -461,6 +463,7 @@ onMounted(() => {
   font-size: 18px;
   line-height: 1.7;
   color: #2A2A2A;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 
@@ -489,7 +492,7 @@ onMounted(() => {
 .article-share h4 {
   margin: 0 0 16px;
   font-size: 16px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .share-buttons {
@@ -501,7 +504,7 @@ onMounted(() => {
   padding: 8px 16px;
   border: 1px solid #D8D8D8;
   background: white;
-  color: #4A4A4A;
+  color: #545454;
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
@@ -546,15 +549,16 @@ onMounted(() => {
   font-size: 20px;
   font-weight: 500;
   margin: 0 0 12px;
-  color: #0A0A0A;
+  color: #545454;
   line-height: 1.3;
 }
 
 .related-post .post-excerpt {
   font-size: 15px;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   margin: 0 0 20px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .related-post .read-more {

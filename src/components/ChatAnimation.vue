@@ -4,7 +4,9 @@
       <div class="chat-container">
         <div class="chat-header">
           <div class="chat-header-logo">
-            <div class="system3-logo">S3</div>
+            <div class="system3-logo">
+              <img src="/src/assets/logos/compact/logo.png" alt="System3" class="logo-img" />
+            </div>
             <span>System3</span>
           </div>
         </div>
@@ -12,7 +14,10 @@
           <!-- User Message -->
           <div class="message user-message">
             <div class="avatar user-avatar">
-              <div class="avatar-placeholder">U</div>
+              <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"/>
+                <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="currentColor"/>
+              </svg>
             </div>
             <div class="message-bubble">
               <div class="message-text">What makes System3's AI education unique?</div>
@@ -23,7 +28,9 @@
           <!-- System3 Response -->
           <div class="message system-message">
             <div class="avatar system-avatar">
-              <div class="system-logo">S3</div>
+              <div class="system-logo">
+                <img src="/src/assets/logos/compact/logo.png" alt="System3" class="logo-img-small" />
+              </div>
             </div>
             <div class="message-bubble">
               <div class="message-text">Our education is led by Harvard faculty and combines academic rigor with practical AI applications</div>
@@ -34,7 +41,10 @@
           <!-- Second User Message -->
           <div class="message user-message">
             <div class="avatar user-avatar">
-              <div class="avatar-placeholder">U</div>
+              <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"/>
+                <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="currentColor"/>
+              </svg>
             </div>
             <div class="message-bubble">
               <div class="message-text">Do you offer courses for high school students?</div>
@@ -45,7 +55,9 @@
           <!-- Second System3 Response -->
           <div class="message system-message">
             <div class="avatar system-avatar">
-              <div class="system-logo">S3</div>
+              <div class="system-logo">
+                <img src="/src/assets/logos/compact/logo.png" alt="System3" class="logo-img-small" />
+              </div>
             </div>
             <div class="message-bubble">
               <div class="message-text">Yes! We have specialized AI courses designed specifically for exceptional high school students</div>
@@ -130,6 +142,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.logo-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .chat-messages {
   padding: 20px;
   overflow-y: auto;
@@ -207,8 +225,14 @@
   font-size: 14px;
 }
 
+.avatar-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
 .system-avatar {
-  background-color: white;
+  background-color: transparent;
 }
 
 .system-logo {
@@ -220,6 +244,13 @@
   font-weight: bold;
   color: #5842FF;
   font-size: 13px;
+}
+
+.logo-img-small {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .message-bubble {

@@ -147,7 +147,6 @@ const certificationItems = [
   "Digital project portfolio showcasing CV applications",
   "Certificate for college applications and internships",
   "Access to System3 student network",
-  "Invitation to student CV competitions",
   "Continued learning resources and community access"
 ];
 </script>

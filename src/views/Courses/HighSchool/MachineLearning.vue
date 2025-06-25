@@ -178,7 +178,6 @@ const formatItems = [
   "Self-paced learning modules with hands-on exercises",
   "Real-world projects with curated datasets",
   "Mentor-guided review sessions and code reviews",
-  "Collaborative group challenges and competitions"
 ];
 
 const toolsItems = [

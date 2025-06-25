@@ -609,7 +609,7 @@ button, input, select, textarea {
   background-clip: text;
   color: transparent;
   text-shadow: none;
-  font-weight: 700; /* Nourd Bold per brand */
+  font-weight: 500; /* Nourd Bold per brand */
   display: inline-block;
 }
 

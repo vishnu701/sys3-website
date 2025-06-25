@@ -549,7 +549,7 @@ const resetForm = () => {
   color: var(--color-primary);
   font-size: 0.85rem;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;

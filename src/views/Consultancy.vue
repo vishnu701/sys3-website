@@ -116,8 +116,7 @@
               <img :src="consultingIcon" alt="Strategy Icon" class="service-icon-img" />
             </div>
             <h3>Strategy Development</h3>
-            <p>Create a comprehensive AI roadmap aligned with your business objectives and industry positioning. We identify high-impact opportunities and develop a phased implementation plan.</p>
-            <RouterLink to="/contact" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
+            <p><strong>AI roadmap</strong> aligned with your business objectives. <strong>High-impact opportunities</strong> with phased implementation.</p>
           </div>
           
           <div class="service-card">
@@ -125,8 +124,7 @@
               <img :src="machineLearningIcon" alt="Custom Solutions Icon" class="service-icon-img" />
             </div>
             <h3>Custom Solutions</h3>
-            <p>Develop tailored AI applications to solve your unique business challenges, from predictive analytics and natural language processing to computer vision and recommendation systems.</p>
-            <RouterLink to="/contact" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
+            <p><strong>Tailored AI applications</strong> for your unique challenges. <strong>Predictive analytics</strong>, NLP, computer vision & more.</p>
           </div>
           
           <div class="service-card">
@@ -134,8 +132,7 @@
               <img :src="dataScienceIcon" alt="Implementation Icon" class="service-icon-img" />
             </div>
             <h3>Implementation Support</h3>
-            <p>End-to-end guidance from conceptualization to deployment and maintenance. Our team works closely with yours to ensure smooth integration and knowledge transfer.</p>
-            <RouterLink to="/contact" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
+            <p><strong>End-to-end guidance</strong> from concept to deployment. <strong>Smooth integration</strong> with complete knowledge transfer.</p>
           </div>
           
           <div class="service-card">
@@ -143,9 +140,13 @@
               <img :src="computerVisionIcon" alt="Ethics Icon" class="service-icon-img" />
             </div>
             <h3>Ethical AI Framework</h3>
-            <p>Ensure your AI systems adhere to ethical standards and regulatory requirements. We help you build responsible AI systems that maintain trust with your customers and stakeholders.</p>
-            <RouterLink to="/contact" class="text-link">Learn more <span class="arrow">→</span></RouterLink>
+            <p><strong>Responsible AI systems</strong> meeting ethical standards. <strong>Regulatory compliance</strong> that maintains stakeholder trust.</p>
           </div>
+        </div>
+        
+        <!-- Clean Central CTA -->
+        <div class="services-cta">
+          <RouterLink to="/contact" class="text-link large">Learn more about our solutions <span class="arrow">→</span></RouterLink>
         </div>
       </div>
     </section>
@@ -164,7 +165,7 @@
             <div class="feature-number">01</div>
             <div class="feature-text">
               <h4>Discovery & Assessment</h4>
-              <p>We start by understanding your business, its challenges, and objectives. Our experts conduct a comprehensive assessment of your existing systems, data infrastructure, and AI readiness.</p>
+              <p><strong>Understand your business</strong> challenges and objectives. <strong>Comprehensive assessment</strong> of systems and AI readiness.</p>
             </div>
           </div>
           
@@ -172,7 +173,7 @@
             <div class="feature-number">02</div>
             <div class="feature-text">
               <h4>Strategy & Solution Design</h4>
-              <p>Based on our findings, we develop a strategic roadmap and design custom AI solutions aligned with your business goals. This includes selecting the right technologies, algorithms, and implementation approach.</p>
+              <p><strong>Strategic roadmap</strong> with custom AI solutions. <strong>Right technologies</strong> and implementation approach for your goals.</p>
             </div>
           </div>
           
@@ -180,7 +181,7 @@
             <div class="feature-number">03</div>
             <div class="feature-text">
               <h4>Development & Implementation</h4>
-              <p>Our team of experts develops and implements the AI solutions, ensuring integration with your existing systems. We follow agile methodologies to deliver value incrementally and adapt to changing requirements.</p>
+              <p><strong>Expert development</strong> with seamless system integration. <strong>Agile methodologies</strong> deliver incremental value.</p>
             </div>
           </div>
           
@@ -188,7 +189,7 @@
             <div class="feature-number">04</div>
             <div class="feature-text">
               <h4>Monitoring & Optimization</h4>
-              <p>We continuously monitor the performance of your AI systems, making necessary adjustments to improve accuracy and efficiency. Our team provides ongoing support to ensure long-term success.</p>
+              <p><strong>Continuous monitoring</strong> with performance improvements. <strong>Ongoing support</strong> ensures long-term success.</p>
             </div>
           </div>
         </div>
@@ -648,7 +649,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .dark-section h2 {
@@ -674,6 +675,7 @@ h2 {
   color: rgba(0, 0, 0, 0.7);
   font-size: 1.125rem;
   line-height: 1.5;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .section-description {
@@ -685,8 +687,9 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .large-text {
@@ -807,7 +810,7 @@ h2 {
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .hero-heading .gradient-text {
@@ -818,8 +821,9 @@ h2 {
   font-size: 19px;
   margin: 0 0 40px;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .hero-visual {
@@ -1876,7 +1880,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -1900,12 +1904,12 @@ h2 {
 
 .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 
@@ -2011,6 +2015,12 @@ h2 {
   margin-top: 64px;
 }
 
+/* Clean Central CTA */
+.services-cta {
+  text-align: center;
+  margin-top: 64px;
+}
+
 /* Case Studies Grid - 3 columns on desktop */
 .case-studies-grid {
   grid-template-columns: repeat(3, 1fr);
@@ -2077,14 +2087,27 @@ h2 {
   font-weight: 500;
   margin: 0 0 16px;
   letter-spacing: -0.01em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .service-card p {
-  color: #4A4A4A;
+  color: #545454;
   margin: 0 0 24px;
   line-height: 1.7;
   font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Enhanced Visual Hierarchy for Service Cards */
+.service-card p strong {
+  color: #2D2D2D;
+  font-weight: 500;
+}
+
+/* Enhanced Visual Hierarchy for Feature Items */
+.feature-text p strong {
+  color: #2D2D2D;
+  font-weight: 500;
 }
 
 /* Split Layout - Clean Home Page Style */
@@ -2164,15 +2187,16 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .feature-text p {
   margin: 0;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Service Grid for Case Studies - Clean Home Page Style */
@@ -2320,11 +2344,11 @@ h2 {
   margin-bottom: 40px;
   text-align: center;
   max-width: 100%;
-  color: #4A4A4A;
+  color: #545454;
 }
 
 .cta-content-overlay h2 {
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .cta-actions {
@@ -2349,12 +2373,12 @@ h2 {
 
 .cta-content-overlay .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-content-overlay .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 

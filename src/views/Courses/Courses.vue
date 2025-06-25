@@ -327,7 +327,7 @@ function truncateDescription(text, maxLength = 100) {
   font-weight: 300;
   margin-bottom: 32px;
   line-height: 1.15;
-  color: #0A0A0A;
+  color: #545454;
   position: relative;
   z-index: 5;
   letter-spacing: -0.02em;
@@ -342,7 +342,7 @@ function truncateDescription(text, maxLength = 100) {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -371,7 +371,7 @@ function truncateDescription(text, maxLength = 100) {
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -454,7 +454,7 @@ function truncateDescription(text, maxLength = 100) {
   flex-direction: column;
   background: white;
   border: 1px solid #E8E8E8;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
               box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -525,7 +525,7 @@ function truncateDescription(text, maxLength = 100) {
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.3rem 0.8rem;
-  border-radius: 12px;
+  border-radius: 24px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -568,7 +568,7 @@ function truncateDescription(text, maxLength = 100) {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.25rem;
-  color: #4A4A4A;
+  color: #545454;
   font-size: 0.95rem;
 }
 
@@ -582,7 +582,7 @@ function truncateDescription(text, maxLength = 100) {
   line-height: 1.7;
   min-height: 48px;
   overflow: hidden;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -593,7 +593,7 @@ function truncateDescription(text, maxLength = 100) {
 .course-topics h4 {
   font-size: 18px;
   margin-bottom: 8px;
-  color: #0A0A0A;
+  color: #545454;
   font-weight: 500;
 }
 
@@ -607,7 +607,7 @@ function truncateDescription(text, maxLength = 100) {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
 }
@@ -634,7 +634,7 @@ function truncateDescription(text, maxLength = 100) {
   background: transparent;
   border: 1.5px solid #5842FF;
   color: #5842FF;
-  border-radius: 6px;
+  border-radius: 24px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   text-align: center;
@@ -728,7 +728,7 @@ function truncateDescription(text, maxLength = 100) {
 .approach-item {
   background: white;
   border: 1px solid #E8E8E8;
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 2.5rem 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   text-align: center;
@@ -794,7 +794,7 @@ function truncateDescription(text, maxLength = 100) {
 }
 
 .approach-item p {
-  color: #4A4A4A;
+  color: #545454;
   line-height: 1.7;
   font-size: 15px;
   font-weight: 300;
@@ -1001,7 +1001,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
   text-align: center;
 }
 
@@ -1010,7 +1010,7 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
   text-align: center;
   margin-left: auto;

@@ -173,6 +173,8 @@ const formatItems = [
   "Rigorous theoretical lectures with mathematical derivations",
   "Advanced programming assignments and algorithm implementations",
   "In-depth hands-on workshops for practical application",
+  "Interactive codecasts for step-by-step coding demonstrations",
+  "Comprehensive tutorials for advanced concept mastery",
   "Weekly mentorship sessions with industry professionals",
   "Research-focused computational lab sessions",
   "Team-based projects applying data science to real-world problems"

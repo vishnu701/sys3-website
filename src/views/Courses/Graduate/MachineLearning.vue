@@ -194,22 +194,16 @@ const prerequisites = [
 
 const formatItems = [
   "Rigorous theoretical lectures with mathematical derivations",
-  "Research paper reading and discussion seminars",
   "Advanced programming assignments and algorithm implementations",
   "Collaborative research projects mimicking conference-style work",
   "Industry guest lectures from leading ML researchers",
-  "Research-focused computational lab sessions",
-  "Individual and group presentation of technical papers"
+  "Research-focused computational lab sessions"
 ];
 
 const toolsItems = [
   "Advanced PyTorch and TensorFlow implementations",
   "Custom neural network architecture design",
-  "Distributed training frameworks (Horovod, PyTorch DDP)",
-  "Bayesian inference libraries (PyMC3, Stan)",
   "Hyperparameter optimization frameworks",
-  "MLOps tools for experiment tracking and model management",
-  "Cloud-based model training and deployment infrastructure"
 ];
 
 const certificationItems = [

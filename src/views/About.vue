@@ -689,7 +689,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .section-divider {
@@ -710,6 +710,7 @@ h2 {
   max-width: 700px;
   margin: 20px auto 0;
   color: var(--color-text-secondary);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .large-text {
@@ -717,8 +718,9 @@ h2 {
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .large-text {
@@ -784,7 +786,7 @@ h2 {
   margin-bottom: 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
   position: relative;
   z-index: 5;
 }
@@ -798,11 +800,12 @@ h2 {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   text-align: center;
   position: relative;
   z-index: 5;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .gradient-text {
@@ -824,7 +827,7 @@ h2 {
 }
 
 [data-theme="light"] .hero-content h1 {
-  color: #202124;
+  color: #545454;
   text-shadow: 0 2px 10px rgba(138, 133, 255, 0.08);
 }
 
@@ -1235,7 +1238,7 @@ h2 {
   align-items: flex-start;
   padding: 24px;
   background: rgba(88, 66, 255, 0.02);
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid rgba(88, 66, 255, 0.06);
   transition: all 0.3s ease;
 }
@@ -1268,15 +1271,16 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .feature-text p {
   margin: 0;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .dark-section .feature-text p {
@@ -1294,7 +1298,7 @@ h2 {
 .value-card {
   background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 32px 24px;
   text-align: center;
   transition: all 0.3s ease;
@@ -1328,6 +1332,7 @@ h2 {
   color: rgba(0, 0, 0, 0.7);
   margin: 0;
   line-height: 1.6;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Team Section */
@@ -1357,7 +1362,7 @@ h2 {
 
 .team-leader {
   background: white;
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
   height: 100%;
@@ -1429,6 +1434,7 @@ h2 {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .leader-links {
@@ -1463,7 +1469,7 @@ h2 {
 
 .team-member {
   background: white;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
   height: 100%;
@@ -1526,6 +1532,7 @@ h2 {
   margin-bottom: 16px;
   line-height: 1.4;
   flex-grow: 1;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .member-social {
@@ -1562,7 +1569,7 @@ h2 {
 .cta-box {
   text-align: center;
   padding: 80px 40px;
-  border-radius: 8px;
+  border-radius: 24px;
   background: linear-gradient(135deg, rgba(10, 15, 31, 0.8), rgba(20, 30, 60, 0.9));
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -1593,6 +1600,7 @@ h2 {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* CTA Button */
@@ -1601,7 +1609,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  border-radius: 4px;
+  border-radius: 24px;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.5px;

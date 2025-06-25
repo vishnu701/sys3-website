@@ -596,7 +596,7 @@ const initAnimations = () => {
   display: inline-block;
   padding: 0.85rem 1.8rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 24px;
   transition: all 0.3s ease;
   text-decoration: none;
   cursor: pointer;

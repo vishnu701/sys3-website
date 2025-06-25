@@ -26,25 +26,16 @@
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
 
-// FAQ Data
-const faqs = [
-  {
-    question: "What age groups do you serve for educational programs?",
-    answer: "We primarily serve high school students, graduate students, and professionals. Our courses are curated based on the individuals we teach, ensuring relevant content for all skill levels."
-  },
-  {
-    question: "What consultancy services do you offer?",
-    answer: "We offer tailored consultancy services for AI integration and innovative program development for companies of all sizes. Our expertise spans across diverse industries, ensuring solutions that are both cutting-edge and industry-specific."
-  },
-  {
-    question: "How long does it take to implement an AI solution?",
-    answer: "Implementation timelines range from 2-6 months for initial solutions to 12+ months for enterprise-wide transformations. We follow an agile methodology with regular deliverables to ensure continuous progress."
-  },
-  {
-    question: "What makes your AI education programs different?",
-    answer: "Our programs are led by Harvard faculty and combine academic rigor with practical applications. We place emphasis on personalized learning paths, hands-on projects with real-world datasets, and continuous mentorship from industry experts."
+// Define props
+const props = defineProps({
+  items: {
+    type: Array,
+    default: () => []
   }
-];
+});
+
+// Use props data or fallback to empty array
+const faqs = props.items;
 
 const activeIndex = ref(0); // Start with first item open
 const itemHeights = reactive(Array(faqs.length).fill('auto'));
@@ -141,7 +132,6 @@ onMounted(() => {
 .faq-item.active .faq-icon {
   opacity: 1;
   background: linear-gradient(135deg, #5842FF, #6585FE);
-  transform: rotate(45deg);
   box-shadow: 0 4px 12px rgba(88, 66, 255, 0.25);
 }
 

@@ -151,27 +151,27 @@
               <div class="section-divider"></div>
             </div>
             
-            <p class="large-text">We provide tailored AI solutions to ensure your organization stays at the forefront of technological innovation.</p>
+            <p class="large-text">Tailored <span class="highlight-text">AI solutions</span> that keep your organization at the forefront of <span class="highlight-text">technological innovation</span>.</p>
             
             <div class="service-grid">
               <div class="minimal-card">
                 <h4>Strategic Guidance</h4>
-                <p>Expert consultancy in AI integration and program development for forward-thinking organizations.</p>
+                <p>Expert consultancy in AI integration and program development.</p>
               </div>
               
               <div class="minimal-card">
                 <h4>Implementation Support</h4>
-                <p>Hands-on assistance with seamless AI integration into your existing systems and workflows.</p>
+                <p>Seamless integration into your existing systems and workflows.</p>
               </div>
               
               <div class="minimal-card">
                 <h4>Customized Solutions</h4>
-                <p>Bespoke strategies designed specifically for your organization's unique challenges and goals.</p>
+                <p>Bespoke strategies designed for your unique challenges.</p>
               </div>
               
               <div class="minimal-card">
                 <h4>Ongoing Optimization</h4>
-                <p>Continuous improvement of AI systems to maximize efficiency and return on investment.</p>
+                <p>Continuous improvement to maximize efficiency and ROI.</p>
               </div>
             </div>
             
@@ -213,7 +213,7 @@
           <div class="section-divider"></div>
         </div>
         
-        <MinimalFaq />
+        <MinimalFaq :items="faqs" />
         
         <div class="cta-center">
           <RouterLink to="/contact" class="text-link large">Have more questions? Contact us <span class="arrow">→</span></RouterLink>
@@ -225,6 +225,7 @@
     <section id="contact-cta" class="section dark-section">
       <!-- Background Video -->
       <video
+        ref="ctaVideoRef"
         autoplay
         loop
         muted
@@ -277,10 +278,40 @@ import consultingIcon from '@/assets/images/consulting-icon.svg';
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+// General FAQ data for homepage
+const faqs = [
+  {
+    question: "What services does System3 offer?",
+    answer: "We provide comprehensive AI education programs and strategic consulting services. Our education division offers expert-led courses and personalized learning experiences, while our consulting team helps organizations implement AI solutions tailored to their specific needs."
+  },
+  {
+    question: "Who can benefit from your AI education programs?",
+    answer: "Our programs are designed for professionals, students, and organizations looking to master AI technologies. Whether you're a beginner or have existing technical knowledge, we offer courses that match your skill level and career goals."
+  },
+  {
+    question: "How does your consulting process work?",
+    answer: "We follow a methodical approach: Discovery & Assessment, Strategy & Solution Design, Development & Implementation, and ongoing Monitoring & Optimization. Each project is tailored to your specific business objectives and technical requirements."
+  },
+  {
+    question: "What makes System3 different from other AI companies?",
+    answer: "We combine academic expertise with practical industry experience to deliver both education and implementation services. Our team of experts ensures you not only learn about AI but also successfully integrate it into your organization with ongoing support."
+  }
+];
+
+// Video ref for CTA section
+const ctaVideoRef = ref(null);
+
 // Initialize animations and particles
 onMounted(() => {
   // Initialize premium minimal animations
   initializeAnimations();
+  
+  // Slow down CTA video playback
+  setTimeout(() => {
+    if (ctaVideoRef.value) {
+      ctaVideoRef.value.playbackRate = 1 // 60% of normal speed
+    }
+  }, 100);
 });
 
 // Premium animation system
@@ -513,7 +544,7 @@ h2 {
   margin: 0 0 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .dark-section h2 {
@@ -546,11 +577,12 @@ h2 {
 }
 
 .large-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 19px;
   line-height: 1.8;
   margin-bottom: 48px;
   font-weight: 300;
-  color: #4A4A4A;
+  color: #545454;
   max-width: 680px;
 }
 
@@ -564,6 +596,21 @@ h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+/* Highlight Text Styles */
+.highlight-text {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+}
+
+.highlight-word {
+  color: #8B7BFF;
+  font-weight: 500;
 }
 
 /* Hero Section - Fixed Alignment & Improved Contrast */
@@ -665,12 +712,13 @@ h2 {
 }
 
 .hero-heading {
+  font-family: 'Nourd', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 56px;
   font-weight: 300;
   margin: 0 0 32px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .hero-heading .gradient-text {
@@ -678,10 +726,11 @@ h2 {
 }
 
 .hero-paragraph {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 19px;
   margin: 0 0 40px;
   line-height: 1.7;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
 }
 
@@ -693,11 +742,12 @@ h2 {
 }
 
 .cta-button {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 16px 32px;
-  border-radius: 8px;
+  border-radius: 24px;
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.3px;
@@ -721,19 +771,19 @@ h2 {
 
 .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 
 /* Dark Section Button Adjustments */
 .dark-section .cta-button.primary {
   background: #FFFFFF;
-  color: #0A0A0A;
+  color: #545454;
   border-color: #FFFFFF;
 }
 
@@ -831,7 +881,7 @@ h2 {
 .service-card {
   padding: 48px;
   background: white;
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid #E8E8E8;
   transition: all 0.3s ease;
   position: relative;
@@ -865,7 +915,7 @@ h2 {
   height: 56px;
   margin-bottom: 24px;
   background: rgba(88, 66, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -882,11 +932,12 @@ h2 {
   font-weight: 500;
   margin: 0 0 16px;
   letter-spacing: -0.01em;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .service-card p {
-  color: #4A4A4A;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: #545454;
   margin: 0 0 24px;
   line-height: 1.7;
   font-weight: 300;
@@ -921,7 +972,7 @@ h2 {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 */
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
   background: #000;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
@@ -951,7 +1002,7 @@ h2 {
   align-items: flex-start;
   padding: 24px;
   background: rgba(88, 66, 255, 0.02);
-  border-radius: 12px;
+  border-radius: 24px;
   border: 1px solid rgba(88, 66, 255, 0.06);
   transition: all 0.3s ease;
 }
@@ -980,13 +1031,14 @@ h2 {
   font-size: 18px;
   font-weight: 500;
   margin: 0 0 8px;
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .feature-text p {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin: 0;
   line-height: 1.6;
-  color: #4A4A4A;
+  color: #545454;
   font-weight: 300;
   font-size: 15px;
 }
@@ -1003,7 +1055,7 @@ h2 {
   padding: 36px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 24px;
   transition: all 0.3s ease;
 }
 
@@ -1021,6 +1073,7 @@ h2 {
 }
 
 .minimal-card p {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin: 0;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
@@ -1084,7 +1137,7 @@ h2 {
   z-index: 2;
   background: white;
   padding: 60px;
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   max-width: 700px;
   width: 100%;
@@ -1097,14 +1150,15 @@ h2 {
 }
 
 .cta-content-overlay .large-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   margin-bottom: 40px;
   text-align: center;
   max-width: 100%;
-  color: #4A4A4A;
+  color: #545454;
 }
 
 .cta-content-overlay h2 {
-  color: #0A0A0A;
+  color: #545454;
 }
 
 .cta-actions {
@@ -1129,12 +1183,12 @@ h2 {
 
 .cta-content-overlay .cta-button.secondary {
   background: transparent;
-  color: #0A0A0A;
+  color: #545454;
   border: 1px solid #D8D8D8;
 }
 
 .cta-content-overlay .cta-button.secondary:hover {
-  border-color: #0A0A0A;
+  border-color: #545454;
   background: rgba(0, 0, 0, 0.02);
 }
 
