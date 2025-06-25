@@ -24,7 +24,9 @@ if (!repoName) {
 }
 
 // Get base URL - for GitHub Actions deployment to GitHub Pages
-const base = process.env.NODE_ENV === 'production' ? `/${repoName}/` : '/';
+const base = `/${repoName}/` ;
+// const base = '/';
+
 
 export default defineConfig({
   plugins: [vue()],
