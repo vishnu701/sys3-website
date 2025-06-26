@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Computer Vision"
+    courseTitle="COMPUTER VISION"
     heroImage=""
     heroTagline="Teach computers to see: Build intelligent systems that understand and interpret visual data."
     overviewTitle="Computer Vision for High School"

@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Natural Language Processing"
+    courseTitle="NATURAL LANGUAGE PROCESSING"
     heroImage=""
     heroTagline="Master advanced language understanding systems and cutting-edge NLP architectures for sophisticated text processing."
     overviewTitle="Advanced Natural Language Processing"

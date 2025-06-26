@@ -38,6 +38,16 @@
           </div>
         </div>
       </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" ref="scrollIndicator">
+        <div class="scroll-dots">
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+          <div class="scroll-dot"></div>
+        </div>
+        <p>SCROLL</p>
+      </div>
     </section>
 
     <!-- Article Content -->
@@ -113,7 +123,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -122,12 +132,25 @@ import { getBlogById, getRelatedBlogs } from '@/data/blogs/index.js';
 gsap.registerPlugin(ScrollTrigger);
 
 const route = useRoute();
+const scrollIndicator = ref(null);
 
 // Get current blog data
 const currentBlog = computed(() => getBlogById(route.params.id));
 const relatedBlogs = computed(() => getRelatedBlogs(route.params.id, 3));
 
+// Handle scroll to fade out scroll indicator
+let animationComplete = false;
+const handleScroll = () => {
+  if (scrollIndicator.value && animationComplete) {
+    const scrollY = window.scrollY;
+    const opacity = Math.max(0, 1 - scrollY / 300); // Fade out over 300px of scroll
+    scrollIndicator.value.style.opacity = opacity;
+  }
+};
+
 onMounted(() => {
+  // Add scroll listener for fade effect
+  window.addEventListener('scroll', handleScroll);
   // Hero animations
   const headerTimeline = gsap.timeline();
   
@@ -136,6 +159,21 @@ onMounted(() => {
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
     );
+
+  // Animate scroll indicator
+  headerTimeline.fromTo('.scroll-indicator',
+    { opacity: 0, y: -10 },
+    { 
+      opacity: 1, 
+      y: 0, 
+      duration: 0.8, 
+      ease: 'power2.out',
+      onComplete: () => {
+        animationComplete = true;
+      }
+    },
+    '-=0.6'
+  );
 
   // Animate article sections on scroll
   gsap.utils.toArray('.article-text h2').forEach((heading, i) => {
@@ -173,6 +211,11 @@ onMounted(() => {
       }
     );
   });
+});
+
+onBeforeUnmount(() => {
+  // Remove scroll listener
+  window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
@@ -341,6 +384,29 @@ onMounted(() => {
 .dark-theme .article-text :deep(.image-caption) {
   color: rgba(255, 255, 255, 0.7);
 }
+/* Base Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.container.narrow {
+  max-width: 750px;
+}
+
+.section {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero section specific styling to account for fixed header */
+#article-header {
+  padding-top: 200px; /* 120px base + 80px header height */
+}
+
 /* Article Header */
 .article-header-content {
   max-width: 800px;
@@ -464,6 +530,8 @@ onMounted(() => {
   line-height: 1.7;
   color: #2A2A2A;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 
@@ -509,11 +577,19 @@ onMounted(() => {
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-height: 44px; /* Minimum touch target size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .share-btn:hover {
   border-color: #5842FF;
   color: #5842FF;
+}
+
+.share-btn:active {
+  transform: scale(0.98);
 }
 
 /* Related Articles */
@@ -570,10 +646,61 @@ onMounted(() => {
   gap: 6px;
   font-size: 14px;
   transition: all 0.3s ease;
+  min-height: 44px; /* Better touch target */
+  padding: 8px 0;
 }
 
 .back-to-blog {
   text-align: center;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  z-index: 10;
+}
+
+.scroll-indicator:hover {
+  opacity: 0.7;
+}
+
+.scroll-dots {
+  width: 1px;
+  height: 50px;
+  background: #D8D8D8;
+  margin: 0 auto 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-dots::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 15px;
+  background: #0A0A0A;
+  animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(-15px); }
+  50% { transform: translateY(50px); }
+  100% { transform: translateY(50px); }
+}
+
+.scroll-indicator p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8A8A8A;
+  margin: 0;
+  font-weight: 600;
 }
 
 /* Dark Theme */
@@ -606,70 +733,392 @@ onMounted(() => {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.dark-theme .scroll-indicator p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .scroll-dots {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme .scroll-dots::after {
+  background: rgba(255, 255, 255, 0.8);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .article-title {
-    font-size: 32px;
+  /* Section spacing */
+  .section {
+    padding: 80px 0;
   }
   
-  .article-subtitle {
-    font-size: 18px;
+  /* Hero section for mobile with header offset */
+  #article-header {
+    padding-top: 160px; /* 80px base + 80px header height */
   }
   
-  .article-text {
-    font-size: 16px;
+  /* Container padding */
+  .container {
+    padding: 0 20px;
   }
   
-  .article-text h2 {
-    font-size: 26px;
-    margin: 48px 0 20px;
+  /* Hero section */
+  .article-header-content {
+    padding: 0 20px;
+  }
+  
+  .breadcrumb {
+    margin-bottom: 20px;
+    font-size: 13px;
   }
   
   .article-meta {
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .article-title {
+    font-size: 32px;
+    margin: 0 0 24px;
+    line-height: 1.2;
+  }
+  
+  .article-subtitle {
+    font-size: 18px;
+    margin: 0 0 32px;
+    line-height: 1.5;
   }
   
   .author-info {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
   }
   
   .author-details {
     text-align: center;
   }
   
-  .related-grid {
-    grid-template-columns: 1fr;
+  .author-avatar {
+    width: 56px;
+    height: 56px;
+  }
+  
+  /* Article body */
+  .article-body {
+    max-width: 100%;
+  }
+  
+  .article-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .article-text :deep(h2) {
+    font-size: 26px;
+    margin: 40px 0 20px;
+  }
+  
+  .article-text :deep(h3) {
+    font-size: 22px;
+    margin: 32px 0 16px;
+  }
+  
+  .article-text :deep(p) {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .article-text :deep(blockquote) {
+    margin: 32px 0;
+    padding: 24px 20px;
+    font-size: 18px;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  .article-text :deep(ul) {
+    margin: 20px 0;
+  }
+  
+  .article-text :deep(ul li) {
+    margin: 10px 0;
+    padding-left: 28px;
+  }
+  
+  .article-text :deep(.highlight-box) {
+    margin: 32px 0;
+    padding: 24px 20px;
+    border-radius: 8px;
+  }
+  
+  .article-text :deep(.milestone-item) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .article-text :deep(.article-image) {
+    margin: 32px 0;
+  }
+  
+  /* Article footer */
+  .article-footer {
+    margin-top: 48px;
+    padding-top: 32px;
+  }
+  
+  .article-tags {
+    margin-bottom: 24px;
+  }
+  
+  .tag {
+    font-size: 12px;
+    padding: 4px 10px;
+    margin: 0 6px 6px 0;
   }
   
   .share-buttons {
     flex-wrap: wrap;
+    gap: 8px;
   }
   
-  .milestone-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+  .share-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  /* Related articles */
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .related-post {
+    padding: 24px 20px;
+  }
+  
+  .related-post h3 {
+    font-size: 18px;
+  }
+  
+  .related-post .post-excerpt {
+    font-size: 14px;
+  }
+  
+  /* Scroll indicator - moved lower to avoid author section */
+  .scroll-indicator {
+    bottom: 10px; /* Move lower to bottom edge */
+    transform: translateX(-50%) scale(0.8); /* Make smaller */
+  }
+  
+  .scroll-dots {
+    height: 30px;
+  }
+  
+  .scroll-indicator p {
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 }
 
 @media (max-width: 576px) {
+  /* Section spacing */
+  .section {
+    padding: 60px 0;
+  }
+  
+  /* Hero section for small mobile with header offset */
+  #article-header {
+    padding-top: 140px; /* 60px base + 80px header height */
+  }
+  
+  /* Container padding */
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Hero section */
+  .article-header-content {
+    padding: 0 16px;
+  }
+  
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .article-meta {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .article-date,
+  .read-time {
+    font-size: 13px;
+  }
+  
+  .article-category {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+  
   .article-title {
     font-size: 28px;
+    margin: 0 0 20px;
+    line-height: 1.15;
   }
   
-  .article-text blockquote {
-    padding: 24px;
+  .article-subtitle {
+    font-size: 16px;
+    margin: 0 0 28px;
+    line-height: 1.4;
+  }
+  
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .author-name {
+    font-size: 15px;
+  }
+  
+  .author-title {
+    font-size: 13px;
+  }
+  
+  /* Article body */
+  .article-text {
+    font-size: 15px;
+  }
+  
+  .article-text :deep(h2) {
+    font-size: 24px;
+    margin: 32px 0 16px;
+  }
+  
+  .article-text :deep(h3) {
+    font-size: 20px;
+    margin: 28px 0 14px;
+  }
+  
+  .article-text :deep(p) {
+    font-size: 15px;
+    margin: 0 0 18px;
+    line-height: 1.5;
+  }
+  
+  .article-text :deep(blockquote) {
+    margin: 28px 0;
+    padding: 20px 16px;
+    font-size: 16px;
+  }
+  
+  .article-text :deep(blockquote::before) {
+    font-size: 48px;
+    top: 12px;
+    left: 16px;
+  }
+  
+  .article-text :deep(.highlight-box) {
+    margin: 28px 0;
+    padding: 20px 16px;
+  }
+  
+  .article-text :deep(.highlight-box h3) {
     font-size: 18px;
+    margin: 0 0 16px;
   }
   
-  .highlight-box {
-    padding: 24px;
+  .article-text :deep(.milestone-item) {
+    padding: 10px;
+  }
+  
+  .article-text :deep(.year) {
+    font-size: 14px;
+    min-width: 50px;
+  }
+  
+  .article-text :deep(.event) {
+    font-size: 14px;
+  }
+  
+  /* Article footer */
+  .article-footer {
+    margin-top: 40px;
+    padding-top: 24px;
+  }
+  
+  .article-share h4 {
+    font-size: 15px;
+  }
+  
+  .share-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+  
+  /* Related articles */
+  .related-grid {
+    gap: 20px;
   }
   
   .related-post {
-    padding: 24px;
+    padding: 20px 16px;
+  }
+  
+  .related-post h3 {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+  
+  .related-post .post-excerpt {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .related-post .read-more {
+    font-size: 13px;
+  }
+  
+  /* Section headers */
+  .section-header h2 {
+    font-size: 28px;
+  }
+  
+  .overline {
+    font-size: 11px;
+  }
+  
+  /* Back to blog button */
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  
+  /* Scroll indicator - moved to very bottom to avoid interference */
+  .scroll-indicator {
+    bottom: -10px; /* Move to very bottom edge */
+    transform: translateX(-50%) scale(1); /* Make smaller but still visible */
+    opacity: 0.4; /* Keep reasonably visible */
+  }
+  
+  .scroll-dots {
+    height: 25px;
+  }
+  
+  .scroll-indicator p {
+    font-size: 8px;
+    letter-spacing: 0.5px;
   }
 }
 </style>

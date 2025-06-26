@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Reinforcement Learning"
+    courseTitle="REINFORCEMENT LEARNING"
     heroImage=""
     heroTagline="Master advanced reinforcement learning algorithms for complex decision-making systems and intelligent agents."
     overviewTitle="Advanced Reinforcement Learning"

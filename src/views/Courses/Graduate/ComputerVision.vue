@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Computer Vision"
+    courseTitle="COMPUTER VISION"
     heroImage=""
     heroTagline="Master advanced computer vision algorithms, deep learning architectures, and state-of-the-art visual understanding systems."
     overviewTitle="Advanced Computer Vision"

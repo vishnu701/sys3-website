@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Data Science"
+    courseTitle="DATA SCIENCE"
     heroImage=""
     heroTagline="Build a comprehensive foundation in programming, statistics, and mathematics for advanced data science and machine learning."
     overviewTitle="Advanced Data Science"

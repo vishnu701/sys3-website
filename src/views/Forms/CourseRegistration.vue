@@ -1,44 +1,26 @@
 <template>
   <div class="content">
-    <section id="form-section" class="section">
-      <div class="section-content">
+    <!-- Form Section -->
+    <section id="form-section" class="section" style="padding-top: 160px;">
+      <div class="container">
         <div class="form-wrapper">
           <div class="form-container">
             <div class="form-header">
-              <div class="form-logo">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" stroke="url(#paint0_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 12L20 7.5" stroke="url(#paint1_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 12V21" stroke="url(#paint2_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 12L4 7.5" stroke="url(#paint3_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <defs>
-                    <linearGradient id="paint0_linear" x1="4" y1="12" x2="20" y2="12" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#8a85ff"/>
-                      <stop offset="1" stop-color="#c389c5"/>
-                    </linearGradient>
-                    <linearGradient id="paint1_linear" x1="12" y1="9.75" x2="20" y2="9.75" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#8a85ff"/>
-                      <stop offset="1" stop-color="#c389c5"/>
-                    </linearGradient>
-                    <linearGradient id="paint2_linear" x1="12" y1="16.5" x2="13" y2="16.5" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#8a85ff"/>
-                      <stop offset="1" stop-color="#c389c5"/>
-                    </linearGradient>
-                    <linearGradient id="paint3_linear" x1="4" y1="9.75" x2="12" y2="9.75" gradientUnits="userSpaceOnUse">
-                      <stop stop-color="#8a85ff"/>
-                      <stop offset="1" stop-color="#c389c5"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
               <div class="form-title-row">
-                <h1>System3 AI X TIS Course Registration – July 2025 (Indian Cohort)</h1>
+                <div class="section-header center">
+                  <span class="overline">Course Registration</span>
+                  <h2>System3 AI X TIS Course</h2>
+                  <div class="section-divider"></div>
+                  <p class="section-description">July 2025 (Indian Cohort) - High School Program</p>
+                </div>
                 <button id="prefill-form-btn" class="prefill-button" type="button" @click="prefillForm">
                   {{ prefillButtonText }}
                 </button>
               </div>
-              <p>🚀 <strong>Welcome to System3's AI & Data Science Course!</strong> 🚀<br>
-              Thank you for your interest in our <strong>live online program</strong> designed for high school students. This course will introduce you to <strong>Python, data science, and machine learning</strong> through interactive lectures, hands-on projects, and teamwork.</p>
+              <div class="welcome-message">
+                <p class="large-text">🚀 <strong>Welcome to System3's AI & Data Science Course!</strong> 🚀</p>
+                <p class="large-text">Thank you for your interest in our <strong>live online program</strong> designed for high school students. This course will introduce you to <strong>Python, data science, and machine learning</strong> through interactive lectures, hands-on projects, and teamwork.</p>
+              </div>
               <div class="form-important-info">
                 <div class="info-header">
                   <div class="info-icon">
@@ -542,12 +524,409 @@ const resetForm = () => {
 </script>
 
 <style scoped>
-/* Prefill button styles */
+/* Base styles for the minimal premium design */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.gradient-text {
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.overline {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #5842FF;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #545454;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #5842FF, #6585FE);
+  margin: 24px auto 0;
+  border-radius: 2px;
+}
+
+.section-description {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: #545454;
+  font-weight: 300;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.large-text {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  font-weight: 300;
+  color: #545454;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  border: 1px solid rgba(88, 66, 255, 0.05);
+}
+
+.form-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.form-title-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: rgba(245, 247, 250, 0.3);
+  border-radius: 16px;
+  border: 1px solid rgba(88, 66, 255, 0.08);
+}
+
+.form-section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #5842FF;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(88, 66, 255, 0.1);
+}
+
+.form-section-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #545454;
+  font-size: 15px;
+}
+
+.required-field::after {
+  content: ' *';
+  color: #e74c3c;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #5842FF;
+  box-shadow: 0 0 0 3px rgba(88, 66, 255, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  transform: translateY(-1px);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+  border-radius: 16px;
+}
+
+/* Radio Groups */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.radio-option:hover {
+  background: rgba(88, 66, 255, 0.05);
+  border-color: rgba(88, 66, 255, 0.2);
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+  background: rgba(88, 66, 255, 0.1);
+  border-color: #5842FF;
+}
+
+.radio-option input[type="radio"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.radio-option label {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* Field Description */
+.field-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+/* Important Info */
+.form-important-info {
+  background: rgba(88, 66, 255, 0.05);
+  border: 1px solid rgba(88, 66, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.info-icon {
+  color: #5842FF;
+  flex-shrink: 0;
+}
+
+.info-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5842FF;
+  margin: 0;
+}
+
+.info-content ul {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.info-content li {
+  margin-bottom: 8px;
+  color: #545454;
+}
+
+.info-content p {
+  margin: 12px 0;
+  color: #545454;
+}
+
+.info-content a {
+  color: #5842FF;
+  text-decoration: none;
+}
+
+.info-content a:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.form-submit {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.submit-btn {
+  background: #5842FF;
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 24px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.2);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(88, 66, 255, 0.35);
+  background: linear-gradient(135deg, #5842FF, #6585FE);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Form Note */
+.form-note {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Success Message */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.success-message.active {
+  display: block;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #22c55e;
+}
+
+.success-message h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #545454;
+  font-weight: 600;
+}
+
+.success-message p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #545454;
+  line-height: 1.6;
+}
+
+.success-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.success-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.success-btn:first-child {
+  background: #5842FF;
+  color: white;
+  box-shadow: 0 4px 12px rgba(88, 66, 255, 0.2);
+}
+
+.success-btn:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(88, 66, 255, 0.35);
+}
+
+.success-btn:last-child {
+  background: transparent;
+  color: #5842FF;
+  border: 1px solid #5842FF;
+}
+
+.success-btn:last-child:hover {
+  background: rgba(88, 66, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Prefill Button */
 .prefill-button {
-  background: rgba(138, 133, 255, 0.1);
-  border: 1px solid rgba(138, 133, 255, 0.3);
-  color: var(--color-primary);
-  font-size: 0.85rem;
+  background: rgba(88, 66, 255, 0.1);
+  border: 1px solid rgba(88, 66, 255, 0.3);
+  color: #5842FF;
+  font-size: 14px;
   padding: 8px 16px;
   border-radius: 24px;
   cursor: pointer;
@@ -557,18 +936,54 @@ const resetForm = () => {
 }
 
 .prefill-button:hover {
-  background: rgba(138, 133, 255, 0.2);
+  background: rgba(88, 66, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(138, 133, 255, 0.2);
+  box-shadow: 0 3px 8px rgba(88, 66, 255, 0.2);
 }
 
-/* Light mode adjustments */
-:deep([data-theme="light"]) .prefill-button {
-  background: rgba(138, 133, 255, 0.08);
-  border: 1px solid rgba(138, 133, 255, 0.2);
+/* Responsive Styles */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+  
+  .form-container {
+    padding: 24px;
+  }
+  
+  .form-section {
+    padding: 20px;
+  }
+  
+  .form-title-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .success-actions {
+    flex-direction: column;
+  }
 }
 
-:deep([data-theme="light"]) .prefill-button:hover {
-  background: rgba(138, 133, 255, 0.15);
+@media (max-width: 576px) {
+  h2 {
+    font-size: 28px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
 }
 </style>

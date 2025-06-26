@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Machine Learning"
+    courseTitle="MACHINE LEARNING"
     heroImage=""
     heroTagline="Advanced algorithms and deep learning techniques for cutting-edge machine learning applications."
     overviewTitle="Advanced Machine Learning"

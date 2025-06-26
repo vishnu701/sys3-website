@@ -1,6 +1,6 @@
 <template>
   <CourseTemplate
-    courseTitle="Machine Learning"
+    courseTitle="MACHINE LEARNING"
     heroImage=""
     heroTagline="From algorithms to applied intelligence: Build, train, and deploy powerful machine learning models."
     overviewTitle="Machine Learning for High School"

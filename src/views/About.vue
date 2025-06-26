@@ -31,15 +31,19 @@
           <div class="section-divider"></div>
         </div>
         
+        <!-- Full width paragraphs -->
+        <div class="vision-intro">
+          <p class="large-text">
+            At System3, we create an inspiring and innovative learning environment where students thrive. Our cutting-edge pedagogy ensures our courses are not only user-friendly but also equip students with the skills to excel in a rapidly evolving tech landscape.
+          </p>
+          <p class="large-text">
+            We craft meticulously designed courses that ignite curiosity and passion, giving students the tools they need to excel, whether in healthcare, finance, art, or any field they choose. What sets us apart is our unwavering commitment to excellence.
+          </p>
+        </div>
+        
+        <!-- Feature list with aligned visual -->
         <div class="split-layout">
           <div class="split-content">
-            <p class="large-text">
-              At System3, we create an inspiring and innovative learning environment where students thrive. Our cutting-edge pedagogy ensures our courses are not only user-friendly but also equip students with the skills to excel in a rapidly evolving tech landscape.
-            </p>
-            <p class="large-text">
-              We craft meticulously designed courses that ignite curiosity and passion, giving students the tools they need to excel, whether in healthcare, finance, art, or any field they choose. What sets us apart is our unwavering commitment to excellence.
-            </p>
-            
             <div class="feature-list">
               <div class="feature-item">
                 <div class="feature-number">01</div>
@@ -194,7 +198,11 @@
               <div class="member-social" v-if="member.socialLinks">
                 <a v-for="(link, linkIndex) in member.socialLinks" :key="linkIndex"
                    :href="link.url" target="_blank" class="social-link">
-                  <span v-html="link.icon"></span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -294,8 +302,8 @@ const harvardIcon = `<svg width="18" height="18" viewBox="0 0 32 32" fill="none"
   <path d="M4 25V29H28V25H4Z" fill="currentColor"/>
 </svg>`;
 
-// LinkedIn icon for social links
-const linkedInIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>`;
+// LinkedIn icon - using simple text for now to test
+const linkedInIcon = `in`;
 
 // Team leaders data
 const teamLeaders = ref([
@@ -357,7 +365,7 @@ const teamMembers = ref([
   },
   {
     name: "Shibani Budhraja",
-    title: "Data Scientist",
+    title: "Senior Data Scientist",
     image: shibaniImage,
     imagePos: "20%",
     socialLinks: [
@@ -816,6 +824,7 @@ h2 {
   color: transparent;
 }
 
+
 [data-theme="light"] .hero {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(250, 250, 252, 0.97)) !important;
   box-shadow: inset 0 0 100px rgba(138, 133, 255, 0.08);
@@ -876,6 +885,19 @@ h2 {
   50%, 100% {
     transform: translateY(100%);
   }
+}
+
+/* Vision Intro - Full Width */
+.vision-intro {
+  max-width: 100%;
+  margin-bottom: 64px;
+}
+
+.vision-intro .large-text {
+  max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Split Layout */
@@ -1226,7 +1248,7 @@ h2 {
 
 /* Feature List */
 .feature-list {
-  margin: 48px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -1417,6 +1439,7 @@ h2 {
   font-weight: 700;
   margin: 0 0 8px;
   color: #202124;
+  font-family: 'Nourd', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .leader-title {
@@ -1463,8 +1486,38 @@ h2 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* First 3 members take 2 columns each */
+.team-grid .team-member:nth-child(1) {
+  grid-column: 1 / 3;
+}
+
+.team-grid .team-member:nth-child(2) {
+  grid-column: 3 / 5;
+}
+
+.team-grid .team-member:nth-child(3) {
+  grid-column: 5 / 7;
+}
+
+/* Last 2 members centered in middle 4 columns */
+.team-grid .team-member:nth-child(4) {
+  grid-column: 2 / 4;
+}
+
+.team-grid .team-member:nth-child(5) {
+  grid-column: 4 / 6;
+}
+
+/* Ensure all members have the same width */
+.team-grid .team-member {
+  width: 100%;
+  max-width: none;
 }
 
 .team-member {
@@ -1524,6 +1577,7 @@ h2 {
   font-weight: 600;
   margin: 0 0 8px;
   color: #202124;
+  font-family: 'Nourd', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .member-title {
@@ -1552,6 +1606,11 @@ h2 {
   justify-content: center;
   color: #5842FF;
   transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid rgba(88, 66, 255, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .social-link:hover {
@@ -1561,9 +1620,16 @@ h2 {
 }
 
 .social-link svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
 }
+
 
 /* CTA Section */
 .cta-box {
@@ -1670,6 +1736,12 @@ h2 {
   
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+  
+  /* Reset grid positioning for mobile */
+  .team-grid .team-member {
+    grid-column: auto !important;
   }
   
   .team-leaders {
@@ -1679,6 +1751,10 @@ h2 {
   .split-layout {
     flex-direction: column;
     gap: 40px;
+  }
+  
+  .vision-intro {
+    margin-bottom: 48px;
   }
   
   .large-text {
@@ -1701,6 +1777,12 @@ h2 {
   
   .team-grid {
     grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  /* Reset grid positioning for smaller screens */
+  .team-grid .team-member {
+    grid-column: auto !important;
   }
   
   .hero {

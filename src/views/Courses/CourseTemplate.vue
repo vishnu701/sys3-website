@@ -989,7 +989,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #5842FF 100%);
   overflow: hidden;
 }
 
@@ -1047,7 +1046,7 @@ h2 {
 }
 
 .course-hero-content h1 .hero-highlight {
-  font-weight: 600;
+  font-weight: 400;
   background: linear-gradient(135deg, #ffffff 0%, #e8e3ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -1060,6 +1059,9 @@ h2 {
   line-height: 1.7;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Light theme module toggle */
