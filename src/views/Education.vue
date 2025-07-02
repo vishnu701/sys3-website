@@ -996,6 +996,7 @@ h2 {
     black 90%);
 }
 
+
 /* Hero Text Container */
 .hero-text-container {
   flex: 1;

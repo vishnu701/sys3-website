@@ -4,8 +4,7 @@
       <!-- Mobile-first: Logo and description at top -->
       <div class="footer-brand">
         <div class="footer-logo">
-          <span class="logo-mark"></span>
-          System<span class="gradient-text">3</span>
+          <img src="/src/assets/logos/full/logo_white.png" alt="System3 Logo" class="logo-image">
         </div>
         <p class="footer-description">
           Empowering organizations with advanced AI education and strategic consulting services.
@@ -37,7 +36,7 @@
       <!-- Social and copyright -->
       <div class="footer-bottom">
         <div class="footer-social">
-          <a href="https://www.linkedin.com/company/system3-company/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/system3-company" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
@@ -84,11 +83,14 @@ footer {
 }
 
 .footer-logo {
-  color: white;
-  font-weight: 700;
-  font-size: 1.5rem;
   margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  height: 65px;
+  width: auto;
 }
 
 .footer-description {
@@ -205,6 +207,10 @@ footer {
     margin-bottom: 2.5rem;
   }
   
+  .footer-logo {
+    justify-content: flex-start;
+  }
+  
   .footer-description {
     max-width: 400px;
     margin: 0;
@@ -213,14 +219,14 @@ footer {
   
   .footer-nav {
     flex-direction: row;
-    justify-content: space-between;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
+    justify-content: flex-end;
+    gap: 4rem;
+    margin: 0 0 2.5rem;
   }
   
   .nav-section {
     text-align: left;
-    flex: 1;
+    flex: none;
   }
   
   .nav-section h4::after {
@@ -258,8 +264,8 @@ footer {
     margin-bottom: 0;
   }
   
-  .footer-logo {
-    font-size: 1.75rem;
+  .logo-image {
+    height: 70px;
   }
   
   .footer-description {
